@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { caseTasks, type CasePattern, type CaseTask } from "./case-data";
 
 type BudgetCategory = {
   name: string;
@@ -433,6 +434,8 @@ const getWordSize = (schools: number) => {
 };
 
 type TabKey = "overview" | "budget" | "diagnosis" | "edutech" | "preference" | "semester";
+type AppMode = "home" | "budget" | "cases";
+type CaseTabKey = "case-overview" | CaseTask["key"] | "case-semester";
 
 const tabs: { key: TabKey; label: string }[] = [
   { key: "overview", label: "한눈에" },
@@ -443,6 +446,15 @@ const tabs: { key: TabKey; label: string }[] = [
   { key: "semester", label: "2학기 운영" },
 ];
 
+const caseTabs: { key: CaseTabKey; label: string }[] = [
+  { key: "case-overview", label: "사례 한눈에" },
+  { key: "required1", label: "필수 1 · 배움" },
+  { key: "required2", label: "필수 2 · 관계" },
+  { key: "required3", label: "필수 3 · 문화" },
+  { key: "optional", label: "선택과제" },
+  { key: "case-semester", label: "2학기 설계" },
+];
+
 function diagnose(value: number, median: number) {
   if (value === 0) return "아직 입력 전";
   if (value < median - 15) return "가운데 수준보다 낮은 편 · 일정과 계약 단계를 확인해 보세요.";
@@ -451,7 +463,10 @@ function diagnose(value: number, median: number) {
 }
 
 export default function Home() {
+  const [appMode, setAppMode] = useState<AppMode>("home");
   const [activeTab, setActiveTab] = useState<TabKey>("overview");
+  const [activeCaseTab, setActiveCaseTab] = useState<CaseTabKey>("case-overview");
+  const [caseDetail, setCaseDetail] = useState<{ taskKey: CaseTask["key"]; patternId: string } | null>(null);
   const [selectedTool, setSelectedTool] = useState(edutech[0]);
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
   const [selectedRecipeNumber, setSelectedRecipeNumber] = useState("1");
@@ -484,14 +499,42 @@ export default function Home() {
     : selectedTool.schools >= 2
       ? "소수 학교에서 반복 확인된 선택"
       : "한 학교에서 확인된 실험적 선택";
+  const detailTask = caseDetail ? caseTasks.find((task) => task.key === caseDetail.taskKey) : undefined;
+  const detailPattern = detailTask?.patterns.find((pattern) => pattern.id === caseDetail?.patternId);
 
   const toggleCheck = (key: string) =>
     setChecked((current) => ({ ...current, [key]: !current[key] }));
 
   const selectTab = (tab: TabKey) => {
+    setAppMode("budget");
     setActiveTab(tab);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const selectCaseTab = (tab: CaseTabKey) => {
+    setAppMode("cases");
+    setActiveCaseTab(tab);
+    setCaseDetail(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const goHome = () => {
+    setAppMode("home");
+    setCaseDetail(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const showCaseDetail = (task: CaseTask, pattern: CasePattern) => {
+    setCaseDetail({ taskKey: task.key, patternId: pattern.id });
+  };
+
+  useEffect(() => {
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setCaseDetail(null);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, []);
 
   const revealDetail = (id: string) => {
     window.requestAnimationFrame(() => {
@@ -512,27 +555,102 @@ export default function Home() {
   return (
     <main>
       <header className="site-header">
-        <button className="brand" type="button" onClick={() => selectTab("overview")} aria-label="한눈에 화면으로">
+        <button className="brand" type="button" onClick={goHome} aria-label="분석 선택 화면으로">
           <span className="brand-mark">AI</span>
-          <span>AI·디지털 활용 선도학교 예산 레시피</span>
+          <span>AI·디지털 활용 선도학교 운영 인사이트</span>
         </button>
-        <nav className="tab-navigation" aria-label="주요 화면" role="tablist">
-          {tabs.map((tab) => (
+        {appMode === "budget" && (
+          <nav className="tab-navigation" aria-label="예산 분석 주요 화면" role="tablist">
+            {tabs.map((tab) => (
+              <button
+                key={tab.key}
+                type="button"
+                role="tab"
+                aria-selected={activeTab === tab.key}
+                className={activeTab === tab.key ? "active" : ""}
+                onClick={() => selectTab(tab.key)}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </nav>
+        )}
+        {appMode === "cases" && (
+          <nav className="tab-navigation case-tabs" aria-label="과제 사례 분석 주요 화면" role="tablist">
+            {caseTabs.map((tab) => (
+              <button
+                key={tab.key}
+                type="button"
+                role="tab"
+                aria-selected={activeCaseTab === tab.key}
+                className={activeCaseTab === tab.key ? "active" : ""}
+                onClick={() => selectCaseTab(tab.key)}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </nav>
+        )}
+        {appMode === "home" && (
+          <nav className="mode-navigation" aria-label="분석 선택">
             <button
-              key={tab.key}
               type="button"
-              role="tab"
-              aria-selected={activeTab === tab.key}
-              className={activeTab === tab.key ? "active" : ""}
-              onClick={() => selectTab(tab.key)}
+              onClick={() => selectTab("overview")}
             >
-              {tab.label}
+              예산 분석
             </button>
-          ))}
-        </nav>
-        <span className="date-chip">2026. 7. 1. 기준</span>
+            <button type="button" onClick={() => selectCaseTab("case-overview")}>과제 사례</button>
+          </nav>
+        )}
+        <span className="date-chip">
+          {appMode === "budget" ? "2026. 7. 1. 기준" : appMode === "cases" ? "1학기 사례 기반" : "2026 운영 인사이트"}
+        </span>
       </header>
 
+      <section className="portal-section" hidden={appMode !== "home"} aria-labelledby="portal-title">
+        <div className="portal-copy">
+          <span className="eyebrow">AI·디지털 활용 선도학교</span>
+          <h1 id="portal-title">
+            숫자와 사례를
+            <br />
+            <em>2학기 실행</em>으로 바꿔요
+          </h1>
+          <p>
+            예산의 흐름과 수업·관계·학교문화의 변화를 한곳에서 살펴보세요.
+            학교명 없이, 일반 교사가 바로 적용할 수 있는 판단과 질문에 집중했습니다.
+          </p>
+        </div>
+        <div className="portal-visual" aria-hidden="true">
+          <Image
+            src="/insight-cones.png"
+            alt=""
+            fill
+            priority
+            unoptimized
+            sizes="(max-width: 900px) 100vw, 52vw"
+          />
+        </div>
+        <div className="portal-choice-grid">
+          <button className="portal-choice budget-choice" type="button" onClick={() => selectTab("overview")}>
+            <span className="choice-number">01</span>
+            <div className="choice-scoops" aria-hidden="true"><i /><i /><i /><i /></div>
+            <small>예산의 흐름에서 다음 행동 찾기</small>
+            <h2>예산 데이터 분석</h2>
+            <p>네 영역의 평균 계획·집행 흐름, 에듀테크 선택과 2학기 운영 레시피를 살펴봅니다.</p>
+            <em>예산 분석 들어가기 →</em>
+          </button>
+          <button className="portal-choice case-choice" type="button" onClick={() => selectCaseTab("case-overview")}>
+            <span className="choice-number">02</span>
+            <div className="choice-scoops" aria-hidden="true"><i /><i /><i /><i /></div>
+            <small>반복된 사례에서 수업의 변화 읽기</small>
+            <h2>과제 사례 분석</h2>
+            <p>배움·관계·학교문화·선택과제를 사례 흐름, 인사이트, 2학기 생각거리로 해석합니다.</p>
+            <em>사례 분석 들어가기 →</em>
+          </button>
+        </div>
+      </section>
+
+      <div className="budget-app" hidden={appMode !== "budget"}>
       <section className="hero tab-panel" id="top" hidden={activeTab !== "overview"}>
         <div className="hero-copy">
           <h1>
@@ -933,11 +1051,240 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </div>
+
+      <div className="case-app" hidden={appMode !== "cases"}>
+        <section
+          className="case-overview-section tab-panel"
+          hidden={activeCaseTab !== "case-overview"}
+          aria-labelledby="case-overview-title"
+        >
+          <div className="section-heading">
+            <span className="section-kicker">과제 사례 분석</span>
+            <h2 id="case-overview-title">몇 곳이 했는지보다, 어떻게 바꾸었는지</h2>
+            <p>
+              과제 제출 여부를 세지 않았습니다. 여러 사례에서 반복된 수업 장면을
+              ‘사례 흐름–인사이트–2학기 생각거리’로 다시 읽었습니다.
+            </p>
+          </div>
+          <div className="case-scoop-grid">
+            {caseTasks.map((task, index) => (
+              <button
+                type="button"
+                className="case-scoop-card"
+                key={task.key}
+                style={{ "--case-accent": task.color } as React.CSSProperties}
+                onClick={() => selectCaseTab(task.key)}
+              >
+                <div className="case-scoop-top">
+                  <span>{index + 1}</span>
+                  <em>사례 읽기 ↗</em>
+                </div>
+                <small>{task.label}</small>
+                <h3>{task.short}</h3>
+                <p>{task.essentialQuestion}</p>
+                <div className="case-preview-chips">
+                  {task.patterns.slice(0, 3).map((pattern) => <i key={pattern.id}>{pattern.title}</i>)}
+                </div>
+              </button>
+            ))}
+          </div>
+          <div className="case-reading-guide">
+            <div>
+              <span>01</span>
+              <b>사례 흐름</b>
+              <p>도구 이름보다 수업이 어떤 순서로 바뀌었는지 봅니다.</p>
+            </div>
+            <div>
+              <span>02</span>
+              <b>인사이트</b>
+              <p>반복되는 장면이 교사의 판단에 어떤 의미인지 해석합니다.</p>
+            </div>
+            <div>
+              <span>03</span>
+              <b>2학기 생각거리</b>
+              <p>그대로 복사하기보다 우리 학교에 맞게 바꿀 질문을 제시합니다.</p>
+            </div>
+          </div>
+          <div className="anonymous-note">
+            <b>학교명은 표시하지 않습니다.</b>
+            <p>사례는 학교를 특정할 수 있는 표현을 덜어내고, 공통 운영 방식 중심으로 재서술했습니다.</p>
+          </div>
+        </section>
+
+        {caseTasks.map((task) => (
+          <section
+            className="case-task-section tab-panel"
+            key={task.key}
+            hidden={activeCaseTab !== task.key}
+            style={{ "--case-accent": task.color } as React.CSSProperties}
+            aria-labelledby={`${task.key}-title`}
+          >
+            <div className="case-task-hero">
+              <div>
+                <span className="section-kicker">{task.label} · {task.short}</span>
+                <h2 id={`${task.key}-title`}>{task.headline}</h2>
+                <p>{task.intro}</p>
+              </div>
+              <aside>
+                <small>이 과제를 읽는 핵심 질문</small>
+                <strong>{task.essentialQuestion}</strong>
+              </aside>
+            </div>
+
+            <div className="case-section-title">
+              <span>반복 사례에서 찾은 흐름</span>
+              <h3>교실과 학교에서 자주 나타난 장면</h3>
+              <p>카드를 누르면 실행 순서, 인사이트, 주의점과 2학기 적용 질문이 바로 열립니다.</p>
+            </div>
+            <div className="case-pattern-grid">
+              {task.patterns.map((pattern, index) => (
+                <button
+                  type="button"
+                  className="case-pattern-card"
+                  key={pattern.id}
+                  onClick={() => showCaseDetail(task, pattern)}
+                  aria-label={`${pattern.title} 상세 사례 분석 보기`}
+                >
+                  <div>
+                    <span className={`case-signal ${
+                      pattern.signal === "가장 두드러짐"
+                        ? "signal-strong"
+                        : pattern.signal === "반복적으로 확인"
+                          ? "signal-repeat"
+                          : "signal-new"
+                    }`}>{pattern.signal}</span>
+                    <b>0{index + 1}</b>
+                  </div>
+                  <h4>{pattern.title}</h4>
+                  <p>{pattern.summary}</p>
+                  <em>상세 사례 분석 보기 →</em>
+                </button>
+              ))}
+            </div>
+
+            <div className="case-meaning-grid">
+              <article>
+                <span>이 과제에서 읽은 인사이트</span>
+                <h3>도구가 아니라 변화의 구조를 봅니다</h3>
+                <ul>{task.insights.map((insight) => <li key={insight}>{insight}</li>)}</ul>
+              </article>
+              <article>
+                <span>2학기 운영 초점</span>
+                <h3>작게 시작해 증거를 남깁니다</h3>
+                <ol>{task.semesterFocus.map((focus) => <li key={focus}>{focus}</li>)}</ol>
+                <button type="button" onClick={() => selectCaseTab("case-semester")}>통합 2학기 설계 보기 →</button>
+              </article>
+            </div>
+          </section>
+        ))}
+
+        <section
+          className="case-semester-section tab-panel"
+          hidden={activeCaseTab !== "case-semester"}
+          aria-labelledby="case-semester-title"
+        >
+          <div className="section-heading light">
+            <span className="section-kicker">과제 사례 기반 2학기 설계</span>
+            <h2 id="case-semester-title">네 과제를 따로 하지 말고, 하나의 변화로</h2>
+            <p>
+              배움–관계–교사문화–학교특색은 서로 연결됩니다. 한 번에 크게 벌이기보다
+              한 수업의 변화가 동료와 학교에 이어지도록 순서를 잡아보세요.
+            </p>
+          </div>
+          <div className="case-semester-flow">
+            {caseTasks.map((task, index) => (
+              <article key={task.key} style={{ "--case-accent": task.color } as React.CSSProperties}>
+                <span>{index + 1}</span>
+                <small>{task.label}</small>
+                <h3>{task.short}</h3>
+                <p>{task.semesterFocus[0]}</p>
+                <ul>{task.semesterFocus.slice(1).map((focus) => <li key={focus}>{focus}</li>)}</ul>
+                <button type="button" onClick={() => selectCaseTab(task.key)}>관련 사례 보기 →</button>
+              </article>
+            ))}
+          </div>
+          <div className="case-semester-recipe">
+            <div>
+              <span>1주차</span>
+              <b>문제 한 문장</b>
+              <p>학생과 교사가 지금 가장 바꾸고 싶은 수업 장면을 한 문장으로 정합니다.</p>
+            </div>
+            <div>
+              <span>2~4주차</span>
+              <b>작은 실행</b>
+              <p>한 학년·한 단원에서 역할, 피드백, 재수행이 보이는 수업을 시험합니다.</p>
+            </div>
+            <div>
+              <span>5주차</span>
+              <b>증거와 성찰</b>
+              <p>학생 반응, 수정 전후 결과물, 교사의 다음 판단을 짧게 남깁니다.</p>
+            </div>
+            <div>
+              <span>그다음</span>
+              <b>동료와 재설계</b>
+              <p>잘된 점보다 바꿀 점을 먼저 나누고, 다음 교사가 다시 쓸 수 있게 정리합니다.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {detailTask && detailPattern && (
+        <div className="case-dialog-backdrop" role="presentation" onMouseDown={() => setCaseDetail(null)}>
+          <aside
+            className="case-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="case-dialog-title"
+            style={{ "--case-accent": detailTask.color } as React.CSSProperties}
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <div className="case-dialog-head">
+              <div>
+                <span>{detailTask.label} · {detailTask.short}</span>
+                <small className={`case-signal ${
+                  detailPattern.signal === "가장 두드러짐"
+                    ? "signal-strong"
+                    : detailPattern.signal === "반복적으로 확인"
+                      ? "signal-repeat"
+                      : "signal-new"
+                }`}>{detailPattern.signal}</small>
+              </div>
+              <button type="button" onClick={() => setCaseDetail(null)} aria-label="상세 분석 닫기">×</button>
+            </div>
+            <h2 id="case-dialog-title">{detailPattern.title}</h2>
+            <p className="case-dialog-summary">{detailPattern.summary}</p>
+
+            <section className="case-flow-detail">
+              <b>사례에서 반복된 운영 흐름</b>
+              <ol>{detailPattern.scene.map((scene) => <li key={scene}>{scene}</li>)}</ol>
+            </section>
+            <section className="case-dialog-insight">
+              <span>인사이트</span>
+              <p>{detailPattern.insight}</p>
+            </section>
+            <section className="case-dialog-semester">
+              <span>2학기 운영 시 생각해볼 사안</span>
+              <p>{detailPattern.semester}</p>
+              <ul>{detailPattern.questions.map((question) => <li key={question}>{question}</li>)}</ul>
+            </section>
+            <section className="case-dialog-actions">
+              <span>작게 시작하는 순서</span>
+              <ol>{detailPattern.actionSteps.map((step) => <li key={step}>{step}</li>)}</ol>
+            </section>
+            <p className="case-dialog-watch"><b>주의할 점</b>{detailPattern.watch}</p>
+            <div className="case-dialog-footer">
+              <span>학교명 없이 공통 운영 방식으로 재서술한 사례입니다.</span>
+              <button type="button" onClick={() => setCaseDetail(null)}>확인했어요</button>
+            </div>
+          </aside>
+        </div>
+      )}
 
       <footer>
         <div>
-          <b>AI·디지털 활용 선도학교 예산 레시피</b>
-          <p>2026년 7월 1일 기준</p>
+          <b>AI·디지털 활용 선도학교 운영 인사이트</b>
+          <p>예산 데이터와 1학기 과제 사례 기반</p>
           <p>© 2026 서울가동초 백인규. All rights reserved.</p>
         </div>
         <p>학교명과 학교별 원문·금액은 공개 데이터에 포함하지 않았습니다.</p>

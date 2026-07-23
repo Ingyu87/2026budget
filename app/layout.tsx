@@ -14,9 +14,9 @@ const deploymentHost =
 const deploymentOrigin = deploymentHost.startsWith("localhost")
   ? `http://${deploymentHost}`
   : `https://${deploymentHost}`;
-const title = "AI·디지털 활용 선도학교 예산 레시피";
+const title = "2026 AI·디지털 활용 선도학교 운영 인사이트";
 const description =
-  "예산 운영 흐름과 에듀테크 선택을 2학기 실행으로 연결하는 교사용 대시보드";
+  "예산의 흐름과 배움·관계·학교문화 사례를 2학기 실행으로 연결하는 교사용 인사이트 웹앱";
 
 export const metadata: Metadata = {
   metadataBase: new URL(deploymentOrigin),
@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     title,
     description,
     type: "website",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: title }],
+    images: [{ url: "/og-insights.png", width: 1200, height: 630, alt: title }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/og.png"],
+    images: ["/og-insights.png"],
   },
 };
 
