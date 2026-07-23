@@ -405,7 +405,11 @@ export default function Home() {
       </section>
 
       <footer>
-        <div><b>AI·디지털 선도학교 예산 레시피</b><p>2026년 7월 1일 기준 · 58개교 익명 집계</p></div>
+        <div>
+          <b>AI·디지털 선도학교 예산 레시피</b>
+          <p>2026년 7월 1일 기준 · 58개교 익명 집계</p>
+          <p>© 2026 서울가동초 백인규. All rights reserved.</p>
+        </div>
         <p>학교명과 학교별 원문·금액은 공개 데이터에 포함하지 않았습니다.</p>
       </footer>
     </main>
