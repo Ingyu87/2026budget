@@ -611,6 +611,12 @@ export default function Home() {
           <span className="brand-mark">AI</span>
           <span>AI·디지털 활용 선도학교 운영 인사이트</span>
         </button>
+        {appMode !== "home" && (
+          <button className="home-return-button" type="button" onClick={goHome}>
+            <span aria-hidden="true">←</span>
+            메인으로
+          </button>
+        )}
         {appMode === "budget" && (
           <nav className="tab-navigation" aria-label="예산 분석 주요 화면" role="tablist">
             {tabs.map((tab) => (

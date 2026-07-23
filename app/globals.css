@@ -94,6 +94,36 @@ main {
   transform: rotate(-4deg);
 }
 
+.home-return-button {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 13px;
+  border: 2px solid var(--purple);
+  border-radius: 13px;
+  background: #fff;
+  color: var(--purple);
+  font-size: 14px;
+  font-weight: 900;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.home-return-button span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.home-return-button:hover,
+.home-return-button:focus-visible {
+  background: var(--purple);
+  color: #fff;
+  outline: none;
+  transform: translateX(-2px);
+}
+
 .tab-navigation {
   display: flex;
   align-items: center;
@@ -2998,9 +3028,17 @@ footer p {
   .brand { gap: 7px; }
   .brand > span:last-child { max-width: 195px; font-size: 13px; }
   .date-chip { padding: 7px 10px; font-size: 12px; }
+  .home-return-button {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    min-height: 42px;
+    font-size: 15px;
+  }
   .mode-navigation { order: 3; width: 100%; }
   .mode-navigation button { flex: 1; font-size: 15px; }
   .tab-navigation {
+    order: 4;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     overflow: visible;

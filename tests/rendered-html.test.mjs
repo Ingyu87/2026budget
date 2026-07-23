@@ -22,6 +22,7 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.match(page, /에듀테크 토핑/);
   assert.match(page, /전체 사례 보기/);
   assert.match(page, /전체 사례 카드/);
+  assert.match(page, /메인으로/);
   assert.doesNotMatch(page, /학교명 없이|학교명은 표시하지|공통 운영 방식으로 재서술|공개 데이터에 포함/);
   assert.match(layout, /metadataBase/);
   const manifest = JSON.parse(packageJson);
