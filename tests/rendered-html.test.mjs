@@ -7,10 +7,11 @@ const root = new URL("../", import.meta.url);
 test("builds a standard Next.js deployment and keeps the dashboard content", async () => {
   await access(new URL(".next/BUILD_ID", root));
 
-  const [page, caseData, caseCatalog, layout, packageJson] = await Promise.all([
+  const [page, caseData, caseCatalog, styles, layout, packageJson] = await Promise.all([
     readFile(new URL("app/page.tsx", root), "utf8"),
     readFile(new URL("app/case-data.ts", root), "utf8"),
     readFile(new URL("app/case-catalog-data.ts", root), "utf8"),
+    readFile(new URL("app/globals.css", root), "utf8"),
     readFile(new URL("app/layout.tsx", root), "utf8"),
     readFile(new URL("package.json", root), "utf8"),
   ]);
@@ -54,5 +55,6 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.equal((caseCatalog.match(/"id":/g) ?? []).length, 231);
   assert.doesNotMatch(caseCatalog, /초등학교|중학교|학교명|원본파일|PDF페이지/);
   assert.doesNotMatch(caseCatalog, /교사 는|피드백 과|제공하 였|이었습 니다|아 바타|유 행|디 지털|도 구|학 습|수 업/);
+  assert.match(styles, /\.case-app[\s\S]*word-break: keep-all/);
   assert.doesNotMatch(page, /AI·디지털 선도학교 예산 레시피/);
 });

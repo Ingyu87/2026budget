@@ -1799,6 +1799,13 @@ footer p {
 }
 
 /* Shared landing and qualitative case analysis */
+.case-app :where(h2, h3, h4, p, li, strong),
+.case-dialog :where(h2, h3, h4, p, li, strong),
+.case-catalog-dialog :where(h2, h3, h4, p, li, strong) {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
 .mode-navigation {
   display: flex;
   gap: 8px;
