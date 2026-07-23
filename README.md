@@ -27,3 +27,7 @@ npm run dev
 ```bash
 npm test
 ```
+
+## 배포
+
+표준 Next.js App Router 프로젝트입니다. GitHub 저장소를 Vercel에 연결하면 `npm run build`가 `.next` 출력을 생성하고 `main` 브랜치 변경사항이 자동 배포됩니다.

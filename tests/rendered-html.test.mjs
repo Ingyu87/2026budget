@@ -1,27 +1,28 @@
 import assert from "node:assert/strict";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render() {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
-  const { default: worker } = await import(workerUrl.href);
-  return worker.fetch(
-    new Request("http://localhost/", { headers: { accept: "text/html" } }),
-    {
-      ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) },
-    },
-    { waitUntil() {}, passThroughOnException() {} },
-  );
-}
+const root = new URL("../", import.meta.url);
 
-test("renders the budget dashboard", async () => {
-  const response = await render();
-  assert.equal(response.status, 200);
-  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
-  const html = await response.text();
-  assert.match(html, /AI·디지털 선도학교 예산 레시피/);
-  assert.match(html, /예산 숫자를/);
-  assert.match(html, /에듀테크 토핑/);
-  assert.match(html, /학교명 없이/);
-  assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|총 교부액/);
+test("builds a standard Next.js deployment and keeps the dashboard content", async () => {
+  await access(new URL(".next/BUILD_ID", root));
+
+  const [page, layout, packageJson] = await Promise.all([
+    readFile(new URL("app/page.tsx", root), "utf8"),
+    readFile(new URL("app/layout.tsx", root), "utf8"),
+    readFile(new URL("package.json", root), "utf8"),
+  ]);
+
+  assert.match(page, /AI·디지털 선도학교 예산 레시피/);
+  assert.match(page, /예산 숫자를/);
+  assert.match(page, /에듀테크 토핑/);
+  assert.match(page, /학교명 없이/);
+  assert.match(layout, /metadataBase/);
+  const manifest = JSON.parse(packageJson);
+  assert.equal(manifest.scripts.build, "next build");
+  assert.equal(manifest.engines.node, "22.x");
+  assert.equal(manifest.dependencies.vinext, undefined);
+  assert.equal(manifest.devDependencies.wrangler, undefined);
+  assert.equal(manifest.devDependencies["cross-env"], undefined);
+  assert.doesNotMatch(page, /총 교부액|19,397,529|1120616420|2000000000/);
 });
