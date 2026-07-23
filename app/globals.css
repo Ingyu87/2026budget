@@ -241,7 +241,9 @@ h1 em {
 
 .hero-art {
   position: relative;
+  width: min(100%, 480px);
   min-height: 500px;
+  justify-self: center;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 42px;
@@ -262,20 +264,10 @@ h1 em {
   pointer-events: none;
 }
 
-.hero-art::before {
-  position: absolute;
-  inset: 0 auto 0 0;
-  z-index: 1;
-  width: 58%;
-  background: linear-gradient(90deg, #2b0078 0%, #2b0078 95%, rgba(43, 0, 120, 0) 100%);
-  content: "";
-  pointer-events: none;
-}
-
 .hero-art img {
-  object-fit: cover;
-  object-position: 80% center;
-  transform: scale(1.035);
+  object-fit: contain;
+  object-position: center;
+  transform: scale(1.02);
   transition: transform 0.5s ease;
 }
 
@@ -1562,8 +1554,7 @@ footer p {
     margin-top: 34px;
     border-radius: 30px;
   }
-  .hero-art::before { display: none; }
-  .hero-art img { object-position: 87% center; }
+  .hero-art img { object-position: center; }
   .flow-section, .diagnosis-section, .edutech-section, .preference-section,
   .budget-section, .semester-section { min-height: calc(100vh - 120px); padding: 52px 20px; }
   .flow-grid, .budget-grid, .insight-strip { grid-template-columns: 1fr; }

@@ -551,10 +551,11 @@ export default function Home() {
         </div>
         <div className="hero-art" aria-label="교원역량, 교육활동, 환경지원, 사업추진 네 영역을 표현한 아이스크림">
           <Image
-            src="/og.png"
+            src="/hero-icecream.png"
             alt="교원역량, 교육활동, 환경지원, 사업추진 네 스쿱 아이스크림"
             fill
             priority
+            unoptimized
             sizes="(max-width: 720px) 100vw, 48vw"
           />
         </div>
