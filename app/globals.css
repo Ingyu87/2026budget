@@ -241,86 +241,47 @@ h1 em {
 
 .hero-art {
   position: relative;
-  display: grid;
-  align-content: center;
-  justify-content: center;
   min-height: 500px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 42px;
+  background: #25006e;
+  box-shadow:
+    0 30px 70px rgba(48, 17, 106, 0.22),
+    0 10px 0 rgba(48, 17, 106, 0.08);
+  isolation: isolate;
 }
 
-.scoops {
-  position: relative;
-  width: 400px;
-  height: 270px;
-}
-
-.scoop {
+.hero-art::after {
   position: absolute;
-  display: grid;
-  width: 170px;
-  height: 170px;
-  place-items: center;
-  border: 5px solid var(--ink);
-  border-radius: 48% 52% 45% 55% / 52% 45% 55% 48%;
-  color: var(--ink);
-  font-size: 25px;
-  font-weight: 900;
-  box-shadow: inset -14px -18px 0 rgba(255, 255, 255, 0.2), 9px 12px 0 rgba(52, 33, 109, 0.12);
-}
-
-.scoop::before,
-.scoop::after {
-  position: absolute;
-  width: 8px;
-  height: 18px;
-  border-radius: 999px;
-  background: rgba(39, 35, 63, 0.48);
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  box-shadow: inset 0 0 45px rgba(39, 0, 102, 0.15);
   content: "";
-  transform: rotate(38deg);
+  pointer-events: none;
 }
 
-.scoop::before { top: 35px; left: 37px; }
-.scoop::after { right: 34px; bottom: 40px; }
-.scoop-pink { left: 15px; top: 74px; background: var(--pink); transform: rotate(-10deg); }
-.scoop-green { left: 116px; top: 8px; z-index: 3; background: var(--lime); }
-.scoop-blue { right: 12px; top: 75px; background: var(--blue); transform: rotate(10deg); }
-.scoop-yellow { left: 116px; top: 124px; z-index: 4; background: var(--yellow); }
-
-.cone {
-  position: relative;
-  width: 205px;
-  height: 245px;
-  margin: -62px auto 0;
-  clip-path: polygon(0 0, 100% 0, 52% 100%);
-  background:
-    linear-gradient(35deg, transparent 44%, rgba(70, 45, 23, 0.18) 45%, rgba(70, 45, 23, 0.18) 49%, transparent 50%) 0 0 / 35px 35px,
-    linear-gradient(-35deg, transparent 44%, rgba(70, 45, 23, 0.18) 45%, rgba(70, 45, 23, 0.18) 49%, transparent 50%) 0 0 / 35px 35px,
-    #d89952;
-  filter: drop-shadow(8px 12px 0 rgba(52, 33, 109, 0.13));
-}
-
-.cone span {
+.hero-art::before {
   position: absolute;
-  left: 50%;
-  top: 112px;
-  width: 112px;
-  color: #5b321c;
-  font-size: 15px;
-  font-weight: 900;
-  line-height: 1.22;
-  text-align: center;
-  transform: translateX(-50%);
+  inset: 0 auto 0 0;
+  z-index: 1;
+  width: 58%;
+  background: linear-gradient(90deg, #2b0078 0%, #2b0078 95%, rgba(43, 0, 120, 0) 100%);
+  content: "";
+  pointer-events: none;
 }
 
-.sparkle {
-  position: absolute;
-  color: var(--purple);
-  font-size: 36px;
-  font-weight: 900;
+.hero-art img {
+  object-fit: cover;
+  object-position: 80% center;
+  transform: scale(1.035);
+  transition: transform 0.5s ease;
 }
 
-.sparkle.s1 { left: 4%; top: 18%; color: #ef6f9e; transform: rotate(15deg); }
-.sparkle.s2 { right: 5%; top: 23%; color: #f7b72c; font-size: 18px; }
-.sparkle.s3 { right: 2%; bottom: 22%; color: #65b839; transform: rotate(-10deg); }
+.hero-art:hover img {
+  transform: scale(1.065);
+}
 
 .flow-section,
 .diagnosis-section,
@@ -1596,7 +1557,13 @@ footer p {
   .hero { min-height: auto; padding: 62px 20px 60px; }
   h1 { font-size: 50px; }
   .hero-copy > p { font-size: 16px; }
-  .hero-art { min-height: 430px; transform: scale(0.78); margin: -35px -60px; }
+  .hero-art {
+    min-height: 470px;
+    margin-top: 34px;
+    border-radius: 30px;
+  }
+  .hero-art::before { display: none; }
+  .hero-art img { object-position: 87% center; }
   .flow-section, .diagnosis-section, .edutech-section, .preference-section,
   .budget-section, .semester-section { min-height: calc(100vh - 120px); padding: 52px 20px; }
   .flow-grid, .budget-grid, .insight-strip { grid-template-columns: 1fr; }

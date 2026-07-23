@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 
 type BudgetCategory = {
@@ -548,17 +549,14 @@ export default function Home() {
             <button className="button secondary" type="button" onClick={() => selectTab("diagnosis")}>우리 학교 진단하기</button>
           </div>
         </div>
-        <div className="hero-art" aria-label="네 가지 예산 영역을 표현한 아이스크림 일러스트">
-          <div className="sparkle s1">✦</div>
-          <div className="sparkle s2">●</div>
-          <div className="sparkle s3">✦</div>
-          <div className="scoops">
-            <div className="scoop scoop-pink">연수</div>
-            <div className="scoop scoop-green">수업</div>
-            <div className="scoop scoop-blue">환경</div>
-            <div className="scoop scoop-yellow">운영</div>
-          </div>
-          <div className="cone"><span>2학기 운영<br />레시피</span></div>
+        <div className="hero-art" aria-label="교원역량, 교육활동, 환경지원, 사업추진 네 영역을 표현한 아이스크림">
+          <Image
+            src="/og.png"
+            alt="교원역량, 교육활동, 환경지원, 사업추진 네 스쿱 아이스크림"
+            fill
+            priority
+            sizes="(max-width: 720px) 100vw, 48vw"
+          />
         </div>
       </section>
 
