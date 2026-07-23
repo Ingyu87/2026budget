@@ -6,6 +6,7 @@ const root = new URL("../", import.meta.url);
 
 test("builds a standard Next.js deployment and keeps the dashboard content", async () => {
   await access(new URL(".next/BUILD_ID", root));
+  await access(new URL("public/case-hero.png", root));
 
   const [page, caseData, caseCatalog, styles, layout, packageJson] = await Promise.all([
     readFile(new URL("app/page.tsx", root), "utf8"),
@@ -19,6 +20,8 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.match(page, /AI·디지털 활용 선도학교 운영 인사이트/);
   assert.match(page, /예산 데이터 분석/);
   assert.match(page, /과제 사례 분석/);
+  assert.match(page, /src="\/case-hero\.png"/);
+  assert.match(page, /사례의 숫자보다/);
   assert.match(page, /예산 숫자를/);
   assert.match(page, /에듀테크 토핑/);
   assert.match(page, /전체 사례 보기/);

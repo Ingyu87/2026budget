@@ -1116,13 +1116,43 @@ export default function Home() {
           hidden={activeCaseTab !== "case-overview"}
           aria-labelledby="case-overview-title"
         >
-          <div className="section-heading">
-            <span className="section-kicker">과제 사례 분석</span>
-            <h2 id="case-overview-title">몇 곳이 했는지보다, 어떻게 바꾸었는지</h2>
-            <p>
-              과제 제출 여부를 세지 않았습니다. 여러 사례에서 반복된 수업 장면을
-              ‘사례 흐름–인사이트–2학기 생각거리’로 다시 읽었습니다.
-            </p>
+          <div className="case-overview-hero">
+            <div className="case-overview-copy">
+              <span className="section-kicker">과제 사례 분석</span>
+              <h2 id="case-overview-title">
+                사례의 숫자보다
+                <br />
+                <em>변화의 장면</em>을 읽어요
+              </h2>
+              <p>
+                배움·관계·교사문화·선택과제에서 반복해서 나타난 실행을
+                ‘사례 흐름–인사이트–2학기 생각거리’로 연결했습니다.
+              </p>
+              <div className="hero-actions">
+                <button className="button primary" type="button" onClick={() => selectCaseTab("required1")}>
+                  4개 과제 살펴보기
+                </button>
+                <button className="button secondary" type="button" onClick={() => openCaseCatalog()}>
+                  전체 사례 보기
+                </button>
+              </div>
+            </div>
+            <div className="case-overview-art" aria-label="배움, 관계, 교사문화, 선택과제 네 영역을 표현한 아이스크림">
+              <Image
+                src="/case-hero.png"
+                alt="배움, 관계, 교사문화, 선택과제를 상징하는 네 스쿱 아이스크림"
+                fill
+                priority
+                unoptimized
+                sizes="(max-width: 1000px) 100vw, 44vw"
+              />
+              <div className="case-hero-labels" aria-hidden="true">
+                <span>배움 전환</span>
+                <span>관계 전환</span>
+                <span>교사문화</span>
+                <span>선택과제</span>
+              </div>
+            </div>
           </div>
           <div className="case-scoop-grid">
             {caseTasks.map((task, index) => (
