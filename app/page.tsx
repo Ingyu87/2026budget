@@ -2,6 +2,10 @@
 
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
+import {
+  caseCatalog,
+  type CaseCatalogTask,
+} from "./case-catalog-data";
 import { caseTasks, type CasePattern, type CaseTask } from "./case-data";
 
 type BudgetCategory = {
@@ -436,6 +440,7 @@ const getWordSize = (schools: number) => {
 type TabKey = "overview" | "budget" | "diagnosis" | "edutech" | "preference" | "semester";
 type AppMode = "home" | "budget" | "cases";
 type CaseTabKey = "case-overview" | CaseTask["key"] | "case-semester";
+type CaseCatalogFilter = "all" | CaseCatalogTask;
 
 const tabs: { key: TabKey; label: string }[] = [
   { key: "overview", label: "한눈에" },
@@ -455,6 +460,14 @@ const caseTabs: { key: CaseTabKey; label: string }[] = [
   { key: "case-semester", label: "2학기 설계" },
 ];
 
+const caseCatalogFilters: { key: CaseCatalogFilter; label: string }[] = [
+  { key: "all", label: "전체" },
+  { key: "required1", label: "필수 1 · 배움" },
+  { key: "required2", label: "필수 2 · 관계" },
+  { key: "required3", label: "필수 3 · 문화" },
+  { key: "optional", label: "선택과제" },
+];
+
 function diagnose(value: number, median: number) {
   if (value === 0) return "아직 입력 전";
   if (value < median - 15) return "가운데 수준보다 낮은 편 · 일정과 계약 단계를 확인해 보세요.";
@@ -467,6 +480,9 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<TabKey>("overview");
   const [activeCaseTab, setActiveCaseTab] = useState<CaseTabKey>("case-overview");
   const [caseDetail, setCaseDetail] = useState<{ taskKey: CaseTask["key"]; patternId: string } | null>(null);
+  const [caseCatalogOpen, setCaseCatalogOpen] = useState(false);
+  const [caseCatalogFilter, setCaseCatalogFilter] = useState<CaseCatalogFilter>("all");
+  const [caseCatalogQuery, setCaseCatalogQuery] = useState("");
   const [selectedTool, setSelectedTool] = useState(edutech[0]);
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
   const [selectedRecipeNumber, setSelectedRecipeNumber] = useState("1");
@@ -501,6 +517,23 @@ export default function Home() {
       : "한 학교에서 확인된 실험적 선택";
   const detailTask = caseDetail ? caseTasks.find((task) => task.key === caseDetail.taskKey) : undefined;
   const detailPattern = detailTask?.patterns.find((pattern) => pattern.id === caseDetail?.patternId);
+  const visibleCases = useMemo(() => {
+    const normalizedQuery = caseCatalogQuery.trim().toLocaleLowerCase("ko");
+
+    return caseCatalog.filter((item) => {
+      if (caseCatalogFilter !== "all" && item.task !== caseCatalogFilter) return false;
+      if (!normalizedQuery) return true;
+
+      return [
+        item.title,
+        item.summary,
+        item.detail,
+        item.keywords.join(" "),
+        item.tools.join(" "),
+        item.topics.join(" "),
+      ].some((value) => value.toLocaleLowerCase("ko").includes(normalizedQuery));
+    });
+  }, [caseCatalogFilter, caseCatalogQuery]);
 
   const toggleCheck = (key: string) =>
     setChecked((current) => ({ ...current, [key]: !current[key] }));
@@ -521,6 +554,7 @@ export default function Home() {
   const goHome = () => {
     setAppMode("home");
     setCaseDetail(null);
+    setCaseCatalogOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -528,13 +562,31 @@ export default function Home() {
     setCaseDetail({ taskKey: task.key, patternId: pattern.id });
   };
 
+  const openCaseCatalog = (task: CaseCatalogFilter = "all") => {
+    setCaseCatalogFilter(task);
+    setCaseCatalogQuery("");
+    setCaseCatalogOpen(true);
+  };
+
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setCaseDetail(null);
+      if (event.key === "Escape") {
+        setCaseDetail(null);
+        setCaseCatalogOpen(false);
+      }
     };
     window.addEventListener("keydown", closeOnEscape);
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, []);
+
+  useEffect(() => {
+    if (!caseCatalogOpen && !caseDetail) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [caseCatalogOpen, caseDetail]);
 
   const revealDetail = (id: string) => {
     window.requestAnimationFrame(() => {
@@ -617,7 +669,6 @@ export default function Home() {
           </h1>
           <p>
             예산의 흐름과 수업·관계·학교문화의 변화를 한곳에서 살펴보세요.
-            학교명 없이, 일반 교사가 바로 적용할 수 있는 판단과 질문에 집중했습니다.
           </p>
         </div>
         <div className="portal-visual" aria-hidden="true">
@@ -782,7 +833,7 @@ export default function Home() {
       <section className="diagnosis-section tab-panel" id="diagnosis" hidden={activeTab !== "diagnosis"} aria-labelledby="diagnosis-title">
         <div className="section-heading">
           <span className="section-kicker">우리 학교 스쿱 진단</span>
-          <h2 id="diagnosis-title">학교명 없이, 우리 진행률만 비교해 보세요</h2>
+          <h2 id="diagnosis-title">우리 학교의 진행 흐름을 가볍게 점검해 보세요</h2>
           <p>입력값은 이 브라우저 안에서만 계산되며 저장하거나 전송하지 않습니다.</p>
         </div>
         <div className="diagnosis-grid">
@@ -1106,9 +1157,15 @@ export default function Home() {
               <p>그대로 복사하기보다 우리 학교에 맞게 바꿀 질문을 제시합니다.</p>
             </div>
           </div>
-          <div className="anonymous-note">
-            <b>학교명은 표시하지 않습니다.</b>
-            <p>사례는 학교를 특정할 수 있는 표현을 덜어내고, 공통 운영 방식 중심으로 재서술했습니다.</p>
+          <div className="case-catalog-launch">
+            <div>
+              <span>개별 사례 모아보기</span>
+              <h3>공통 흐름 밖의 다양한 실행까지 살펴보세요</h3>
+              <p>네 과제의 구체적인 활동 내용과 활용 도구를 카드로 펼쳐볼 수 있습니다.</p>
+            </div>
+            <button type="button" onClick={() => openCaseCatalog()}>
+              전체 사례 보기 →
+            </button>
           </div>
         </section>
 
@@ -1162,6 +1219,13 @@ export default function Home() {
                 </button>
               ))}
             </div>
+            <button
+              type="button"
+              className="case-catalog-inline-button"
+              onClick={() => openCaseCatalog(task.key)}
+            >
+              {task.label} 전체 사례 보기 →
+            </button>
 
             <div className="case-meaning-grid">
               <article>
@@ -1274,10 +1338,121 @@ export default function Home() {
             </section>
             <p className="case-dialog-watch"><b>주의할 점</b>{detailPattern.watch}</p>
             <div className="case-dialog-footer">
-              <span>학교명 없이 공통 운영 방식으로 재서술한 사례입니다.</span>
               <button type="button" onClick={() => setCaseDetail(null)}>확인했어요</button>
             </div>
           </aside>
+        </div>
+      )}
+
+      {caseCatalogOpen && (
+        <div
+          className="case-catalog-backdrop"
+          role="presentation"
+          onMouseDown={() => setCaseCatalogOpen(false)}
+        >
+          <section
+            className="case-catalog-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="case-catalog-title"
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <header className="case-catalog-header">
+              <div>
+                <span>과제별 개별 사례</span>
+                <h2 id="case-catalog-title">전체 사례 카드</h2>
+                <p>공통 흐름을 이룬 활동부터 서로 다른 실행까지 과제별로 찾아볼 수 있습니다.</p>
+              </div>
+              <button
+                type="button"
+                className="case-catalog-close"
+                onClick={() => setCaseCatalogOpen(false)}
+                aria-label="전체 사례 닫기"
+              >
+                ×
+              </button>
+            </header>
+
+            <div className="case-catalog-controls">
+              <div className="case-catalog-filters" role="group" aria-label="과제 선택">
+                {caseCatalogFilters.map((item) => (
+                  <button
+                    type="button"
+                    key={item.key}
+                    className={caseCatalogFilter === item.key ? "active" : ""}
+                    aria-pressed={caseCatalogFilter === item.key}
+                    onClick={() => setCaseCatalogFilter(item.key)}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+              <label className="case-catalog-search">
+                <span>사례 검색</span>
+                <input
+                  type="search"
+                  value={caseCatalogQuery}
+                  onChange={(event) => setCaseCatalogQuery(event.target.value)}
+                  placeholder="예: 피드백, 패들렛, 공동연구"
+                />
+              </label>
+            </div>
+
+            <div className="case-catalog-scroll">
+              {visibleCases.length > 0 ? (
+                <div className="case-catalog-grid">
+                  {visibleCases.map((item) => (
+                    <details className={`case-catalog-card task-${item.task}`} key={item.id}>
+                      <summary>
+                        <div className="case-catalog-card-top">
+                          <span>{item.taskLabel}</span>
+                          <small>사례 {item.id.slice(-3)}</small>
+                        </div>
+                        <h3>{item.title}</h3>
+                        <p>{item.summary}</p>
+                        <div className="case-catalog-tags">
+                          {item.keywords.slice(0, 3).map((keyword) => (
+                            <i key={keyword}>#{keyword}</i>
+                          ))}
+                        </div>
+                        <em>
+                          <span className="case-catalog-open-label">구체적인 내용 펼치기</span>
+                          <span className="case-catalog-close-label">내용 접기</span>
+                        </em>
+                      </summary>
+                      <div className="case-catalog-detail">
+                        <section>
+                          <h4>구체적인 운영 내용</h4>
+                          <p>{item.detail}</p>
+                        </section>
+                        {item.tools.length > 0 && (
+                          <section>
+                            <h4>활용 도구·자료</h4>
+                            <div className="case-catalog-detail-chips">
+                              {item.tools.map((tool) => <span key={tool}>{tool}</span>)}
+                            </div>
+                          </section>
+                        )}
+                        {item.topics.length > 0 && (
+                          <section>
+                            <h4>함께 볼 주제</h4>
+                            <div className="case-catalog-detail-chips">
+                              {item.topics.map((topic) => <span key={topic}>{topic}</span>)}
+                            </div>
+                          </section>
+                        )}
+                      </div>
+                    </details>
+                  ))}
+                </div>
+              ) : (
+                <div className="case-catalog-empty">
+                  <b>검색 결과가 없습니다.</b>
+                  <p>다른 과제를 선택하거나 검색어를 짧게 입력해 보세요.</p>
+                </div>
+              )}
+            </div>
+          </section>
         </div>
       )}
 
@@ -1287,7 +1462,6 @@ export default function Home() {
           <p>예산 데이터와 1학기 과제 사례 기반</p>
           <p>© 2026 서울가동초 백인규. All rights reserved.</p>
         </div>
-        <p>학교명과 학교별 원문·금액은 공개 데이터에 포함하지 않았습니다.</p>
       </footer>
     </main>
   );

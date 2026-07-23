@@ -7,9 +7,10 @@ const root = new URL("../", import.meta.url);
 test("builds a standard Next.js deployment and keeps the dashboard content", async () => {
   await access(new URL(".next/BUILD_ID", root));
 
-  const [page, caseData, layout, packageJson] = await Promise.all([
+  const [page, caseData, caseCatalog, layout, packageJson] = await Promise.all([
     readFile(new URL("app/page.tsx", root), "utf8"),
     readFile(new URL("app/case-data.ts", root), "utf8"),
+    readFile(new URL("app/case-catalog-data.ts", root), "utf8"),
     readFile(new URL("app/layout.tsx", root), "utf8"),
     readFile(new URL("package.json", root), "utf8"),
   ]);
@@ -19,7 +20,9 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.match(page, /과제 사례 분석/);
   assert.match(page, /예산 숫자를/);
   assert.match(page, /에듀테크 토핑/);
-  assert.match(page, /학교명 없이/);
+  assert.match(page, /전체 사례 보기/);
+  assert.match(page, /전체 사례 카드/);
+  assert.doesNotMatch(page, /학교명 없이|학교명은 표시하지|공통 운영 방식으로 재서술|공개 데이터에 포함/);
   assert.match(layout, /metadataBase/);
   const manifest = JSON.parse(packageJson);
   assert.equal(manifest.scripts.build, "next build");
@@ -47,5 +50,7 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.match(caseData, /선택과제/);
   assert.match(page, /2학기 운영 시 생각해볼 사안/);
   assert.doesNotMatch(caseData, /초등학교|학교명|개교|미제출/);
+  assert.equal((caseCatalog.match(/"id":/g) ?? []).length, 231);
+  assert.doesNotMatch(caseCatalog, /초등학교|중학교|학교명|원본파일|PDF페이지/);
   assert.doesNotMatch(page, /AI·디지털 선도학교 예산 레시피/);
 });
