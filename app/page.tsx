@@ -182,7 +182,7 @@ const edutech: Edutech[] = [
   { name: "패들렛", schools: 28, group: "협업·공유", related: ["북크리에이터", "매쓰홀릭", "Gemini"] },
   { name: "북크리에이터", schools: 13, group: "콘텐츠 제작", related: ["패들렛", "ZEP·젭퀴즈", "블루킷"] },
   { name: "Gemini", schools: 11, group: "생성형 AI", related: ["패들렛", "Claude", "SUNO"] },
-  { name: "매쓰홀릭", schools: 11, group: "수학·맞춤형", related: ["패들렛", "북크리에이터", "ChatGPT"] },
+  { name: "매쓰홀릭", schools: 11, group: "교과·맞춤형", related: ["패들렛", "북크리에이터", "ChatGPT"] },
   { name: "Claude", schools: 10, group: "생성형 AI", related: ["패들렛", "ChatGPT", "Gemini"] },
   { name: "ZEP·젭퀴즈", schools: 10, group: "퀴즈·참여", related: ["북크리에이터", "패들렛", "블루킷"] },
   { name: "블루킷", schools: 8, group: "퀴즈·참여", related: ["패들렛", "북크리에이터", "ZEP·젭퀴즈"] },
@@ -190,10 +190,10 @@ const edutech: Edutech[] = [
   { name: "SUNO", schools: 6, group: "콘텐츠 제작", related: ["Gemini", "북크리에이터", "패들렛"] },
   { name: "카훗", schools: 6, group: "퀴즈·참여", related: ["패들렛", "북크리에이터", "Gemini"] },
   { name: "띵커벨", schools: 5, group: "퀴즈·참여", related: ["패들렛", "북크리에이터", "ChatGPT"] },
-  { name: "알공", schools: 5, group: "언어·문해", related: ["토도한글", "패들렛", "ZEP·젭퀴즈"] },
+  { name: "알공", schools: 5, group: "교과·맞춤형", related: ["토도한글", "패들렛", "ZEP·젭퀴즈"] },
   { name: "키위티", schools: 5, group: "언어·문해", related: ["패들렛", "북크리에이터", "Claude"] },
-  { name: "스쿨플랫", schools: 4, group: "수학·맞춤형", related: ["패들렛", "키위티", "ChatGPT"] },
-  { name: "지니아튜터", schools: 4, group: "언어·문해", related: ["북크리에이터", "패들렛", "ChatGPT"] },
+  { name: "스쿨플랫", schools: 4, group: "교과·맞춤형", related: ["패들렛", "키위티", "ChatGPT"] },
+  { name: "지니아튜터", schools: 4, group: "교과·맞춤형", related: ["북크리에이터", "패들렛", "ChatGPT"] },
   { name: "토도한글", schools: 4, group: "언어·문해", related: ["알공", "패들렛", "AI 아크수학"] },
   { name: "YouTube Premium", schools: 3, group: "콘텐츠 제작", related: ["Claude", "Gemini", "북크리에이터"] },
   { name: "Zoom Pro", schools: 3, group: "협업·공유", related: ["북크리에이터", "패들렛", "Claude"] },
@@ -203,11 +203,11 @@ const edutech: Edutech[] = [
   { name: "코드모스", schools: 3, group: "코딩·컴퓨팅", related: ["띵커벨", "북크리에이터", "아이쌤GPT"] },
   { name: "클래스카드", schools: 3, group: "언어·문해", related: ["Gemini", "SUNO", "Snorkl"] },
   { name: "클래스팅 AI", schools: 3, group: "학습관리", related: ["패들렛", "Claude", "Gemini"] },
-  { name: "클래시파이", schools: 3, group: "퀴즈·참여", related: ["Claude", "YouTube Premium", "띵커벨"] },
-  { name: "AI 아크수학", schools: 2, group: "수학·맞춤형", related: ["패들렛", "ZEP·젭퀴즈", "그라운드"] },
-  { name: "AI마타수학", schools: 2, group: "수학·맞춤형", related: ["VLLO", "YBM AIDT", "리드포스쿨"] },
+  { name: "클래시파이", schools: 3, group: "학습관리", related: ["Claude", "YouTube Premium", "띵커벨"] },
+  { name: "AI 아크수학", schools: 2, group: "교과·맞춤형", related: ["패들렛", "ZEP·젭퀴즈", "그라운드"] },
+  { name: "AI마타수학", schools: 2, group: "교과·맞춤형", related: ["VLLO", "YBM AIDT", "리드포스쿨"] },
   { name: "Delightex", schools: 2, group: "코딩·컴퓨팅", related: ["ChatGPT", "Claude", "SUNO"] },
-  { name: "Snorkl", schools: 2, group: "언어·문해", related: ["Gemini", "클래스카드", "키위티"] },
+  { name: "Snorkl", schools: 2, group: "퀴즈·참여", related: ["Gemini", "클래스카드", "키위티"] },
   { name: "Wordwall", schools: 2, group: "퀴즈·참여", related: ["SUNO", "ElevenLabs", "Gemini"] },
   { name: "리딩게이트", schools: 2, group: "언어·문해", related: ["U클래스"] },
   { name: "리딩오션", schools: 2, group: "언어·문해", related: ["AI마타수학", "Gemini", "VLLO"] },
@@ -216,14 +216,14 @@ const edutech: Edutech[] = [
   { name: "멘티미터", schools: 2, group: "퀴즈·참여", related: ["ChatGPT", "Claude", "Delightex"] },
   { name: "미리캔버스", schools: 2, group: "콘텐츠 제작", related: ["ChatGPT", "Claude", "Delightex"] },
   { name: "아이쌤GPT", schools: 2, group: "생성형 AI", related: ["띵커벨", "코드모스", "Zoom Pro"] },
-  { name: "와우아이디어스", schools: 2, group: "콘텐츠 제작", related: ["북크리에이터", "ZEP·젭퀴즈", "다했니·다했어요"] },
+  { name: "와우아이디어스", schools: 2, group: "협업·공유", related: ["북크리에이터", "ZEP·젭퀴즈", "다했니·다했어요"] },
   { name: "초코클래스", schools: 2, group: "학습관리", related: ["카훗", "패들렛", "AI마타수학"] },
-  { name: "토도수학", schools: 2, group: "수학·맞춤형", related: ["알공", "Gemini", "리딩오션"] },
+  { name: "토도수학", schools: 2, group: "교과·맞춤형", related: ["알공", "Gemini", "리딩오션"] },
   { name: "투닝", schools: 2, group: "콘텐츠 제작", related: ["Gemini", "Snorkl", "북크리에이터"] },
   { name: "4K Video Downloader+", schools: 1, group: "콘텐츠 제작", related: ["Claude", "Lily's AI", "OpenAI API"] },
   { name: "EBS영어", schools: 1, group: "언어·문해", related: ["Gemini", "초코클래스", "카훗"] },
   { name: "ElevenLabs", schools: 1, group: "콘텐츠 제작", related: ["Learney", "SUNO", "Wordwall"] },
-  { name: "Learney", schools: 1, group: "학습관리", related: ["ElevenLabs", "SUNO", "Wordwall"] },
+  { name: "Learney", schools: 1, group: "언어·문해", related: ["ElevenLabs", "SUNO", "Wordwall"] },
   { name: "Lily's AI", schools: 1, group: "생성형 AI", related: ["4K Video Downloader+", "Claude", "OpenAI API"] },
   { name: "OpenAI API", schools: 1, group: "생성형 AI", related: ["4K Video Downloader+", "Claude", "Lily's AI"] },
   { name: "TBLT-Agent", schools: 1, group: "생성형 AI", related: ["4K Video Downloader+", "Claude", "Lily's AI"] },
@@ -237,36 +237,117 @@ const edutech: Edutech[] = [
   { name: "노션", schools: 1, group: "협업·공유", related: ["ZEP·젭퀴즈", "매쓰홀릭", "북크리에이터"] },
   { name: "라포라포", schools: 1, group: "언어·문해", related: ["ZEP·젭퀴즈", "그림한글받아쓰기", "리드포스쿨"] },
   { name: "리틀팍스", schools: 1, group: "언어·문해", related: ["Gemini", "리딩오션", "스쿨플랫"] },
-  { name: "매쓰플랫", schools: 1, group: "수학·맞춤형", related: ["패들렛"] },
+  { name: "매쓰플랫", schools: 1, group: "교과·맞춤형", related: ["패들렛"] },
   { name: "문제G", schools: 1, group: "학습관리", related: ["ElevenLabs", "Learney", "SUNO"] },
   { name: "밀리의 서재", schools: 1, group: "언어·문해", related: ["패들렛"] },
-  { name: "수학대왕", schools: 1, group: "수학·맞춤형", related: ["Gemini", "리드포스쿨", "패들렛"] },
+  { name: "수학대왕", schools: 1, group: "교과·맞춤형", related: ["Gemini", "리드포스쿨", "패들렛"] },
   { name: "스픽AI", schools: 1, group: "언어·문해", related: ["ChatGPT", "Claude", "Delightex"] },
   { name: "슬라이도", schools: 1, group: "퀴즈·참여", related: ["Claude", "Gemini", "YouTube Premium"] },
   { name: "아트봉봉", schools: 1, group: "콘텐츠 제작", related: ["ZEP·젭퀴즈", "그림한글받아쓰기", "라포라포"] },
   { name: "엘리프", schools: 1, group: "언어·문해", related: ["ChatGPT", "패들렛", "퍼플 경제교실"] },
-  { name: "옥수수", schools: 1, group: "학습관리", related: [] },
+  { name: "옥수수", schools: 1, group: "교과·맞춤형", related: [] },
   { name: "우리반", schools: 1, group: "학습관리", related: ["매쓰홀릭", "패들렛"] },
   { name: "원아워", schools: 1, group: "학습관리", related: ["Zoom Pro", "띵커벨", "매쓰홀릭"] },
   { name: "젠스파크", schools: 1, group: "생성형 AI", related: ["ChatGPT", "Claude", "ZEP·젭퀴즈"] },
-  { name: "지학사 AIDT", schools: 1, group: "수학·맞춤형", related: ["Zoom Pro", "띵커벨", "매쓰홀릭"] },
+  { name: "지학사 AIDT", schools: 1, group: "교과·맞춤형", related: ["Zoom Pro", "띵커벨", "매쓰홀릭"] },
   { name: "초등문해력", schools: 1, group: "언어·문해", related: ["Gemini", "리딩오션", "리틀팍스"] },
   { name: "큐리팟", schools: 1, group: "생성형 AI", related: ["ChatGPT", "Claude", "ZEP·젭퀴즈"] },
-  { name: "클리포", schools: 1, group: "생성형 AI", related: ["ChatGPT", "Claude", "ZEP·젭퀴즈"] },
+  { name: "클리포", schools: 1, group: "퀴즈·참여", related: ["ChatGPT", "Claude", "ZEP·젭퀴즈"] },
   { name: "토도국어", schools: 1, group: "언어·문해", related: ["매일국어·독도", "알공", "클래스카드"] },
   { name: "퍼플 경제교실", schools: 1, group: "학습관리", related: ["ChatGPT", "엘리프", "패들렛"] },
   { name: "플랭스쿨", schools: 1, group: "학습관리", related: ["AI마타수학", "YBM AIDT", "북크리에이터"] },
   { name: "후크패드", schools: 1, group: "콘텐츠 제작", related: ["ElevenLabs", "Learney", "SUNO"] },
 ];
 
+const toolPurposes: Record<string, string> = {
+  "패들렛": "게시판·캔버스에 자료와 의견을 함께 모으는 실시간 협업 공간",
+  "북크리에이터": "글·이미지·음성·영상을 엮어 전자책과 학습 결과물을 만드는 저작 도구",
+  "Gemini": "텍스트·이미지·자료 분석과 생성을 지원하는 범용 멀티모달 생성형 AI",
+  "매쓰홀릭": "수학 문제은행과 진단·추천 학습을 제공하는 수학 AI 코스웨어",
+  "Claude": "긴 문서 분석·글쓰기·아이디어 정리를 지원하는 범용 생성형 AI",
+  "ZEP·젭퀴즈": "메타버스형 참여 공간과 게임형 퀴즈를 결합한 수업 참여 도구",
+  "블루킷": "문항 세트를 여러 게임 모드로 운영하는 실시간 퀴즈 플랫폼",
+  "ChatGPT": "대화형 자료 생성·분석·아이디어 탐색을 지원하는 범용 생성형 AI",
+  "SUNO": "텍스트 지시로 노래·배경음악을 만드는 생성형 음악 도구",
+  "카훗": "실시간 퀴즈·설문으로 이해도와 참여를 확인하는 게임형 평가 도구",
+  "띵커벨": "퀴즈·토론·설문·워드클라우드·보드를 제공하는 수업 상호작용 도구",
+  "알공": "초등 영어·수학을 게임과 AI 맞춤 복습으로 지원하는 교과 코스웨어",
+  "키위티": "학생 글쓰기 제출과 AI 대화·피드백을 지원하는 AI 글쓰기 코스웨어",
+  "스쿨플랫": "문제은행·과제·성취 분석을 제공하는 학교 맞춤형 수학 AI 코스웨어",
+  "지니아튜터": "국·영·수·사·과 과정과 AI 글쓰기 평가를 제공하는 교과 코스웨어",
+  "토도한글": "유아·초등 초기 문해의 한글 읽기와 쓰기를 돕는 단계형 학습 앱",
+  "YouTube Premium": "광고 없이 교육 영상을 탐색·재생·저장하는 영상 콘텐츠 이용 서비스",
+  "Zoom Pro": "화상수업·회의·화면 공유·소그룹 활동을 지원하는 원격 협업 도구",
+  "다했니·다했어요": "과제 배부·제출·확인과 학급 활동 기록을 돕는 학급관리 플랫폼",
+  "리드포스쿨": "시선추적과 AI 분석을 활용해 읽기 과정을 진단하는 문해력 코스웨어",
+  "캡컷": "자막·효과·AI 기능을 갖춘 영상 편집 및 숏폼 제작 도구",
+  "코드모스": "학교 수업용 단계형 SW·AI 학습 콘텐츠를 제공하는 코딩 코스웨어",
+  "클래스카드": "영어 어휘·문장 세트를 게임과 반복 학습으로 익히는 언어 학습 도구",
+  "클래스팅 AI": "학급관리와 AI 기반 진단·맞춤 학습을 결합한 교육 플랫폼",
+  "클래시파이": "학생 성향·관계 심리검사 결과로 상담과 생활지도를 돕는 학급관리 도구",
+  "AI 아크수학": "학생 수준 진단과 맞춤형 수학 학습을 지원하는 AI 수학 코스웨어",
+  "AI마타수학": "진단 결과에 따라 개별 수학 문항과 학습 경로를 제공하는 AI 코스웨어",
+  "Delightex": "3D 공간을 만들고 코딩·VR·AR로 확장하는 실감형 창작 플랫폼",
+  "Snorkl": "학생이 말·글·그림으로 설명하면 즉시 AI 피드백하는 형성평가 플랫폼",
+  "Wordwall": "교사가 만든 문항을 게임·활동지 형태로 바꾸는 퀴즈 저작 도구",
+  "리딩게이트": "레벨별 영어 원서 읽기와 독후 활동을 제공하는 영어 독서 프로그램",
+  "리딩오션": "전자책 읽기와 독서 활동·학습 관리를 제공하는 디지털 독서 플랫폼",
+  "마이클": "학교 문서·수업 자료·상담 기록을 생성하는 교원 업무 특화 AI",
+  "매일국어·독도": "국어 기초 학습과 독해·어휘 연습을 지원하는 교과 학습 콘텐츠",
+  "멘티미터": "실시간 투표·설문·퀴즈·워드클라우드로 의견을 모으는 참여 도구",
+  "미리캔버스": "프레젠테이션·카드뉴스·학습자료를 만드는 웹 기반 디자인 도구",
+  "아이쌤GPT": "교사의 수업 준비와 학교 업무를 지원하는 교육 특화 생성형 AI",
+  "와우아이디어스": "온라인 브레인스토밍으로 아이디어 생성·정리·평가·공유를 잇는 PBL 협업 도구",
+  "초코클래스": "수업 콘텐츠·학생 활동·학습 데이터를 운영하는 교실 학습 플랫폼",
+  "토도수학": "초등 수 개념과 연산을 단계별 활동으로 익히는 수학 학습 앱",
+  "투닝": "안전한 AI 기능으로 웹툰·스토리·이미지 콘텐츠를 만드는 교육용 창작 도구",
+  "4K Video Downloader+": "온라인 영상·음원을 내려받아 수업 자료로 관리하는 미디어 보조 도구",
+  "EBS영어": "EBS 영어 영상·음원·학습 콘텐츠를 활용하는 영어 학습 서비스",
+  "ElevenLabs": "텍스트를 자연스러운 음성으로 변환하고 보이스를 생성하는 AI 오디오 도구",
+  "Learney": "성취기준 기반 국어·문해 학습과 AI 피드백·진도 분석을 제공하는 플랫폼",
+  "Lily's AI": "영상·문서·웹 자료를 요약하고 지식 노트로 정리하는 AI 학습 보조 도구",
+  "OpenAI API": "생성형 AI 모델을 맞춤형 앱·자동화·수업 도구에 연결하는 개발 인터페이스",
+  "TBLT-Agent": "과업 중심 언어 수업 설계와 활동 생성을 지원하는 AI 에이전트",
+  "U클래스": "학생 계정·수업·과제·진도를 관리하는 교육용 클래스 플랫폼",
+  "VLLO": "모바일에서 자막·효과·음악을 편집하는 쉬운 영상 제작 앱",
+  "YBM AIDT": "교과 콘텐츠·AI 튜터·학습 분석을 결합한 YBM AI 디지털교과서",
+  "e-Future e-Library": "레벨별 영어 전자책과 듣기·읽기 활동을 제공하는 영어 도서관",
+  "감마": "AI로 발표자료·문서·웹페이지 초안을 만드는 프레젠테이션 저작 도구",
+  "그라운드": "학생 학습 활동과 진도를 운영·확인하는 교육 플랫폼",
+  "그림한글받아쓰기": "그림 단서와 받아쓰기로 초기 한글 쓰기를 연습하는 문해 학습 도구",
+  "노션": "문서·데이터베이스·일정·업무를 함께 관리하는 협업 워크스페이스",
+  "라포라포": "학생의 읽기·쓰기 및 의사소통 활동을 지원하는 언어 학습 도구",
+  "리틀팍스": "애니메이션 영어동화와 단계별 읽기·듣기 콘텐츠를 제공하는 영어 학습 서비스",
+  "매쓰플랫": "수학 문제은행·오답 관리·개인별 추천을 제공하는 맞춤형 수학 플랫폼",
+  "문제G": "문항 제작·배부·채점과 학습 결과 관리를 돕는 평가 운영 도구",
+  "밀리의 서재": "전자책·오디오북을 읽고 듣는 디지털 독서 구독 서비스",
+  "수학대왕": "AI 진단과 개인별 문제 추천을 제공하는 수학 맞춤 학습 플랫폼",
+  "스픽AI": "AI 튜터와 대화하며 영어 말하기·발음을 연습하는 회화 학습 앱",
+  "슬라이도": "질문·투표·퀴즈·워드클라우드로 발표 참여를 높이는 상호작용 도구",
+  "아트봉봉": "디지털 드로잉과 미술 활동 결과물 제작을 지원하는 예술교육 도구",
+  "엘리프": "양방향 수업과 예습·복습을 결합한 초등 영어 디지털 학습 솔루션",
+  "옥수수": "진단평가 후 학생별 학습을 추천하는 학교 전용 수학 AI 코스웨어",
+  "우리반": "공지·기록·소통 등 담임의 학급 운영을 돕는 클래스 관리 도구",
+  "원아워": "과제 배부·제출·피드백과 진도 확인을 지원하는 학습관리 도구",
+  "젠스파크": "검색·자료 조사·문서와 프레젠테이션 생성을 수행하는 AI 에이전트",
+  "지학사 AIDT": "교과 학습·AI 튜터·학습 분석을 결합한 지학사 AI 디지털교과서",
+  "초등문해력": "초등 읽기 이해·어휘·독해를 단계적으로 연습하는 문해력 콘텐츠",
+  "큐리팟": "질문 생성과 탐구 활동 설계를 지원하는 교육용 AI 도구",
+  "클리포": "수행평가 설계·AI 자동채점·맞춤 피드백·기록을 지원하는 평가 코스웨어",
+  "토도국어": "초등 국어 읽기·쓰기·어휘를 단계별로 학습하는 교과 앱",
+  "퍼플 경제교실": "학생 참여형 경제·금융 수업 콘텐츠와 활동을 제공하는 교과 플랫폼",
+  "플랭스쿨": "교과 학습 콘텐츠와 학생 진도·과제를 운영하는 학교용 학습 플랫폼",
+  "후크패드": "코드 진행을 만들고 함께 작곡·편곡하는 웹 기반 음악 창작 도구",
+};
+
 const functionGroups = [
-  { name: "협업·공유", schools: 28, rate: 48.3, color: "#18a7e0", text: "결과물을 모으고 나누는 쉬운 시작" },
-  { name: "언어·문해", schools: 26, rate: 44.8, color: "#e39a20", text: "읽기·쓰기·영어 등 교과 목적이 분명한 선택" },
-  { name: "퀴즈·참여", schools: 22, rate: 37.9, color: "#f06a4e", text: "수업 중 즉각적인 참여와 피드백" },
-  { name: "수학·맞춤형", schools: 22, rate: 37.9, color: "#7dbd35", text: "진단과 개인별 연습을 수업에 연결" },
+  { name: "협업·공유", schools: 29, rate: 50.0, color: "#18a7e0", text: "결과물·아이디어를 함께 모으고 나누는 쉬운 시작" },
+  { name: "교과·맞춤형", schools: 27, rate: 46.6, color: "#7dbd35", text: "교과 진단과 개인별 연습을 수업에 연결" },
+  { name: "언어·문해", schools: 24, rate: 41.4, color: "#e39a20", text: "읽기·쓰기·영어 등 언어 기능이 분명한 선택" },
+  { name: "퀴즈·참여", schools: 23, rate: 39.7, color: "#f06a4e", text: "수업 중 참여·형성평가·피드백" },
   { name: "생성형 AI", schools: 22, rate: 37.9, color: "#7b68d9", text: "여러 제품을 비교하며 교원 활용을 탐색" },
   { name: "콘텐츠 제작", schools: 21, rate: 36.2, color: "#ef79b7", text: "학생과 교사의 디지털 결과물 제작" },
-  { name: "학습관리", schools: 15, rate: 25.9, color: "#9a6b32", text: "과제·진도·학급 운영을 한 흐름으로 관리" },
+  { name: "학습관리", schools: 16, rate: 27.6, color: "#9a6b32", text: "과제·진도·상담·학급 운영을 한 흐름으로 관리" },
   { name: "코딩·컴퓨팅", schools: 5, rate: 8.6, color: "#66829a", text: "연수와 운영 여건을 함께 확인" },
 ];
 
@@ -275,7 +356,7 @@ const cloudFilters = [
   ["협업·공유", "협업·공유"],
   ["언어·문해", "언어·문해"],
   ["퀴즈·참여", "퀴즈·참여"],
-  ["수학·맞춤형", "수학·맞춤형"],
+  ["교과·맞춤형", "교과·맞춤형"],
   ["생성형 AI", "생성형 AI"],
   ["콘텐츠 제작", "콘텐츠 제작"],
   ["학습관리", "학습관리"],
@@ -306,11 +387,11 @@ const groupMeta: Record<string, {
     question: "교사의 자료 제작, 학생 탐구, 업무 지원 중 어떤 장면을 위해 구독했나요?",
     actions: ["개인정보·저작권·검증 원칙 합의하기", "도구별 강점을 한 장으로 비교하기", "좋은 활용 사례와 실패 사례를 함께 기록하기"],
   },
-  "수학·맞춤형": {
+  "교과·맞춤형": {
     className: "math",
-    demand: "진단과 개인별 연습을 지원하는 교과 특화 수요입니다. 이용량보다 진단 결과가 보충·심화 수업으로 이어지는지가 중요합니다.",
-    question: "추천 문제 결과가 교사의 다음 차시 판단과 실제로 연결되고 있나요?",
-    actions: ["대상 학년과 단원을 좁혀 적용하기", "진단 뒤 교사 개입 장면 정하기", "학생별 변화 사례를 짧게 남기기"],
+    demand: "수학뿐 아니라 국어·영어 등 교과 진단과 개인별 연습을 지원하는 코스웨어 수요입니다. 이용량보다 결과가 보충·심화 수업으로 이어지는지가 중요합니다.",
+    question: "진단·추천 결과가 교사의 다음 차시 판단과 실제 개별 지원으로 연결되고 있나요?",
+    actions: ["대상 학년·교과·단원을 좁혀 적용하기", "진단 뒤 교사 개입 장면 정하기", "학생별 변화 사례를 짧게 남기기"],
   },
   "언어·문해": {
     className: "literacy",
@@ -375,6 +456,7 @@ export default function Home() {
   const [selectedRecipeNumber, setSelectedRecipeNumber] = useState("1");
   const [filter, setFilter] = useState("all");
   const [toolQuery, setToolQuery] = useState("");
+  const [cloudPage, setCloudPage] = useState(0);
   const [diagnosis, setDiagnosis] = useState<Record<string, string>>({});
   const [checked, setChecked] = useState<Record<string, boolean>>({});
 
@@ -384,6 +466,13 @@ export default function Home() {
       && tool.name.toLocaleLowerCase("ko").includes(toolQuery.trim().toLocaleLowerCase("ko")),
     ),
     [filter, toolQuery],
+  );
+  const cloudPageSize = 16;
+  const cloudPageCount = Math.max(1, Math.ceil(visibleTools.length / cloudPageSize));
+  const safeCloudPage = Math.min(cloudPage, cloudPageCount - 1);
+  const cloudTools = visibleTools.slice(
+    safeCloudPage * cloudPageSize,
+    safeCloudPage * cloudPageSize + cloudPageSize,
   );
   const selectedMeta = groupMeta[selectedTool.group];
   const selectedRecipe = semesterRecipes.find((recipe) => recipe.number === selectedRecipeNumber) ?? semesterRecipes[0];
@@ -609,7 +698,7 @@ export default function Home() {
         <div className="section-heading">
           <span className="section-kicker">에듀테크 토핑</span>
           <h2 id="edutech-title">상위 10개부터 롱테일까지, 78종을 모두 펼쳤어요</h2>
-          <p>글자 크기는 확인 학교 수를 7단계로 구분했습니다. 단어를 가리키거나 클릭하면 비율과 상세 해석이 바뀝니다.</p>
+          <p>공식 제품 소개와 교육부·교육청 활용자료로 핵심 기능을 다시 대조했습니다. 글자 크기는 확인 학교 수를 7단계로 구분하며, 클릭하면 비율·실제 기능·상세 해석이 바뀝니다.</p>
         </div>
         <div className="edutech-summary" aria-label="에듀테크 재집계 요약">
           <div><b>78</b><span>제품명이 확인된 도구</span></div>
@@ -620,7 +709,10 @@ export default function Home() {
         <div className="tool-toolbar">
           <div className="cloud-filters" aria-label="에듀테크 기능 필터">
             {cloudFilters.map(([key, label]) => (
-              <button key={key} type="button" className={filter === key ? "active" : ""} onClick={() => setFilter(key)}>{label}</button>
+              <button key={key} type="button" className={filter === key ? "active" : ""} onClick={() => {
+                setFilter(key);
+                setCloudPage(0);
+              }}>{label}</button>
             ))}
           </div>
           <label className="tool-search">
@@ -628,7 +720,10 @@ export default function Home() {
             <input
               type="search"
               value={toolQuery}
-              onChange={(event) => setToolQuery(event.target.value)}
+              onChange={(event) => {
+                setToolQuery(event.target.value);
+                setCloudPage(0);
+              }}
               placeholder="예: 수학, 패들렛, AI"
             />
           </label>
@@ -639,15 +734,18 @@ export default function Home() {
               <span className="collab">협업·공유</span>
               <span className="literacy">언어·문해</span>
               <span className="quiz">퀴즈·참여</span>
-              <span className="math">수학·맞춤형</span>
+              <span className="math">교과·맞춤형</span>
               <span className="ai">생성형 AI</span>
               <span className="create">콘텐츠 제작</span>
               <span className="manage">학습관리</span>
               <span className="coding">코딩·컴퓨팅</span>
             </div>
-            <p className="cloud-guide"><b>크기:</b> 1개교 1.7%부터 28개교 48.3%까지 · <b>현재:</b> {visibleTools.length}종</p>
+            <p className="cloud-guide">
+              <b>크기:</b> 선택 학교 수에 비례 · <b>현재:</b> {visibleTools.length}종
+              {visibleTools.length > 0 && <> · {safeCloudPage * cloudPageSize + 1}–{Math.min((safeCloudPage + 1) * cloudPageSize, visibleTools.length)}번째 표시</>}
+            </p>
             <div className={`word-cloud ${visibleTools.length <= 10 ? "compact" : ""}`} aria-label={`에듀테크 워드클라우드, 현재 ${visibleTools.length}종`}>
-              {visibleTools.map((tool, index) => {
+              {cloudTools.map((tool, index) => {
                 const rate = getRate(tool.schools);
                 const className = groupMeta[tool.group].className;
                 return (
@@ -672,6 +770,13 @@ export default function Home() {
               })}
               {visibleTools.length === 0 && <p className="empty-cloud">조건에 맞는 도구가 없습니다. 검색어나 기능 필터를 바꿔 보세요.</p>}
             </div>
+            {visibleTools.length > cloudPageSize && (
+              <div className="cloud-pagination" aria-label="워드클라우드 페이지">
+                <button type="button" onClick={() => setCloudPage((page) => Math.max(0, page - 1))} disabled={safeCloudPage === 0}>이전</button>
+                <span><b>{safeCloudPage + 1}</b> / {cloudPageCount}</span>
+                <button type="button" onClick={() => setCloudPage((page) => Math.min(cloudPageCount - 1, page + 1))} disabled={safeCloudPage === cloudPageCount - 1}>다음</button>
+              </div>
+            )}
           </div>
           <aside className="tool-detail" aria-live="polite">
             <div className="tool-detail-head">
@@ -679,6 +784,10 @@ export default function Home() {
               <span className="rank-chip">전체 {selectedRank}위</span>
             </div>
             <h3>{selectedTool.name}</h3>
+            <div className="tool-purpose">
+              <span>실제 핵심 기능</span>
+              <p>{toolPurposes[selectedTool.name]}</p>
+            </div>
             <div className="tool-share">
               <span>선택 학교 비율</span>
               <b>{selectedRate}%</b>
@@ -715,7 +824,7 @@ export default function Home() {
           <summary>전체 순위와 정확한 수치 보기 <span>{visibleTools.length}종 표시</span></summary>
           <div className="table-wrap">
             <table>
-              <thead><tr><th>순위</th><th>도구</th><th>학교 수</th><th>비율</th><th>기능</th></tr></thead>
+              <thead><tr><th>순위</th><th>도구</th><th>학교 수</th><th>비율</th><th>대표 유형</th><th>실제 핵심 기능</th></tr></thead>
               <tbody>{visibleTools.map((tool) => (
                 <tr key={tool.name}>
                   <td>{edutech.findIndex((item) => item.name === tool.name) + 1}</td>
@@ -723,6 +832,7 @@ export default function Home() {
                   <td>{tool.schools}개교</td>
                   <td>{getRate(tool.schools)}%</td>
                   <td>{tool.group}</td>
+                  <td>{toolPurposes[tool.name]}</td>
                 </tr>
               ))}</tbody>
             </table>
@@ -749,8 +859,8 @@ export default function Home() {
           <article className="preference-insight">
             <span className="mini-sprinkle">● ✦ ●</span>
             <h3>공유 플랫폼은 넓게,<br />교과 도구는 다양하게</h3>
-            <p>협업·공유형이 48.3%로 가장 넓게 확인됐고, 언어·문해형도 44.8%로 여러 학년·교과 도구에 분산됐습니다.</p>
-            <p>퀴즈·참여, 수학·맞춤형, 생성형 AI가 각각 37.9%입니다. 비율은 같아도 선택 이유가 다르므로 제품 수보다 해결하려는 수업 문제를 먼저 비교해야 합니다.</p>
+            <p>공식 기능 기준으로 다시 묶으면 협업·공유형이 50.0%로 가장 넓고, 교과·맞춤형 코스웨어도 46.6%로 여러 학년·교과에 확산됐습니다.</p>
+            <p>공식 기능을 다시 대조하면 협업·공유가 50.0%로 가장 넓고, 교과·맞춤형 코스웨어가 46.6%로 뒤를 잇습니다. 언어·문해 41.4%, 퀴즈·참여 39.7%도 고르게 나타나므로 제품 수보다 해결하려는 수업 문제를 먼저 비교해야 합니다.</p>
             <small>이는 지출내용의 선택 경향이며 실제 선호 이유를 직접 조사한 결과는 아닙니다.</small>
           </article>
         </div>
