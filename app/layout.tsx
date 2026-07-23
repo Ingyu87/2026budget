@@ -16,7 +16,7 @@ const deploymentOrigin = deploymentHost.startsWith("localhost")
   : `https://${deploymentHost}`;
 const title = "AI·디지털 선도학교 예산 레시피";
 const description =
-  "58개 선도학교의 익명 예산 흐름과 에듀테크 선택을 2학기 실행으로 연결하는 대시보드";
+  "예산 운영 흐름과 에듀테크 선택을 2학기 실행으로 연결하는 교사용 대시보드";
 
 export const metadata: Metadata = {
   metadataBase: new URL(deploymentOrigin),

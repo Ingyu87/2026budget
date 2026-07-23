@@ -9,7 +9,6 @@ type BudgetCategory = {
   spent: string;
   rate: number;
   median: number;
-  zero: number;
   color: string;
   note: string;
   action: string;
@@ -37,7 +36,6 @@ const categories: BudgetCategory[] = [
     spent: "약 193만원",
     rate: 43.9,
     median: 14.4,
-    zero: 14,
     color: "#ff7fb5",
     note: "평균과 가운데 수준의 차이가 가장 커요. 일부 학교의 큰 집행이 평균을 끌어올렸습니다.",
     action: "2학기 연수 일정·강사·공동연구 산출물을 먼저 확정해 보세요.",
@@ -50,7 +48,6 @@ const categories: BudgetCategory[] = [
     spent: "약 1,490만원",
     rate: 60.3,
     median: 61.1,
-    zero: 3,
     color: "#8bd450",
     note: "가장 큰 예산 영역이며 학교들의 집행도 비교적 고르게 진행됐어요.",
     action: "구독 도구마다 수업 대상·활용 장면·결과물 계획을 연결해 보세요.",
@@ -63,9 +60,8 @@ const categories: BudgetCategory[] = [
     spent: "약 141만원",
     rate: 54.2,
     median: 54.7,
-    zero: 15,
     color: "#6ac8f2",
-    note: "절반가량 진행됐지만 아직 지출이 없는 학교도 15개교로 확인됐어요.",
+    note: "학교별 가운데 수준도 54.7%로, 평균 집행 흐름과 비슷하게 나타났어요.",
     action: "기기 수량보다 실제 수업 불편을 줄이는 부속품인지 다시 확인해 보세요.",
     examples: ["마우스·키보드", "헤드셋·이어폰", "터치펜", "기기 수리"],
   },
@@ -76,7 +72,6 @@ const categories: BudgetCategory[] = [
     spent: "약 75만원",
     rate: 26.9,
     median: 23.1,
-    zero: 8,
     color: "#ffc95b",
     note: "다른 영역보다 느리지만 2학기 협의회·성과공유 일정과 연결해 해석해야 해요.",
     action: "행사 날짜, 참여자, 공유할 결과를 먼저 정하고 필요한 경비를 역산하세요.",
@@ -115,6 +110,17 @@ const cloudFilters = [
   ["learn", "평가·맞춤학습"],
 ];
 
+type TabKey = "overview" | "budget" | "diagnosis" | "edutech" | "preference" | "semester";
+
+const tabs: { key: TabKey; label: string }[] = [
+  { key: "overview", label: "한눈에" },
+  { key: "budget", label: "예산 4스쿱" },
+  { key: "diagnosis", label: "우리 학교 진단" },
+  { key: "edutech", label: "에듀테크" },
+  { key: "preference", label: "유형 인사이트" },
+  { key: "semester", label: "2학기 운영" },
+];
+
 function diagnose(value: number, median: number) {
   if (value === 0) return "아직 입력 전";
   if (value < median - 15) return "가운데 수준보다 낮은 편 · 일정과 계약 단계를 확인해 보세요.";
@@ -123,6 +129,7 @@ function diagnose(value: number, median: number) {
 }
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState<TabKey>("overview");
   const [selectedTool, setSelectedTool] = useState(edutech[0]);
   const [filter, setFilter] = useState("all");
   const [diagnosis, setDiagnosis] = useState<Record<string, string>>({});
@@ -136,25 +143,37 @@ export default function Home() {
   const toggleCheck = (key: string) =>
     setChecked((current) => ({ ...current, [key]: !current[key] }));
 
+  const selectTab = (tab: TabKey) => {
+    setActiveTab(tab);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <main>
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="처음으로">
+        <button className="brand" type="button" onClick={() => selectTab("overview")} aria-label="한눈에 화면으로">
           <span className="brand-mark">AI</span>
           <span>선도학교 예산 레시피</span>
-        </a>
-        <nav aria-label="주요 메뉴">
-          <a href="#budget">예산 4스쿱</a>
-          <a href="#diagnosis">우리 학교 진단</a>
-          <a href="#edutech">에듀테크</a>
-          <a href="#semester">2학기 운영</a>
+        </button>
+        <nav className="tab-navigation" aria-label="주요 화면" role="tablist">
+          {tabs.map((tab) => (
+            <button
+              key={tab.key}
+              type="button"
+              role="tab"
+              aria-selected={activeTab === tab.key}
+              className={activeTab === tab.key ? "active" : ""}
+              onClick={() => selectTab(tab.key)}
+            >
+              {tab.label}
+            </button>
+          ))}
         </nav>
         <span className="date-chip">2026. 7. 1. 기준</span>
       </header>
 
-      <section className="hero" id="top">
+      <section className="hero tab-panel" id="top" hidden={activeTab !== "overview"}>
         <div className="hero-copy">
-          <span className="eyebrow">58개 선도학교의 익명 집계</span>
           <h1>
             예산 숫자를
             <br />
@@ -165,8 +184,8 @@ export default function Home() {
             네 영역의 다음 행동과 많이 선택한 에듀테크를 가볍게 살펴보세요.
           </p>
           <div className="hero-actions">
-            <a className="button primary" href="#budget">4개 영역 살펴보기</a>
-            <a className="button secondary" href="#diagnosis">우리 학교 진단하기</a>
+            <button className="button primary" type="button" onClick={() => selectTab("budget")}>4개 영역 살펴보기</button>
+            <button className="button secondary" type="button" onClick={() => selectTab("diagnosis")}>우리 학교 진단하기</button>
           </div>
         </div>
         <div className="hero-art" aria-label="네 가지 예산 영역을 표현한 아이스크림 일러스트">
@@ -183,7 +202,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flow-section" aria-labelledby="flow-title">
+      <section className="flow-section tab-panel" hidden={activeTab !== "overview"} aria-labelledby="flow-title">
         <div className="section-heading">
           <span className="section-kicker">동료학교 운영 흐름</span>
           <h2 id="flow-title">비슷한 학교들은 지금 어디쯤일까요?</h2>
@@ -209,7 +228,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="budget-section" id="budget" aria-labelledby="budget-title">
+      <section className="budget-section tab-panel" id="budget" hidden={activeTab !== "budget"} aria-labelledby="budget-title">
         <div className="section-heading light">
           <span className="section-kicker">예산 4스쿱</span>
           <h2 id="budget-title">영역마다 다른 속도, 같은 눈금으로 보기</h2>
@@ -220,7 +239,6 @@ export default function Home() {
             <article className="budget-card" key={category.name} style={{ "--accent": category.color } as React.CSSProperties}>
               <div className="budget-card-top">
                 <span className="scoop-icon">{index + 1}</span>
-                <span className="zero-badge">아직 지출 없음 {category.zero}개교</span>
               </div>
               <h3>{category.name}</h3>
               <div className="money-pair">
@@ -239,7 +257,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="diagnosis-section" id="diagnosis" aria-labelledby="diagnosis-title">
+      <section className="diagnosis-section tab-panel" id="diagnosis" hidden={activeTab !== "diagnosis"} aria-labelledby="diagnosis-title">
         <div className="section-heading">
           <span className="section-kicker">우리 학교 스쿱 진단</span>
           <h2 id="diagnosis-title">학교명 없이, 우리 진행률만 비교해 보세요</h2>
@@ -271,7 +289,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="edutech-section" id="edutech" aria-labelledby="edutech-title">
+      <section className="edutech-section tab-panel" id="edutech" hidden={activeTab !== "edutech"} aria-labelledby="edutech-title">
         <div className="section-heading">
           <span className="section-kicker">에듀테크 토핑</span>
           <h2 id="edutech-title">글자가 클수록 더 많은 학교에서 확인됐어요</h2>
@@ -298,11 +316,9 @@ export default function Home() {
                     key={tool.name}
                     className={`cloud-word ${tool.colorGroup} ${selectedTool.name === tool.name ? "selected" : ""}`}
                     style={{
-                      left: `${tool.x}%`,
-                      top: `${tool.y}%`,
-                      fontSize: `${size}px`,
-                      transform: `translate(-50%, -50%) rotate(${tool.rotate}deg)`,
-                    }}
+                      "--word-size": `${size}px`,
+                      "--word-rotate": `${tool.rotate}deg`,
+                    } as React.CSSProperties}
                     onMouseEnter={() => setSelectedTool(tool)}
                     onFocus={() => setSelectedTool(tool)}
                     onClick={() => setSelectedTool(tool)}
@@ -344,7 +360,7 @@ export default function Home() {
         </details>
       </section>
 
-      <section className="preference-section" aria-labelledby="preference-title">
+      <section className="preference-section tab-panel" hidden={activeTab !== "preference"} aria-labelledby="preference-title">
         <div className="section-heading">
           <span className="section-kicker">교사 선택 유형</span>
           <h2 id="preference-title">어떤 기능에 선택이 모였을까요?</h2>
@@ -370,7 +386,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="semester-section" id="semester" aria-labelledby="semester-title">
+      <section className="semester-section tab-panel" id="semester" hidden={activeTab !== "semester"} aria-labelledby="semester-title">
         <div className="section-heading light">
           <span className="section-kicker">2학기 운영 레시피</span>
           <h2 id="semester-title">예산을 수업 변화로 연결하는 네 단계</h2>
@@ -407,7 +423,7 @@ export default function Home() {
       <footer>
         <div>
           <b>AI·디지털 선도학교 예산 레시피</b>
-          <p>2026년 7월 1일 기준 · 58개교 익명 집계</p>
+          <p>2026년 7월 1일 기준</p>
           <p>© 2026 서울가동초 백인규. All rights reserved.</p>
         </div>
         <p>학교명과 학교별 원문·금액은 공개 데이터에 포함하지 않았습니다.</p>

@@ -25,4 +25,7 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.equal(manifest.devDependencies.wrangler, undefined);
   assert.equal(manifest.devDependencies["cross-env"], undefined);
   assert.doesNotMatch(page, /총 교부액|19,397,529|1120616420|2000000000/);
+  assert.doesNotMatch(page, /58개 선도학교|58개교 익명|미집행|아직 지출 없음/);
+  assert.match(page, /role="tab"/);
+  assert.match(page, /hidden=\{activeTab !== "edutech"\}/);
 });
