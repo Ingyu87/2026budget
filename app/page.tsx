@@ -18,14 +18,8 @@ type BudgetCategory = {
 type Edutech = {
   name: string;
   schools: number;
-  rate: number;
   group: string;
-  colorGroup: string;
-  insight: string;
-  action: string;
-  x: number;
-  y: number;
-  rotate: number;
+  related: string[];
 };
 
 const categories: BudgetCategory[] = [
@@ -80,35 +74,176 @@ const categories: BudgetCategory[] = [
 ];
 
 const edutech: Edutech[] = [
-  { name: "패들렛", schools: 26, rate: 44.8, group: "협업·공유", colorGroup: "collab", insight: "결과물 수집과 공유를 빠르게 시작할 수 있는 유형에 선택이 모였습니다.", action: "게시판 수보다 학생 참여 방식과 결과물 활용 계획을 먼저 점검해 보세요.", x: 50, y: 48, rotate: 0 },
-  { name: "북크리에이터", schools: 13, rate: 22.4, group: "콘텐츠 제작", colorGroup: "create", insight: "학생이 글·이미지·음성을 엮어 결과물을 만드는 도구가 두 번째로 많이 확인됐습니다.", action: "완성물의 평가 기준과 공유 대상을 수업 전에 정해 보세요.", x: 27, y: 27, rotate: -8 },
-  { name: "매쓰홀릭", schools: 11, rate: 19.0, group: "수학·맞춤형 학습", colorGroup: "learn", insight: "교과 특화형 맞춤학습 도구에 대한 수요도 뚜렷합니다.", action: "진단 결과가 실제 보충·심화 활동으로 이어지는지 확인해 보세요.", x: 72, y: 29, rotate: 8 },
-  { name: "ChatGPT", schools: 8, rate: 13.8, group: "생성형 AI", colorGroup: "ai", insight: "생성형 AI는 하나의 제품에 집중되기보다 여러 서비스로 나뉘어 선택됐습니다.", action: "개인정보, 계정, 결과 검증 원칙을 학교 공통으로 합의해 보세요.", x: 69, y: 66, rotate: -7 },
-  { name: "Gemini", schools: 8, rate: 13.8, group: "생성형 AI", colorGroup: "ai", insight: "생성형 AI 선택이 분산되어 교사별 활용 목적을 먼저 확인할 필요가 있습니다.", action: "기존 학교 계정 체계와 연동되는지, 중복 구독은 없는지 살펴보세요.", x: 31, y: 68, rotate: 7 },
-  { name: "ZEP·젭퀴즈", schools: 8, rate: 13.8, group: "퀴즈·평가·참여", colorGroup: "learn", insight: "놀이형 참여와 즉각적인 반응을 지원하는 도구가 꾸준히 선택됐습니다.", action: "재미뿐 아니라 어떤 학습 확인에 사용할지 질문을 설계해 보세요.", x: 49, y: 18, rotate: 5 },
-  { name: "Claude", schools: 7, rate: 12.1, group: "생성형 AI", colorGroup: "ai", insight: "생성형 AI 도구가 복수로 선택되며 장문·자료 제작 수요가 함께 보입니다.", action: "도구별 장단점을 비교한 짧은 교사 사례를 공유해 보세요.", x: 51, y: 78, rotate: -8 },
-  { name: "키위티", schools: 5, rate: 8.6, group: "퀴즈·평가·참여", colorGroup: "learn", insight: "수업 중 참여와 피드백을 간편하게 확인하려는 선택으로 볼 수 있습니다.", action: "수집한 반응을 다음 차시 수업에 어떻게 반영할지 정해 보세요.", x: 16, y: 50, rotate: -8 },
-  { name: "띵커벨", schools: 5, rate: 8.6, group: "퀴즈·평가·참여", colorGroup: "learn", insight: "실시간 확인과 상호작용 도구가 여러 제품으로 나뉘어 선택됐습니다.", action: "비슷한 기능을 가진 도구의 중복 구독 여부를 점검해 보세요.", x: 83, y: 48, rotate: 8 },
-  { name: "지니아튜터", schools: 4, rate: 6.9, group: "언어·문해", colorGroup: "create", insight: "언어·문해 지원은 전체에서 작은 비중이지만 교과 목적이 분명한 선택입니다.", action: "대상 학년과 향상시키려는 언어 기능을 구체화해 보세요.", x: 20, y: 78, rotate: 6 },
+  { name: "패들렛", schools: 28, group: "협업·공유", related: ["북크리에이터", "매쓰홀릭", "Gemini"] },
+  { name: "북크리에이터", schools: 13, group: "콘텐츠 제작", related: ["패들렛", "ZEP·젭퀴즈", "블루킷"] },
+  { name: "Gemini", schools: 11, group: "생성형 AI", related: ["패들렛", "Claude", "SUNO"] },
+  { name: "매쓰홀릭", schools: 11, group: "수학·맞춤형", related: ["패들렛", "북크리에이터", "ChatGPT"] },
+  { name: "Claude", schools: 10, group: "생성형 AI", related: ["패들렛", "ChatGPT", "Gemini"] },
+  { name: "ZEP·젭퀴즈", schools: 10, group: "퀴즈·참여", related: ["북크리에이터", "패들렛", "블루킷"] },
+  { name: "블루킷", schools: 8, group: "퀴즈·참여", related: ["패들렛", "북크리에이터", "ZEP·젭퀴즈"] },
+  { name: "ChatGPT", schools: 7, group: "생성형 AI", related: ["패들렛", "Claude", "Gemini"] },
+  { name: "SUNO", schools: 6, group: "콘텐츠 제작", related: ["Gemini", "북크리에이터", "패들렛"] },
+  { name: "카훗", schools: 6, group: "퀴즈·참여", related: ["패들렛", "북크리에이터", "Gemini"] },
+  { name: "띵커벨", schools: 5, group: "퀴즈·참여", related: ["패들렛", "북크리에이터", "ChatGPT"] },
+  { name: "알공", schools: 5, group: "언어·문해", related: ["토도한글", "패들렛", "ZEP·젭퀴즈"] },
+  { name: "키위티", schools: 5, group: "언어·문해", related: ["패들렛", "북크리에이터", "Claude"] },
+  { name: "스쿨플랫", schools: 4, group: "수학·맞춤형", related: ["패들렛", "키위티", "ChatGPT"] },
+  { name: "지니아튜터", schools: 4, group: "언어·문해", related: ["북크리에이터", "패들렛", "ChatGPT"] },
+  { name: "토도한글", schools: 4, group: "언어·문해", related: ["알공", "패들렛", "AI 아크수학"] },
+  { name: "YouTube Premium", schools: 3, group: "콘텐츠 제작", related: ["Claude", "Gemini", "북크리에이터"] },
+  { name: "Zoom Pro", schools: 3, group: "협업·공유", related: ["북크리에이터", "패들렛", "Claude"] },
+  { name: "다했니·다했어요", schools: 3, group: "학습관리", related: ["북크리에이터", "패들렛", "ChatGPT"] },
+  { name: "리드포스쿨", schools: 3, group: "언어·문해", related: ["AI마타수학", "Gemini", "VLLO"] },
+  { name: "캡컷", schools: 3, group: "콘텐츠 제작", related: ["ChatGPT", "Claude", "패들렛"] },
+  { name: "코드모스", schools: 3, group: "코딩·컴퓨팅", related: ["띵커벨", "북크리에이터", "아이쌤GPT"] },
+  { name: "클래스카드", schools: 3, group: "언어·문해", related: ["Gemini", "SUNO", "Snorkl"] },
+  { name: "클래스팅 AI", schools: 3, group: "학습관리", related: ["패들렛", "Claude", "Gemini"] },
+  { name: "클래시파이", schools: 3, group: "퀴즈·참여", related: ["Claude", "YouTube Premium", "띵커벨"] },
+  { name: "AI 아크수학", schools: 2, group: "수학·맞춤형", related: ["패들렛", "ZEP·젭퀴즈", "그라운드"] },
+  { name: "AI마타수학", schools: 2, group: "수학·맞춤형", related: ["VLLO", "YBM AIDT", "리드포스쿨"] },
+  { name: "Delightex", schools: 2, group: "코딩·컴퓨팅", related: ["ChatGPT", "Claude", "SUNO"] },
+  { name: "Snorkl", schools: 2, group: "언어·문해", related: ["Gemini", "클래스카드", "키위티"] },
+  { name: "Wordwall", schools: 2, group: "퀴즈·참여", related: ["SUNO", "ElevenLabs", "Gemini"] },
+  { name: "리딩게이트", schools: 2, group: "언어·문해", related: ["U클래스"] },
+  { name: "리딩오션", schools: 2, group: "언어·문해", related: ["AI마타수학", "Gemini", "VLLO"] },
+  { name: "마이클", schools: 2, group: "생성형 AI", related: ["패들렛", "Claude", "스쿨플랫"] },
+  { name: "매일국어·독도", schools: 2, group: "언어·문해", related: ["ZEP·젭퀴즈", "그림한글받아쓰기", "라포라포"] },
+  { name: "멘티미터", schools: 2, group: "퀴즈·참여", related: ["ChatGPT", "Claude", "Delightex"] },
+  { name: "미리캔버스", schools: 2, group: "콘텐츠 제작", related: ["ChatGPT", "Claude", "Delightex"] },
+  { name: "아이쌤GPT", schools: 2, group: "생성형 AI", related: ["띵커벨", "코드모스", "Zoom Pro"] },
+  { name: "와우아이디어스", schools: 2, group: "콘텐츠 제작", related: ["북크리에이터", "ZEP·젭퀴즈", "다했니·다했어요"] },
+  { name: "초코클래스", schools: 2, group: "학습관리", related: ["카훗", "패들렛", "AI마타수학"] },
+  { name: "토도수학", schools: 2, group: "수학·맞춤형", related: ["알공", "Gemini", "리딩오션"] },
+  { name: "투닝", schools: 2, group: "콘텐츠 제작", related: ["Gemini", "Snorkl", "북크리에이터"] },
+  { name: "4K Video Downloader+", schools: 1, group: "콘텐츠 제작", related: ["Claude", "Lily's AI", "OpenAI API"] },
+  { name: "EBS영어", schools: 1, group: "언어·문해", related: ["Gemini", "초코클래스", "카훗"] },
+  { name: "ElevenLabs", schools: 1, group: "콘텐츠 제작", related: ["Learney", "SUNO", "Wordwall"] },
+  { name: "Learney", schools: 1, group: "학습관리", related: ["ElevenLabs", "SUNO", "Wordwall"] },
+  { name: "Lily's AI", schools: 1, group: "생성형 AI", related: ["4K Video Downloader+", "Claude", "OpenAI API"] },
+  { name: "OpenAI API", schools: 1, group: "생성형 AI", related: ["4K Video Downloader+", "Claude", "Lily's AI"] },
+  { name: "TBLT-Agent", schools: 1, group: "생성형 AI", related: ["4K Video Downloader+", "Claude", "Lily's AI"] },
+  { name: "U클래스", schools: 1, group: "학습관리", related: ["리딩게이트"] },
+  { name: "VLLO", schools: 1, group: "콘텐츠 제작", related: ["AI마타수학", "리드포스쿨", "리딩오션"] },
+  { name: "YBM AIDT", schools: 1, group: "언어·문해", related: ["AI마타수학", "북크리에이터", "블루킷"] },
+  { name: "e-Future e-Library", schools: 1, group: "언어·문해", related: ["ElevenLabs", "Learney", "SUNO"] },
+  { name: "감마", schools: 1, group: "콘텐츠 제작", related: ["ChatGPT", "Claude", "Delightex"] },
+  { name: "그라운드", schools: 1, group: "학습관리", related: ["AI 아크수학", "ZEP·젭퀴즈", "띵커벨"] },
+  { name: "그림한글받아쓰기", schools: 1, group: "언어·문해", related: ["ZEP·젭퀴즈", "라포라포", "리드포스쿨"] },
+  { name: "노션", schools: 1, group: "협업·공유", related: ["ZEP·젭퀴즈", "매쓰홀릭", "북크리에이터"] },
+  { name: "라포라포", schools: 1, group: "언어·문해", related: ["ZEP·젭퀴즈", "그림한글받아쓰기", "리드포스쿨"] },
+  { name: "리틀팍스", schools: 1, group: "언어·문해", related: ["Gemini", "리딩오션", "스쿨플랫"] },
+  { name: "매쓰플랫", schools: 1, group: "수학·맞춤형", related: ["패들렛"] },
+  { name: "문제G", schools: 1, group: "학습관리", related: ["ElevenLabs", "Learney", "SUNO"] },
+  { name: "밀리의 서재", schools: 1, group: "언어·문해", related: ["패들렛"] },
+  { name: "수학대왕", schools: 1, group: "수학·맞춤형", related: ["Gemini", "리드포스쿨", "패들렛"] },
+  { name: "스픽AI", schools: 1, group: "언어·문해", related: ["ChatGPT", "Claude", "Delightex"] },
+  { name: "슬라이도", schools: 1, group: "퀴즈·참여", related: ["Claude", "Gemini", "YouTube Premium"] },
+  { name: "아트봉봉", schools: 1, group: "콘텐츠 제작", related: ["ZEP·젭퀴즈", "그림한글받아쓰기", "라포라포"] },
+  { name: "엘리프", schools: 1, group: "언어·문해", related: ["ChatGPT", "패들렛", "퍼플 경제교실"] },
+  { name: "옥수수", schools: 1, group: "학습관리", related: [] },
+  { name: "우리반", schools: 1, group: "학습관리", related: ["매쓰홀릭", "패들렛"] },
+  { name: "원아워", schools: 1, group: "학습관리", related: ["Zoom Pro", "띵커벨", "매쓰홀릭"] },
+  { name: "젠스파크", schools: 1, group: "생성형 AI", related: ["ChatGPT", "Claude", "ZEP·젭퀴즈"] },
+  { name: "지학사 AIDT", schools: 1, group: "수학·맞춤형", related: ["Zoom Pro", "띵커벨", "매쓰홀릭"] },
+  { name: "초등문해력", schools: 1, group: "언어·문해", related: ["Gemini", "리딩오션", "리틀팍스"] },
+  { name: "큐리팟", schools: 1, group: "생성형 AI", related: ["ChatGPT", "Claude", "ZEP·젭퀴즈"] },
+  { name: "클리포", schools: 1, group: "생성형 AI", related: ["ChatGPT", "Claude", "ZEP·젭퀴즈"] },
+  { name: "토도국어", schools: 1, group: "언어·문해", related: ["매일국어·독도", "알공", "클래스카드"] },
+  { name: "퍼플 경제교실", schools: 1, group: "학습관리", related: ["ChatGPT", "엘리프", "패들렛"] },
+  { name: "플랭스쿨", schools: 1, group: "학습관리", related: ["AI마타수학", "YBM AIDT", "북크리에이터"] },
+  { name: "후크패드", schools: 1, group: "콘텐츠 제작", related: ["ElevenLabs", "Learney", "SUNO"] },
 ];
 
 const functionGroups = [
   { name: "협업·공유", schools: 28, rate: 48.3, color: "#18a7e0", text: "결과물을 모으고 나누는 쉬운 시작" },
-  { name: "퀴즈·평가·참여", schools: 20, rate: 34.5, color: "#f06a4e", text: "수업 중 즉각적인 참여와 피드백" },
-  { name: "콘텐츠 제작", schools: 16, rate: 27.6, color: "#ef79b7", text: "학생과 교사의 디지털 결과물 제작" },
-  { name: "수학·맞춤형 학습", schools: 16, rate: 27.6, color: "#7dbd35", text: "교과 진단과 개인별 학습 지원" },
-  { name: "생성형 AI", schools: 15, rate: 25.9, color: "#7b68d9", text: "여러 제품으로 나뉜 탐색과 활용" },
-  { name: "언어·문해", schools: 9, rate: 15.5, color: "#e39a20", text: "목적이 분명한 교과 특화 활용" },
+  { name: "언어·문해", schools: 26, rate: 44.8, color: "#e39a20", text: "읽기·쓰기·영어 등 교과 목적이 분명한 선택" },
+  { name: "퀴즈·참여", schools: 22, rate: 37.9, color: "#f06a4e", text: "수업 중 즉각적인 참여와 피드백" },
+  { name: "수학·맞춤형", schools: 22, rate: 37.9, color: "#7dbd35", text: "진단과 개인별 연습을 수업에 연결" },
+  { name: "생성형 AI", schools: 22, rate: 37.9, color: "#7b68d9", text: "여러 제품을 비교하며 교원 활용을 탐색" },
+  { name: "콘텐츠 제작", schools: 21, rate: 36.2, color: "#ef79b7", text: "학생과 교사의 디지털 결과물 제작" },
+  { name: "학습관리", schools: 15, rate: 25.9, color: "#9a6b32", text: "과제·진도·학급 운영을 한 흐름으로 관리" },
   { name: "코딩·컴퓨팅", schools: 5, rate: 8.6, color: "#66829a", text: "연수와 운영 여건을 함께 확인" },
 ];
 
 const cloudFilters = [
   ["all", "전체"],
-  ["collab", "협업·공유"],
-  ["create", "제작·표현"],
-  ["ai", "생성형 AI"],
-  ["learn", "평가·맞춤학습"],
+  ["협업·공유", "협업·공유"],
+  ["언어·문해", "언어·문해"],
+  ["퀴즈·참여", "퀴즈·참여"],
+  ["수학·맞춤형", "수학·맞춤형"],
+  ["생성형 AI", "생성형 AI"],
+  ["콘텐츠 제작", "콘텐츠 제작"],
+  ["학습관리", "학습관리"],
+  ["코딩·컴퓨팅", "코딩·컴퓨팅"],
 ];
+
+const groupMeta: Record<string, {
+  className: string;
+  demand: string;
+  question: string;
+  actions: string[];
+}> = {
+  "협업·공유": {
+    className: "collab",
+    demand: "학생 결과물을 한곳에 모으고 서로 보고 반응하게 하는, 진입 장벽이 낮은 수업 흐름에 수요가 큽니다.",
+    question: "게시 공간을 만든 뒤 학생의 읽기·댓글·수정 활동까지 설계되어 있나요?",
+    actions: ["공개 범위와 개인정보 기준 정하기", "결과물에 반응하는 규칙 만들기", "학기 말 포트폴리오 활용 여부 점검하기"],
+  },
+  "퀴즈·참여": {
+    className: "quiz",
+    demand: "즉시 참여와 빠른 확인을 원하는 선택입니다. 비슷한 기능의 제품이 많아 목적 없이 늘리면 중복 구독이 되기 쉽습니다.",
+    question: "정답률을 보는 데서 끝나지 않고 다음 설명·모둠 활동을 바꾸는 데 쓰고 있나요?",
+    actions: ["확인하려는 학습 목표 한 가지 정하기", "오답 뒤 재설명 방식을 함께 설계하기", "유사 퀴즈 도구와 기능 겹침 점검하기"],
+  },
+  "생성형 AI": {
+    className: "ai",
+    demand: "한 제품 독점보다 여러 생성형 AI를 비교·탐색하는 흐름입니다. 구매보다 공통 활용 원칙이 먼저 필요한 유형입니다.",
+    question: "교사의 자료 제작, 학생 탐구, 업무 지원 중 어떤 장면을 위해 구독했나요?",
+    actions: ["개인정보·저작권·검증 원칙 합의하기", "도구별 강점을 한 장으로 비교하기", "좋은 활용 사례와 실패 사례를 함께 기록하기"],
+  },
+  "수학·맞춤형": {
+    className: "math",
+    demand: "진단과 개인별 연습을 지원하는 교과 특화 수요입니다. 이용량보다 진단 결과가 보충·심화 수업으로 이어지는지가 중요합니다.",
+    question: "추천 문제 결과가 교사의 다음 차시 판단과 실제로 연결되고 있나요?",
+    actions: ["대상 학년과 단원을 좁혀 적용하기", "진단 뒤 교사 개입 장면 정하기", "학생별 변화 사례를 짧게 남기기"],
+  },
+  "언어·문해": {
+    className: "literacy",
+    demand: "읽기·쓰기·영어 등 구체적인 교과 문제를 해결하려는 선택입니다. 제품 수가 많아 학년별로 흩어질 가능성도 큽니다.",
+    question: "어휘·읽기 유창성·이해·쓰기 중 실제로 개선하려는 기능이 분명한가요?",
+    actions: ["대상 학생과 언어 기능 명시하기", "교사 관찰 기록과 도구 결과 함께 보기", "학년 간 중복 구독과 연계성 점검하기"],
+  },
+  "콘텐츠 제작": {
+    className: "create",
+    demand: "글·이미지·영상·음악을 결합한 결과물 제작 수요입니다. 완성도보다 학습 내용을 설명하고 수정하는 과정이 핵심입니다.",
+    question: "예쁜 결과물보다 학생의 생각과 수정 과정이 보이도록 과제가 설계됐나요?",
+    actions: ["결과물 평가 기준을 먼저 공유하기", "초안·피드백·수정 흔적 남기기", "저작권과 출처 표시 확인하기"],
+  },
+  "학습관리": {
+    className: "manage",
+    demand: "과제 배부, 진도 확인, 학급 운영을 한 흐름으로 묶으려는 선택입니다. 기존 플랫폼과 역할이 겹치는지 확인해야 합니다.",
+    question: "교사와 학생의 어떤 반복 업무가 실제로 줄었는지 설명할 수 있나요?",
+    actions: ["기존 LMS와 기능 중복 확인하기", "학생 로그인·접근 불편 점검하기", "사용 전후 교사 업무 변화를 기록하기"],
+  },
+  "코딩·컴퓨팅": {
+    className: "coding",
+    demand: "코딩 활동과 컴퓨팅 사고를 지원하는 선택입니다. 도구만 구매하기보다 수업 차시와 교사 지원이 함께 필요합니다.",
+    question: "체험 한 번이 아니라 문제 해결 과정을 반복할 수 있는 수업 흐름이 있나요?",
+    actions: ["교사 사전 체험 시간 확보하기", "단계별 산출물과 도움 기준 정하기", "기기·네트워크 여건 사전 점검하기"],
+  },
+};
+
+const getRate = (schools: number) => Number(((schools / 58) * 100).toFixed(1));
+
+const getWordSize = (schools: number) => {
+  if (schools >= 20) return 66;
+  if (schools >= 12) return 50;
+  if (schools >= 8) return 42;
+  if (schools >= 5) return 34;
+  if (schools >= 3) return 28;
+  if (schools >= 2) return 23;
+  return 17;
+};
 
 type TabKey = "overview" | "budget" | "diagnosis" | "edutech" | "preference" | "semester";
 
@@ -132,13 +267,25 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<TabKey>("overview");
   const [selectedTool, setSelectedTool] = useState(edutech[0]);
   const [filter, setFilter] = useState("all");
+  const [toolQuery, setToolQuery] = useState("");
   const [diagnosis, setDiagnosis] = useState<Record<string, string>>({});
   const [checked, setChecked] = useState<Record<string, boolean>>({});
 
   const visibleTools = useMemo(
-    () => edutech.filter((tool) => filter === "all" || tool.colorGroup === filter),
-    [filter],
+    () => edutech.filter((tool) =>
+      (filter === "all" || tool.group === filter)
+      && tool.name.toLocaleLowerCase("ko").includes(toolQuery.trim().toLocaleLowerCase("ko")),
+    ),
+    [filter, toolQuery],
   );
+  const selectedMeta = groupMeta[selectedTool.group];
+  const selectedRank = edutech.findIndex((tool) => tool.name === selectedTool.name) + 1;
+  const selectedRate = getRate(selectedTool.schools);
+  const selectionSignal = selectedTool.schools >= 8
+    ? "여러 학교에서 반복 확인된 공통 선택"
+    : selectedTool.schools >= 2
+      ? "소수 학교에서 반복 확인된 선택"
+      : "한 학교에서 확인된 실험적 선택";
 
   const toggleCheck = (key: string) =>
     setChecked((current) => ({ ...current, [key]: !current[key] }));
@@ -292,68 +439,122 @@ export default function Home() {
       <section className="edutech-section tab-panel" id="edutech" hidden={activeTab !== "edutech"} aria-labelledby="edutech-title">
         <div className="section-heading">
           <span className="section-kicker">에듀테크 토핑</span>
-          <h2 id="edutech-title">글자가 클수록 더 많은 학교에서 확인됐어요</h2>
-          <p>단어를 가리키거나 선택하면 정확한 비율과 2학기 활용 질문을 볼 수 있습니다.</p>
+          <h2 id="edutech-title">상위 10개부터 롱테일까지, 78종을 모두 펼쳤어요</h2>
+          <p>글자 크기는 확인 학교 수를 7단계로 구분했습니다. 단어를 가리키거나 클릭하면 비율과 상세 해석이 바뀝니다.</p>
         </div>
-        <div className="cloud-filters" aria-label="에듀테크 기능 필터">
-          {cloudFilters.map(([key, label]) => (
-            <button key={key} className={filter === key ? "active" : ""} onClick={() => setFilter(key)}>{label}</button>
-          ))}
+        <div className="edutech-summary" aria-label="에듀테크 재집계 요약">
+          <div><b>78</b><span>제품명이 확인된 도구</span></div>
+          <div><b>41</b><span>2개교 이상 반복 선택</span></div>
+          <div><b>37</b><span>1개교 롱테일 선택</span></div>
+          <div><b>48.3%</b><span>1위 패들렛 확인 비율</span></div>
+        </div>
+        <div className="tool-toolbar">
+          <div className="cloud-filters" aria-label="에듀테크 기능 필터">
+            {cloudFilters.map(([key, label]) => (
+              <button key={key} type="button" className={filter === key ? "active" : ""} onClick={() => setFilter(key)}>{label}</button>
+            ))}
+          </div>
+          <label className="tool-search">
+            <span>도구 찾기</span>
+            <input
+              type="search"
+              value={toolQuery}
+              onChange={(event) => setToolQuery(event.target.value)}
+              placeholder="예: 수학, 패들렛, AI"
+            />
+          </label>
         </div>
         <div className="edutech-layout">
           <div className="cloud-card">
             <div className="cloud-legend" aria-label="색상 범례">
               <span className="collab">협업·공유</span>
-              <span className="create">제작·표현</span>
+              <span className="literacy">언어·문해</span>
+              <span className="quiz">퀴즈·참여</span>
+              <span className="math">수학·맞춤형</span>
               <span className="ai">생성형 AI</span>
-              <span className="learn">평가·맞춤학습</span>
+              <span className="create">콘텐츠 제작</span>
+              <span className="manage">학습관리</span>
+              <span className="coding">코딩·컴퓨팅</span>
             </div>
-            <div className="word-cloud">
-              {visibleTools.map((tool) => {
-                const size = 18 + Math.sqrt(tool.schools / 26) * 38;
+            <p className="cloud-guide"><b>크기:</b> 1개교 1.7%부터 28개교 48.3%까지 · <b>현재:</b> {visibleTools.length}종</p>
+            <div className={`word-cloud ${visibleTools.length <= 10 ? "compact" : ""}`} aria-label={`에듀테크 워드클라우드, 현재 ${visibleTools.length}종`}>
+              {visibleTools.map((tool, index) => {
+                const rate = getRate(tool.schools);
+                const className = groupMeta[tool.group].className;
                 return (
                   <button
                     key={tool.name}
-                    className={`cloud-word ${tool.colorGroup} ${selectedTool.name === tool.name ? "selected" : ""}`}
+                    type="button"
+                    className={`cloud-word ${className} ${selectedTool.name === tool.name ? "selected" : ""}`}
                     style={{
-                      "--word-size": `${size}px`,
-                      "--word-rotate": `${tool.rotate}deg`,
+                      "--word-size": `${getWordSize(tool.schools)}px`,
+                      "--word-rotate": `${tool.schools > 1 ? [-4, 0, 4, 0][index % 4] : 0}deg`,
                     } as React.CSSProperties}
                     onMouseEnter={() => setSelectedTool(tool)}
                     onFocus={() => setSelectedTool(tool)}
                     onClick={() => setSelectedTool(tool)}
-                    aria-label={`${tool.name}, ${tool.schools}개교, ${tool.rate}%, ${tool.group}`}
+                    aria-pressed={selectedTool.name === tool.name}
+                    aria-label={`${tool.name}, ${tool.schools}개교, ${rate}%, ${tool.group}`}
                   >
-                    {tool.name}
+                    <span>{tool.name}</span>
+                    {selectedTool.name === tool.name && <em>{rate}%</em>}
                   </button>
                 );
               })}
+              {visibleTools.length === 0 && <p className="empty-cloud">조건에 맞는 도구가 없습니다. 검색어나 기능 필터를 바꿔 보세요.</p>}
             </div>
           </div>
           <aside className="tool-detail" aria-live="polite">
-            <span className={`tool-group ${selectedTool.colorGroup}`}>{selectedTool.group}</span>
+            <div className="tool-detail-head">
+              <span className={`tool-group ${selectedMeta.className}`}>{selectedTool.group}</span>
+              <span className="rank-chip">전체 {selectedRank}위</span>
+            </div>
             <h3>{selectedTool.name}</h3>
-            <div className="tool-stat"><b>{selectedTool.schools}</b><span>개교</span><i /><b>{selectedTool.rate}%</b></div>
-            <p className="tool-base">58개교 중 {selectedTool.schools}개교의 지출내용에서 확인</p>
+            <div className="tool-share">
+              <span>선택 학교 비율</span>
+              <b>{selectedRate}%</b>
+              <small>{selectedTool.schools}개교 / 58개교</small>
+            </div>
+            <p className="signal-chip">{selectionSignal}</p>
             <div className="detail-block">
-              <b>데이터에서 보이는 점</b>
-              <p>{selectedTool.insight}</p>
+              <b>이 선택이 보여주는 수업 수요</b>
+              <p>{selectedMeta.demand}</p>
+            </div>
+            <div className="detail-block lilac">
+              <b>같은 학교 지출내역에서 함께 확인된 도구</b>
+              {selectedTool.related.length > 0
+                ? <div className="related-tools">{selectedTool.related.map((name) => <button type="button" key={name} onClick={() => {
+                  const target = edutech.find((tool) => tool.name === name);
+                  if (target) setSelectedTool(target);
+                }}>{name}</button>)}</div>
+                : <p>함께 확인된 다른 제품명이 없습니다.</p>}
+              <small>동시 등장 순이며, 함께 사용했거나 효과가 있다는 뜻은 아닙니다.</small>
             </div>
             <div className="detail-block mint">
-              <b>2학기에 확인할 일</b>
-              <p>{selectedTool.action}</p>
+              <b>2학기 점검 질문</b>
+              <p>{selectedMeta.question}</p>
+              <ul>{selectedMeta.actions.map((action) => <li key={action}>{action}</li>)}</ul>
             </div>
-            <small>구매·지출내용에 등장한 빈도이며 실제 활용도, 만족도, 교육효과를 뜻하지 않습니다.</small>
+            <div className="reading-note">
+              <b>이 숫자를 읽는 법</b>
+              <p>구매·지출내용에서 제품명이 확인된 학교의 비율입니다. 1개교(1.7%) 도구는 ‘낮은 선호’로 단정하지 않고 새 시도 후보로 보세요. 실제 사용량·만족도·교육효과는 별도 확인이 필요합니다.</p>
+            </div>
           </aside>
         </div>
 
         <details className="exact-list">
-          <summary>정확한 수치 보기 <span>Top 10</span></summary>
+          <summary>전체 순위와 정확한 수치 보기 <span>{visibleTools.length}종 표시</span></summary>
           <div className="table-wrap">
             <table>
               <thead><tr><th>순위</th><th>도구</th><th>학교 수</th><th>비율</th><th>기능</th></tr></thead>
-              <tbody>{edutech.map((tool, index) => (
-                <tr key={tool.name}><td>{index + 1}</td><th>{tool.name}</th><td>{tool.schools}개교</td><td>{tool.rate}%</td><td>{tool.group}</td></tr>
+              <tbody>{visibleTools.map((tool) => (
+                <tr key={tool.name}>
+                  <td>{edutech.findIndex((item) => item.name === tool.name) + 1}</td>
+                  <th><button type="button" onClick={() => setSelectedTool(tool)}>{tool.name}</button></th>
+                  <td>{tool.schools}개교</td>
+                  <td>{getRate(tool.schools)}%</td>
+                  <td>{tool.group}</td>
+                </tr>
               ))}</tbody>
             </table>
           </div>
@@ -378,9 +579,9 @@ export default function Home() {
           </div>
           <article className="preference-insight">
             <span className="mini-sprinkle">● ✦ ●</span>
-            <h3>선택은 ‘쉽게 연결하고<br />바로 반응받는 도구’에 집중</h3>
-            <p>협업·공유형이 48.3%로 가장 넓게 확인됐고, 퀴즈·평가·참여형이 34.5%로 뒤를 이었습니다.</p>
-            <p>생성형 AI는 25.9%지만 여러 제품으로 나뉩니다. 특정 제품 일괄 구매보다 공통 활용원칙과 사례 공유가 먼저입니다.</p>
+            <h3>공유 플랫폼은 넓게,<br />교과 도구는 다양하게</h3>
+            <p>협업·공유형이 48.3%로 가장 넓게 확인됐고, 언어·문해형도 44.8%로 여러 학년·교과 도구에 분산됐습니다.</p>
+            <p>퀴즈·참여, 수학·맞춤형, 생성형 AI가 각각 37.9%입니다. 비율은 같아도 선택 이유가 다르므로 제품 수보다 해결하려는 수업 문제를 먼저 비교해야 합니다.</p>
             <small>이는 지출내용의 선택 경향이며 실제 선호 이유를 직접 조사한 결과는 아닙니다.</small>
           </article>
         </div>
