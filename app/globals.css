@@ -178,6 +178,7 @@ main {
   grid-template-columns: 1.08fr 0.92fr;
   min-height: 690px;
   padding: 90px clamp(24px, 7vw, 112px) 80px;
+  overflow: hidden;
   background:
     radial-gradient(circle at 10% 15%, rgba(255, 135, 184, 0.16), transparent 28%),
     radial-gradient(circle at 90% 20%, rgba(185, 238, 104, 0.2), transparent 28%),
@@ -968,7 +969,7 @@ h1 em {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 230px;
+  max-width: 100%;
   gap: 5px;
   padding: 6px 8px;
   border: 0;
@@ -980,7 +981,8 @@ h1 em {
   line-height: 1;
   text-align: center;
   white-space: normal;
-  overflow-wrap: anywhere;
+  word-break: keep-all;
+  overflow-wrap: break-word;
   transform: rotate(var(--word-rotate));
   transition: filter 0.2s ease, text-shadow 0.2s ease;
 }
@@ -1096,7 +1098,8 @@ h1 em {
   margin: 15px 0 10px;
   font-size: 36px;
   letter-spacing: -0.06em;
-  word-break: break-word;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .tool-share {
@@ -1278,9 +1281,11 @@ table th button {
 
 .preference-row {
   display: grid;
-  grid-template-columns: 220px 1fr 185px;
+  grid-template-columns: minmax(250px, 0.8fr) minmax(220px, 1.2fr);
   align-items: center;
-  gap: 14px;
+  gap: 10px 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--line);
 }
 
 .preference-row > div:first-child {
@@ -1295,7 +1300,8 @@ table th button {
 }
 
 .preference-row p {
-  margin: 0;
+  grid-column: 1 / -1;
+  margin: 0 0 2px;
 }
 
 .preference-insight {
@@ -1805,6 +1811,13 @@ footer p {
   line-height: 1.55;
 }
 
+/* Keep Korean words intact at the larger reader-facing type scale. */
+.budget-app :where(h1, h2, h3, h4, p, li, strong),
+.portal-section :where(h1, h2, h3, p) {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
 /* Shared landing and qualitative case analysis */
 .case-app :where(h2, h3, h4, p, li, strong),
 .case-dialog :where(h2, h3, h4, p, li, strong),
@@ -2058,10 +2071,34 @@ footer p {
 }
 
 .case-overview-art img {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   transform: scale(1.015);
   transition: transform 500ms ease;
+}
+
+@media (min-width: 1001px) {
+  .exact-list table {
+    table-layout: fixed;
+  }
+
+  .exact-list th,
+  .exact-list td {
+    white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  .exact-list th:nth-child(1),
+  .exact-list td:nth-child(1) { width: 72px; }
+  .exact-list th:nth-child(2),
+  .exact-list td:nth-child(2) { width: 210px; }
+  .exact-list th:nth-child(3),
+  .exact-list td:nth-child(3) { width: 115px; }
+  .exact-list th:nth-child(4),
+  .exact-list td:nth-child(4) { width: 100px; }
+  .exact-list th:nth-child(5),
+  .exact-list td:nth-child(5) { width: 190px; }
 }
 
 .case-overview-art:hover img {
@@ -3243,7 +3280,7 @@ footer p {
   .edutech-layout { display: flex; flex-direction: column; }
   .word-cloud { min-height: 360px; gap: 20px 15px; padding: 30px 8px 38px; overflow: visible; }
   .word-cloud.compact { min-height: 180px; }
-  .cloud-word { max-width: 44vw; font-size: min(var(--word-size), 11vw); }
+  .cloud-word { max-width: 100%; font-size: min(var(--word-size), 11vw); }
   .tool-detail { position: relative; }
   .preference-row { grid-template-columns: 1fr; gap: 7px; }
   .preference-row p { grid-column: auto; }

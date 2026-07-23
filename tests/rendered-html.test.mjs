@@ -60,5 +60,8 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.doesNotMatch(caseCatalog, /교사 는|피드백 과|제공하 였|이었습 니다|아 바타|유 행|디 지털|도 구|학 습|수 업/);
   assert.match(styles, /\.case-app[\s\S]*word-break: keep-all/);
   assert.match(styles, /\.band-row span,[\s\S]*white-space: nowrap/);
+  assert.match(styles, /\.budget-app[\s\S]*word-break: keep-all/);
+  assert.match(styles, /\.case-overview-art img[\s\S]*object-fit: contain/);
+  assert.match(styles, /\.hero \{[\s\S]*overflow: hidden/);
   assert.doesNotMatch(page, /AI·디지털 선도학교 예산 레시피/);
 });
