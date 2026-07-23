@@ -437,8 +437,8 @@ h1 em {
 
 .budget-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .budget-card {
@@ -714,8 +714,8 @@ h1 em {
 
 .diagnosis-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
 }
 
 .diagnosis-card {
@@ -1298,8 +1298,8 @@ table th button {
 
 .recipe-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
 }
 
 .recipe-card {
@@ -1508,6 +1508,266 @@ footer p {
   font-size: 13px;
 }
 
+/* Readability scale: favor legible copy over fitting every panel in one viewport. */
+body {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.brand {
+  font-size: 16px;
+}
+
+.brand-mark {
+  font-size: 16px;
+}
+
+.tab-navigation button {
+  padding: 10px 14px;
+  font-size: 15px;
+}
+
+.date-chip,
+.eyebrow,
+.section-kicker {
+  font-size: 15px;
+}
+
+.hero-copy > p,
+.section-heading > p {
+  font-size: clamp(19px, 1.6vw, 22px);
+  line-height: 1.65;
+}
+
+.section-heading {
+  max-width: 900px;
+  margin-bottom: 36px;
+}
+
+.section-heading h2 {
+  font-size: clamp(40px, 4.5vw, 56px);
+}
+
+.flow-main strong {
+  font-size: 23px;
+}
+
+.flow-main p,
+.insight-strip p {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.band-row span,
+.band-row b,
+.chart-note,
+.insight-strip span {
+  font-size: 16px;
+}
+
+.open-detail {
+  font-size: 14px;
+}
+
+.budget-card {
+  padding: 28px;
+}
+
+.budget-card h3 {
+  font-size: clamp(25px, 2.3vw, 32px);
+}
+
+.money-pair span,
+.rate-line span {
+  font-size: 14px;
+}
+
+.money-pair b {
+  font-size: 21px;
+}
+
+.rate-line b {
+  font-size: 25px;
+}
+
+.median {
+  font-size: 15px;
+}
+
+.budget-card > p:not(.median) {
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.detail-panel-title > div:first-child > span,
+.recipe-detail-head > div > span {
+  font-size: 14px;
+}
+
+.detail-panel-title h3,
+.recipe-detail-head h3 {
+  font-size: clamp(29px, 3vw, 40px);
+}
+
+.detail-rate small,
+.detail-rate span {
+  font-size: 13px;
+}
+
+.detail-rate b {
+  font-size: 38px;
+}
+
+.detail-lead,
+.recipe-detail-head > div > p {
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.budget-detail-grid section > b,
+.recipe-detail-grid section > b {
+  font-size: 16px;
+}
+
+.budget-detail-grid ul,
+.budget-detail-grid ol,
+.recipe-detail-grid ul,
+.recipe-detail-grid ol {
+  gap: 9px;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.detail-caption {
+  font-size: 13px;
+}
+
+.detail-footer {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.diagnosis-card > span,
+.action-box b {
+  font-size: 17px;
+}
+
+.diagnosis-card small,
+.action-box p {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.cloud-filters button,
+.tool-search input {
+  font-size: 15px;
+}
+
+.edutech-summary b {
+  font-size: 28px;
+}
+
+.edutech-summary span,
+.tool-search span,
+.rank-chip,
+.tool-group {
+  font-size: 14px;
+}
+
+.cloud-guide {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cloud-word em,
+.cloud-pagination span {
+  font-size: 13px;
+}
+
+.tool-purpose span,
+.tool-share > span,
+.tool-share small,
+.signal-chip {
+  font-size: 13px;
+}
+
+.tool-purpose p {
+  font-size: 16px;
+}
+
+.detail-block b,
+.reading-note b {
+  font-size: 15px;
+}
+
+.detail-block p,
+.detail-block ul,
+.related-tools button,
+.reading-note p {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.detail-block small {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.exact-list summary,
+table {
+  font-size: 16px;
+}
+
+.exact-list summary span {
+  font-size: 14px;
+}
+
+.preference-row span,
+.preference-row p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.preference-insight h3 {
+  font-size: 32px;
+}
+
+.preference-insight p,
+.preference-insight small {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.recipe-card {
+  min-height: 245px;
+  padding: 28px;
+}
+
+.recipe-card b {
+  font-size: 22px;
+}
+
+.recipe-card p {
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.recipe-card small,
+.recipe-card em,
+.recipe-detail-head > button,
+.recipe-why b,
+.recipe-why p,
+.recipe-caution,
+.closing-card span {
+  font-size: 15px;
+}
+
+.closing-card p,
+footer p {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
 @media (max-width: 1200px) {
   .budget-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -1538,17 +1798,17 @@ footer p {
 @media (max-width: 720px) {
   .site-header { min-height: 62px; padding: 9px 16px; }
   .brand { gap: 7px; }
-  .brand > span:last-child { max-width: 176px; font-size: 11px; }
-  .date-chip { padding: 6px 9px; font-size: 10px; }
+  .brand > span:last-child { max-width: 195px; font-size: 13px; }
+  .date-chip { padding: 7px 10px; font-size: 12px; }
   .tab-navigation {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     overflow: visible;
   }
-  .tab-navigation button { padding: 8px 5px; font-size: 11px; }
+  .tab-navigation button { min-height: 42px; padding: 9px 5px; font-size: 13px; }
   .hero { min-height: auto; padding: 62px 20px 60px; }
   h1 { font-size: 50px; }
-  .hero-copy > p { font-size: 16px; }
+  .hero-copy > p { font-size: 18px; }
   .hero-art {
     min-height: 470px;
     margin-top: 34px;
@@ -1563,7 +1823,7 @@ footer p {
   .budget-detail-panel, .recipe-detail-panel { padding: 22px; border-radius: 24px; }
   .recipe-detail-head > button { width: 100%; }
   .section-heading h2 { font-size: 38px; }
-  .section-heading > p { font-size: 16px; }
+  .section-heading > p { font-size: 18px; }
   .diagnosis-grid, .recipe-grid { grid-template-columns: 1fr; }
   .diagnosis-card { min-height: 210px; }
   .edutech-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
