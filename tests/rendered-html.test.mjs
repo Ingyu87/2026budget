@@ -13,7 +13,7 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
     readFile(new URL("package.json", root), "utf8"),
   ]);
 
-  assert.match(page, /AI·디지털 선도학교 예산 레시피/);
+  assert.match(page, /AI·디지털 활용 선도학교 예산 레시피/);
   assert.match(page, /예산 숫자를/);
   assert.match(page, /에듀테크 토핑/);
   assert.match(page, /학교명 없이/);
@@ -34,4 +34,9 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.match(page, /선택 학교 비율/);
   assert.match(page, /getWordSize/);
   assert.doesNotMatch(page, /정확한 수치 보기 <span>Top 10/);
+  assert.match(page, /예산 4스쿱/);
+  assert.match(page, /상세 분석 보기/);
+  assert.match(page, /2학기 운영 레시피/);
+  assert.match(page, /실행 체크/);
+  assert.doesNotMatch(page, /AI·디지털 선도학교 예산 레시피/);
 });

@@ -13,6 +13,12 @@ type BudgetCategory = {
   note: string;
   action: string;
   examples: string[];
+  headline: string;
+  interpretation: string;
+  possibleReasons: string[];
+  checks: string[];
+  steps: string[];
+  caution: string;
 };
 
 type Edutech = {
@@ -20,6 +26,18 @@ type Edutech = {
   schools: number;
   group: string;
   related: string[];
+};
+
+type SemesterRecipe = {
+  number: string;
+  title: string;
+  summary: string;
+  purpose: string;
+  why: string;
+  questions: string[];
+  steps: string[];
+  evidence: string[];
+  caution: string;
 };
 
 const categories: BudgetCategory[] = [
@@ -34,6 +52,16 @@ const categories: BudgetCategory[] = [
     note: "평균과 가운데 수준의 차이가 가장 커요. 일부 학교의 큰 집행이 평균을 끌어올렸습니다.",
     action: "2학기 연수 일정·강사·공동연구 산출물을 먼저 확정해 보세요.",
     examples: ["교원 연수", "학습공동체", "연구용 구독", "도서·자료"],
+    headline: "평균 집행 흐름과 가운데 학교의 차이가 가장 큰 영역",
+    interpretation: "전체 계획액 대비 집행은 43.9%지만, 학교별 집행률의 가운데 수준은 14.4%입니다. 여러 학교가 비슷하게 집행한 모습이라기보다 일부 학교가 연수·연구 활동을 먼저 시작하면서 평균을 끌어올린 구조로 읽는 편이 안전합니다.",
+    possibleReasons: [
+      "2학기 연수나 공동연구 일정이 아직 확정되지 않았을 가능성",
+      "강사 섭외·원고·계약·지급 시점이 서로 달라 집행이 늦게 잡힐 가능성",
+      "개별 구독과 공동연구비 등 학교별 운영 방식의 차이",
+    ],
+    checks: ["연수 대상과 참여 인원", "강사·일정·장소 확정 여부", "연수 뒤 남길 공동 산출물", "계약과 지급 완료 예정일"],
+    steps: ["8월 안에 핵심 연수 한 가지를 확정", "연수 전후 교사 적용 사례를 같은 양식으로 기록", "유사한 개인 구독이 중복되는지 점검"],
+    caution: "집행률이 낮다고 교원 역량 활동이 부족하다고 단정할 수 없습니다. 2학기 일정과 계약 단계가 원자료에 모두 나타나지 않기 때문입니다.",
   },
   {
     name: "교육활동운영비",
@@ -46,6 +74,16 @@ const categories: BudgetCategory[] = [
     note: "가장 큰 예산 영역이며 학교들의 집행도 비교적 고르게 진행됐어요.",
     action: "구독 도구마다 수업 대상·활용 장면·결과물 계획을 연결해 보세요.",
     examples: ["에듀테크 구독", "AI 코스웨어", "수업 콘텐츠", "학생 캠프"],
+    headline: "학교들이 가장 넓고 비교적 고르게 집행한 핵심 수업 영역",
+    interpretation: "전체 계획액 대비 60.3%가 집행됐고 학교별 가운데 수준도 61.1%로 비슷합니다. 에듀테크 구독, AI 코스웨어, 수업 콘텐츠, 학생 캠프처럼 실제 교육활동에 바로 연결되는 항목이 상반기 집행을 이끈 것으로 볼 수 있습니다.",
+    possibleReasons: [
+      "학기 초부터 필요한 학생·교원 계정의 선구매",
+      "학년·교과별 코스웨어와 콘텐츠의 학기 단위 계약",
+      "방학 캠프나 공개수업을 위한 재료·운영 준비",
+    ],
+    checks: ["대상 학년·학생·교사 수", "실제 사용할 수업 차시", "라이선스 시작·종료일", "학생 결과물과 피드백 방식"],
+    steps: ["도구마다 ‘누가·언제·무엇을’ 표로 정리", "비슷한 기능의 구독을 한 번 더 비교", "2학기 중간에 미사용 계정과 활용 장벽 점검"],
+    caution: "구매가 빠르다는 사실만으로 수업 활용이나 교육적 효과가 높다고 볼 수 없습니다. 사용 장면과 학생 변화 증거를 따로 확인해야 합니다.",
   },
   {
     name: "환경지원비",
@@ -58,6 +96,16 @@ const categories: BudgetCategory[] = [
     note: "학교별 가운데 수준도 54.7%로, 평균 집행 흐름과 비슷하게 나타났어요.",
     action: "기기 수량보다 실제 수업 불편을 줄이는 부속품인지 다시 확인해 보세요.",
     examples: ["마우스·키보드", "헤드셋·이어폰", "터치펜", "기기 수리"],
+    headline: "평균과 가운데 수준이 거의 같아 비교적 일정한 집행 흐름",
+    interpretation: "전체 계획액 대비 집행은 54.2%, 학교별 가운데 수준은 54.7%로 매우 가깝습니다. 마우스·이어폰·터치펜·보호용품·수리처럼 수업 중 반복되는 불편을 해결하는 보조 장비 중심의 집행이 확인됩니다.",
+    possibleReasons: [
+      "1학기 기기 활용 뒤 드러난 실제 불편을 보완",
+      "디벗·크롬북 등 기존 기기의 부속품과 보관 환경 지원",
+      "수업 확대에 따른 충전·음향·입력 장치 수요",
+    ],
+    checks: ["수업 중 가장 자주 발생한 불편", "기존 보유 수량과 고장 수량", "기기 호환성과 보증 조건", "보관·대여·회수 담당 방식"],
+    steps: ["교사 불편 사례를 우선순위로 정리", "소량 시험 사용 뒤 추가 구매 판단", "수리·분실·소모품 교체 기준 마련"],
+    caution: "품목 수량만으로 환경 개선 정도를 평가할 수 없습니다. 실제 수업 중단 시간이나 접근성 개선 여부를 함께 봐야 합니다.",
   },
   {
     name: "사업추진경비",
@@ -70,6 +118,63 @@ const categories: BudgetCategory[] = [
     note: "다른 영역보다 느리지만 2학기 협의회·성과공유 일정과 연결해 해석해야 해요.",
     action: "행사 날짜, 참여자, 공유할 결과를 먼저 정하고 필요한 경비를 역산하세요.",
     examples: ["운영 협의회", "성과공유회", "워크숍", "다과·간담회"],
+    headline: "상반기 집행은 낮지만 2학기 일정과 연결해 판단해야 하는 영역",
+    interpretation: "전체 계획액 대비 26.9%, 학교별 가운데 수준 23.1%로 네 영역 중 가장 낮습니다. 협의회·워크숍·성과공유회처럼 2학기에 집중되는 활동이 많아 7월 수치만으로 지연이나 부진을 단정하기 어렵습니다.",
+    possibleReasons: [
+      "성과공유회와 운영 협의회가 2학기에 예정됐을 가능성",
+      "참여자·장소·행사 규모가 확정된 뒤 집행되는 구조",
+      "교육활동 결과가 나온 다음 필요한 운영비가 결정되는 순서",
+    ],
+    checks: ["행사 목적과 날짜", "참여 대상과 예상 인원", "공유할 학생·교사 결과물", "필요 경비와 불필요한 관행성 지출"],
+    steps: ["행사 목적을 한 문장으로 먼저 확정", "결과물·참여자·일정에서 비용을 역산", "성과공유 뒤 다음 운영에 남길 기록 정하기"],
+    caution: "낮은 집행률 자체가 문제라는 뜻은 아닙니다. 다만 2학기 일정과 담당자가 아직 없다면 실행 지연 신호가 될 수 있습니다.",
+  },
+];
+
+const semesterRecipes: SemesterRecipe[] = [
+  {
+    number: "1",
+    title: "목적 다시 보기",
+    summary: "구매 품목보다 해결하려는 수업 문제를 한 문장으로 적기",
+    purpose: "예산을 ‘무엇을 살까’가 아니라 ‘어떤 수업 문제를 줄일까’에서 출발하게 하는 단계입니다.",
+    why: "같은 도구도 학교마다 필요한 이유가 다릅니다. 목적이 없으면 인기 도구를 따라 사거나 비슷한 기능을 중복 구독하기 쉽습니다.",
+    questions: ["학생이 지금 가장 어려워하는 장면은 무엇인가요?", "교사가 반복해서 시간을 쓰는 일은 무엇인가요?", "이 구매가 없으면 어떤 수업이 어려운가요?"],
+    steps: ["문제를 학생 행동 중심으로 한 문장 작성", "필요한 기능과 있으면 좋은 기능을 구분", "기존 도구로 해결 가능한지 먼저 확인"],
+    evidence: ["해결하려는 문제 한 문장", "대상 학년·교과", "도구 선택 이유와 대안 비교"],
+    caution: "제품명이 목적을 대신하지 않게 하세요. ‘패들렛 활용’보다 ‘모든 학생의 생각을 수집하고 서로 피드백하게 하기’가 목적에 가깝습니다.",
+  },
+  {
+    number: "2",
+    title: "일정 연결하기",
+    summary: "계약·연수·수업·성과공유 날짜를 하나의 달력에 놓기",
+    purpose: "예산 집행과 실제 수업 적용 사이의 빈틈을 줄이는 단계입니다.",
+    why: "계약만 끝나고 교사 연수가 늦어지거나, 수업이 끝난 뒤 성과공유 일정을 잡으면 활용 증거를 놓치기 쉽습니다.",
+    questions: ["라이선스가 시작되는 날과 첫 수업 날짜가 맞물리나요?", "교사 사전 체험 시간은 확보됐나요?", "결과를 나눌 날짜가 수업 전에 정해졌나요?"],
+    steps: ["계약·연수·첫 수업·중간 점검·공유 날짜 표시", "각 일정의 담당자 한 명 지정", "지연될 때 줄이거나 미룰 범위를 미리 결정"],
+    evidence: ["2학기 통합 일정표", "단계별 담당자", "중간 점검일과 변경 기록"],
+    caution: "집행 완료일만 관리하면 실제 활용이 뒤로 밀릴 수 있습니다. 계약 이후의 수업 일정을 같은 수준으로 관리하세요.",
+  },
+  {
+    number: "3",
+    title: "사용 장면 정하기",
+    summary: "대상 학년, 수업 차시, 교사 역할과 학생 결과물 정하기",
+    purpose: "구독한 도구가 실제 어느 수업에서 어떻게 쓰일지 구체화하는 단계입니다.",
+    why: "‘전교생 활용’처럼 범위가 넓으면 책임과 수업 장면이 흐려집니다. 작은 학년·단원에서 시작하면 교사 지원과 개선이 쉬워집니다.",
+    questions: ["어느 학년·교과·단원에서 시작하나요?", "교사는 무엇을 설명하고 학생은 무엇을 만드나요?", "도구 사용 뒤 다음 차시가 어떻게 달라지나요?"],
+    steps: ["첫 적용 학년과 2~3개 차시 선정", "교사 안내·학생 활동·결과물 형식 작성", "접속 실패와 기기 문제의 대안 활동 준비"],
+    evidence: ["간단한 수업 설계안", "학생 결과물 예시", "접근성·개인정보 점검표"],
+    caution: "활용 횟수를 늘리는 것보다 도구가 필요한 수업 장면을 정확히 고르는 것이 우선입니다.",
+  },
+  {
+    number: "4",
+    title: "작은 증거 남기기",
+    summary: "활용 횟수보다 학생 반응과 다음 개선점을 짧게 기록하기",
+    purpose: "예산 사용을 다음 학기 의사결정에 활용할 수 있는 작은 근거로 바꾸는 단계입니다.",
+    why: "로그인 수나 사용 횟수만으로는 학습 변화를 설명하기 어렵습니다. 교사의 관찰과 학생 결과물을 함께 남겨야 계속·확대·중단 판단이 가능합니다.",
+    questions: ["학생의 참여나 결과물이 이전과 어떻게 달라졌나요?", "도구 때문에 새로 생긴 어려움은 무엇인가요?", "다음 수업에서 유지·수정·중단할 것은 무엇인가요?"],
+    steps: ["수업 직후 3문장 관찰 기록", "학생 결과물 전후 예시 1개씩 보관", "월 1회 교사 사례를 짧게 공유"],
+    evidence: ["학생 반응 한 줄", "결과물 전후 사례", "유지·개선·중단 판단과 이유"],
+    caution: "좋은 사례만 모으면 판단이 왜곡됩니다. 실패·미사용·접근 어려움도 같은 양식으로 기록하세요.",
   },
 ];
 
@@ -266,6 +371,8 @@ function diagnose(value: number, median: number) {
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabKey>("overview");
   const [selectedTool, setSelectedTool] = useState(edutech[0]);
+  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+  const [selectedRecipeNumber, setSelectedRecipeNumber] = useState("1");
   const [filter, setFilter] = useState("all");
   const [toolQuery, setToolQuery] = useState("");
   const [diagnosis, setDiagnosis] = useState<Record<string, string>>({});
@@ -279,6 +386,7 @@ export default function Home() {
     [filter, toolQuery],
   );
   const selectedMeta = groupMeta[selectedTool.group];
+  const selectedRecipe = semesterRecipes.find((recipe) => recipe.number === selectedRecipeNumber) ?? semesterRecipes[0];
   const selectedRank = edutech.findIndex((tool) => tool.name === selectedTool.name) + 1;
   const selectedRate = getRate(selectedTool.schools);
   const selectionSignal = selectedTool.schools >= 8
@@ -295,12 +403,28 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const revealDetail = (id: string) => {
+    window.requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  };
+
+  const showBudgetDetail = (category: BudgetCategory) => {
+    setSelectedCategory(category);
+    revealDetail("budget-detail");
+  };
+
+  const showRecipeDetail = (number: string) => {
+    setSelectedRecipeNumber(number);
+    revealDetail("recipe-detail");
+  };
+
   return (
     <main>
       <header className="site-header">
         <button className="brand" type="button" onClick={() => selectTab("overview")} aria-label="한눈에 화면으로">
           <span className="brand-mark">AI</span>
-          <span>선도학교 예산 레시피</span>
+          <span>AI·디지털 활용 선도학교 예산 레시피</span>
         </button>
         <nav className="tab-navigation" aria-label="주요 화면" role="tablist">
           {tabs.map((tab) => (
@@ -345,7 +469,7 @@ export default function Home() {
             <div className="scoop scoop-blue">환경</div>
             <div className="scoop scoop-yellow">운영</div>
           </div>
-          <div className="cone"><span>2학기<br />레시피</span></div>
+          <div className="cone"><span>2학기 운영<br />레시피</span></div>
         </div>
       </section>
 
@@ -383,9 +507,18 @@ export default function Home() {
         </div>
         <div className="budget-grid">
           {categories.map((category, index) => (
-            <article className="budget-card" key={category.name} style={{ "--accent": category.color } as React.CSSProperties}>
+            <button
+              type="button"
+              className={`budget-card ${selectedCategory.name === category.name ? "selected" : ""}`}
+              key={category.name}
+              style={{ "--accent": category.color } as React.CSSProperties}
+              onClick={() => showBudgetDetail(category)}
+              aria-pressed={selectedCategory.name === category.name}
+              aria-label={`${category.name} 상세 분석 보기`}
+            >
               <div className="budget-card-top">
                 <span className="scoop-icon">{index + 1}</span>
+                <span className="open-detail">상세 분석 ↗</span>
               </div>
               <h3>{category.name}</h3>
               <div className="money-pair">
@@ -397,11 +530,47 @@ export default function Home() {
               <div className="progress"><i style={{ width: `${category.rate}%` }} /></div>
               <p className="median">학교별 가운데 수준 <b>{category.median}%</b></p>
               <p>{category.note}</p>
-              <div className="tag-list">{category.examples.map((item) => <span key={item}>{item}</span>)}</div>
-              <div className="action-box"><b>2학기 한 걸음</b><p>{category.action}</p></div>
-            </article>
+            </button>
           ))}
         </div>
+        <article
+          id="budget-detail"
+          className="budget-detail-panel"
+          style={{ "--accent": selectedCategory.color } as React.CSSProperties}
+          aria-live="polite"
+        >
+          <div className="detail-panel-title">
+            <div>
+              <span>{selectedCategory.name} 상세 분석</span>
+              <h3>{selectedCategory.headline}</h3>
+            </div>
+            <div className="detail-rate">
+              <small>계획액 대비 집행</small>
+              <b>{selectedCategory.rate}%</b>
+              <span>학교별 가운데 {selectedCategory.median}%</span>
+            </div>
+          </div>
+          <p className="detail-lead">{selectedCategory.interpretation}</p>
+          <div className="budget-detail-grid">
+            <section>
+              <b>왜 이런 흐름일까요?</b>
+              <p className="detail-caption">원자료와 운영 시점을 바탕으로 확인할 가능성입니다.</p>
+              <ul>{selectedCategory.possibleReasons.map((item) => <li key={item}>{item}</li>)}</ul>
+            </section>
+            <section>
+              <b>우리 학교에서 확인할 것</b>
+              <ul>{selectedCategory.checks.map((item) => <li key={item}>{item}</li>)}</ul>
+            </section>
+            <section>
+              <b>2학기 실행 순서</b>
+              <ol>{selectedCategory.steps.map((item) => <li key={item}>{item}</li>)}</ol>
+            </section>
+          </div>
+          <div className="detail-footer">
+            <div><b>주요 지출 예시</b>{selectedCategory.examples.map((item) => <span key={item}>{item}</span>)}</div>
+            <p><b>해석할 때 주의</b>{selectedCategory.caution}</p>
+          </div>
+        </article>
       </section>
 
       <section className="diagnosis-section tab-panel" id="diagnosis" hidden={activeTab !== "diagnosis"} aria-labelledby="diagnosis-title">
@@ -591,26 +760,61 @@ export default function Home() {
         <div className="section-heading light">
           <span className="section-kicker">2학기 운영 레시피</span>
           <h2 id="semester-title">예산을 수업 변화로 연결하는 네 단계</h2>
-          <p>우리 학교에 필요한 항목을 체크해 보세요. 체크 상태는 서버로 전송되지 않습니다.</p>
+          <p>카드를 누르면 실행 이유·질문·세부 순서·남길 증거가 열립니다. 완료 체크는 서버로 전송되지 않습니다.</p>
         </div>
         <div className="recipe-grid">
-          {[
-            ["1", "목적 다시 보기", "구매 품목보다 해결하려는 수업 문제를 한 문장으로 적기"],
-            ["2", "일정 연결하기", "계약·연수·수업·성과공유 날짜를 하나의 달력에 놓기"],
-            ["3", "사용 장면 정하기", "대상 학년, 수업 차시, 교사 역할과 학생 결과물 정하기"],
-            ["4", "작은 증거 남기기", "활용 횟수보다 학생 반응과 다음 개선점을 짧게 기록하기"],
-          ].map(([number, title, text]) => (
+          {semesterRecipes.map((recipe) => (
             <button
-              key={number}
-              className={`recipe-card ${checked[number] ? "done" : ""}`}
-              onClick={() => toggleCheck(number)}
-              aria-pressed={Boolean(checked[number])}
+              type="button"
+              key={recipe.number}
+              className={`recipe-card ${checked[recipe.number] ? "done" : ""} ${selectedRecipeNumber === recipe.number ? "selected" : ""}`}
+              onClick={() => showRecipeDetail(recipe.number)}
+              aria-pressed={selectedRecipeNumber === recipe.number}
+              aria-label={`${recipe.title} 상세 안내 보기`}
             >
-              <span>{checked[number] ? "✓" : number}</span>
-              <div><b>{title}</b><p>{text}</p></div>
+              <span>{checked[recipe.number] ? "✓" : recipe.number}</span>
+              <div>
+                <small>{checked[recipe.number] ? "실행 체크 완료" : `${recipe.number}단계`}</small>
+                <b>{recipe.title}</b>
+                <p>{recipe.summary}</p>
+                <em>상세 안내 보기 →</em>
+              </div>
             </button>
           ))}
         </div>
+        <article id="recipe-detail" className="recipe-detail-panel" aria-live="polite">
+          <div className="recipe-detail-head">
+            <div>
+              <span>{selectedRecipe.number}단계 상세 안내</span>
+              <h3>{selectedRecipe.title}</h3>
+              <p>{selectedRecipe.purpose}</p>
+            </div>
+            <button
+              type="button"
+              className={checked[selectedRecipe.number] ? "checked" : ""}
+              onClick={() => toggleCheck(selectedRecipe.number)}
+              aria-pressed={Boolean(checked[selectedRecipe.number])}
+            >
+              {checked[selectedRecipe.number] ? "✓ 실행 체크 완료" : "○ 이 단계 실행 체크"}
+            </button>
+          </div>
+          <div className="recipe-why"><b>왜 필요한가요?</b><p>{selectedRecipe.why}</p></div>
+          <div className="recipe-detail-grid">
+            <section>
+              <b>운영교사가 함께 물어볼 질문</b>
+              <ul>{selectedRecipe.questions.map((item) => <li key={item}>{item}</li>)}</ul>
+            </section>
+            <section>
+              <b>실행 순서</b>
+              <ol>{selectedRecipe.steps.map((item) => <li key={item}>{item}</li>)}</ol>
+            </section>
+            <section>
+              <b>남겨둘 작은 증거</b>
+              <ul>{selectedRecipe.evidence.map((item) => <li key={item}>{item}</li>)}</ul>
+            </section>
+          </div>
+          <p className="recipe-caution"><b>주의할 점</b>{selectedRecipe.caution}</p>
+        </article>
         <div className="closing-card">
           <div className="mini-icecream" aria-hidden="true"><i /><i /><i /><b /></div>
           <div>
@@ -623,7 +827,7 @@ export default function Home() {
 
       <footer>
         <div>
-          <b>AI·디지털 선도학교 예산 레시피</b>
+          <b>AI·디지털 활용 선도학교 예산 레시피</b>
           <p>2026년 7월 1일 기준</p>
           <p>© 2026 서울가동초 백인규. All rights reserved.</p>
         </div>

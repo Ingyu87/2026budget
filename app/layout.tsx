@@ -14,7 +14,7 @@ const deploymentHost =
 const deploymentOrigin = deploymentHost.startsWith("localhost")
   ? `http://${deploymentHost}`
   : `https://${deploymentHost}`;
-const title = "AI·디지털 선도학교 예산 레시피";
+const title = "AI·디지털 활용 선도학교 예산 레시피";
 const description =
   "예산 운영 흐름과 에듀테크 선택을 2학기 실행으로 연결하는 교사용 대시보드";
 
