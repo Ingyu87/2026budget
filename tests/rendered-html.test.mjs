@@ -24,6 +24,13 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.match(page, /1학기 사례에서 찾은/);
   assert.match(page, /예산 숫자를/);
   assert.match(page, /에듀테크 선택 현황/);
+  assert.match(page, /학생 사용 전 필수 확인/);
+  assert.match(page, /학교운영위원회 심의/);
+  assert.match(page, /법정대리인의 개인정보 활용 동의/);
+  assert.match(page, /Claude\.ai 일반 소비자용 서비스는 18세 이상/);
+  assert.match(page, /ChatGPT와 SUNO.*13세 이상/);
+  assert.match(page, /일반 범용 생성형 AI/);
+  assert.doesNotMatch(page, /ChatGPT는 18세 미만 사용 불가|SUNO는 18세 미만 사용 불가/);
   assert.match(page, /전체 사례 보기/);
   assert.match(page, /전체 사례 카드/);
   assert.match(page, /메인으로/);

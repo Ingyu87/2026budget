@@ -1092,6 +1092,115 @@ h1 em {
     var(--cream);
 }
 
+.student-safety-gate {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.4fr);
+  gap: 18px 22px;
+  margin: 0 0 22px;
+  padding: 24px;
+  border: 2px solid #e75967;
+  border-radius: 26px;
+  background: #fff8f4;
+  box-shadow: 0 14px 34px rgba(120, 43, 59, 0.09);
+}
+
+.student-safety-heading > span {
+  display: inline-flex;
+  margin-bottom: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #b82945;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.student-safety-heading h3 {
+  margin: 0;
+  color: #3c2030;
+  font-size: 25px;
+  letter-spacing: -0.045em;
+  line-height: 1.25;
+}
+
+.student-safety-heading p {
+  margin: 10px 0 0;
+  color: #6d4752;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.65;
+}
+
+.student-safety-checks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.student-safety-checks li {
+  padding: 15px;
+  border: 1px solid #f0cbd0;
+  border-radius: 17px;
+  background: #fff;
+}
+
+.student-safety-checks b {
+  color: #76293d;
+  font-size: 14px;
+}
+
+.student-safety-checks p {
+  margin: 7px 0 0;
+  color: #5e4d55;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.general-ai-notice {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px 16px;
+  padding: 15px 17px;
+  border-radius: 17px;
+  background: #372071;
+  color: #fff;
+}
+
+.general-ai-notice b {
+  color: #c9ff5f;
+  font-size: 14px;
+}
+
+.general-ai-notice p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.general-ai-notice small {
+  grid-column: 2;
+  color: #d9d0ef;
+  font-size: 10px;
+}
+
+.student-safety-sources {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.student-safety-sources a {
+  color: #77213a;
+  font-size: 11px;
+  font-weight: 800;
+  text-underline-offset: 3px;
+}
+
 .cloud-filters {
   display: flex;
   flex-wrap: wrap;
@@ -1288,6 +1397,17 @@ h1 em {
   line-height: 1;
 }
 
+.general-ai-badge {
+  padding: 3px 6px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
 .cloud-pagination {
   display: flex;
   align-items: center;
@@ -1341,6 +1461,67 @@ h1 em {
   font-size: 14px;
   font-weight: 750;
   line-height: 1.55;
+}
+
+.tool-safety-detail {
+  display: grid;
+  gap: 11px;
+  margin: 0 0 17px;
+  padding: 16px;
+  border: 2px solid #e75967;
+  border-radius: 18px;
+  background: #fff8f4;
+}
+
+.tool-safety-detail > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.tool-safety-detail > div:first-child span {
+  color: #a12740;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.tool-safety-detail > div:first-child b {
+  color: #3c2030;
+  font-size: 13px;
+}
+
+.tool-safety-detail dl {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+}
+
+.tool-safety-detail dl > div {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 8px;
+}
+
+.tool-safety-detail dt {
+  color: #9c2941;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.tool-safety-detail dd {
+  margin: 0;
+  color: #55454b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.tool-safety-detail a {
+  color: #77213a;
+  font-size: 11px;
+  font-weight: 850;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 .cloud-word:hover,
@@ -3670,6 +3851,10 @@ footer p {
   .diagnosis-card { min-height: 390px; }
   .decile-result p { grid-template-columns: 1fr; gap: 2px; }
   .edutech-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .student-safety-gate { grid-template-columns: 1fr; padding: 21px; }
+  .student-safety-checks { grid-template-columns: 1fr; }
+  .general-ai-notice { grid-template-columns: 1fr; }
+  .general-ai-notice small { grid-column: auto; }
   .edutech-summary > div { display: grid; gap: 1px; }
   .tool-toolbar { align-items: stretch; flex-direction: column; }
   .tool-search { flex-basis: auto; }

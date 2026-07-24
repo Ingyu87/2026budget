@@ -34,6 +34,15 @@ type Edutech = {
   related: string[];
 };
 
+type ToolSafety = {
+  classification: string;
+  ageRule: string;
+  classroomRule: string;
+  privacyRule: string;
+  sourceLabel: string;
+  sourceUrl: string;
+};
+
 type ExpenseDetail = {
   label: string;
   original: string;
@@ -402,6 +411,33 @@ const toolPurposes: Record<string, string> = {
   "후크패드": "코드 진행을 만들고 함께 작곡·편곡하는 웹 기반 음악 창작 도구",
 };
 
+const toolSafetyMeta: Record<string, ToolSafety> = {
+  "ChatGPT": {
+    classification: "일반 범용 생성형 AI",
+    ageRule: "13세 이상이며, 18세 미만은 부모 또는 법정대리인의 허락이 필요합니다.",
+    classroomRule: "13세 미만 학생과 직접 상호작용하는 교육 상황에서는 성인이 실제 상호작용을 진행해야 합니다. 학생 개인 계정을 일괄 생성하는 방식으로 운영하지 마세요.",
+    privacyRule: "학생 이름·연락처·사진·음성·생활기록·평가자료 등 개인정보와 민감한 학교 자료를 입력하지 않습니다.",
+    sourceLabel: "OpenAI 이용약관·연령 안내",
+    sourceUrl: "https://openai.com/policies/terms-of-use/",
+  },
+  "Claude": {
+    classification: "일반 범용 생성형 AI",
+    ageRule: "Claude.ai 일반 소비자용 서비스는 18세 이상만 사용할 수 있습니다.",
+    classroomRule: "학생 개인 계정으로 직접 사용하게 하지 않습니다. 교사가 자료 제작 보조로 활용할 때도 결과를 검토하고 개인정보를 입력하지 않습니다.",
+    privacyRule: "학생을 식별할 수 있는 정보, 상담·평가자료, 얼굴·음성 등 개인정보를 입력하거나 업로드하지 않습니다.",
+    sourceLabel: "Anthropic 소비자 서비스 연령 기준",
+    sourceUrl: "https://www.anthropic.com/transparency/voluntary-commitments/security%26privacy",
+  },
+  "SUNO": {
+    classification: "일반 범용 음악 생성 AI",
+    ageRule: "13세 이상이며, 18세 미만은 부모 또는 보호자의 명시적 동의가 필요합니다.",
+    classroomRule: "학생 직접 사용 전 보호자 동의, 공개 게시 범위, 저작권·상업적 이용 조건과 기능별 추가 연령 제한을 확인합니다.",
+    privacyRule: "학생의 실명·얼굴·음성 등 개인정보가 프롬프트나 결과물에 포함되지 않도록 하고, 공개 설정을 먼저 확인합니다.",
+    sourceLabel: "Suno 이용약관",
+    sourceUrl: "https://suno.com/terms/",
+  },
+};
+
 const functionGroups = [
   { name: "협업·공유", schools: 29, rate: 50.0, color: "#18a7e0", text: "학생 결과물과 아이디어를 함께 모아 공유" },
   { name: "교과·맞춤형", schools: 27, rate: 46.6, color: "#7dbd35", text: "교과 진단과 개인별 연습을 수업에 연결" },
@@ -636,6 +672,7 @@ export default function Home() {
     safeCloudPage * cloudPageSize + cloudPageSize,
   );
   const selectedMeta = groupMeta[selectedTool.group];
+  const selectedSafety = toolSafetyMeta[selectedTool.name];
   const selectedRecipe = semesterRecipes.find((recipe) => recipe.number === selectedRecipeNumber) ?? semesterRecipes[0];
   const selectedRank = edutech.findIndex((tool) => tool.name === selectedTool.name) + 1;
   const selectedRate = getRate(selectedTool.schools);
@@ -1081,6 +1118,36 @@ export default function Home() {
           <h2 id="edutech-title">어떤 에듀테크를 많이 선택했을까요?</h2>
           <p>협업·공유 도구가 가장 넓게 선택됐고, 교과·맞춤형 도구도 여러 학교에서 확인됐습니다.</p>
         </div>
+        <section className="student-safety-gate" aria-labelledby="student-safety-title">
+          <div className="student-safety-heading">
+            <span>학생 사용 전 필수 확인</span>
+            <h3 id="student-safety-title">도입보다 먼저, 연령·심의·개인정보를 확인하세요</h3>
+            <p>목록에 있다는 사실만으로 학생이 바로 사용할 수 있는 교육용 도구라는 뜻은 아닙니다. 확인이 끝나기 전에는 학생 계정을 만들거나 학생 개인정보·결과물을 업로드하지 마세요.</p>
+          </div>
+          <ol className="student-safety-checks">
+            <li>
+              <b>① 사용 연령과 계정</b>
+              <p>공식 이용약관에서 최소 연령, 보호자 동의, 학생 직접 계정 사용 가능 여부를 확인합니다.</p>
+            </li>
+            <li>
+              <b>② 학교운영위원회 심의</b>
+              <p>학습지원 소프트웨어를 교육자료로 선정·도입하는 경우 학교운영위원회 심의 대상과 학교 절차를 확인합니다.</p>
+            </li>
+            <li>
+              <b>③ 개인정보와 동의서</b>
+              <p>이름·이메일·학년·음성·얼굴·과제·접속기록의 수집·전송 여부를 확인하고, 동의가 필요한 경우 학생과 법정대리인의 개인정보 활용 동의를 받은 뒤 사용합니다.</p>
+            </li>
+          </ol>
+          <div className="general-ai-notice">
+            <b>범용 AI는 교육용 에듀테크와 구분합니다.</b>
+            <p><strong>Claude</strong>는 일반 소비자용 서비스가 18세 이상입니다. <strong>ChatGPT와 SUNO</strong>는 13세 이상이지만 18세 미만은 보호자 허락·동의가 필요합니다. 도구를 선택하면 현재 공식 약관에 따른 상세 조건을 볼 수 있습니다.</p>
+            <small>2026년 7월 24일 공식 약관 기준 · 이용 조건은 바뀔 수 있으므로 실제 사용 직전에 다시 확인하세요.</small>
+          </div>
+          <nav className="student-safety-sources" aria-label="학생 에듀테크 사용 확인 자료">
+            <a href="https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=105007&lev=0&m=020" target="_blank" rel="noreferrer">교육부: 학습지원 소프트웨어 선정 기준·학교운영위원회 심의 ↗</a>
+            <a href="https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=295&boardSeq=100362&lev=0&m=020401&opType=N&page=1&s=moe&searchType=null&statusYN=W" target="_blank" rel="noreferrer">교육부: 개인정보 동의서와 최소 수집 확인 ↗</a>
+          </nav>
+        </section>
         <div className="edutech-summary" aria-label="에듀테크 선택 현황 요약">
           <div><b>78</b><span>확인된 에듀테크 종류</span></div>
           <div><b>41</b><span>여러 학교가 함께 선택</span></div>
@@ -1151,6 +1218,7 @@ export default function Home() {
                     aria-label={`${tool.name}, ${tool.schools}개교, ${rate}%, ${tool.group}`}
                   >
                     <span>{tool.name}</span>
+                    {toolSafetyMeta[tool.name] && <small className="general-ai-badge">범용 AI</small>}
                     {selectedTool.name === tool.name && <em>{rate}%</em>}
                   </button>
                 );
@@ -1175,6 +1243,20 @@ export default function Home() {
               <span>실제 핵심 기능</span>
               <p>{toolPurposes[selectedTool.name]}</p>
             </div>
+            {selectedSafety && (
+              <section className="tool-safety-detail" aria-label={`${selectedTool.name} 학생 사용 조건`}>
+                <div>
+                  <span>학생 사용 조건</span>
+                  <b>{selectedSafety.classification}</b>
+                </div>
+                <dl>
+                  <div><dt>연령</dt><dd>{selectedSafety.ageRule}</dd></div>
+                  <div><dt>수업 적용</dt><dd>{selectedSafety.classroomRule}</dd></div>
+                  <div><dt>개인정보</dt><dd>{selectedSafety.privacyRule}</dd></div>
+                </dl>
+                <a href={selectedSafety.sourceUrl} target="_blank" rel="noreferrer">{selectedSafety.sourceLabel} 확인 ↗</a>
+              </section>
+            )}
             <div className="tool-share">
               <span>선택 학교 비율</span>
               <b>{selectedRate}%</b>
@@ -1210,7 +1292,7 @@ export default function Home() {
         <details className="exact-list">
           <summary>자료 읽는 법</summary>
           <div className="reading-note">
-            <p>에듀테크의 기능은 공식 제품 소개와 교육부·교육청 활용 자료를 바탕으로 분류했습니다. 워드클라우드의 글자 크기는 해당 도구가 확인된 학교 수를 나타냅니다. 구매 내역만으로 실제 사용량·만족도·교육 효과를 판단할 수는 없습니다.</p>
+            <p>에듀테크의 기능은 공식 제품 소개와 교육부·교육청 활용 자료를 바탕으로 분류했습니다. ‘생성형 AI’ 등 색상 범주는 구매내역을 기능별로 읽기 위한 분류이며, 교육용 제품 인증이나 학생 사용 가능 여부를 뜻하지 않습니다. 워드클라우드의 글자 크기는 해당 도구가 확인된 학교 수를 나타냅니다. 구매 내역만으로 실제 사용량·만족도·교육 효과를 판단할 수는 없습니다.</p>
           </div>
         </details>
         <details className="exact-list">
