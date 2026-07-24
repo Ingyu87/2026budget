@@ -1102,8 +1102,16 @@ export default function Home() {
             </li>
           </ol>
           <div className="general-ai-notice">
-            <b>도구 사용 전 공식 이용약관을 꼭 확인하세요.</b>
-            <p><strong>Claude</strong>는 일반 소비자용 서비스가 18세 이상입니다. <strong>ChatGPT와 SUNO</strong>는 13세 이상이지만 18세 미만은 보호자 허락·동의가 필요합니다.</p>
+            <span>학생 직접 사용 제한</span>
+            <b>ChatGPT·SUNO는 만 13세 미만 학생이 보호자 동의 여부와 관계없이 직접 사용할 수 없습니다.</b>
+            <p className="direct-use-ban">초등학생에게 개인 계정을 만들게 하거나 직접 입력하도록 안내하지 마세요.</p>
+            <ul>
+              <li><strong>ChatGPT</strong>: 만 13세 미만 대상 교육에서는 성인이 실제 상호작용을 진행해야 합니다.</li>
+              <li><strong>SUNO</strong>: 만 13세 미만은 계정을 만들거나 서비스를 사용할 수 없습니다.</li>
+              <li><strong>Claude</strong>: 일반 소비자용 서비스는 18세 이상만 사용할 수 있습니다.</li>
+              <li><strong>Gemini·Genspark</strong>: 교육 전용 코스웨어가 아닌 일반 범용 AI 서비스입니다. 사용 연령, 보호자 동의, 학교 계정의 관리자 허용 여부를 확인하기 전에는 학생이 직접 사용하지 않도록 합니다.</li>
+            </ul>
+            <p className="terms-reminder">도구 사용 전 공식 이용약관을 꼭 확인하세요.</p>
             <small>2026년 7월 24일 공식 약관 기준 · 이용 조건은 바뀔 수 있으므로 실제 사용 직전에 다시 확인하세요.</small>
           </div>
           <nav className="student-safety-sources" aria-label="학생 에듀테크 사용 확인 자료">

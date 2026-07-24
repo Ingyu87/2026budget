@@ -31,11 +31,12 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.doesNotMatch(page, /교육부: 학습지원 소프트웨어 선정 기준·학교운영위원회 심의/);
   assert.doesNotMatch(page, /교육부: 개인정보 동의서와 최소 수집 확인/);
   assert.match(page, /도구 사용 전 공식 이용약관을 꼭 확인하세요/);
+  assert.match(page, /ChatGPT·SUNO는 만 13세 미만 학생이 보호자 동의 여부와 관계없이 직접 사용할 수 없습니다/);
+  assert.match(page, /초등학생에게 개인 계정을 만들게 하거나 직접 입력하도록 안내하지 마세요/);
+  assert.match(page, /Gemini·Genspark.*일반 범용 AI 서비스/);
   assert.doesNotMatch(page, /className="general-ai-badge"/);
   assert.doesNotMatch(page, /도구를 선택하면 현재 공식 약관에 따른 상세 조건을 볼 수 있습니다/);
-  assert.match(page, /Claude.*일반 소비자용 서비스가 18세 이상/);
-  assert.match(page, /ChatGPT와 SUNO.*13세 이상/);
-  assert.doesNotMatch(page, /범용/);
+  assert.match(page, /Claude.*일반 소비자용 서비스는 18세 이상/);
   assert.doesNotMatch(page, /tool-safety-detail|selectedSafety|toolSafetyMeta/);
   assert.doesNotMatch(page, /ChatGPT는 18세 미만 사용 불가|SUNO는 18세 미만 사용 불가/);
   assert.match(page, /전체 사례 보기/);
