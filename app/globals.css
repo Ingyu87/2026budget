@@ -1159,67 +1159,6 @@ h1 em {
   line-height: 1.55;
 }
 
-.general-ai-notice {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 9px;
-  padding: 19px 20px;
-  border-radius: 17px;
-  background: #372071;
-  color: #fff;
-}
-
-.general-ai-notice > span {
-  width: fit-content;
-  padding: 5px 9px;
-  border-radius: 999px;
-  background: #ffdd67;
-  color: #3c2030;
-  font-size: 11px;
-  font-weight: 950;
-}
-
-.general-ai-notice b {
-  color: #c9ff5f;
-  font-size: 19px;
-  line-height: 1.45;
-}
-
-.general-ai-notice p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.55;
-}
-
-.general-ai-notice .direct-use-ban {
-  padding: 10px 12px;
-  border-radius: 11px;
-  background: #fff;
-  color: #7d1933;
-  font-weight: 900;
-}
-
-.general-ai-notice ul {
-  display: grid;
-  gap: 6px;
-  margin: 2px 0;
-  padding-left: 21px;
-  color: #f4efff;
-  font-size: 13px;
-  line-height: 1.55;
-}
-
-.general-ai-notice .terms-reminder {
-  color: #ffdf78;
-  font-weight: 900;
-}
-
-.general-ai-notice small {
-  color: #d9d0ef;
-  font-size: 10px;
-}
-
 .student-safety-sources {
   grid-column: 1 / -1;
   display: flex;
@@ -3814,7 +3753,6 @@ footer p {
   .edutech-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .student-safety-gate { grid-template-columns: 1fr; padding: 21px; }
   .student-safety-checks { grid-template-columns: 1fr; }
-  .general-ai-notice { grid-template-columns: 1fr; }
   .edutech-summary > div { display: grid; gap: 1px; }
   .tool-toolbar { align-items: stretch; flex-direction: column; }
   .tool-search { flex-basis: auto; }
