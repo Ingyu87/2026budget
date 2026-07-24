@@ -34,15 +34,6 @@ type Edutech = {
   related: string[];
 };
 
-type ToolSafety = {
-  classification: string;
-  ageRule: string;
-  classroomRule: string;
-  privacyRule: string;
-  sourceLabel: string;
-  sourceUrl: string;
-};
-
 type ExpenseDetail = {
   label: string;
   original: string;
@@ -333,12 +324,12 @@ const edutech: Edutech[] = [
 const toolPurposes: Record<string, string> = {
   "패들렛": "게시판·캔버스에 자료와 의견을 함께 모으는 실시간 협업 공간",
   "북크리에이터": "글·이미지·음성·영상을 엮어 전자책과 학습 결과물을 만드는 저작 도구",
-  "Gemini": "텍스트·이미지·자료 분석과 생성을 지원하는 범용 멀티모달 생성형 AI",
+  "Gemini": "텍스트·이미지·자료 분석과 생성을 지원하는 멀티모달 생성형 AI",
   "매쓰홀릭": "수학 문제은행과 진단·추천 학습을 제공하는 수학 AI 코스웨어",
-  "Claude": "긴 문서 분석·글쓰기·아이디어 정리를 지원하는 범용 생성형 AI",
+  "Claude": "긴 문서 분석·글쓰기·아이디어 정리를 지원하는 생성형 AI",
   "ZEP·젭퀴즈": "메타버스형 참여 공간과 게임형 퀴즈를 결합한 수업 참여 도구",
   "블루킷": "문항 세트를 여러 게임 모드로 운영하는 실시간 퀴즈 플랫폼",
-  "ChatGPT": "대화형 자료 생성·분석·아이디어 탐색을 지원하는 범용 생성형 AI",
+  "ChatGPT": "대화형 자료 생성·분석·아이디어 탐색을 지원하는 생성형 AI",
   "SUNO": "텍스트 지시로 노래·배경음악을 만드는 생성형 음악 도구",
   "카훗": "실시간 퀴즈·설문으로 이해도와 참여를 확인하는 게임형 평가 도구",
   "띵커벨": "퀴즈·토론·설문·워드클라우드·보드를 제공하는 수업 상호작용 도구",
@@ -409,33 +400,6 @@ const toolPurposes: Record<string, string> = {
   "퍼플 경제교실": "학생 참여형 경제·금융 수업 콘텐츠와 활동을 제공하는 교과 플랫폼",
   "플랭스쿨": "교과 학습 콘텐츠와 학생 진도·과제를 운영하는 학교용 학습 플랫폼",
   "후크패드": "코드 진행을 만들고 함께 작곡·편곡하는 웹 기반 음악 창작 도구",
-};
-
-const toolSafetyMeta: Record<string, ToolSafety> = {
-  "ChatGPT": {
-    classification: "일반 범용 생성형 AI",
-    ageRule: "13세 이상이며, 18세 미만은 부모 또는 법정대리인의 허락이 필요합니다.",
-    classroomRule: "13세 미만 학생과 직접 상호작용하는 교육 상황에서는 성인이 실제 상호작용을 진행해야 합니다. 학생 개인 계정을 일괄 생성하는 방식으로 운영하지 마세요.",
-    privacyRule: "학생 이름·연락처·사진·음성·생활기록·평가자료 등 개인정보와 민감한 학교 자료를 입력하지 않습니다.",
-    sourceLabel: "OpenAI 이용약관·연령 안내",
-    sourceUrl: "https://openai.com/policies/terms-of-use/",
-  },
-  "Claude": {
-    classification: "일반 범용 생성형 AI",
-    ageRule: "Claude.ai 일반 소비자용 서비스는 18세 이상만 사용할 수 있습니다.",
-    classroomRule: "학생 개인 계정으로 직접 사용하게 하지 않습니다. 교사가 자료 제작 보조로 활용할 때도 결과를 검토하고 개인정보를 입력하지 않습니다.",
-    privacyRule: "학생을 식별할 수 있는 정보, 상담·평가자료, 얼굴·음성 등 개인정보를 입력하거나 업로드하지 않습니다.",
-    sourceLabel: "Anthropic 소비자 서비스 연령 기준",
-    sourceUrl: "https://www.anthropic.com/transparency/voluntary-commitments/security%26privacy",
-  },
-  "SUNO": {
-    classification: "일반 범용 음악 생성 AI",
-    ageRule: "13세 이상이며, 18세 미만은 부모 또는 보호자의 명시적 동의가 필요합니다.",
-    classroomRule: "학생 직접 사용 전 보호자 동의, 공개 게시 범위, 저작권·상업적 이용 조건과 기능별 추가 연령 제한을 확인합니다.",
-    privacyRule: "학생의 실명·얼굴·음성 등 개인정보가 프롬프트나 결과물에 포함되지 않도록 하고, 공개 설정을 먼저 확인합니다.",
-    sourceLabel: "Suno 이용약관",
-    sourceUrl: "https://suno.com/terms/",
-  },
 };
 
 const functionGroups = [
@@ -672,7 +636,6 @@ export default function Home() {
     safeCloudPage * cloudPageSize + cloudPageSize,
   );
   const selectedMeta = groupMeta[selectedTool.group];
-  const selectedSafety = toolSafetyMeta[selectedTool.name];
   const selectedRecipe = semesterRecipes.find((recipe) => recipe.number === selectedRecipeNumber) ?? semesterRecipes[0];
   const selectedRank = edutech.findIndex((tool) => tool.name === selectedTool.name) + 1;
   const selectedRate = getRate(selectedTool.schools);
@@ -1241,20 +1204,6 @@ export default function Home() {
               <span>실제 핵심 기능</span>
               <p>{toolPurposes[selectedTool.name]}</p>
             </div>
-            {selectedSafety && (
-              <section className="tool-safety-detail" aria-label={`${selectedTool.name} 학생 사용 조건`}>
-                <div>
-                  <span>학생 사용 조건</span>
-                  <b>{selectedSafety.classification}</b>
-                </div>
-                <dl>
-                  <div><dt>연령</dt><dd>{selectedSafety.ageRule}</dd></div>
-                  <div><dt>수업 적용</dt><dd>{selectedSafety.classroomRule}</dd></div>
-                  <div><dt>개인정보</dt><dd>{selectedSafety.privacyRule}</dd></div>
-                </dl>
-                <a href={selectedSafety.sourceUrl} target="_blank" rel="noreferrer">{selectedSafety.sourceLabel} 확인 ↗</a>
-              </section>
-            )}
             <div className="tool-share">
               <span>선택 학교 비율</span>
               <b>{selectedRate}%</b>
