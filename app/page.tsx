@@ -1145,7 +1145,7 @@ export default function Home() {
           </div>
           <nav className="student-safety-sources" aria-label="학생 에듀테크 사용 확인 자료">
             <a href="https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=105007&lev=0&m=020" target="_blank" rel="noreferrer">교육부: 학습지원 소프트웨어 선정 기준·학교운영위원회 심의 ↗</a>
-            <a href="https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=295&boardSeq=100362&lev=0&m=020401&opType=N&page=1&s=moe&searchType=null&statusYN=W" target="_blank" rel="noreferrer">교육부: 개인정보 동의서와 최소 수집 확인 ↗</a>
+            <a href="https://buseo.sen.go.kr/buseo/bu10/user/bbs/BD_selectBbs.do?q_bbsDocNo=20251220202229742&q_bbsSn=1240" target="_blank" rel="noreferrer">서울시교육청: AI·에듀테크 공교육 도입 및 활용 가이드라인·지원자료 ↗</a>
           </nav>
         </section>
         <div className="edutech-summary" aria-label="에듀테크 선택 현황 요약">
