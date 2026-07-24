@@ -29,6 +29,9 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.match(page, /법정대리인의 개인정보 활용 동의/);
   assert.match(page, /서울시교육청: AI·에듀테크 공교육 도입 및 활용 가이드라인·지원자료/);
   assert.doesNotMatch(page, /교육부: 개인정보 동의서와 최소 수집 확인/);
+  assert.match(page, /도구 사용 전 공식 이용약관을 꼭 확인하세요/);
+  assert.doesNotMatch(page, /className="general-ai-badge"/);
+  assert.doesNotMatch(page, /도구를 선택하면 현재 공식 약관에 따른 상세 조건을 볼 수 있습니다/);
   assert.match(page, /Claude\.ai 일반 소비자용 서비스는 18세 이상/);
   assert.match(page, /ChatGPT와 SUNO.*13세 이상/);
   assert.match(page, /일반 범용 생성형 AI/);

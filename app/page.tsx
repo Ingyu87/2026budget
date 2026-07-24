@@ -1139,8 +1139,8 @@ export default function Home() {
             </li>
           </ol>
           <div className="general-ai-notice">
-            <b>범용 AI는 교육용 에듀테크와 구분합니다.</b>
-            <p><strong>Claude</strong>는 일반 소비자용 서비스가 18세 이상입니다. <strong>ChatGPT와 SUNO</strong>는 13세 이상이지만 18세 미만은 보호자 허락·동의가 필요합니다. 도구를 선택하면 현재 공식 약관에 따른 상세 조건을 볼 수 있습니다.</p>
+            <b>도구 사용 전 공식 이용약관을 꼭 확인하세요.</b>
+            <p><strong>Claude</strong>는 일반 소비자용 서비스가 18세 이상입니다. <strong>ChatGPT와 SUNO</strong>는 13세 이상이지만 18세 미만은 보호자 허락·동의가 필요합니다.</p>
             <small>2026년 7월 24일 공식 약관 기준 · 이용 조건은 바뀔 수 있으므로 실제 사용 직전에 다시 확인하세요.</small>
           </div>
           <nav className="student-safety-sources" aria-label="학생 에듀테크 사용 확인 자료">
@@ -1218,7 +1218,6 @@ export default function Home() {
                     aria-label={`${tool.name}, ${tool.schools}개교, ${rate}%, ${tool.group}`}
                   >
                     <span>{tool.name}</span>
-                    {toolSafetyMeta[tool.name] && <small className="general-ai-badge">범용 AI</small>}
                     {selectedTool.name === tool.name && <em>{rate}%</em>}
                   </button>
                 );

@@ -1397,17 +1397,6 @@ h1 em {
   line-height: 1;
 }
 
-.general-ai-badge {
-  padding: 3px 6px;
-  border: 1px solid currentColor;
-  border-radius: 999px;
-  background: #fff;
-  font-size: 9px;
-  font-weight: 900;
-  letter-spacing: 0;
-  line-height: 1;
-}
-
 .cloud-pagination {
   display: flex;
   align-items: center;
