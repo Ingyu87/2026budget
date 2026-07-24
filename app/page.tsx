@@ -55,11 +55,11 @@ const categories: BudgetCategory[] = [
     rate: 43.9,
     median: 14.4,
     color: "#ff7fb5",
-    note: "평균과 가운데 수준의 차이가 가장 커요. 일부 학교의 큰 집행이 평균을 끌어올렸습니다.",
+    note: "평균 집행률과 학교별 집행률의 중간 지점 차이가 가장 커요. 일부 학교의 큰 집행이 평균을 끌어올렸습니다.",
     action: "2학기 연수 일정·강사·공동연구 산출물을 먼저 확정해 보세요.",
     examples: ["교원 연수", "학습공동체", "연구용 구독", "도서·자료"],
-    headline: "평균 집행 흐름과 가운데 학교의 차이가 가장 큰 영역",
-    interpretation: "전체 계획액 대비 집행은 43.9%지만, 학교별 집행률의 가운데 수준은 14.4%입니다. 여러 학교가 비슷하게 집행한 모습이라기보다 일부 학교가 연수·연구 활동을 먼저 시작하면서 평균을 끌어올린 구조로 읽는 편이 안전합니다.",
+    headline: "평균 집행률과 학교별 집행률 중간 지점의 차이가 가장 큰 영역",
+    interpretation: "전체 계획액 대비 집행은 43.9%지만, 학교별 집행률의 중간 지점은 14.4%입니다. 여러 학교가 비슷하게 집행한 모습이라기보다 일부 학교가 연수·연구 활동을 먼저 시작하면서 평균을 끌어올린 구조로 읽는 편이 안전합니다.",
     possibleReasons: [
       "2학기 연수나 공동연구 일정이 아직 확정되지 않았을 가능성",
       "강사 섭외·원고·계약·지급 시점이 서로 달라 집행이 늦게 잡힐 가능성",
@@ -81,7 +81,7 @@ const categories: BudgetCategory[] = [
     action: "구독 도구마다 수업 대상·활용 장면·결과물 계획을 연결해 보세요.",
     examples: ["에듀테크 구독", "AI 코스웨어", "수업 콘텐츠", "학생 캠프"],
     headline: "학교들이 가장 넓고 비교적 고르게 집행한 핵심 수업 영역",
-    interpretation: "전체 계획액 대비 60.3%가 집행됐고 학교별 가운데 수준도 61.1%로 비슷합니다. 에듀테크 구독, AI 코스웨어, 수업 콘텐츠, 학생 캠프처럼 실제 교육활동에 바로 연결되는 항목이 상반기 집행을 이끈 것으로 볼 수 있습니다.",
+    interpretation: "전체 계획액 대비 60.3%가 집행됐고 학교별 집행률의 중간 지점도 61.1%로 비슷합니다. 에듀테크 구독, AI 코스웨어, 수업 콘텐츠, 학생 캠프처럼 실제 교육활동에 바로 연결되는 항목이 상반기 집행을 이끈 것으로 볼 수 있습니다.",
     possibleReasons: [
       "학기 초부터 필요한 학생·교원 계정의 선구매",
       "학년·교과별 코스웨어와 콘텐츠의 학기 단위 계약",
@@ -99,11 +99,11 @@ const categories: BudgetCategory[] = [
     rate: 54.2,
     median: 54.7,
     color: "#6ac8f2",
-    note: "학교별 가운데 수준도 54.7%로, 평균 집행 흐름과 비슷하게 나타났어요.",
+    note: "학교별 집행률의 중간 지점도 54.7%로, 평균 집행 흐름과 비슷하게 나타났어요.",
     action: "기기 수량보다 실제 수업 불편을 줄이는 부속품인지 다시 확인해 보세요.",
     examples: ["마우스·키보드", "헤드셋·이어폰", "터치펜", "기기 수리"],
-    headline: "평균과 가운데 수준이 거의 같아 비교적 일정한 집행 흐름",
-    interpretation: "전체 계획액 대비 집행은 54.2%, 학교별 가운데 수준은 54.7%로 매우 가깝습니다. 마우스·이어폰·터치펜·보호용품·수리처럼 수업 중 반복되는 불편을 해결하는 보조 장비 중심의 집행이 확인됩니다.",
+    headline: "평균 집행률과 학교별 중간 지점이 거의 같은 영역",
+    interpretation: "전체 계획액 대비 집행은 54.2%, 학교별 집행률의 중간 지점은 54.7%로 매우 가깝습니다. 마우스·이어폰·터치펜·보호용품·수리처럼 수업 중 반복되는 불편을 해결하는 보조 장비 중심의 집행이 확인됩니다.",
     possibleReasons: [
       "1학기 기기 활용 뒤 드러난 실제 불편을 보완",
       "디벗·크롬북 등 기존 기기의 부속품과 보관 환경 지원",
@@ -125,7 +125,7 @@ const categories: BudgetCategory[] = [
     action: "행사 날짜, 참여자, 공유할 결과를 먼저 정하고 필요한 경비를 역산하세요.",
     examples: ["운영 협의회", "성과공유회", "워크숍", "다과·간담회"],
     headline: "상반기 집행은 낮지만 2학기 일정과 연결해 판단해야 하는 영역",
-    interpretation: "전체 계획액 대비 26.9%, 학교별 가운데 수준 23.1%로 네 영역 중 가장 낮습니다. 협의회·워크숍·성과공유회처럼 2학기에 집중되는 활동이 많아 7월 수치만으로 지연이나 부진을 단정하기 어렵습니다.",
+    interpretation: "전체 계획액 대비 26.9%, 학교별 집행률의 중간 지점은 23.1%로 네 영역 중 가장 낮습니다. 협의회·워크숍·성과공유회처럼 2학기에 집중되는 활동이 많아 7월 수치만으로 지연이나 부진을 단정하기 어렵습니다.",
     possibleReasons: [
       "성과공유회와 운영 협의회가 2학기에 예정됐을 가능성",
       "참여자·장소·행사 규모가 확정된 뒤 집행되는 구조",
@@ -470,9 +470,37 @@ const caseCatalogFilters: { key: CaseCatalogFilter; label: string }[] = [
 
 function diagnose(value: number, median: number) {
   if (value === 0) return "아직 입력 전";
-  if (value < median - 15) return "가운데 수준보다 낮은 편 · 일정과 계약 단계를 확인해 보세요.";
-  if (value > median + 15) return "가운데 수준보다 높은 편 · 실제 활용과 결과 기록을 함께 점검하세요.";
-  return "동료학교의 가운데 수준과 비슷해요 · 남은 일정과 활용 계획을 이어가세요.";
+  if (value < median - 15) return "학교별 집행률의 중간 지점보다 낮은 편 · 일정과 계약 단계를 확인해 보세요.";
+  if (value > median + 15) return "학교별 집행률의 중간 지점보다 높은 편 · 실제 활용과 결과 기록을 함께 점검하세요.";
+  return "동료학교 집행률의 중간 지점과 비슷해요 · 남은 일정과 활용 계획을 이어가세요.";
+}
+
+const middlePointExplanation =
+  "학교별 집행률을 낮은 순서부터 놓았을 때 정확히 절반이 지난 위치의 값입니다. 일부 학교의 큰 금액에 영향을 덜 받아 일반적인 흐름을 살피는 데 도움이 됩니다.";
+
+const otherToolsExplanation =
+  "상위 10개 뒤에 이어지는 도구들입니다. 선택 횟수는 적지만 새로운 수업 시도나 특정 교과의 필요를 보여줄 수 있습니다.";
+
+function TermHelp({
+  label,
+  explanation,
+  focusable = true,
+}: {
+  label: string;
+  explanation: string;
+  focusable?: boolean;
+}) {
+  return (
+    <span
+      className="term-help"
+      data-explanation={explanation}
+      title={explanation}
+      tabIndex={focusable ? 0 : undefined}
+      aria-label={`${label}: ${explanation}`}
+    >
+      {label}<i aria-hidden="true">?</i>
+    </span>
+  );
 }
 
 export default function Home() {
@@ -740,13 +768,18 @@ export default function Home() {
         <div className="section-heading">
           <span className="section-kicker">동료학교 운영 흐름</span>
           <h2 id="flow-title">비슷한 학교들은 지금 어디쯤일까요?</h2>
-          <p>학교들을 집행률 순으로 놓았을 때 가운데 학교는 약 57%입니다.</p>
+          <p>
+            학교별 집행률을 낮은 순서부터 놓으면{" "}
+            <TermHelp label="중간 지점" explanation={middlePointExplanation} />은 약 57%입니다.
+          </p>
         </div>
         <div className="flow-grid">
           <article className="flow-main">
             <div className="big-number">57.0<span>%</span></div>
-            <strong>학교별 전체 집행률 가운데 수준</strong>
-            <p>가운데 절반의 학교는 약 40.3%에서 74.3% 사이에 있어요.</p>
+            <strong>
+              학교별 전체 집행률 <TermHelp label="중간 지점" explanation={middlePointExplanation} />
+            </strong>
+            <p>학교의 절반은 약 40.3%에서 74.3% 사이에 있어요.</p>
           </article>
           <article className="band-card">
             <div className="band-row"><span>50% 미만</span><div><i style={{ width: "36.2%" }} /></div><b>21개교</b></div>
@@ -791,7 +824,15 @@ export default function Home() {
               </div>
               <div className="rate-line"><span>전체 계획액 대비 집행</span><b>{category.rate}%</b></div>
               <div className="progress"><i style={{ width: `${category.rate}%` }} /></div>
-              <p className="median">학교별 가운데 수준 <b>{category.median}%</b></p>
+              <p className="median">
+                학교별{" "}
+                <TermHelp
+                  label="중간 지점"
+                  explanation={middlePointExplanation}
+                  focusable={false}
+                />{" "}
+                <b>{category.median}%</b>
+              </p>
               <p>{category.note}</p>
             </button>
           ))}
@@ -810,7 +851,10 @@ export default function Home() {
             <div className="detail-rate">
               <small>계획액 대비 집행</small>
               <b>{selectedCategory.rate}%</b>
-              <span>학교별 가운데 {selectedCategory.median}%</span>
+              <span>
+                학교별 <TermHelp label="중간 지점" explanation={middlePointExplanation} />{" "}
+                {selectedCategory.median}%
+              </span>
             </div>
           </div>
           <p className="detail-lead">{selectedCategory.interpretation}</p>
@@ -871,13 +915,23 @@ export default function Home() {
       <section className="edutech-section tab-panel" id="edutech" hidden={activeTab !== "edutech"} aria-labelledby="edutech-title">
         <div className="section-heading">
           <span className="section-kicker">에듀테크 토핑</span>
-          <h2 id="edutech-title">상위 10개부터 롱테일까지, 78종을 모두 펼쳤어요</h2>
+          <h2 id="edutech-title">
+            상위 10개부터{" "}
+            <TermHelp label="그 밖의 도구" explanation={otherToolsExplanation} />까지,
+            78종을 모두 펼쳤어요
+          </h2>
           <p>공식 제품 소개와 교육부·교육청 활용자료로 핵심 기능을 다시 대조했습니다. 글자 크기는 확인 학교 수를 7단계로 구분하며, 클릭하면 비율·실제 기능·상세 해석이 바뀝니다.</p>
         </div>
         <div className="edutech-summary" aria-label="에듀테크 재집계 요약">
           <div><b>78</b><span>제품명이 확인된 도구</span></div>
           <div><b>41</b><span>2개교 이상 반복 선택</span></div>
-          <div><b>37</b><span>1개교 롱테일 선택</span></div>
+          <div>
+            <b>37</b>
+            <span>
+              한 학교에서만 확인된{" "}
+              <TermHelp label="도구" explanation={otherToolsExplanation} />
+            </span>
+          </div>
           <div><b>48.3%</b><span>1위 패들렛 확인 비율</span></div>
         </div>
         <div className="tool-toolbar">

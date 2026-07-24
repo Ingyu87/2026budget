@@ -39,7 +39,10 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.doesNotMatch(page, /58개 선도학교|58개교 익명|미집행|아직 지출 없음/);
   assert.match(page, /role="tab"/);
   assert.match(page, /hidden=\{activeTab !== "edutech"\}/);
-  assert.match(page, /상위 10개부터 롱테일까지, 78종을 모두/);
+  assert.match(page, /그 밖의 도구/);
+  assert.match(page, /학교별 집행률을 낮은 순서부터 놓았을 때 정확히 절반이 지난 위치/);
+  assert.match(page, /className="term-help"/);
+  assert.doesNotMatch(page, /가운데 학교|가운데 수준|롱테일/);
   assert.match(page, /4K Video Downloader\+/);
   assert.match(page, /후크패드/);
   assert.match(page, /선택 학교 비율/);

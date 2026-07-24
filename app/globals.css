@@ -172,6 +172,71 @@ main {
   box-shadow: 0 6px 20px rgba(64, 46, 105, 0.08);
 }
 
+.term-help {
+  position: relative;
+  z-index: 8;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.18em;
+  border-bottom: 2px dashed currentColor;
+  color: inherit;
+  line-height: 1.15;
+  cursor: help;
+}
+
+.term-help > i {
+  display: inline-grid;
+  width: 1.15em;
+  height: 1.15em;
+  place-items: center;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  font-size: 0.48em;
+  font-style: normal;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.term-help::after {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 12px);
+  z-index: 30;
+  width: min(330px, 76vw);
+  padding: 13px 15px;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 7px 7px 0 rgba(48, 17, 106, 0.18);
+  content: attr(data-explanation);
+  font-size: 17px;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  word-break: keep-all;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 7px);
+  transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+}
+
+.term-help:hover::after,
+.term-help:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+.term-help:focus-visible {
+  border-radius: 4px;
+  outline: 3px solid var(--pink);
+  outline-offset: 4px;
+}
+
 .hero {
   position: relative;
   display: grid;
