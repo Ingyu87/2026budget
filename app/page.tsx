@@ -59,10 +59,10 @@ const categories: BudgetCategory[] = [
     action: "2학기 연수 일정·강사·공동연구 산출물을 먼저 확정해 보세요.",
     examples: ["교원 연수", "학습공동체", "연구용 구독", "도서·자료"],
     headline: "평균 집행률과 학교별 집행률 중간 지점의 차이가 가장 큰 영역",
-    interpretation: "전체 계획액 대비 집행은 43.9%지만, 학교별 집행률의 중간 지점은 14.4%입니다. 여러 학교가 비슷하게 집행한 모습이라기보다 일부 학교가 연수·연구 활동을 먼저 시작하면서 평균을 끌어올린 구조로 읽는 편이 안전합니다.",
+    interpretation: "전체 계획액 대비 집행은 43.9%지만, 학교별 집행률의 중간 지점은 14.4%입니다. 일부 학교가 연수·연구 활동을 먼저 시작하면서 전체 평균이 높아졌을 가능성이 있습니다.",
     possibleReasons: [
       "2학기 연수나 공동연구 일정이 아직 확정되지 않았을 가능성",
-      "강사 섭외·원고·계약·지급 시점이 서로 달라 집행이 늦게 잡힐 가능성",
+      "강사 섭외·원고·계약·지급 시점이 서로 달라 일부 지급이 2학기로 예정됐을 가능성",
       "개별 구독과 공동연구비 등 학교별 운영 방식의 차이",
     ],
     checks: ["연수 대상과 참여 인원", "강사·일정·장소 확정 여부", "연수 뒤 남길 공동 산출물", "계약과 지급 완료 예정일"],
@@ -100,7 +100,7 @@ const categories: BudgetCategory[] = [
     median: 54.7,
     color: "#6ac8f2",
     note: "학교별 집행률의 중간 지점도 54.7%로, 평균 집행 흐름과 비슷하게 나타났어요.",
-    action: "기기 수량보다 실제 수업 불편을 줄이는 부속품인지 다시 확인해 보세요.",
+    action: "수업에서 반복되는 불편을 줄이는 부속품인지 확인해 보세요.",
     examples: ["마우스·키보드", "헤드셋·이어폰", "터치펜", "기기 수리"],
     headline: "평균 집행률과 학교별 중간 지점이 거의 같은 영역",
     interpretation: "전체 계획액 대비 집행은 54.2%, 학교별 집행률의 중간 지점은 54.7%로 매우 가깝습니다. 마우스·이어폰·터치펜·보호용품·수리처럼 수업 중 반복되는 불편을 해결하는 보조 장비 중심의 집행이 확인됩니다.",
@@ -122,18 +122,18 @@ const categories: BudgetCategory[] = [
     median: 23.1,
     color: "#ffc95b",
     note: "다른 영역보다 느리지만 2학기 협의회·성과공유 일정과 연결해 해석해야 해요.",
-    action: "행사 날짜, 참여자, 공유할 결과를 먼저 정하고 필요한 경비를 역산하세요.",
+    action: "행사 날짜, 참여자, 공유할 결과를 먼저 정하고 필요한 경비를 산정하세요.",
     examples: ["운영 협의회", "성과공유회", "워크숍", "다과·간담회"],
     headline: "상반기 집행은 낮지만 2학기 일정과 연결해 판단해야 하는 영역",
     interpretation: "전체 계획액 대비 26.9%, 학교별 집행률의 중간 지점은 23.1%로 네 영역 중 가장 낮습니다. 협의회·워크숍·성과공유회처럼 2학기에 집중되는 활동이 많아 7월 수치만으로 지연이나 부진을 단정하기 어렵습니다.",
     possibleReasons: [
       "성과공유회와 운영 협의회가 2학기에 예정됐을 가능성",
-      "참여자·장소·행사 규모가 확정된 뒤 집행되는 구조",
+      "참여자·장소·행사 규모가 확정된 뒤 집행되는 운영 방식",
       "교육활동 결과가 나온 다음 필요한 운영비가 결정되는 순서",
     ],
     checks: ["행사 목적과 날짜", "참여 대상과 예상 인원", "공유할 학생·교사 결과물", "필요 경비와 불필요한 관행성 지출"],
-    steps: ["행사 목적을 한 문장으로 먼저 확정", "결과물·참여자·일정에서 비용을 역산", "성과공유 뒤 다음 운영에 남길 기록 정하기"],
-    caution: "낮은 집행률 자체가 문제라는 뜻은 아닙니다. 다만 2학기 일정과 담당자가 아직 없다면 실행 지연 신호가 될 수 있습니다.",
+    steps: ["행사 목적을 한 문장으로 먼저 확정", "결과물·참여자·일정에 따라 비용 산정", "성과공유 뒤 다음 운영에 남길 기록 정하기"],
+    caution: "낮은 집행률 자체가 문제라는 뜻은 아닙니다. 다만 2학기 일정과 담당자가 아직 정해지지 않았다면 운영이 늦어질 수 있습니다.",
   },
 ];
 
@@ -141,8 +141,8 @@ const semesterRecipes: SemesterRecipe[] = [
   {
     number: "1",
     title: "목적 다시 보기",
-    summary: "구매 품목보다 해결하려는 수업 문제를 한 문장으로 적기",
-    purpose: "예산을 ‘무엇을 살까’가 아니라 ‘어떤 수업 문제를 줄일까’에서 출발하게 하는 단계입니다.",
+    summary: "해결하려는 수업 문제를 한 문장으로 적기",
+    purpose: "예산 집행의 목적을 해결하려는 수업 문제에서 찾는 단계입니다.",
     why: "같은 도구도 학교마다 필요한 이유가 다릅니다. 목적이 없으면 인기 도구를 따라 사거나 비슷한 기능을 중복 구독하기 쉽습니다.",
     questions: ["학생이 지금 가장 어려워하는 장면은 무엇인가요?", "교사가 반복해서 시간을 쓰는 일은 무엇인가요?", "이 구매가 없으면 어떤 수업이 어려운가요?"],
     steps: ["문제를 학생 행동 중심으로 한 문장 작성", "필요한 기능과 있으면 좋은 기능을 구분", "기존 도구로 해결 가능한지 먼저 확인"],
@@ -169,13 +169,13 @@ const semesterRecipes: SemesterRecipe[] = [
     questions: ["어느 학년·교과·단원에서 시작하나요?", "교사는 무엇을 설명하고 학생은 무엇을 만드나요?", "도구 사용 뒤 다음 차시가 어떻게 달라지나요?"],
     steps: ["첫 적용 학년과 2~3개 차시 선정", "교사 안내·학생 활동·결과물 형식 작성", "접속 실패와 기기 문제의 대안 활동 준비"],
     evidence: ["간단한 수업 설계안", "학생 결과물 예시", "접근성·개인정보 점검표"],
-    caution: "활용 횟수를 늘리는 것보다 도구가 필요한 수업 장면을 정확히 고르는 것이 우선입니다.",
+    caution: "도구가 필요한 수업 장면을 정확히 고른 뒤 활용 횟수를 늘리세요.",
   },
   {
     number: "4",
-    title: "작은 증거 남기기",
-    summary: "활용 횟수보다 학생 반응과 다음 개선점을 짧게 기록하기",
-    purpose: "예산 사용을 다음 학기 의사결정에 활용할 수 있는 작은 근거로 바꾸는 단계입니다.",
+    title: "운영 기록 남기기",
+    summary: "활용 횟수와 함께 학생 반응과 다음 개선점을 짧게 기록하기",
+    purpose: "예산 사용 결과를 다음 학기 운영 계획에 활용할 수 있도록 기록하는 단계입니다.",
     why: "로그인 수나 사용 횟수만으로는 학습 변화를 설명하기 어렵습니다. 교사의 관찰과 학생 결과물을 함께 남겨야 계속·확대·중단 판단이 가능합니다.",
     questions: ["학생의 참여나 결과물이 이전과 어떻게 달라졌나요?", "도구 때문에 새로 생긴 어려움은 무엇인가요?", "다음 수업에서 유지·수정·중단할 것은 무엇인가요?"],
     steps: ["수업 직후 3문장 관찰 기록", "학생 결과물 전후 예시 1개씩 보관", "월 1회 교사 사례를 짧게 공유"],
@@ -347,7 +347,7 @@ const toolPurposes: Record<string, string> = {
 };
 
 const functionGroups = [
-  { name: "협업·공유", schools: 29, rate: 50.0, color: "#18a7e0", text: "결과물·아이디어를 함께 모으고 나누는 쉬운 시작" },
+  { name: "협업·공유", schools: 29, rate: 50.0, color: "#18a7e0", text: "학생 결과물과 아이디어를 함께 모아 공유" },
   { name: "교과·맞춤형", schools: 27, rate: 46.6, color: "#7dbd35", text: "교과 진단과 개인별 연습을 수업에 연결" },
   { name: "언어·문해", schools: 24, rate: 41.4, color: "#e39a20", text: "읽기·쓰기·영어 등 언어 기능이 분명한 선택" },
   { name: "퀴즈·참여", schools: 23, rate: 39.7, color: "#f06a4e", text: "수업 중 참여·형성평가·피드백" },
@@ -377,7 +377,7 @@ const groupMeta: Record<string, {
 }> = {
   "협업·공유": {
     className: "collab",
-    demand: "학생 결과물을 한곳에 모으고 서로 보고 반응하게 하는, 진입 장벽이 낮은 수업 흐름에 수요가 큽니다.",
+    demand: "학생 결과물을 한곳에 모으고 서로 보고 반응하는 활동에 많이 활용됐습니다. 교사와 학생이 비교적 쉽게 시작할 수 있는 유형입니다.",
     question: "게시 공간을 만든 뒤 학생의 읽기·댓글·수정 활동까지 설계되어 있나요?",
     actions: ["공개 범위와 개인정보 기준 정하기", "결과물에 반응하는 규칙 만들기", "학기 말 포트폴리오 활용 여부 점검하기"],
   },
@@ -389,13 +389,13 @@ const groupMeta: Record<string, {
   },
   "생성형 AI": {
     className: "ai",
-    demand: "한 제품 독점보다 여러 생성형 AI를 비교·탐색하는 흐름입니다. 구매보다 공통 활용 원칙이 먼저 필요한 유형입니다.",
+    demand: "여러 생성형 AI를 함께 선택한 학교가 확인됐습니다. 도구를 정할 때 개인정보·저작권·결과 검증 원칙도 함께 마련할 필요가 있습니다.",
     question: "교사의 자료 제작, 학생 탐구, 업무 지원 중 어떤 장면을 위해 구독했나요?",
     actions: ["개인정보·저작권·검증 원칙 합의하기", "도구별 강점을 한 장으로 비교하기", "좋은 활용 사례와 실패 사례를 함께 기록하기"],
   },
   "교과·맞춤형": {
     className: "math",
-    demand: "수학뿐 아니라 국어·영어 등 교과 진단과 개인별 연습을 지원하는 코스웨어 수요입니다. 이용량보다 결과가 보충·심화 수업으로 이어지는지가 중요합니다.",
+    demand: "수학뿐 아니라 국어·영어 등 교과 진단과 개인별 연습을 지원하려는 선택입니다. 진단 결과가 보충·심화 수업으로 이어지는지 확인하는 것이 중요합니다.",
     question: "진단·추천 결과가 교사의 다음 차시 판단과 실제 개별 지원으로 연결되고 있나요?",
     actions: ["대상 학년·교과·단원을 좁혀 적용하기", "진단 뒤 교사 개입 장면 정하기", "학생별 변화 사례를 짧게 남기기"],
   },
@@ -407,7 +407,7 @@ const groupMeta: Record<string, {
   },
   "콘텐츠 제작": {
     className: "create",
-    demand: "글·이미지·영상·음악을 결합한 결과물 제작 수요입니다. 완성도보다 학습 내용을 설명하고 수정하는 과정이 핵심입니다.",
+    demand: "글·이미지·영상·음악을 결합한 결과물 제작을 위한 선택입니다. 학습 내용을 설명하고 수정하는 과정이 드러나야 합니다.",
     question: "예쁜 결과물보다 학생의 생각과 수정 과정이 보이도록 과제가 설계됐나요?",
     actions: ["결과물 평가 기준을 먼저 공유하기", "초안·피드백·수정 흔적 남기기", "저작권과 출처 표시 확인하기"],
   },
@@ -444,10 +444,10 @@ type CaseCatalogFilter = "all" | CaseCatalogTask;
 
 const tabs: { key: TabKey; label: string }[] = [
   { key: "overview", label: "한눈에" },
-  { key: "budget", label: "예산 4스쿱" },
-  { key: "diagnosis", label: "우리 학교 진단" },
+  { key: "budget", label: "영역별 예산" },
+  { key: "diagnosis", label: "우리 학교 비교" },
   { key: "edutech", label: "에듀테크" },
-  { key: "preference", label: "유형 인사이트" },
+  { key: "preference", label: "활용 유형" },
   { key: "semester", label: "2학기 운영" },
 ];
 
@@ -472,7 +472,7 @@ function diagnose(value: number, median: number) {
   if (value === 0) return "아직 입력 전";
   if (value < median - 15) return "학교별 집행률의 중간 지점보다 낮은 편 · 일정과 계약 단계를 확인해 보세요.";
   if (value > median + 15) return "학교별 집행률의 중간 지점보다 높은 편 · 실제 활용과 결과 기록을 함께 점검하세요.";
-  return "동료학교 집행률의 중간 지점과 비슷해요 · 남은 일정과 활용 계획을 이어가세요.";
+  return "학교별 집행률의 중간 지점과 비슷해요 · 남은 일정과 활용 계획을 이어가세요.";
 }
 
 const middlePointExplanation =
@@ -541,8 +541,8 @@ export default function Home() {
   const selectionSignal = selectedTool.schools >= 8
     ? "여러 학교에서 반복 확인된 공통 선택"
     : selectedTool.schools >= 2
-      ? "소수 학교에서 반복 확인된 선택"
-      : "한 학교에서 확인된 실험적 선택";
+      ? "두 곳 이상의 학교에서 확인된 선택"
+      : "한 학교에서 확인된 선택";
   const detailTask = caseDetail ? caseTasks.find((task) => task.key === caseDetail.taskKey) : undefined;
   const detailPattern = detailTask?.patterns.find((pattern) => pattern.id === caseDetail?.patternId);
   const visibleCases = useMemo(() => {
@@ -637,7 +637,7 @@ export default function Home() {
       <header className="site-header">
         <button className="brand" type="button" onClick={goHome} aria-label="분석 선택 화면으로">
           <span className="brand-mark">AI</span>
-          <span>AI·디지털 활용 선도학교 운영 인사이트</span>
+          <span>AI·디지털 활용 선도학교 운영 길잡이</span>
         </button>
         {appMode !== "home" && (
           <button className="home-return-button" type="button" onClick={goHome}>
@@ -689,7 +689,7 @@ export default function Home() {
           </nav>
         )}
         <span className="date-chip">
-          {appMode === "budget" ? "2026. 7. 1. 기준" : appMode === "cases" ? "1학기 사례 기반" : "2026 운영 인사이트"}
+          {appMode === "budget" ? "2026. 7. 1. 기준" : appMode === "cases" ? "1학기 사례 기반" : "2026 운영 길잡이"}
         </span>
       </header>
 
@@ -719,17 +719,17 @@ export default function Home() {
           <button className="portal-choice budget-choice" type="button" onClick={() => selectTab("overview")}>
             <span className="choice-number">01</span>
             <div className="choice-scoops" aria-hidden="true"><i /><i /><i /><i /></div>
-            <small>예산의 흐름에서 다음 행동 찾기</small>
+            <small>7월 1일 기준 예산 집행 현황</small>
             <h2>예산 데이터 분석</h2>
-            <p>네 영역의 평균 계획·집행 흐름, 에듀테크 선택과 2학기 운영 레시피를 살펴봅니다.</p>
+            <p>네 영역의 평균 계획액과 집행 현황, 에듀테크 선택과 2학기 운영 계획을 살펴봅니다.</p>
             <em>예산 분석 들어가기 →</em>
           </button>
           <button className="portal-choice case-choice" type="button" onClick={() => selectCaseTab("case-overview")}>
             <span className="choice-number">02</span>
             <div className="choice-scoops" aria-hidden="true"><i /><i /><i /><i /></div>
-            <small>반복된 사례에서 수업의 변화 읽기</small>
+            <small>1학기 과제별 운영 사례</small>
             <h2>과제 사례 분석</h2>
-            <p>배움·관계·학교문화·선택과제를 사례 흐름, 인사이트, 2학기 생각거리로 해석합니다.</p>
+            <p>배움·관계·학교문화·선택과제의 공통 특징과 2학기 적용 방향을 살펴봅니다.</p>
             <em>사례 분석 들어가기 →</em>
           </button>
         </div>
@@ -744,12 +744,12 @@ export default function Home() {
             <em>2학기 실행</em>으로 바꿔요
           </h1>
           <p>
-            총액보다 지금 필요한 판단에 집중했습니다. 비슷한 학교의 흐름을 보고,
-            네 영역의 다음 행동과 많이 선택한 에듀테크를 가볍게 살펴보세요.
+            7월 1일 기준 예산 집행 현황을 살펴보고, 영역별 2학기 운영 계획과
+            에듀테크 선택을 점검해 보세요.
           </p>
           <div className="hero-actions">
             <button className="button primary" type="button" onClick={() => selectTab("budget")}>4개 영역 살펴보기</button>
-            <button className="button secondary" type="button" onClick={() => selectTab("diagnosis")}>우리 학교 진단하기</button>
+            <button className="button secondary" type="button" onClick={() => selectTab("diagnosis")}>우리 학교 비교하기</button>
           </div>
         </div>
         <div className="hero-art" aria-label="교원역량, 교육활동, 환경지원, 사업추진 네 영역을 표현한 아이스크림">
@@ -766,8 +766,8 @@ export default function Home() {
 
       <section className="flow-section tab-panel" hidden={activeTab !== "overview"} aria-labelledby="flow-title">
         <div className="section-heading">
-          <span className="section-kicker">동료학교 운영 흐름</span>
-          <h2 id="flow-title">비슷한 학교들은 지금 어디쯤일까요?</h2>
+          <span className="section-kicker">학교별 예산 집행 현황</span>
+          <h2 id="flow-title">학교별 예산 집행은 어느 정도 진행됐을까요?</h2>
           <p>
             학교별 집행률을 낮은 순서부터 놓으면{" "}
             <TermHelp label="중간 지점" explanation={middlePointExplanation} />은 약 57%입니다.
@@ -797,8 +797,8 @@ export default function Home() {
 
       <section className="budget-section tab-panel" id="budget" hidden={activeTab !== "budget"} aria-labelledby="budget-title">
         <div className="section-heading light">
-          <span className="section-kicker">예산 4스쿱</span>
-          <h2 id="budget-title">영역마다 다른 속도, 같은 눈금으로 보기</h2>
+          <span className="section-kicker">영역별 예산</span>
+          <h2 id="budget-title">네 영역의 평균 계획액과 7월 집행 현황</h2>
           <p>평균 계획액과 7월 1일까지의 평균 집행액을 학교당 금액으로 비교했습니다.</p>
         </div>
         <div className="budget-grid">
@@ -860,8 +860,8 @@ export default function Home() {
           <p className="detail-lead">{selectedCategory.interpretation}</p>
           <div className="budget-detail-grid">
             <section>
-              <b>왜 이런 흐름일까요?</b>
-              <p className="detail-caption">원자료와 운영 시점을 바탕으로 확인할 가능성입니다.</p>
+              <b>학교에서 함께 점검할 배경</b>
+              <p className="detail-caption">계약·일정·운영 방식에 따라 학교마다 달라질 수 있습니다.</p>
               <ul>{selectedCategory.possibleReasons.map((item) => <li key={item}>{item}</li>)}</ul>
             </section>
             <section>
@@ -882,9 +882,9 @@ export default function Home() {
 
       <section className="diagnosis-section tab-panel" id="diagnosis" hidden={activeTab !== "diagnosis"} aria-labelledby="diagnosis-title">
         <div className="section-heading">
-          <span className="section-kicker">우리 학교 스쿱 진단</span>
-          <h2 id="diagnosis-title">우리 학교의 진행 흐름을 가볍게 점검해 보세요</h2>
-          <p>입력값은 이 브라우저 안에서만 계산되며 저장하거나 전송하지 않습니다.</p>
+          <span className="section-kicker">우리 학교 예산 점검</span>
+          <h2 id="diagnosis-title">우리 학교의 영역별 집행률을 입력해 비교해 보세요</h2>
+          <p>학교별 집행률의 중간 지점과 비교해 남은 일정과 집행 계획을 확인할 수 있습니다.</p>
         </div>
         <div className="diagnosis-grid">
           {categories.map((category) => {
@@ -910,25 +910,22 @@ export default function Home() {
             );
           })}
         </div>
+        <p className="chart-note">입력한 값은 저장되지 않습니다.</p>
       </section>
 
       <section className="edutech-section tab-panel" id="edutech" hidden={activeTab !== "edutech"} aria-labelledby="edutech-title">
         <div className="section-heading">
-          <span className="section-kicker">에듀테크 토핑</span>
-          <h2 id="edutech-title">
-            상위 10개부터{" "}
-            <TermHelp label="그 밖의 도구" explanation={otherToolsExplanation} />까지,
-            78종을 모두 펼쳤어요
-          </h2>
-          <p>공식 제품 소개와 교육부·교육청 활용자료로 핵심 기능을 다시 대조했습니다. 글자 크기는 확인 학교 수를 7단계로 구분하며, 클릭하면 비율·실제 기능·상세 해석이 바뀝니다.</p>
+          <span className="section-kicker">에듀테크 선택 현황</span>
+          <h2 id="edutech-title">어떤 에듀테크를 많이 선택했을까요?</h2>
+          <p>협업·공유 도구가 가장 넓게 선택됐고, 교과·맞춤형 도구도 여러 학교에서 확인됐습니다.</p>
         </div>
-        <div className="edutech-summary" aria-label="에듀테크 재집계 요약">
-          <div><b>78</b><span>제품명이 확인된 도구</span></div>
-          <div><b>41</b><span>2개교 이상 반복 선택</span></div>
+        <div className="edutech-summary" aria-label="에듀테크 선택 현황 요약">
+          <div><b>78</b><span>확인된 에듀테크 종류</span></div>
+          <div><b>41</b><span>여러 학교가 함께 선택</span></div>
           <div>
             <b>37</b>
             <span>
-              한 학교에서만 확인된{" "}
+              한 학교의 특색 있는{" "}
               <TermHelp label="도구" explanation={otherToolsExplanation} />
             </span>
           </div>
@@ -969,7 +966,7 @@ export default function Home() {
               <span className="coding">코딩·컴퓨팅</span>
             </div>
             <p className="cloud-guide">
-              <b>크기:</b> 선택 학교 수에 비례 · <b>현재:</b> {visibleTools.length}종
+              도구를 선택하면 비율과 활용 의미를 볼 수 있습니다. · <b>크기:</b> 선택 학교 수에 비례 · <b>현재:</b> {visibleTools.length}종
               {visibleTools.length > 0 && <> · {safeCloudPage * cloudPageSize + 1}–{Math.min((safeCloudPage + 1) * cloudPageSize, visibleTools.length)}번째 표시</>}
             </p>
             <div className={`word-cloud ${visibleTools.length <= 10 ? "compact" : ""}`} aria-label={`에듀테크 워드클라우드, 현재 ${visibleTools.length}종`}>
@@ -1023,7 +1020,7 @@ export default function Home() {
             </div>
             <p className="signal-chip">{selectionSignal}</p>
             <div className="detail-block">
-              <b>이 선택이 보여주는 수업 수요</b>
+              <b>이 도구를 선택한 수업 목적</b>
               <p>{selectedMeta.demand}</p>
             </div>
             <div className="detail-block lilac">
@@ -1043,11 +1040,17 @@ export default function Home() {
             </div>
             <div className="reading-note">
               <b>이 숫자를 읽는 법</b>
-              <p>구매·지출내용에서 제품명이 확인된 학교의 비율입니다. 1개교(1.7%) 도구는 ‘낮은 선호’로 단정하지 않고 새 시도 후보로 보세요. 실제 사용량·만족도·교육효과는 별도 확인이 필요합니다.</p>
+              <p>구매·지출내용에서 제품명이 확인된 학교의 비율입니다. 한 학교에서 확인된 도구도 새로운 수업 시도로 살펴볼 수 있습니다. 실제 사용량·만족도·교육 효과는 별도 확인이 필요합니다.</p>
             </div>
           </aside>
         </div>
 
+        <details className="exact-list">
+          <summary>자료 읽는 법</summary>
+          <div className="reading-note">
+            <p>에듀테크의 기능은 공식 제품 소개와 교육부·교육청 활용 자료를 바탕으로 분류했습니다. 워드클라우드의 글자 크기는 해당 도구가 확인된 학교 수를 나타냅니다. 구매 내역만으로 실제 사용량·만족도·교육 효과를 판단할 수는 없습니다.</p>
+          </div>
+        </details>
         <details className="exact-list">
           <summary>전체 순위와 정확한 수치 보기 <span>{visibleTools.length}종 표시</span></summary>
           <div className="table-wrap">
@@ -1070,9 +1073,9 @@ export default function Home() {
 
       <section className="preference-section tab-panel" hidden={activeTab !== "preference"} aria-labelledby="preference-title">
         <div className="section-heading">
-          <span className="section-kicker">교사 선택 유형</span>
+          <span className="section-kicker">에듀테크 활용 유형</span>
           <h2 id="preference-title">어떤 기능에 선택이 모였을까요?</h2>
-          <p>한 학교가 여러 유형에 포함될 수 있어 비율의 합은 100%가 아닙니다.</p>
+          <p>협업·공유형과 교과·맞춤형 도구 선택이 두드러졌습니다.</p>
         </div>
         <div className="preference-layout">
           <div className="preference-chart">
@@ -1086,19 +1089,18 @@ export default function Home() {
           </div>
           <article className="preference-insight">
             <span className="mini-sprinkle">● ✦ ●</span>
-            <h3>공유 플랫폼은 넓게,<br />교과 도구는 다양하게</h3>
-            <p>공식 기능 기준으로 다시 묶으면 협업·공유형이 50.0%로 가장 넓고, 교과·맞춤형 코스웨어도 46.6%로 여러 학년·교과에 확산됐습니다.</p>
-            <p>공식 기능을 다시 대조하면 협업·공유가 50.0%로 가장 넓고, 교과·맞춤형 코스웨어가 46.6%로 뒤를 잇습니다. 언어·문해 41.4%, 퀴즈·참여 39.7%도 고르게 나타나므로 제품 수보다 해결하려는 수업 문제를 먼저 비교해야 합니다.</p>
-            <small>이는 지출내용의 선택 경향이며 실제 선호 이유를 직접 조사한 결과는 아닙니다.</small>
+            <h3>협업·공유 도구 선택이<br />가장 많았습니다</h3>
+            <p>협업·공유형이 50.0%로 가장 넓었고, 교과·맞춤형 46.6%, 언어·문해 41.4%, 퀴즈·참여 39.7%가 뒤를 이었습니다. 학교에서 해결하려는 수업 문제를 먼저 정한 뒤 제품을 비교하는 것이 중요합니다.</p>
+            <small>※ 한 학교가 여러 유형에 포함될 수 있어 비율의 합은 100%가 아닙니다. 구매 내역에서 확인된 선택 경향이며, 선호 이유를 조사한 결과는 아닙니다.</small>
           </article>
         </div>
       </section>
 
       <section className="semester-section tab-panel" id="semester" hidden={activeTab !== "semester"} aria-labelledby="semester-title">
         <div className="section-heading light">
-          <span className="section-kicker">2학기 운영 레시피</span>
+          <span className="section-kicker">2학기 운영 계획</span>
           <h2 id="semester-title">예산을 수업 변화로 연결하는 네 단계</h2>
-          <p>카드를 누르면 실행 이유·질문·세부 순서·남길 증거가 열립니다. 완료 체크는 서버로 전송되지 않습니다.</p>
+          <p>목적–일정–수업 장면–운영 기록의 순서로 2학기 예산 집행 계획을 점검해 보세요.</p>
         </div>
         <div className="recipe-grid">
           {semesterRecipes.map((recipe) => (
@@ -1147,17 +1149,18 @@ export default function Home() {
               <ol>{selectedRecipe.steps.map((item) => <li key={item}>{item}</li>)}</ol>
             </section>
             <section>
-              <b>남겨둘 작은 증거</b>
+              <b>남겨둘 운영 기록</b>
               <ul>{selectedRecipe.evidence.map((item) => <li key={item}>{item}</li>)}</ul>
             </section>
           </div>
           <p className="recipe-caution"><b>주의할 점</b>{selectedRecipe.caution}</p>
+          <p className="chart-note">실행 체크 내용은 저장되지 않습니다.</p>
         </article>
         <div className="closing-card">
           <div className="mini-icecream" aria-hidden="true"><i /><i /><i /><b /></div>
           <div>
             <span>7월의 숫자는 중간 점검표입니다</span>
-            <h3>빨리 쓰기보다, 수업과 연결해 잘 쓰기</h3>
+            <h3>예산을 수업과 연결해 계획적으로 집행하기</h3>
             <p>낮은 집행률을 실패로 보지 말고 아직 남아 있는 계획·계약·활용 단계를 확인하세요.</p>
           </div>
         </div>
@@ -1174,13 +1177,13 @@ export default function Home() {
             <div className="case-overview-copy">
               <span className="section-kicker">과제 사례 분석</span>
               <h2 id="case-overview-title">
-                사례의 숫자보다
+                1학기 사례에서 찾은
                 <br />
-                <em>변화의 장면</em>을 읽어요
+                <em>운영의 공통점</em>
               </h2>
               <p>
-                배움·관계·교사문화·선택과제에서 반복해서 나타난 실행을
-                ‘사례 흐름–인사이트–2학기 생각거리’로 연결했습니다.
+                배움·관계·교사문화·선택과제에서 자주 나타난 운영 방식과
+                2학기에 적용할 내용을 살펴봅니다.
               </p>
               <div className="hero-actions">
                 <button className="button primary" type="button" onClick={() => selectCaseTab("required1")}>
@@ -1233,18 +1236,18 @@ export default function Home() {
           <div className="case-reading-guide">
             <div>
               <span>01</span>
-              <b>사례 흐름</b>
-              <p>도구 이름보다 수업이 어떤 순서로 바뀌었는지 봅니다.</p>
+              <b>수업과 운영 장면</b>
+              <p>수업과 학교 운영이 어떤 순서로 이루어졌는지 살펴봅니다.</p>
             </div>
             <div>
               <span>02</span>
-              <b>인사이트</b>
-              <p>반복되는 장면이 교사의 판단에 어떤 의미인지 해석합니다.</p>
+              <b>공통 특징</b>
+              <p>여러 사례에서 반복해서 나타난 특징을 정리합니다.</p>
             </div>
             <div>
               <span>03</span>
-              <b>2학기 생각거리</b>
-              <p>그대로 복사하기보다 우리 학교에 맞게 바꿀 질문을 제시합니다.</p>
+              <b>2학기 적용</b>
+              <p>우리 학교의 2학기 운영에 적용할 질문을 제시합니다.</p>
             </div>
           </div>
           <div className="case-catalog-launch">
@@ -1282,7 +1285,7 @@ export default function Home() {
             <div className="case-section-title">
               <span>반복 사례에서 찾은 흐름</span>
               <h3>교실과 학교에서 자주 나타난 장면</h3>
-              <p>카드를 누르면 실행 순서, 인사이트, 주의점과 2학기 적용 질문이 바로 열립니다.</p>
+              <p>카드를 선택하면 실행 순서, 공통 특징, 주의점과 2학기 적용 질문을 확인할 수 있습니다.</p>
             </div>
             <div className="case-pattern-grid">
               {task.patterns.map((pattern, index) => (
@@ -1319,8 +1322,8 @@ export default function Home() {
 
             <div className="case-meaning-grid">
               <article>
-                <span>이 과제에서 읽은 인사이트</span>
-                <h3>도구가 아니라 변화의 구조를 봅니다</h3>
+                <span>이 과제에서 확인한 공통 특징</span>
+                <h3>반복 사례에서 확인한 운영의 공통점</h3>
                 <ul>{task.insights.map((insight) => <li key={insight}>{insight}</li>)}</ul>
               </article>
               <article>
@@ -1414,7 +1417,7 @@ export default function Home() {
               <ol>{detailPattern.scene.map((scene) => <li key={scene}>{scene}</li>)}</ol>
             </section>
             <section className="case-dialog-insight">
-              <span>인사이트</span>
+              <span>사례에서 확인한 의미</span>
               <p>{detailPattern.insight}</p>
             </section>
             <section className="case-dialog-semester">
@@ -1548,7 +1551,7 @@ export default function Home() {
 
       <footer>
         <div>
-          <b>AI·디지털 활용 선도학교 운영 인사이트</b>
+          <b>AI·디지털 활용 선도학교 운영 길잡이</b>
           <p>예산 데이터와 1학기 과제 사례 기반</p>
           <p>© 2026 서울가동초 백인규. All rights reserved.</p>
         </div>

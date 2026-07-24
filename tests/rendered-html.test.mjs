@@ -17,13 +17,13 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
     readFile(new URL("package.json", root), "utf8"),
   ]);
 
-  assert.match(page, /AI·디지털 활용 선도학교 운영 인사이트/);
+  assert.match(page, /AI·디지털 활용 선도학교 운영 길잡이/);
   assert.match(page, /예산 데이터 분석/);
   assert.match(page, /과제 사례 분석/);
   assert.match(page, /src="\/case-hero\.png"/);
-  assert.match(page, /사례의 숫자보다/);
+  assert.match(page, /1학기 사례에서 찾은/);
   assert.match(page, /예산 숫자를/);
-  assert.match(page, /에듀테크 토핑/);
+  assert.match(page, /에듀테크 선택 현황/);
   assert.match(page, /전체 사례 보기/);
   assert.match(page, /전체 사례 카드/);
   assert.match(page, /메인으로/);
@@ -39,18 +39,19 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.doesNotMatch(page, /58개 선도학교|58개교 익명|미집행|아직 지출 없음/);
   assert.match(page, /role="tab"/);
   assert.match(page, /hidden=\{activeTab !== "edutech"\}/);
-  assert.match(page, /그 밖의 도구/);
+  assert.match(page, /자료 읽는 법/);
   assert.match(page, /학교별 집행률을 낮은 순서부터 놓았을 때 정확히 절반이 지난 위치/);
   assert.match(page, /className="term-help"/);
   assert.doesNotMatch(page, /가운데 학교|가운데 수준|롱테일/);
+  assert.doesNotMatch(page, /총액보다 지금 필요한 판단|입력값은 이 브라우저|완료 체크는 서버로|공식 기능을 다시 대조|에듀테크 토핑|우리 학교 스쿱 진단|운영 인사이트/);
   assert.match(page, /4K Video Downloader\+/);
   assert.match(page, /후크패드/);
   assert.match(page, /선택 학교 비율/);
   assert.match(page, /getWordSize/);
   assert.doesNotMatch(page, /정확한 수치 보기 <span>Top 10/);
-  assert.match(page, /예산 4스쿱/);
+  assert.match(page, /영역별 예산/);
   assert.match(page, /상세 분석 보기/);
-  assert.match(page, /2학기 운영 레시피/);
+  assert.match(page, /2학기 운영 계획/);
   assert.match(page, /실행 체크/);
   assert.match(caseData, /필수과제 1/);
   assert.match(caseData, /필수과제 2/);
