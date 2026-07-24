@@ -28,6 +28,7 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.match(page, /학교운영위원회 심의/);
   assert.match(page, /법정대리인의 개인정보 활용 동의/);
   assert.match(page, /서울시교육청: AI·에듀테크 공교육 도입 및 활용 가이드라인·지원자료/);
+  assert.doesNotMatch(page, /교육부: 학습지원 소프트웨어 선정 기준·학교운영위원회 심의/);
   assert.doesNotMatch(page, /교육부: 개인정보 동의서와 최소 수집 확인/);
   assert.match(page, /도구 사용 전 공식 이용약관을 꼭 확인하세요/);
   assert.doesNotMatch(page, /className="general-ai-badge"/);
