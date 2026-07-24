@@ -34,6 +34,20 @@ type Edutech = {
   related: string[];
 };
 
+type ExpenseDetail = {
+  label: string;
+  original: string;
+  basis: string;
+};
+
+type DecileResult = {
+  decile: number;
+  percentile: number;
+  band: string;
+  position: string;
+  guidance: string;
+};
+
 type SemesterRecipe = {
   number: string;
   title: string;
@@ -97,13 +111,13 @@ const categories: BudgetCategory[] = [
     plan: "약 260만원",
     spent: "약 141만원",
     rate: 54.2,
-    median: 54.7,
+    median: 57.7,
     color: "#6ac8f2",
-    note: "학교별 집행률의 중간 지점도 54.7%로, 평균 집행 흐름과 비슷하게 나타났어요.",
+    note: "학교별 집행률의 중간 지점은 57.7%로, 절반의 학교가 계획액의 약 58% 이상을 집행했어요.",
     action: "수업에서 반복되는 불편을 줄이는 부속품인지 확인해 보세요.",
     examples: ["마우스·키보드", "헤드셋·이어폰", "터치펜", "기기 수리"],
-    headline: "평균 집행률과 학교별 중간 지점이 거의 같은 영역",
-    interpretation: "전체 계획액 대비 집행은 54.2%, 학교별 집행률의 중간 지점은 54.7%로 매우 가깝습니다. 마우스·이어폰·터치펜·보호용품·수리처럼 수업 중 반복되는 불편을 해결하는 보조 장비 중심의 집행이 확인됩니다.",
+    headline: "학교별 집행률의 중간 지점이 약 58%인 영역",
+    interpretation: "전체 계획액 대비 집행은 54.2%, 학교별 집행률의 중간 지점은 57.7%입니다. 학교별 계획액 차이 때문에 두 수치가 다르게 나타날 수 있으며, 마우스·이어폰·터치펜·보호용품·수리처럼 수업 중 반복되는 불편을 해결하는 보조 장비 중심의 집행이 확인됩니다.",
     possibleReasons: [
       "1학기 기기 활용 뒤 드러난 실제 불편을 보완",
       "디벗·크롬북 등 기존 기기의 부속품과 보관 환경 지원",
@@ -136,6 +150,48 @@ const categories: BudgetCategory[] = [
     caution: "낮은 집행률 자체가 문제라는 뜻은 아닙니다. 다만 2학기 일정과 담당자가 아직 정해지지 않았다면 운영이 늦어질 수 있습니다.",
   },
 ];
+
+const budgetRateDistributions: Record<string, number[]> = {
+  교원역량강화비: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.7, 1.24, 2.04, 4.26, 4.55, 5, 5.42, 7.53, 7.65, 10.36, 10.55, 10.71, 11.84, 12.85, 13, 15.75, 16.25, 22.48, 24.15, 25, 26, 27.5, 31.82, 36.05, 44.16, 50, 51.52, 54.79, 56.23, 56.96, 62.12, 66.67, 67.13, 71.23, 73.08, 75, 76.29, 79.32, 89.5, 89.98, 94.42, 100.95, 176.94, 221.69],
+  교육활동운영비: [0, 0, 0, 3.72, 13.62, 15.51, 17.97, 21.74, 26.7, 27.32, 27.64, 28.23, 33.46, 35.98, 44, 45.77, 46.17, 46.88, 49.21, 49.63, 51.07, 53.68, 54.5, 54.78, 55.99, 56.68, 57.8, 58.8, 60.52, 61.75, 62.56, 64.59, 65.13, 66.19, 67.63, 68.42, 68.48, 73.39, 78.3, 78.49, 84.7, 84.91, 85.25, 86.14, 86.88, 88.77, 88.94, 90.25, 94.54, 95.45, 95.86, 97.45, 99.13, 99.49, 99.98, 100, 100, 109.36],
+  환경지원비: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8.84, 10.97, 20, 32.27, 32.72, 33.48, 33.78, 35.59, 35.68, 36, 38.11, 43.1, 48.81, 54.27, 55.13, 60.24, 61.32, 64.57, 69.47, 71.26, 74.33, 77.66, 77.77, 78.33, 85, 89.17, 89.98, 92, 93.55, 96.37, 97.7, 98.74, 99.33, 99.39, 99.46, 99.57, 99.63, 99.89, 99.91, 100, 100, 100, 104.54],
+  사업추진경비: [0, 0, 0, 0, 0, 0, 0, 0, 2.88, 3.33, 8.25, 9.33, 9.79, 11.15, 11.67, 12.5, 14, 15, 16.33, 16.61, 17.93, 19.9, 19.94, 20.36, 21.04, 21.6, 21.6, 22.11, 22.83, 23.34, 23.42, 24.32, 25.22, 26.5, 26.67, 27.35, 29.88, 34.4, 34.83, 37.06, 37.4, 37.59, 37.64, 38.45, 39.94, 40.8, 42.2, 44.67, 46.67, 52.44, 56.25, 58.91, 60.27, 60.48, 60.65, 61.21, 63.83, 72.92],
+};
+
+const expenseDetailsByCategory: Record<string, ExpenseDetail[]> = {
+  교원역량강화비: [
+    { label: "교원 연수 강사비", original: "교원연수 강사비 및 원고료", basis: "370,000원 × 3회 = 1,110,000원" },
+    { label: "생성형 AI 구독", original: "구글AI프로 구독료", basis: "419,000원(12개월) × 9명 = 3,771,000원" },
+    { label: "교원학습공동체 운영", original: "교원학습공동체 운영 물품비", basis: "107,000원 × 1식 = 107,000원" },
+    { label: "Claude 활용", original: "Claude 크레딧", basis: "25,000원 × 10명 × 5개월 = 1,250,000원" },
+    { label: "Gemini 활용", original: "Gemini 구독", basis: "18,760원 × 12명 × 5개월 = 1,125,600원" },
+    { label: "교원 역량강화 도서", original: "AI에듀테크 도서 구입비", basis: "21,450원 × 6권 = 128,700원" },
+  ],
+  교육활동운영비: [
+    { label: "수학 코스웨어", original: "AI 에듀테크(매쓰홀릭) 구독료", basis: "18,710,000원(10개월) × 1학교(670명) = 18,710,000원" },
+    { label: "협업 게시판", original: "AI 에듀테크(패들렛) 구독료", basis: "4,290,000원(12개월) × 1학교(33명분) = 4,290,000원" },
+    { label: "생성형 AI", original: "AI 에듀테크(ChatGPT) 구독료", basis: "499,000원(10개월) × 9명 = 4,491,000원" },
+    { label: "개인별 수학 학습", original: "AI 코스웨어(수학대왕) 구독료", basis: "7,900원(8개월) × 166명 = 7,860,000원" },
+    { label: "문해력 코스웨어", original: "AI 코스웨어(리드포스쿨) 구독료", basis: "6,000원(10개월) × 110명 = 6,600,000원" },
+    { label: "과학 교구 대여", original: "AI디지털기반교육 교구대여료(드론, 3D펜)", basis: "100,000원 × 13개 = 1,300,000원" },
+  ],
+  환경지원비: [
+    { label: "학생용 이어폰", original: "5, 6학년 디벗(크롬북) 연계 유선 이어폰 구입", basis: "5,000원 × 600개 = 3,000,000원" },
+    { label: "보조배터리", original: "기기 부속품 구입비(보조배터리)", basis: "40,650원 × 20세트 = 813,000원" },
+    { label: "충전 케이블", original: "충전함 케이블", basis: "5,000원 × 100개 = 500,000원" },
+    { label: "크롬북 펜 수리", original: "디벗과 부속기기 수리비(펜슬)", basis: "135,000원 × 19대 = 2,565,000원" },
+    { label: "화면 수리", original: "디벗과 부속기기 수리비(액정)", basis: "180,000원 × 2대 = 360,000원" },
+    { label: "키보드·마우스", original: "학생용 무선 키보드마우스세트", basis: "27,000원 × 30대 = 810,000원" },
+  ],
+  사업추진경비: [
+    { label: "리더십팀 워크숍", original: "리더십팀 워크숍 업무추진비", basis: "40,000원 × 17명 = 680,000원" },
+    { label: "학년 실천팀 운영", original: "3~6학년 ACE실천팀 운영 업무추진비", basis: "학년별 40,000원 × 참여 교원 수" },
+    { label: "학습공동체 워크숍", original: "디지털 학습공동체 워크숍 업무추진비", basis: "19,148원 × 20명 × 5회 = 1,914,800원" },
+    { label: "전체 교원 협의회", original: "AI 디지털 선도학교 운영 안내 전체 협의회", basis: "20,000원 × 68명 = 1,360,000원" },
+    { label: "현장 연수 협의회", original: "현장 연수 협의회", basis: "40,000원 × 20명 = 800,000원" },
+    { label: "공개수업 참관 지원", original: "공개수업 참관 교사 간식 물품 구입비", basis: "13,036원 × 80명 = 1,042,950원" },
+  ],
+};
 
 const semesterRecipes: SemesterRecipe[] = [
   {
@@ -468,11 +524,55 @@ const caseCatalogFilters: { key: CaseCatalogFilter; label: string }[] = [
   { key: "optional", label: "선택과제" },
 ];
 
-function diagnose(value: number, median: number) {
-  if (value === 0) return "아직 입력 전";
-  if (value < median - 15) return "학교별 집행률의 중간 지점보다 낮은 편 · 일정과 계약 단계를 확인해 보세요.";
-  if (value > median + 15) return "학교별 집행률의 중간 지점보다 높은 편 · 실제 활용과 결과 기록을 함께 점검하세요.";
-  return "학교별 집행률의 중간 지점과 비슷해요 · 남은 일정과 활용 계획을 이어가세요.";
+const quantile = (values: number[], percentile: number) => {
+  const position = (values.length - 1) * percentile;
+  const lower = Math.floor(position);
+  const upper = Math.ceil(position);
+  return values[lower] + (values[upper] - values[lower]) * (position - lower);
+};
+
+const formatRate = (value: number) => {
+  const rounded = Math.round(value * 10) / 10;
+  return Number.isInteger(rounded) ? `${rounded}` : rounded.toFixed(1);
+};
+
+function diagnose(value: number | null, categoryName: string): DecileResult | null {
+  if (value === null || Number.isNaN(value)) return null;
+
+  const distribution = budgetRateDistributions[categoryName];
+  const lowerCount = distribution.filter((rate) => rate < value).length;
+  const equalCount = distribution.filter((rate) => rate === value).length;
+  const percentile = Math.min(100, Math.max(0, ((lowerCount + equalCount / 2) / distribution.length) * 100));
+  const decile = Math.min(10, Math.max(1, Math.floor(percentile / 10) + 1));
+  const lowerBoundary = decile === 1 ? distribution[0] : quantile(distribution, (decile - 1) / 10);
+  const upperBoundary = decile === 10 ? distribution[distribution.length - 1] : quantile(distribution, decile / 10);
+  const band = Math.abs(lowerBoundary - upperBoundary) < 0.05
+    ? `${formatRate(lowerBoundary)}%에 같은 값이 많이 모인 구간`
+    : decile === 1
+      ? `${formatRate(lowerBoundary)}~${formatRate(upperBoundary)}% 구간`
+      : `${formatRate(lowerBoundary)}% 초과~${formatRate(upperBoundary)}% 이하 구간`;
+  const position = decile === 1
+    ? "분포 아래 10%에 가까운 구간"
+    : decile === 10
+      ? "분포 위 10%에 가까운 구간"
+      : `분포 아래쪽 ${decile - 1}0~${decile}0% 구간`;
+  const guidance = decile <= 2
+    ? "집행 초기 단계에 가까워요. 낮은 수치만으로 판단하지 말고 계약·일정·담당자가 정해졌는지 확인하세요."
+    : decile <= 4
+      ? "집행을 시작한 학교들이 나타나는 구간이에요. 2학기 사용 시점과 지급 예정일을 연결해 보세요."
+      : decile <= 6
+        ? "학교별 분포의 가운데에 가까워요. 남은 예산이 실제 수업 일정과 연결돼 있는지 점검하세요."
+        : decile <= 8
+          ? "집행이 비교적 앞선 구간이에요. 구매·지급이 실제 활용과 운영 기록으로 이어지는지 확인하세요."
+          : "집행률이 높은 구간이에요. 남은 예산보다 이미 집행한 항목의 활용도와 다음 학기 유지 여부를 함께 살펴보세요.";
+
+  return {
+    decile,
+    percentile: Math.round(percentile),
+    band,
+    position,
+    guidance,
+  };
 }
 
 const middlePointExplanation =
@@ -518,6 +618,7 @@ export default function Home() {
   const [toolQuery, setToolQuery] = useState("");
   const [cloudPage, setCloudPage] = useState(0);
   const [diagnosis, setDiagnosis] = useState<Record<string, string>>({});
+  const [selectedExpenseIndex, setSelectedExpenseIndex] = useState(0);
   const [checked, setChecked] = useState<Record<string, boolean>>({});
 
   const visibleTools = useMemo(
@@ -538,6 +639,8 @@ export default function Home() {
   const selectedRecipe = semesterRecipes.find((recipe) => recipe.number === selectedRecipeNumber) ?? semesterRecipes[0];
   const selectedRank = edutech.findIndex((tool) => tool.name === selectedTool.name) + 1;
   const selectedRate = getRate(selectedTool.schools);
+  const selectedExpenseDetails = expenseDetailsByCategory[selectedCategory.name];
+  const selectedExpense = selectedExpenseDetails[selectedExpenseIndex] ?? selectedExpenseDetails[0];
   const selectionSignal = selectedTool.schools >= 8
     ? "여러 학교에서 반복 확인된 공통 선택"
     : selectedTool.schools >= 2
@@ -624,6 +727,7 @@ export default function Home() {
 
   const showBudgetDetail = (category: BudgetCategory) => {
     setSelectedCategory(category);
+    setSelectedExpenseIndex(0);
     revealDetail("budget-detail");
   };
 
@@ -834,6 +938,13 @@ export default function Home() {
                 <b>{category.median}%</b>
               </p>
               <p>{category.note}</p>
+              <div className="budget-example-preview">
+                <strong>주요 지출 예시</strong>
+                <div>
+                  {category.examples.slice(0, 3).map((item) => <span key={item}>{item}</span>)}
+                </div>
+                <em>원문 세부 지출 보기 →</em>
+              </div>
             </button>
           ))}
         </div>
@@ -873,6 +984,38 @@ export default function Home() {
               <ol>{selectedCategory.steps.map((item) => <li key={item}>{item}</li>)}</ol>
             </section>
           </div>
+          <section className="expense-source-panel" aria-labelledby="expense-source-title">
+            <div className="expense-source-heading">
+              <div>
+                <span>학교명 제외 · 원문 지출내용과 산출근거</span>
+                <h4 id="expense-source-title">{selectedCategory.name} 세부 지출 예시</h4>
+              </div>
+              <small>항목을 선택하면 실제 기재 내용을 확인할 수 있습니다.</small>
+            </div>
+            <div className="expense-source-layout">
+              <div className="expense-source-buttons" role="group" aria-label={`${selectedCategory.name} 세부 지출 예시 선택`}>
+                {selectedExpenseDetails.map((item, index) => (
+                  <button
+                    key={`${item.label}-${item.original}`}
+                    type="button"
+                    className={selectedExpenseIndex === index ? "active" : ""}
+                    onClick={() => setSelectedExpenseIndex(index)}
+                    aria-pressed={selectedExpenseIndex === index}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+              <article className="expense-source-detail" aria-live="polite">
+                <span>지출내용 원문</span>
+                <h5>{selectedExpense.original}</h5>
+                <div>
+                  <b>산출근거 원문</b>
+                  <p>{selectedExpense.basis}</p>
+                </div>
+              </article>
+            </div>
+          </section>
           <div className="detail-footer">
             <div><b>주요 지출 예시</b>{selectedCategory.examples.map((item) => <span key={item}>{item}</span>)}</div>
             <p><b>해석할 때 주의</b>{selectedCategory.caution}</p>
@@ -883,12 +1026,14 @@ export default function Home() {
       <section className="diagnosis-section tab-panel" id="diagnosis" hidden={activeTab !== "diagnosis"} aria-labelledby="diagnosis-title">
         <div className="section-heading">
           <span className="section-kicker">우리 학교 예산 점검</span>
-          <h2 id="diagnosis-title">우리 학교의 영역별 집행률을 입력해 비교해 보세요</h2>
-          <p>학교별 집행률의 중간 지점과 비교해 남은 일정과 집행 계획을 확인할 수 있습니다.</p>
+          <h2 id="diagnosis-title">우리 학교는 각 영역의 몇 분위에 있을까요?</h2>
+          <p>영역별 집행률 분포를 10개 구간으로 나눴습니다. 1분위는 분포 아래 10%, 10분위는 위 10%에 가까운 구간입니다.</p>
         </div>
         <div className="diagnosis-grid">
           {categories.map((category) => {
-            const value = Number(diagnosis[category.short] || 0);
+            const rawValue = diagnosis[category.short] ?? "";
+            const value = rawValue === "" ? null : Number(rawValue);
+            const result = diagnose(value, category.name);
             return (
               <label className="diagnosis-card" key={category.name}>
                 <span>{category.name}</span>
@@ -896,21 +1041,38 @@ export default function Home() {
                   <input
                     type="number"
                     min="0"
-                    max="100"
+                    max="300"
                     inputMode="decimal"
-                    value={diagnosis[category.short] ?? ""}
+                    value={rawValue}
                     onChange={(event) => setDiagnosis({ ...diagnosis, [category.short]: event.target.value })}
                     placeholder="0"
                     aria-label={`${category.name} 집행률`}
                   />
                   <b>%</b>
                 </div>
-                <small>{diagnose(value, category.median)}</small>
+                {result ? (
+                  <div className="decile-result" aria-live="polite">
+                    <div>
+                      <strong>{result.decile}분위</strong>
+                      <span>{result.position}</span>
+                    </div>
+                    <div className="decile-scale" aria-label={`1분위부터 10분위 중 ${result.decile}분위`}>
+                      {Array.from({ length: 10 }, (_, index) => index + 1).map((decile) => (
+                        <i className={decile === result.decile ? "active" : ""} key={decile}>{decile}</i>
+                      ))}
+                    </div>
+                    <p><b>이 분위의 범위</b>{result.band}</p>
+                    <p><b>현재 위치</b>분포 아래쪽부터 약 {result.percentile}% 지점</p>
+                    <small>{result.guidance}</small>
+                  </div>
+                ) : (
+                  <p className="diagnosis-prompt">계획액 대비 현재 집행률을 입력해 주세요.</p>
+                )}
               </label>
             );
           })}
         </div>
-        <p className="chart-note">입력한 값은 저장되지 않습니다.</p>
+        <p className="chart-note">계획액이 0인 영역은 해당 영역의 10분위 계산에서 제외했습니다. 입력한 값은 저장되지 않습니다.</p>
       </section>
 
       <section className="edutech-section tab-panel" id="edutech" hidden={activeTab !== "edutech"} aria-labelledby="edutech-title">

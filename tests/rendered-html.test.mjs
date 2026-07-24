@@ -51,6 +51,12 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.doesNotMatch(page, /정확한 수치 보기 <span>Top 10/);
   assert.match(page, /영역별 예산/);
   assert.match(page, /상세 분석 보기/);
+  assert.match(page, /budgetRateDistributions/);
+  assert.match(page, /영역별 집행률 분포를 10개 구간/);
+  assert.match(page, /분포 아래쪽부터 약/);
+  assert.match(page, /학교명 제외 · 원문 지출내용과 산출근거/);
+  assert.match(page, /세부 지출 예시/);
+  assert.match(page, /median: 57\.7/);
   assert.match(page, /2학기 운영 계획/);
   assert.match(page, /실행 체크/);
   assert.match(caseData, /필수과제 1/);

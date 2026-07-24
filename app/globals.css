@@ -649,6 +649,48 @@ h1 em {
   font-size: 13px;
 }
 
+.budget-example-preview {
+  display: grid;
+  gap: 9px;
+  margin-top: 18px;
+  padding: 15px;
+  border: 2px solid color-mix(in srgb, var(--accent) 52%, white);
+  border-radius: 17px;
+  background: color-mix(in srgb, var(--accent) 12%, white);
+}
+
+.budget-example-preview strong {
+  color: var(--purple);
+  font-size: 14px;
+}
+
+.budget-example-preview > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.budget-example-preview span {
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.budget-example-preview em {
+  display: flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: var(--purple);
+  color: #fff;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 900;
+}
+
 .budget-detail-panel {
   scroll-margin-top: 92px;
   margin-top: 28px;
@@ -784,6 +826,112 @@ h1 em {
   font-size: 11px;
 }
 
+.expense-source-panel {
+  margin-top: 22px;
+  padding: 22px;
+  border: 2px solid color-mix(in srgb, var(--accent) 45%, #d9d0e8);
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--accent) 8%, white);
+}
+
+.expense-source-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.expense-source-heading span {
+  color: var(--purple-2);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.expense-source-heading h4 {
+  margin: 5px 0 0;
+  font-size: 24px;
+}
+
+.expense-source-heading small {
+  color: var(--muted);
+}
+
+.expense-source-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.85fr) minmax(0, 1.6fr);
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.expense-source-buttons {
+  display: grid;
+  gap: 8px;
+}
+
+.expense-source-buttons button {
+  min-height: 44px;
+  padding: 10px 13px;
+  border: 1px solid #d9d0e8;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  font-weight: 800;
+  text-align: left;
+}
+
+.expense-source-buttons button:hover,
+.expense-source-buttons button.active {
+  border-color: var(--purple);
+  background: var(--purple);
+  color: #fff;
+}
+
+.expense-source-buttons button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.expense-source-detail {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: 22px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #e5dfee;
+}
+
+.expense-source-detail > span {
+  color: var(--purple-2);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.expense-source-detail h5 {
+  margin: 7px 0 19px;
+  font-size: 24px;
+  line-height: 1.35;
+}
+
+.expense-source-detail > div {
+  padding: 15px;
+  border-radius: 14px;
+  background: #f7f3fc;
+}
+
+.expense-source-detail b {
+  font-size: 12px;
+}
+
+.expense-source-detail p {
+  margin: 5px 0 0;
+  color: #514a65;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
 .tag-list {
   display: flex;
   flex-wrap: wrap;
@@ -859,6 +1007,83 @@ h1 em {
 .diagnosis-card small {
   margin-top: auto;
   color: var(--muted);
+}
+
+.diagnosis-prompt {
+  margin: auto 0 0;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.decile-result {
+  display: grid;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.decile-result > div {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.decile-result strong {
+  color: var(--purple);
+  font-size: 34px;
+  letter-spacing: -0.05em;
+}
+
+.decile-result > div span {
+  color: var(--purple-2);
+  font-weight: 800;
+}
+
+.decile-result .decile-scale {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 4px;
+  width: 100%;
+}
+
+.decile-scale i {
+  display: grid;
+  min-width: 0;
+  min-height: 28px;
+  place-items: center;
+  border-radius: 7px;
+  background: #e9e3f1;
+  color: #746b84;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 850;
+}
+
+.decile-scale i.active {
+  background: var(--purple);
+  color: #fff;
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--purple) 38%, transparent);
+  transform: translateY(-2px);
+}
+
+.decile-result p {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 8px;
+  margin: 0;
+  color: #514a65;
+}
+
+.decile-result p b {
+  color: var(--ink);
+}
+
+.decile-result small {
+  display: block;
+  padding: 13px;
+  border-left: 4px solid var(--purple);
+  border-radius: 0 12px 12px 0;
+  background: #f2ecfa;
 }
 
 .edutech-section {
@@ -1707,6 +1932,25 @@ body {
   line-height: 1.55;
 }
 
+.budget-example-preview {
+  gap: 12px;
+  padding: 20px;
+}
+
+.budget-example-preview strong {
+  font-size: 23px;
+}
+
+.budget-example-preview span {
+  padding: 7px 11px;
+  font-size: 18px;
+}
+
+.budget-example-preview em {
+  min-height: 52px;
+  font-size: 21px;
+}
+
 .detail-panel-title > div:first-child > span,
 .recipe-detail-head > div > span {
   font-size: 21px;
@@ -1755,6 +1999,37 @@ body {
   line-height: 1.55;
 }
 
+.expense-source-heading span,
+.expense-source-detail > span,
+.expense-source-detail b {
+  font-size: 19px;
+}
+
+.expense-source-heading h4 {
+  font-size: 34px;
+}
+
+.expense-source-heading small {
+  max-width: 370px;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.expense-source-buttons button {
+  min-height: 58px;
+  padding: 13px 17px;
+  font-size: 20px;
+}
+
+.expense-source-detail h5 {
+  font-size: 31px;
+}
+
+.expense-source-detail p {
+  font-size: 22px;
+}
+
 .diagnosis-card > span,
 .action-box b {
   font-size: 26px;
@@ -1764,6 +2039,30 @@ body {
 .action-box p {
   font-size: 23px;
   line-height: 1.55;
+}
+
+.diagnosis-card {
+  min-height: 420px;
+}
+
+.diagnosis-prompt,
+.decile-result p,
+.decile-result > div span {
+  font-size: 21px;
+  line-height: 1.5;
+}
+
+.decile-result strong {
+  font-size: 52px;
+}
+
+.decile-scale i {
+  min-height: 40px;
+  font-size: 17px;
+}
+
+.decile-result p {
+  grid-template-columns: 145px 1fr;
 }
 
 .cloud-filters button,
@@ -3228,6 +3527,8 @@ footer p {
   .case-catalog-grid { grid-template-columns: 1fr; }
   .case-catalog-controls { grid-template-columns: 1fr; }
   .budget-detail-grid, .recipe-detail-grid { grid-template-columns: 1fr; }
+  .expense-source-layout { grid-template-columns: 1fr; }
+  .expense-source-buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .diagnosis-grid, .recipe-grid { grid-template-columns: repeat(2, 1fr); }
   .edutech-layout, .preference-layout { grid-template-columns: 1fr; }
   .tool-detail { position: relative; top: auto; }
@@ -3333,11 +3634,16 @@ footer p {
   .detail-panel-title, .recipe-detail-head, .detail-footer { grid-template-columns: 1fr; }
   .detail-rate { min-width: 0; }
   .budget-detail-panel, .recipe-detail-panel { padding: 22px; border-radius: 24px; }
+  .expense-source-panel { padding: 18px; }
+  .expense-source-heading { align-items: flex-start; flex-direction: column; }
+  .expense-source-heading small { max-width: none; text-align: left; }
+  .expense-source-buttons { grid-template-columns: 1fr; }
   .recipe-detail-head > button { width: 100%; }
   .section-heading h2 { font-size: 38px; }
   .section-heading > p { font-size: 27px; }
   .diagnosis-grid, .recipe-grid { grid-template-columns: 1fr; }
-  .diagnosis-card { min-height: 210px; }
+  .diagnosis-card { min-height: 390px; }
+  .decile-result p { grid-template-columns: 1fr; gap: 2px; }
   .edutech-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .edutech-summary > div { display: grid; gap: 1px; }
   .tool-toolbar { align-items: stretch; flex-direction: column; }
