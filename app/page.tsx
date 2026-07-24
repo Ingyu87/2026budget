@@ -1711,11 +1711,10 @@ export default function Home() {
         </div>
       )}
 
-      <footer>
+      <footer className="site-footer">
         <div>
           <b>AI·디지털 활용 선도학교 운영 길잡이</b>
-          <p>예산 데이터와 1학기 과제 사례 기반</p>
-          <p>© 2026 서울가동초 백인규. All rights reserved.</p>
+          <p>제작자: 서울가동초 백인규</p>
         </div>
       </footer>
     </main>

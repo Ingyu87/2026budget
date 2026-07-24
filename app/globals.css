@@ -3478,6 +3478,31 @@ footer p {
   font-size: 19px;
 }
 
+.site-footer {
+  min-height: 0;
+  padding: 18px clamp(20px, 5vw, 72px);
+}
+
+.site-footer > div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px 18px;
+}
+
+.site-footer b,
+.site-footer p {
+  margin: 0;
+  color: #d7cfee;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.site-footer p {
+  padding-left: 18px;
+  border-left: 1px solid rgba(238, 231, 255, 0.28);
+}
+
 @keyframes case-fade {
   from { opacity: 0; }
 }
@@ -3658,6 +3683,9 @@ footer p {
   .closing-card { align-items: flex-start; padding: 28px; }
   .mini-icecream { display: none; }
   footer { flex-direction: column; }
+  .site-footer { padding: 16px 20px; }
+  .site-footer > div { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .site-footer p { padding-left: 0; border-left: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
