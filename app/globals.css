@@ -4140,6 +4140,734 @@ footer p {
   border-left: 1px solid rgba(238, 231, 255, 0.28);
 }
 
+/* Global density and readability pass:
+   enlarge decision-making copy while removing viewport-filling whitespace. */
+body {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.site-header {
+  min-height: 64px;
+  gap: 16px;
+  padding: 8px clamp(18px, 3vw, 54px);
+}
+
+.brand {
+  font-size: 18px;
+}
+
+.brand > span:last-child {
+  max-width: 310px;
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  font-size: 17px;
+}
+
+.home-return-button,
+.mode-navigation button {
+  font-size: 17px;
+}
+
+.tab-navigation {
+  gap: 4px;
+}
+
+.tab-navigation button {
+  padding: 9px 13px;
+  font-size: 16px;
+}
+
+.date-chip,
+.eyebrow,
+.section-kicker {
+  font-size: 16px;
+}
+
+.portal-section {
+  min-height: auto;
+  gap: 16px 24px;
+  padding: 32px clamp(24px, 4vw, 68px) 38px;
+}
+
+.portal-copy .eyebrow {
+  margin-bottom: 15px;
+}
+
+.portal-copy h1 {
+  font-size: clamp(48px, 4.4vw, 64px);
+  line-height: 1.02;
+}
+
+.portal-copy > p {
+  margin-top: 16px;
+  font-size: clamp(23px, 1.55vw, 27px);
+  line-height: 1.52;
+}
+
+.portal-visual {
+  min-height: 300px;
+  border-width: 7px;
+  border-radius: 34px;
+}
+
+.portal-choice-grid {
+  gap: 14px;
+}
+
+.portal-choice {
+  min-height: 0;
+  padding: 23px 25px;
+  border-radius: 26px;
+}
+
+.choice-scoops {
+  margin-bottom: 11px;
+}
+
+.portal-choice small {
+  font-size: 18px;
+}
+
+.portal-choice h2 {
+  font-size: clamp(31px, 2.4vw, 39px);
+}
+
+.portal-choice p {
+  margin-bottom: 11px;
+  font-size: 22px;
+  line-height: 1.48;
+}
+
+.portal-choice em {
+  font-size: 20px;
+}
+
+.hero {
+  min-height: 560px;
+  padding: 48px clamp(24px, 4vw, 68px);
+}
+
+.hero h1 {
+  font-size: clamp(48px, 4.7vw, 66px);
+}
+
+.hero-copy > p {
+  font-size: clamp(23px, 1.6vw, 28px);
+  line-height: 1.55;
+}
+
+.hero-actions {
+  margin-top: 24px;
+}
+
+.button {
+  padding: 13px 19px;
+  font-size: 18px;
+}
+
+.hero-art {
+  width: min(100%, 440px);
+  min-height: 430px;
+  border-radius: 34px;
+}
+
+.flow-section,
+.diagnosis-section,
+.edutech-section,
+.preference-section,
+.budget-section,
+.semester-section,
+.case-overview-section,
+.case-task-section,
+.case-semester-section {
+  min-height: auto;
+  padding: 40px clamp(24px, 4vw, 68px) 48px;
+}
+
+.section-heading {
+  max-width: 1080px;
+  margin-bottom: 22px;
+}
+
+.section-heading h2 {
+  margin: 11px 0 9px;
+  font-size: clamp(38px, 3.35vw, 50px);
+  line-height: 1.12;
+}
+
+.section-heading > p {
+  font-size: clamp(23px, 1.65vw, 27px);
+  line-height: 1.55;
+}
+
+.flow-grid,
+.budget-grid,
+.diagnosis-grid,
+.recipe-grid {
+  gap: 14px;
+}
+
+.flow-main,
+.band-card {
+  padding: 27px;
+  border-radius: 24px;
+}
+
+.insight-strip {
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.insight-strip > div {
+  gap: 10px;
+  padding: 17px;
+  border-radius: 17px;
+}
+
+.budget-card {
+  padding: 23px;
+  border-radius: 23px;
+}
+
+.budget-card h3 {
+  margin: 14px 0;
+  font-size: clamp(32px, 2.6vw, 40px);
+}
+
+.money-pair {
+  margin-bottom: 14px;
+}
+
+.money-pair > div {
+  padding: 11px 13px;
+}
+
+.budget-example-preview {
+  margin-top: 13px;
+  padding: 16px;
+}
+
+.budget-detail-panel,
+.recipe-detail-panel {
+  margin-top: 20px;
+  padding: 27px;
+  border-radius: 25px;
+}
+
+.detail-lead,
+.recipe-detail-head > div > p {
+  margin-block: 17px;
+  font-size: 25px;
+  line-height: 1.55;
+}
+
+.budget-detail-grid section,
+.recipe-detail-grid section {
+  padding: 16px;
+}
+
+.expense-source-panel {
+  margin-top: 16px;
+  padding: 18px;
+}
+
+.expense-source-layout {
+  margin-top: 13px;
+}
+
+.diagnosis-card {
+  min-height: 330px;
+  padding: 20px;
+}
+
+.input-wrap {
+  margin: 17px 0 14px;
+}
+
+.edutech-section > .section-heading {
+  gap: 10px 32px;
+  margin-bottom: 14px;
+}
+
+.edutech-section > .section-heading > p {
+  padding: 13px 17px;
+  font-size: 22px;
+}
+
+.edutech-section .school-level-toolbar {
+  margin-top: 13px;
+}
+
+.school-level-switch button,
+.edutech-section .school-level-switch button {
+  min-height: 46px;
+  font-size: 18px;
+}
+
+.student-safety-gate,
+.edutech-section .student-safety-gate {
+  gap: 14px 20px;
+  margin-bottom: 15px;
+  padding: 20px;
+  border-radius: 21px;
+}
+
+.edutech-section .student-safety-heading > span {
+  font-size: 16px;
+}
+
+.edutech-section .student-safety-heading h3 {
+  font-size: clamp(28px, 1.9vw, 32px);
+}
+
+.edutech-section .student-safety-heading p {
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.edutech-section .student-safety-checks {
+  gap: 9px;
+}
+
+.edutech-section .student-safety-checks li {
+  padding: 15px;
+}
+
+.edutech-section .student-safety-checks b {
+  font-size: 19px;
+}
+
+.edutech-section .student-safety-checks p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.edutech-section .student-safety-sources a {
+  font-size: 17px;
+}
+
+.edutech-story-grid {
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.edutech-section .edutech-story-card,
+.edutech-section .teacher-webapp-card {
+  min-height: 0;
+  padding: 21px;
+}
+
+.edutech-section .edutech-story-card > span,
+.edutech-section .teacher-webapp-card > span,
+.edutech-section .teacher-webapp-card em {
+  font-size: 18px;
+}
+
+.edutech-section .edutech-story-card p,
+.edutech-section .teacher-webapp-card p {
+  font-size: 22px;
+  line-height: 1.52;
+}
+
+.tool-toolbar {
+  margin-bottom: 13px;
+}
+
+.cloud-filters button,
+.tool-search input {
+  font-size: 18px;
+}
+
+.tool-search span,
+.cloud-legend {
+  font-size: 17px;
+}
+
+.cloud-card,
+.tool-detail {
+  padding: 20px;
+  border-radius: 23px;
+}
+
+.word-cloud {
+  min-height: 330px;
+  gap: 16px 20px;
+  padding: 24px 14px 30px;
+}
+
+.cloud-guide {
+  font-size: 19px;
+}
+
+.cloud-word em,
+.cloud-pagination span {
+  font-size: 18px;
+}
+
+.rank-chip,
+.tool-group {
+  font-size: 18px;
+}
+
+.tool-detail h3 {
+  margin: 11px 0 8px;
+}
+
+.tool-purpose {
+  margin-bottom: 12px;
+}
+
+.tool-purpose span,
+.tool-share > span,
+.tool-share small,
+.signal-chip {
+  font-size: 18px;
+}
+
+.tool-purpose p {
+  font-size: 22px;
+}
+
+.tool-usage-cases {
+  margin: 11px 0;
+  padding: 14px;
+}
+
+.tool-case-preview-head span {
+  font-size: 18px;
+}
+
+.tool-case-preview-head b,
+.tool-case-preview-list b {
+  font-size: 20px;
+}
+
+.tool-case-preview-head button {
+  font-size: 17px;
+}
+
+.tool-case-preview-list article {
+  padding: 12px;
+}
+
+.tool-case-preview-list small {
+  font-size: 17px;
+}
+
+.tool-case-preview-list p,
+.tool-case-empty {
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.level-comparison span,
+.level-comparison strong {
+  font-size: 18px;
+}
+
+.level-comparison > div {
+  grid-template-columns: 54px minmax(80px, 1fr) 62px;
+}
+
+.terms-reminder {
+  font-size: 18px;
+}
+
+.detail-block,
+.reading-note {
+  padding-block: 12px;
+}
+
+.detail-block b,
+.reading-note b {
+  font-size: 21px;
+}
+
+.detail-block p,
+.detail-block ul,
+.related-tools button,
+.reading-note p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.detail-block small {
+  font-size: 18px;
+}
+
+.preference-layout {
+  gap: 16px;
+}
+
+.preference-chart {
+  gap: 11px;
+}
+
+.preference-row {
+  gap: 7px 14px;
+  padding-bottom: 8px;
+}
+
+.preference-row span,
+.preference-row p {
+  font-size: 21px;
+  line-height: 1.42;
+}
+
+.preference-insight {
+  padding: 27px;
+  border-radius: 23px;
+}
+
+.preference-insight h3 {
+  font-size: clamp(38px, 3vw, 46px);
+}
+
+.preference-insight p,
+.preference-insight small {
+  font-size: 22px;
+  line-height: 1.52;
+}
+
+.recipe-card {
+  min-height: 0;
+  padding: 22px;
+}
+
+.recipe-card p {
+  font-size: 22px;
+}
+
+.closing-card {
+  padding: 26px;
+}
+
+.case-overview-hero {
+  gap: clamp(24px, 4vw, 54px);
+  margin-bottom: 36px;
+}
+
+.case-overview-copy h2 {
+  margin: 13px 0 16px;
+  font-size: clamp(48px, 4.8vw, 68px);
+  line-height: 1.02;
+}
+
+.case-overview-copy > p {
+  font-size: clamp(23px, 1.8vw, 28px);
+  line-height: 1.55;
+}
+
+.case-overview-art {
+  width: min(100%, 470px);
+  min-height: 500px;
+  border-width: 6px;
+  border-radius: 34px;
+}
+
+.case-scoop-grid {
+  gap: 14px;
+}
+
+.case-scoop-card {
+  min-height: 0;
+  padding: 24px;
+  border-radius: 24px;
+}
+
+.case-scoop-top {
+  margin-bottom: 16px;
+}
+
+.case-scoop-card h3 {
+  font-size: clamp(34px, 3vw, 45px);
+}
+
+.case-scoop-card > p {
+  margin-bottom: 16px;
+  font-size: 22px;
+}
+
+.case-reading-guide {
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.case-reading-guide > div {
+  min-height: 0;
+  padding: 21px;
+  border-radius: 22px;
+}
+
+.case-reading-guide span {
+  font-size: 20px;
+}
+
+.case-reading-guide b {
+  font-size: 28px;
+}
+
+.case-reading-guide p {
+  font-size: 21px;
+}
+
+.case-catalog-launch {
+  margin-top: 14px;
+  padding: 23px 25px;
+}
+
+.case-task-hero {
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.case-task-hero h2 {
+  margin: 13px 0;
+  font-size: clamp(44px, 4vw, 58px);
+}
+
+.case-task-hero > div > p {
+  font-size: 24px;
+  line-height: 1.55;
+}
+
+.case-task-hero aside {
+  padding: 22px;
+}
+
+.case-pattern-grid {
+  gap: 14px;
+}
+
+.case-pattern-card {
+  min-height: 0;
+  padding: 23px;
+  border-radius: 23px;
+}
+
+.case-pattern-card h4 {
+  margin: 18px 0 10px;
+}
+
+.case-pattern-card p {
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.case-pattern-card em {
+  margin-top: 17px;
+  font-size: 20px;
+}
+
+.case-meaning-grid {
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.case-meaning-grid article {
+  padding: 25px;
+  border-radius: 24px;
+}
+
+.case-meaning-grid span {
+  font-size: 19px;
+}
+
+.case-meaning-grid ul,
+.case-meaning-grid ol {
+  font-size: 22px;
+}
+
+.case-semester-flow,
+.case-semester-recipe {
+  gap: 13px;
+}
+
+.case-semester-flow article {
+  min-height: 0;
+  padding: 24px;
+  border-radius: 24px;
+}
+
+.case-semester-recipe {
+  margin-top: 18px;
+}
+
+.case-semester-recipe > div {
+  min-height: 0;
+  padding: 20px;
+}
+
+.case-semester-recipe span {
+  font-size: 19px;
+}
+
+.case-semester-recipe p {
+  font-size: 20px;
+}
+
+.case-dialog {
+  padding: 27px 30px 38px;
+}
+
+.case-dialog > h2 {
+  margin: 20px 0 10px;
+  font-size: clamp(39px, 3.5vw, 50px);
+}
+
+.case-dialog-summary {
+  margin-bottom: 20px;
+  font-size: 23px;
+  line-height: 1.52;
+}
+
+.case-dialog section {
+  margin-top: 13px;
+  padding: 20px;
+}
+
+.case-catalog-header {
+  padding: 22px 27px 16px;
+}
+
+.case-catalog-header h2 {
+  font-size: clamp(38px, 3.3vw, 50px);
+}
+
+.case-catalog-controls {
+  padding: 15px 27px;
+}
+
+.case-catalog-scroll {
+  padding: 20px 27px 28px;
+}
+
+.case-catalog-card > summary {
+  padding: 20px;
+}
+
+.case-catalog-card summary > p,
+.case-catalog-detail p {
+  font-size: 21px;
+}
+
+.case-catalog-detail {
+  padding: 0 20px 21px;
+}
+
+.site-footer {
+  padding: 13px clamp(20px, 4vw, 60px);
+}
+
+.site-footer b,
+.site-footer p {
+  font-size: 16px;
+}
+
 @keyframes case-fade {
   from { opacity: 0; }
 }
@@ -4176,13 +4904,13 @@ footer p {
     scrollbar-width: none;
   }
   .tab-navigation::-webkit-scrollbar { display: none; }
-  .hero { grid-template-columns: 1fr; padding-top: 70px; }
-  .hero-art { min-height: 540px; }
+  .hero { grid-template-columns: 1fr; padding-top: 40px; }
+  .hero-art { min-height: 430px; }
   .portal-section { grid-template-columns: 1fr; }
-  .portal-visual { min-height: 520px; }
+  .portal-visual { min-height: 400px; }
   .portal-choice-grid { grid-template-columns: 1fr; }
   .case-overview-hero { grid-template-columns: 1fr; }
-  .case-overview-art { min-height: 650px; }
+  .case-overview-art { min-height: 500px; }
   .case-scoop-grid, .case-meaning-grid { grid-template-columns: 1fr; }
   .case-task-hero { grid-template-columns: 1fr; }
   .case-reading-guide { grid-template-columns: 1fr; }
@@ -4205,36 +4933,36 @@ footer p {
 @media (max-width: 720px) {
   .site-header { min-height: 62px; padding: 9px 16px; }
   .brand { gap: 7px; }
-  .brand > span:last-child { max-width: 195px; font-size: 13px; }
-  .date-chip { padding: 7px 10px; font-size: 12px; }
+  .brand > span:last-child { max-width: 220px; font-size: 15px; }
+  .date-chip { padding: 7px 10px; font-size: 15px; }
   .home-return-button {
     order: 3;
     width: 100%;
     justify-content: center;
     min-height: 42px;
-    font-size: 15px;
+    font-size: 16px;
   }
   .mode-navigation { order: 3; width: 100%; }
-  .mode-navigation button { flex: 1; font-size: 15px; }
+  .mode-navigation button { flex: 1; font-size: 16px; }
   .tab-navigation {
     order: 4;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     overflow: visible;
   }
-  .tab-navigation button { min-height: 42px; padding: 9px 5px; font-size: 13px; }
+  .tab-navigation button { min-height: 44px; padding: 9px 5px; font-size: 16px; }
   .case-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .portal-section { padding: 52px 20px 62px; }
-  .portal-copy h1 { font-size: 50px; }
-  .portal-copy > p { font-size: 24px; }
-  .portal-visual { min-height: 390px; border-width: 6px; border-radius: 30px; }
-  .portal-choice { min-height: 0; padding: 27px; }
-  .portal-choice p { font-size: 20px; }
-  .case-overview-section, .case-task-section, .case-semester-section { padding: 52px 20px 70px; }
-  .case-overview-hero { gap: 34px; margin-bottom: 48px; }
-  .case-overview-copy h2 { font-size: 50px; }
-  .case-overview-copy > p { font-size: 23px; }
-  .case-overview-art { min-height: 520px; border-width: 6px; border-radius: 30px; }
+  .portal-section { padding: 34px 18px 40px; }
+  .portal-copy h1 { font-size: 46px; }
+  .portal-copy > p { font-size: 23px; }
+  .portal-visual { min-height: 320px; border-width: 6px; border-radius: 30px; }
+  .portal-choice { min-height: 0; padding: 23px; }
+  .portal-choice p { font-size: 21px; }
+  .case-overview-section, .case-task-section, .case-semester-section { padding: 34px 18px 42px; }
+  .case-overview-hero { gap: 24px; margin-bottom: 30px; }
+  .case-overview-copy h2 { font-size: 46px; }
+  .case-overview-copy > p { font-size: 22px; }
+  .case-overview-art { min-height: 420px; border-width: 6px; border-radius: 30px; }
   .case-hero-labels span { min-width: 120px; padding: 8px 12px 9px; font-size: 17px; }
   .case-scoop-card { min-height: 0; padding: 25px; }
   .case-scoop-card > p { font-size: 21px; }
@@ -4281,17 +5009,17 @@ footer p {
   .case-catalog-card h3 { font-size: 26px; }
   .case-catalog-card summary > p,
   .case-catalog-detail p { font-size: 19px; }
-  .hero { min-height: auto; padding: 62px 20px 60px; }
-  h1 { font-size: 50px; }
-  .hero-copy > p { font-size: 27px; }
+  .hero { min-height: auto; padding: 38px 18px 40px; }
+  h1 { font-size: 46px; }
+  .hero-copy > p { font-size: 23px; }
   .hero-art {
-    min-height: 470px;
-    margin-top: 34px;
+    min-height: 390px;
+    margin-top: 22px;
     border-radius: 30px;
   }
   .hero-art img { object-position: center; }
   .flow-section, .diagnosis-section, .edutech-section, .preference-section,
-  .budget-section, .semester-section { min-height: calc(100vh - 120px); padding: 52px 20px; }
+  .budget-section, .semester-section { min-height: auto; padding: 32px 18px 38px; }
   .flow-grid, .budget-grid, .insight-strip { grid-template-columns: 1fr; }
   .band-card { padding: 26px 22px; }
   .band-row {
@@ -4309,11 +5037,11 @@ footer p {
   .expense-source-buttons { grid-template-columns: 1fr; }
   .recipe-detail-head > button { width: 100%; }
   .section-heading h2 { font-size: 38px; }
-  .section-heading > p { font-size: 27px; }
+  .section-heading > p { font-size: 23px; }
   .edutech-section > .section-heading h2 { font-size: 34px; }
   .edutech-section > .section-heading > p { padding: 14px 16px; font-size: 19px; }
   .diagnosis-grid, .recipe-grid { grid-template-columns: 1fr; }
-  .diagnosis-card { min-height: 390px; }
+  .diagnosis-card { min-height: 0; }
   .decile-result p { grid-template-columns: 1fr; gap: 2px; }
   .school-level-toolbar { align-items: stretch; flex-direction: column; }
   .student-safety-gate { padding: 20px; }
