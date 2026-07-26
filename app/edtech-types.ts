@@ -20,6 +20,7 @@ export type EdtechUsageCase = {
   subject: string;
   category: string;
   tools: string[];
+  evidence: Record<string, string>;
 };
 
 export type EdtechTool = {

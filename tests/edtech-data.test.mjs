@@ -68,14 +68,21 @@ test("keeps the 7.24 edtech snapshot internally consistent and anonymous", async
   assert.equal(snapshot.tools.some((tool) => tool.name === "SEN에듀"), false);
 
   const padletCases = snapshot.usageCases.filter((usageCase) => usageCase.tools.includes("패들렛"));
-  assert.ok(padletCases.length >= 40, "패들렛의 실제 활용 사례가 연결되어야 합니다.");
+  assert.equal(padletCases.length, 20, "패들렛이 제목·본문에서 직접 확인된 사례만 연결되어야 합니다.");
   assert.ok(padletCases.every((usageCase) =>
     usageCase.title
     && usageCase.summary
     && usageCase.subject
+    && usageCase.evidence["패들렛"]
+    && /패들렛|Padlet/i.test(usageCase.evidence["패들렛"])
     && ["elementary", "middle", "high"].includes(usageCase.level)
     && !Object.hasOwn(usageCase, "school"),
   ));
+
+  assert.ok(snapshot.usageCases.every((usageCase) =>
+    usageCase.tools.length > 0
+    && usageCase.tools.every((toolName) => usageCase.evidence[toolName]),
+  ), "모든 도구-사례 연결에는 도구별 직접 근거 문장이 있어야 합니다.");
 
   assert.doesNotMatch(source, /초등학교|중학교|고등학교|"school"/);
   assert.doesNotMatch(source, /학생 제작|학생개발/);

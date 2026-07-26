@@ -1313,9 +1313,9 @@ export default function Home() {
                 <div className="tool-case-preview-list">
                   {selectedToolCasePreview.map((usageCase) => (
                     <article key={usageCase.id}>
-                      <small>{schoolLevelLabels[usageCase.level]} · {usageCase.subject} · {usageCase.category}</small>
-                      <b>{usageCase.title}</b>
-                      <p>{usageCase.summary}</p>
+                      <small>{schoolLevelLabels[usageCase.level]}</small>
+                      <b>{usageCase.subject} · {usageCase.category}</b>
+                      <p>{usageCase.evidence[selectedTool.name]}</p>
                     </article>
                   ))}
                 </div>
@@ -1759,9 +1759,9 @@ export default function Home() {
                 <div>
                   {selectedToolCases.map((usageCase) => (
                     <article key={usageCase.id}>
-                      <small>{schoolLevelLabels[usageCase.level]} · {usageCase.subject} · {usageCase.category}</small>
-                      <h3>{usageCase.title}</h3>
-                      <p>{usageCase.summary}</p>
+                      <small>{schoolLevelLabels[usageCase.level]}</small>
+                      <h3>{usageCase.subject} · {usageCase.category}</h3>
+                      <p>{usageCase.evidence[selectedTool.name]}</p>
                     </article>
                   ))}
                 </div>

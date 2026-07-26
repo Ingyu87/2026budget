@@ -6121,9 +6121,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "수학",
       "category": "맞춤형 학습",
       "tools": [
-        "스쿨플랫",
-        "캔바"
-      ]
+        "스쿨플랫"
+      ],
+      "evidence": {
+        "스쿨플랫": "수학과에서 AI 코스웨어 스쿨플랫과 디벗으로 학기별 정밀 진단평가를 실시하고 LMS 데이터 분석에 기반해 수준별 맞춤 문제를 제공했다."
+      }
     },
     {
       "id": "edtech-usage-002",
@@ -6136,7 +6138,12 @@ export const edtechSnapshot: EdtechSnapshot = {
         "리딩오션스쿨",
         "스쿨플랫",
         "패들렛"
-      ]
+      ],
+      "evidence": {
+        "스쿨플랫": "수학은 스쿨플랫, 독서는 리딩오션스쿨 AI 코스웨어를 도입해 학생 수준별 맞춤형 학습 활동을 운영하고, 패들렛 샌드박스로 모둠 협력 학습을 진행했다.",
+        "리딩오션스쿨": "수학은 스쿨플랫, 독서는 리딩오션스쿨 AI 코스웨어를 도입해 학생 수준별 맞춤형 학습 활동을 운영하고, 패들렛 샌드박스로 모둠 협력 학습을 진행했다.",
+        "패들렛": "수학은 스쿨플랫, 독서는 리딩오션스쿨 AI 코스웨어를 도입해 학생 수준별 맞춤형 학습 활동을 운영하고, 패들렛 샌드박스로 모둠 협력 학습을 진행했다."
+      }
     },
     {
       "id": "edtech-usage-003",
@@ -6147,9 +6154,12 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "맞춤형 학습",
       "tools": [
         "똑똑수학탐험대",
-        "심스페이스",
-        "알지오매스키즈"
-      ]
+        "심스페이스"
+      ],
+      "evidence": {
+        "똑똑수학탐험대": "CRA 개념지도와 수학 코스웨어로 맞춤형 학습을 제공하고, 똑똑수학탐험대 게이미피케이션 복습과 심스페이스 감정사전 융합으로 수학+사회정서교육을 실현했다.",
+        "심스페이스": "CRA 개념지도와 수학 코스웨어로 맞춤형 학습을 제공하고, 똑똑수학탐험대 게이미피케이션 복습과 심스페이스 감정사전 융합으로 수학+사회정서교육을 실현했다."
+      }
     },
     {
       "id": "edtech-usage-004",
@@ -6160,9 +6170,12 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "맞춤형 학습",
       "tools": [
         "심스페이스",
-        "아트봉봉",
         "풀리수학"
-      ]
+      ],
+      "evidence": {
+        "풀리수학": "풀리수학의 학생별 학습 데이터로 막히는 단원을 파악해 평가가 곧 다음 수업 설계로 이어지는 과정중심평가를 실천했다.",
+        "심스페이스": "풀리수학 데이터 기반 과정중심평가와 심스페이스 마음 피드백. 풀리수학의 학생별 학습 데이터로 막히는 단원을 파악해 평가가 곧 다음 수업 설계로 이어지는 과정중심평가를 실천했다."
+      }
     },
     {
       "id": "edtech-usage-005",
@@ -6173,9 +6186,12 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "맞춤형 학습",
       "tools": [
         "매쓰홀릭",
-        "심스페이스",
-        "키위티"
-      ]
+        "심스페이스"
+      ],
+      "evidence": {
+        "매쓰홀릭": "매쓰홀릭 수학 학습 플로우를 구축해 AI 데이터로 실시간 진단·맞춤 피드백을 제공하고, 심스페이스로 학생 감정을 분석해 Wee 심리검사와 연계했다.",
+        "심스페이스": "매쓰홀릭 수학 학습 플로우를 구축해 AI 데이터로 실시간 진단·맞춤 피드백을 제공하고, 심스페이스로 학생 감정을 분석해 Wee 심리검사와 연계했다."
+      }
     },
     {
       "id": "edtech-usage-006",
@@ -6185,9 +6201,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "수학",
       "category": "맞춤형 학습",
       "tools": [
-        "매쓰홀릭",
-        "패들렛"
-      ]
+        "매쓰홀릭"
+      ],
+      "evidence": {
+        "매쓰홀릭": "1~6학년 670명에게 매쓰홀릭을 제공해 학교와 가정에서 이어지는 수학 맞춤 학습과 데이터 기반 피드백을 운영했다."
+      }
     },
     {
       "id": "edtech-usage-007",
@@ -6199,7 +6217,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "tools": [
         "AI 아크수학",
         "ZEP·젭퀴즈"
-      ]
+      ],
+      "evidence": {
+        "AI 아크수학": "AI 아크수학 실시간 평가 데이터를 분석해 보충·심화 학습을 제공하고, 느린 학습자에게 즉각적 오프라인 보충지도를 실시했다.",
+        "ZEP·젭퀴즈": "AI 아크수학 데이터 기반 수학 맞춤학습과 젭퀴즈 협력 복습. AI 아크수학 실시간 평가 데이터를 분석해 보충·심화 학습을 제공하고, 느린 학습자에게 즉각적 오프라인 보충지도를 실시했다."
+      }
     },
     {
       "id": "edtech-usage-008",
@@ -6209,10 +6231,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "국어",
       "category": "맞춤형 학습",
       "tools": [
-        "리드포스쿨",
-        "캔바",
-        "패들렛"
-      ]
+        "리드포스쿨"
+      ],
+      "evidence": {
+        "리드포스쿨": "AI 문해력 코스웨어 리드포스쿨로 1:1 맞춤형 과제를 수행하게 하여 전 학생의 문해력 단계 향상을 확인했다."
+      }
     },
     {
       "id": "edtech-usage-009",
@@ -6224,7 +6247,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "tools": [
         "러니",
         "원아워"
-      ]
+      ],
+      "evidence": {
+        "러니": "러니와 원아워로 수준별 개별화 학습·오답 보완 체계를 구축하고, 아두이노 피지컬 컴퓨팅과 결합한 스마트 건축 프로젝트를 운영했다.",
+        "원아워": "러니와 원아워로 수준별 개별화 학습·오답 보완 체계를 구축하고, 아두이노 피지컬 컴퓨팅과 결합한 스마트 건축 프로젝트를 운영했다."
+      }
     },
     {
       "id": "edtech-usage-010",
@@ -6234,10 +6261,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "영어",
       "category": "맞춤형 학습",
       "tools": [
-        "원아워",
-        "클래스카드",
-        "클리포"
-      ]
+        "원아워"
+      ],
+      "evidence": {
+        "원아워": "AI 코스웨어 원아워를 중심으로 학생이 선택하는 개별화 수업을 운영하고, 전체 교사 절반이 참여하는 매월 연수로 확산했다."
+      }
     },
     {
       "id": "edtech-usage-011",
@@ -6249,9 +6277,13 @@ export const edtechSnapshot: EdtechSnapshot = {
       "tools": [
         "러니",
         "체리팟",
-        "클래스카드",
-        "Brisk Teaching"
-      ]
+        "클래스카드"
+      ],
+      "evidence": {
+        "러니": "국어 러니, 수학 체리팟, 영어 클래스카드 AI 코스웨어로 수준별 자료를 제공하는 \"성장 사다리\" 수업을 운영 중이다.",
+        "체리팟": "국어 러니, 수학 체리팟, 영어 클래스카드 AI 코스웨어로 수준별 자료를 제공하는 \"성장 사다리\" 수업을 운영 중이다.",
+        "클래스카드": "국어 러니, 수학 체리팟, 영어 클래스카드 AI 코스웨어로 수준별 자료를 제공하는 \"성장 사다리\" 수업을 운영 중이다."
+      }
     },
     {
       "id": "edtech-usage-012",
@@ -6261,9 +6293,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "수학",
       "category": "맞춤형 학습",
       "tools": [
-        "수학 아레나",
-        "KOSIS"
-      ]
+        "수학 아레나"
+      ],
+      "evidence": {
+        "수학 아레나": "학생이 수학 아레나의 CPM 데이터로 자신의 약점을 진단하고 다음 학습을 스스로 선택하면 교사가 승인·조정하는 학습자 주도 구조를 만들었다."
+      }
     },
     {
       "id": "edtech-usage-013",
@@ -6273,23 +6307,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "수학",
       "category": "맞춤형 학습",
       "tools": [
-        "클래스팅 AI",
-        "패들렛",
-        "포커스팡"
-      ]
-    },
-    {
-      "id": "edtech-usage-015",
-      "title": "AI 코스웨어 기반 개별 맞춤 학습과 에듀테크 협업 수업",
-      "summary": "AI 코스웨어를 도입해 수학·문해력 영역에서 학생별 개별 맞춤형 학습을 실천했다.",
-      "level": "elementary",
-      "subject": "수학",
-      "category": "맞춤형 학습",
-      "tools": [
-        "아트봉봉",
-        "캔바",
-        "패들렛"
-      ]
+        "클래스팅 AI"
+      ],
+      "evidence": {
+        "클래스팅 AI": "클래스팅AI로 아침시간 문제풀이와 AI튜터 추천 개별 피드백을 운영하고, 5학년 수학 3개 단원을 CORE-IDEA 프로젝트로 재구성했다."
+      }
     },
     {
       "id": "edtech-usage-016",
@@ -6302,7 +6324,12 @@ export const edtechSnapshot: EdtechSnapshot = {
         "매쓰홀릭",
         "심스페이스",
         "우리반"
-      ]
+      ],
+      "evidence": {
+        "매쓰홀릭": "매쓰홀릭으로 진단·형성평가를 자동화하고, 심스페이스·우리반으로 학생 정서와 학급 관계를 추적했다.",
+        "심스페이스": "매쓰홀릭으로 진단·형성평가를 자동화하고, 심스페이스·우리반으로 학생 정서와 학급 관계를 추적했다.",
+        "우리반": "매쓰홀릭으로 진단·형성평가를 자동화하고, 심스페이스·우리반으로 학생 정서와 학급 관계를 추적했다."
+      }
     },
     {
       "id": "edtech-usage-017",
@@ -6312,10 +6339,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "수학, 과학",
       "category": "맞춤형 학습",
       "tools": [
-        "똑똑수학탐험대",
-        "띵커벨",
-        "북크리에이터"
-      ]
+        "띵커벨"
+      ],
+      "evidence": {
+        "띵커벨": "띵커벨로 학생 실태를 조사하고 AI 분석 보고서를 바탕으로 맞춤형 교육과정을 재구성했다."
+      }
     },
     {
       "id": "edtech-usage-018",
@@ -6325,10 +6353,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "수학, 영어, 국어",
       "category": "맞춤형 학습",
       "tools": [
-        "매쓰홀릭",
-        "Gemini",
         "MS 리딩 프로그레스"
-      ]
+      ],
+      "evidence": {
+        "MS 리딩 프로그레스": "수학 코스웨어의 오답 쌍둥이 문제와 AI 글쓰기 피드백, MS 리딩 프로그레스 읽기 학습을 결합했다."
+      }
     },
     {
       "id": "edtech-usage-019",
@@ -6338,9 +6367,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "수학, 사회",
       "category": "맞춤형 학습",
       "tools": [
-        "앰플리파이 클래스룸",
         "풀리수학"
-      ]
+      ],
+      "evidence": {
+        "풀리수학": "풀리로 오답·수준별 추가 문제를 제공하고, 바이브 코딩으로 만든 투자 시뮬레이션 웹앱으로 경제교육을 진행했다."
+      }
     },
     {
       "id": "edtech-usage-021",
@@ -6351,9 +6382,12 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "맞춤형 학습",
       "tools": [
         "띵커벨",
-        "마인크래프트",
         "아이쌤GPT"
-      ]
+      ],
+      "evidence": {
+        "아이쌤GPT": "전 교원에게 아이쌤GPT와 띵커벨을 지원하고, 5학년 AI·디지털 리터러시 진단검사를 실시해 맞춤형 피드백의 기초자료로 활용했다.",
+        "띵커벨": "전 교원에게 아이쌤GPT와 띵커벨을 지원하고, 5학년 AI·디지털 리터러시 진단검사를 실시해 맞춤형 피드백의 기초자료로 활용했다."
+      }
     },
     {
       "id": "edtech-usage-023",
@@ -6365,7 +6399,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "tools": [
         "띵커벨",
         "클래스팅"
-      ]
+      ],
+      "evidence": {
+        "클래스팅": "역사 수행평가에서 클래스팅으로 AI와 토론하고, 국어에서 띵커벨 보드에 정서 글을 쓰며 상호작용을 실천했다.",
+        "띵커벨": "역사 수행평가에서 클래스팅으로 AI와 토론하고, 국어에서 띵커벨 보드에 정서 글을 쓰며 상호작용을 실천했다."
+      }
     },
     {
       "id": "edtech-usage-024",
@@ -6377,9 +6415,13 @@ export const edtechSnapshot: EdtechSnapshot = {
       "tools": [
         "매쓰홀릭",
         "심스페이스",
-        "캔바",
         "패들렛"
-      ]
+      ],
+      "evidence": {
+        "매쓰홀릭": "학생용 코스웨어 매쓰홀릭으로 수학 연산 능력을 진단·맞춤 지원하고, 심스페이스 AI 마음일기로 사회정서교육을 병행했다.",
+        "심스페이스": "학생용 코스웨어 매쓰홀릭으로 수학 연산 능력을 진단·맞춤 지원하고, 심스페이스 AI 마음일기로 사회정서교육을 병행했다.",
+        "패들렛": "바이브코딩 챗봇 제작과 패들렛 활용 교원연수로 디지털 역량 확산까지 연계했다."
+      }
     },
     {
       "id": "edtech-usage-025",
@@ -6389,12 +6431,17 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "수학, 국어, 영어",
       "category": "맞춤형 학습",
       "tools": [
-        "구글 클래스룸",
         "매쓰홀릭",
         "문제G",
         "이퓨처라이브러리",
         "Brisk Teaching"
-      ]
+      ],
+      "evidence": {
+        "매쓰홀릭": "수학은 매쓰홀릭T, 국어 독해는 문제G, 영어는 이퓨처라이브러리로 학생 수준별 맞춤 문제를 제공해 개별화 학습을 운영했다.",
+        "문제G": "수학은 매쓰홀릭T, 국어 독해는 문제G, 영어는 이퓨처라이브러리로 학생 수준별 맞춤 문제를 제공해 개별화 학습을 운영했다.",
+        "이퓨처라이브러리": "수학은 매쓰홀릭T, 국어 독해는 문제G, 영어는 이퓨처라이브러리로 학생 수준별 맞춤 문제를 제공해 개별화 학습을 운영했다.",
+        "Brisk Teaching": "브리스크 티칭 기반 피드백과 AI 삽화 책 출판, 디지털 도구 융합 탐구 프로젝트도 함께 진행했다."
+      }
     },
     {
       "id": "edtech-usage-026",
@@ -6404,10 +6451,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "수학, 전 교과",
       "category": "맞춤형 학습",
       "tools": [
-        "구글 클래스룸",
-        "패들렛",
         "SEN스쿨"
-      ]
+      ],
+      "evidence": {
+        "SEN스쿨": "온라인 교무실로 매일의 교육계획을 자동 안내하고, 학기말에는 SEN에듀 계정 기반 디지털 전시회로 학생 산출물을 가정에 공유했다."
+      }
     },
     {
       "id": "edtech-usage-027",
@@ -6422,7 +6470,14 @@ export const edtechSnapshot: EdtechSnapshot = {
         "스쿨플랫",
         "캔바",
         "토도한글"
-      ]
+      ],
+      "evidence": {
+        "다했니·다했어요": "\"다했니 다했어요\" 에듀테크로 다양한 AI 디지털 도구를 쉽게 접근·수합하고, 달달독해·스쿨플랫 코스웨어로 문해력과 문제해결력을 보완했다.",
+        "달달독해": "\"다했니 다했어요\" 에듀테크로 다양한 AI 디지털 도구를 쉽게 접근·수합하고, 달달독해·스쿨플랫 코스웨어로 문해력과 문제해결력을 보완했다.",
+        "스쿨플랫": "\"다했니 다했어요\" 에듀테크로 다양한 AI 디지털 도구를 쉽게 접근·수합하고, 달달독해·스쿨플랫 코스웨어로 문해력과 문제해결력을 보완했다.",
+        "캔바": "교원학습공동체에서 캔바 칭찬도장 메이킹 연수를 진행하고, 토도한글·토도수학으로 특수학생 개별화 학습을 지원했다.",
+        "토도한글": "교원학습공동체에서 캔바 칭찬도장 메이킹 연수를 진행하고, 토도한글·토도수학으로 특수학생 개별화 학습을 지원했다."
+      }
     },
     {
       "id": "edtech-usage-028",
@@ -6433,9 +6488,12 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "맞춤형 학습",
       "tools": [
         "심스페이스",
-        "캔바",
         "패들렛"
-      ]
+      ],
+      "evidence": {
+        "패들렛": "패들렛 사회과 공동학습과 심스페이스 마음상담으로 관계를 다지고, 선도학교 리더십팀과 저작권·캠페인 교육으로 디지털 시민성을 확산했다.",
+        "심스페이스": "패들렛 사회과 공동학습과 심스페이스 마음상담으로 관계를 다지고, 선도학교 리더십팀과 저작권·캠페인 교육으로 디지털 시민성을 확산했다."
+      }
     },
     {
       "id": "edtech-usage-029",
@@ -6449,7 +6507,13 @@ export const edtechSnapshot: EdtechSnapshot = {
         "캔바",
         "패들렛",
         "플랭스쿨"
-      ]
+      ],
+      "evidence": {
+        "플랭스쿨": "플랭스쿨 AI 코스웨어로 발음·이해도를 진단해 성취도별 자기주도학습과 기초학습을 나누고, 패들렛 동료 피드백으로 긍정적 학급 문화를 만들었다.",
+        "패들렛": "플랭스쿨 AI 코스웨어로 발음·이해도를 진단해 성취도별 자기주도학습과 기초학습을 나누고, 패들렛 동료 피드백으로 긍정적 학급 문화를 만들었다.",
+        "캔바": "생성형 AI로 아이디어를 구체화한 뒤 캔바·아트봉봉으로 제작하는 융합 활동과 교원학습공동체 에듀테크 공유회를 운영했다.",
+        "아트봉봉": "생성형 AI로 아이디어를 구체화한 뒤 캔바·아트봉봉으로 제작하는 융합 활동과 교원학습공동체 에듀테크 공유회를 운영했다."
+      }
     },
     {
       "id": "edtech-usage-030",
@@ -6463,7 +6527,13 @@ export const edtechSnapshot: EdtechSnapshot = {
         "지니아튜터",
         "캔바",
         "패들렛"
-      ]
+      ],
+      "evidence": {
+        "지니아튜터": "지니아튜터가 학생별 오답 유형을 분석해 맞춤 보충자료를 제공하고, 알지오매쓰2D로 도형 이동을 직접 조작해 규칙성을 발견하게 했다.",
+        "알지오매쓰2D": "지니아튜터가 학생별 오답 유형을 분석해 맞춤 보충자료를 제공하고, 알지오매쓰2D로 도형 이동을 직접 조작해 규칙성을 발견하게 했다.",
+        "캔바": "캔바로 무늬를 실생활 제품에 적용하고 패들렛으로 공유하며, 개념이해-제작-공유 단계별로 도구를 창의적으로 융합했다.",
+        "패들렛": "캔바로 무늬를 실생활 제품에 적용하고 패들렛으로 공유하며, 개념이해-제작-공유 단계별로 도구를 창의적으로 융합했다."
+      }
     },
     {
       "id": "edtech-usage-032",
@@ -6477,21 +6547,15 @@ export const edtechSnapshot: EdtechSnapshot = {
         "ChatGPT",
         "Claude",
         "Gamma",
-        "Gemini",
-        "MS Teams"
-      ]
-    },
-    {
-      "id": "edtech-usage-033",
-      "title": "에듀테크 플랫폼 데이터 기반 개별 성장 리포트와 ALL-Right 융합수업",
-      "summary": "AI·디지털 기반 교과 맞춤형 소프트웨어로 학습 데이터를 누적·분석해 학생별 취약 지점을 보완하는 \"개별 성장 리포트\"를 지원했다. AI와 디지털 자료를 연결하고 에듀테크로 경험을 쌓아 교육적으로 최적화하는 \"ALL-Right!\" 융합 수업으로 교지 편집, 학교 시설물 공모 등 다양한 활동에 AI를 접목했다.",
-      "level": "middle",
-      "subject": "전 교과",
-      "category": "맞춤형 학습",
-      "tools": [
-        "패들렛",
-        "Claude"
-      ]
+        "Gemini"
+      ],
+      "evidence": {
+        "클래스팅 AI": "1학년 133명 전원에게 클래스팅 AI 러닝패키지와 AI 샌드박스를 지원해 학과별(반려동물케어·세무행정·문화콘텐츠디자인·패션디자인) 실무 과제를 생성형 AI로 초안→피드백→수정하는 과정중심평가로 운영했다.",
+        "Claude": "교원 46명에게 Claude Pro·Gemini Pro·ChatGPT Plus 개인 구독을 지원해 Gamma·Canva·노션 등과 융합한 수업 도구 모형을 개발하고, 3개 교원학습공동체가 전 교원 연수로 확산했다.",
+        "Gemini": "교원 46명에게 Claude Pro·Gemini Pro·ChatGPT Plus 개인 구독을 지원해 Gamma·Canva·노션 등과 융합한 수업 도구 모형을 개발하고, 3개 교원학습공동체가 전 교원 연수로 확산했다.",
+        "ChatGPT": "교원 46명에게 Claude Pro·Gemini Pro·ChatGPT Plus 개인 구독을 지원해 Gamma·Canva·노션 등과 융합한 수업 도구 모형을 개발하고, 3개 교원학습공동체가 전 교원 연수로 확산했다.",
+        "Gamma": "교원 46명에게 Claude Pro·Gemini Pro·ChatGPT Plus 개인 구독을 지원해 Gamma·Canva·노션 등과 융합한 수업 도구 모형을 개발하고, 3개 교원학습공동체가 전 교원 연수로 확산했다."
+      }
     },
     {
       "id": "edtech-usage-035",
@@ -6502,7 +6566,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "맞춤형 학습",
       "tools": [
         "패들렛"
-      ]
+      ],
+      "evidence": {
+        "패들렛": "교사 18명이 패들렛 스쿨백팩으로 교과·동아리·학급 활동을 공유하고, \"AI 시대, 교육과 인간의 길\" 함께 읽기로 교원 인식을 넓혔다."
+      }
     },
     {
       "id": "edtech-usage-036",
@@ -6517,7 +6584,14 @@ export const edtechSnapshot: EdtechSnapshot = {
         "ChatGPT",
         "Claude",
         "Gemini"
-      ]
+      ],
+      "evidence": {
+        "오르조 클래스": "범교과 학습관리 코스웨어 \"오르조 클래스\"를 1·2학년 전체 602명과 3학년 희망자 98명에게 적용하고, Gemini·Claude·ChatGPT Plus·Padlet Platinum·Notion·DBPIA(1,657종) 등을 대량 구독해 수업 현장에 제공했다.",
+        "Gemini": "범교과 학습관리 코스웨어 \"오르조 클래스\"를 1·2학년 전체 602명과 3학년 희망자 98명에게 적용하고, Gemini·Claude·ChatGPT Plus·Padlet Platinum·Notion·DBPIA(1,657종) 등을 대량 구독해 수업 현장에 제공했다.",
+        "Claude": "범교과 학습관리 코스웨어 \"오르조 클래스\"를 1·2학년 전체 602명과 3학년 희망자 98명에게 적용하고, Gemini·Claude·ChatGPT Plus·Padlet Platinum·Notion·DBPIA(1,657종) 등을 대량 구독해 수업 현장에 제공했다.",
+        "ChatGPT": "범교과 학습관리 코스웨어 \"오르조 클래스\"를 1·2학년 전체 602명과 3학년 희망자 98명에게 적용하고, Gemini·Claude·ChatGPT Plus·Padlet Platinum·Notion·DBPIA(1,657종) 등을 대량 구독해 수업 현장에 제공했다.",
+        "노션": "범교과 학습관리 코스웨어 \"오르조 클래스\"를 1·2학년 전체 602명과 3학년 희망자 98명에게 적용하고, Gemini·Claude·ChatGPT Plus·Padlet Platinum·Notion·DBPIA(1,657종) 등을 대량 구독해 수업 현장에 제공했다."
+      }
     },
     {
       "id": "edtech-usage-037",
@@ -6529,9 +6603,13 @@ export const edtechSnapshot: EdtechSnapshot = {
       "tools": [
         "심스페이스",
         "캔바",
-        "패들렛",
         "풀리수학"
-      ]
+      ],
+      "evidence": {
+        "캔바": "사회·국어 연계 캔바 카드뉴스 수행평가로 과정중심 피드백을 하고, 센스쿨 풀리수학·심스페이스를 연구하는 교원학습공동체 2팀을 운영했다.",
+        "풀리수학": "사회·국어 연계 캔바 카드뉴스 수행평가로 과정중심 피드백을 하고, 센스쿨 풀리수학·심스페이스를 연구하는 교원학습공동체 2팀을 운영했다.",
+        "심스페이스": "사회·국어 연계 캔바 카드뉴스 수행평가로 과정중심 피드백을 하고, 센스쿨 풀리수학·심스페이스를 연구하는 교원학습공동체 2팀을 운영했다."
+      }
     },
     {
       "id": "edtech-usage-038",
@@ -6542,7 +6620,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "맞춤형 학습",
       "tools": [
         "패들렛"
-      ]
+      ],
+      "evidence": {
+        "패들렛": "패들렛으로 학습 결과물을 공유·상호 피드백하고 감정 상태를 분석해 마음건강 맞춤 피드백을 제공했다."
+      }
     },
     {
       "id": "edtech-usage-039",
@@ -6552,23 +6633,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "수학, 영어",
       "category": "맞춤형 학습",
       "tools": [
-        "구글 클래스룸",
         "매쓰홀릭"
-      ]
-    },
-    {
-      "id": "edtech-usage-041",
-      "title": "AI Bloom: 생성형 AI 피드백 기반 과학 보고서 개선",
-      "summary": "6학년 과학에서 생성형 AI로 탐구 보고서를 점검받고, AI 피드백의 타당성을 학생 스스로 검토하며 보고서를 개선하는 과정 중심 수업을 운영했다.",
-      "level": "elementary",
-      "subject": "과학",
-      "category": "생성형 AI 활용",
-      "tools": [
-        "패들렛",
-        "ChatGPT",
-        "Claude",
-        "Gemini"
-      ]
+      ],
+      "evidence": {
+        "매쓰홀릭": "수학·영어 교과에 AIDT 교육자료와 매쓰홀릭 AI 코스웨어를 적용해 개별 맞춤 학습을 하고, 수시 피드백으로 수업을 개선하며 교원학습공동체 연수로 확산했다."
+      }
     },
     {
       "id": "edtech-usage-042",
@@ -6579,7 +6648,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "생성형 AI 활용",
       "tools": [
         "Redmenta"
-      ]
+      ],
+      "evidence": {
+        "Redmenta": "Redmenta를 활용해 AI 생성 미디어에 대한 포럼 글을 분석하고 정보 윤리를 지켜 댓글을 작성하는 과정 중심 수행평가를 운영했다."
+      }
     },
     {
       "id": "edtech-usage-043",
@@ -6592,7 +6664,12 @@ export const edtechSnapshot: EdtechSnapshot = {
         "멘티미터",
         "패들렛",
         "Gemini"
-      ]
+      ],
+      "evidence": {
+        "Gemini": "제미나이를 튜터 삼아 자기 수준에 맞는 여행 대화문을 생성하고, 멘티미터·패들렛으로 결과물을 공유·보완하는 수업을 운영했다.",
+        "멘티미터": "제미나이를 튜터 삼아 자기 수준에 맞는 여행 대화문을 생성하고, 멘티미터·패들렛으로 결과물을 공유·보완하는 수업을 운영했다.",
+        "패들렛": "제미나이를 튜터 삼아 자기 수준에 맞는 여행 대화문을 생성하고, 멘티미터·패들렛으로 결과물을 공유·보완하는 수업을 운영했다."
+      }
     },
     {
       "id": "edtech-usage-044",
@@ -6602,35 +6679,13 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "정보, 사회",
       "category": "생성형 AI 활용",
       "tools": [
-        "Brisk Teaching",
         "Gemini",
         "Mizou"
-      ]
-    },
-    {
-      "id": "edtech-usage-046",
-      "title": "분자 모형 앱으로 배우는 규산염 광물과 AI 할루시네이션 검증 수업",
-      "summary": "분자 구조 앱으로 규산염 사면체를 만들고, AI의 평가를 학생이 직접 검증하며 할루시네이션을 이해하는 수업을 운영했다.",
-      "level": "high",
-      "subject": "지구과학",
-      "category": "생성형 AI 활용",
-      "tools": [
-        "Claude",
-        "Gemini"
-      ]
-    },
-    {
-      "id": "edtech-usage-047",
-      "title": "AI 비판적 활용 중심의 탐구-제작-공유 순환 수업",
-      "summary": "학생 요약문과 AI 요약을 비교해 AI가 놓친 맥락을 찾아 수정하는 등 AI를 비판적으로 활용하는 수업을 설계했다.",
-      "level": "elementary",
-      "subject": "국어, 사회, 과학",
-      "category": "생성형 AI 활용",
-      "tools": [
-        "와우아이디어스",
-        "캔바",
-        "투닝"
-      ]
+      ],
+      "evidence": {
+        "Mizou": "Mizou, Gemini Gems로 \"답변만 하지 말고 되물어 학생이 스스로 판단하게\" 챗봇을 만들어 탐구 촉진 수업을 운영했다.",
+        "Gemini": "Mizou, Gemini Gems로 \"답변만 하지 말고 되물어 학생이 스스로 판단하게\" 챗봇을 만들어 탐구 촉진 수업을 운영했다."
+      }
     },
     {
       "id": "edtech-usage-048",
@@ -6640,9 +6695,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "정보, 수학",
       "category": "생성형 AI 활용",
       "tools": [
-        "키네마스터",
         "Elice AI"
-      ]
+      ],
+      "evidence": {
+        "Elice AI": "정보에서 Elice AI로 맞춤형 학습 경로를, 수학에서 AI 프롬프트로 초월수를 판별·시각화하는 수업을 운영했다."
+      }
     },
     {
       "id": "edtech-usage-049",
@@ -6654,21 +6711,13 @@ export const edtechSnapshot: EdtechSnapshot = {
       "tools": [
         "빅카인즈",
         "캔바",
-        "토도한글",
         "ZEP·젭퀴즈"
-      ]
-    },
-    {
-      "id": "edtech-usage-050",
-      "title": "생성형 AI 교차 검증 탐구 수업과 특수학생 맞춤 토도 학습",
-      "summary": "AI 추천에 의존하지 않고 실시간 데이터를 교차 검증하는 비판적 사고 수업을 운영하고, 특수학급에 토도 개별화 학습을 제공했다.",
-      "level": "elementary",
-      "subject": "실과",
-      "category": "생성형 AI 활용",
-      "tools": [
-        "클래스팅 AI",
-        "토도 시리즈"
-      ]
+      ],
+      "evidence": {
+        "캔바": "캔바·젭 퀴즈를 융합한 체험 부스를 학생이 직접 기획·운영하고, 빅카인즈 뉴스 분석과 투닝 카드뉴스를 결합한 환경 프로젝트를 운영했다.",
+        "ZEP·젭퀴즈": "캔바·젭 퀴즈를 융합한 체험 부스를 학생이 직접 기획·운영하고, 빅카인즈 뉴스 분석과 투닝 카드뉴스를 결합한 환경 프로젝트를 운영했다.",
+        "빅카인즈": "캔바·젭 퀴즈를 융합한 체험 부스를 학생이 직접 기획·운영하고, 빅카인즈 뉴스 분석과 투닝 카드뉴스를 결합한 환경 프로젝트를 운영했다."
+      }
     },
     {
       "id": "edtech-usage-051",
@@ -6678,37 +6727,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "과학",
       "category": "생성형 AI 활용",
       "tools": [
-        "캔바",
-        "클리포",
-        "투닝"
-      ]
-    },
-    {
-      "id": "edtech-usage-052",
-      "title": "AI 코스웨어 진단-학습-창작 연계 하이브리드 프로젝트",
-      "summary": "AI 코스웨어로 문법 수준을 진단한 뒤, 대시보드 데이터에 따라 수준별 처방형 수업을 운영했다.",
-      "level": "middle",
-      "subject": "영어",
-      "category": "생성형 AI 활용",
-      "tools": [
-        "캔바",
-        "패들렛",
-        "픽스톤"
-      ]
-    },
-    {
-      "id": "edtech-usage-053",
-      "title": "CLE 모델 기반 AI·디지털 활용 수업 설계와 배움-삶 연계",
-      "summary": "CLE 모델 기반으로 수업을 설계하고 마을 문제 해결 프로젝트로 배움을 가정·지역사회로 확장했다.",
-      "level": "elementary",
-      "subject": "전 교과",
-      "category": "생성형 AI 활용",
-      "tools": [
-        "클래스카드",
-        "토도한글",
-        "패들렛",
-        "ZEP·젭퀴즈"
-      ]
+        "캔바"
+      ],
+      "evidence": {
+        "캔바": "캔바 AI 바이브코딩으로 고체·액체·기체 입자 모형 시뮬레이션을 직접 제작·발표하며 오개념을 해소했다."
+      }
     },
     {
       "id": "edtech-usage-054",
@@ -6720,7 +6743,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "tools": [
         "구글 클래스룸",
         "SEN스쿨"
-      ]
+      ],
+      "evidence": {
+        "구글 클래스룸": "구글 클래스룸·센스쿨 등으로 학생 데이터를 AI로 분류·시각화하고, AI와 함께 토론을 진행하는 수업을 운영했다.",
+        "SEN스쿨": "구글 클래스룸·센스쿨 등으로 학생 데이터를 AI로 분류·시각화하고, AI와 함께 토론을 진행하는 수업을 운영했다."
+      }
     },
     {
       "id": "edtech-usage-055",
@@ -6730,12 +6757,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "국어, 역사",
       "category": "생성형 AI 활용",
       "tools": [
-        "뤼튼",
-        "왓퀴즈",
-        "투닝",
-        "Gemini",
         "NotebookLM"
-      ]
+      ],
+      "evidence": {
+        "NotebookLM": "AI 결과물 제작·AI와 토론 프로젝트와 노트북LM 업무 효율화. 학생이 AI 프롬프트로 헌혈 포스터·문화재 굿즈를 제작하고, AI와 찬반 토론으로 사고를 확장했다."
+      }
     },
     {
       "id": "edtech-usage-056",
@@ -6747,9 +6773,13 @@ export const edtechSnapshot: EdtechSnapshot = {
       "tools": [
         "블루킷",
         "클래스카드",
-        "플랭스쿨",
-        "Claude"
-      ]
+        "플랭스쿨"
+      ],
+      "evidence": {
+        "클래스카드": "클래스카드로 기본 학습을 다지고, 블루킷 개별 결과 보고서 기반 맞춤형 학습지 자동 생성 프로그램을 AI로 직접 만들었다.",
+        "플랭스쿨": "클래스카드·플랭스쿨·블루킷과 생성형 AI를 연계한 맞춤형 학습. 클래스카드로 기본 학습을 다지고, 블루킷 개별 결과 보고서 기반 맞춤형 학습지 자동 생성 프로그램을 AI로 직접 만들었다.",
+        "블루킷": "클래스카드로 기본 학습을 다지고, 블루킷 개별 결과 보고서 기반 맞춤형 학습지 자동 생성 프로그램을 AI로 직접 만들었다."
+      }
     },
     {
       "id": "edtech-usage-057",
@@ -6759,10 +6789,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "과학, 수학",
       "category": "생성형 AI 활용",
       "tools": [
-        "구글 클래스룸",
-        "똑똑수학탐험대",
         "캔바"
-      ]
+      ],
+      "evidence": {
+        "캔바": "과학 단원을 캔바 디지털 탐구보고서와 AI 챗봇 실험 설계 검토로 이어지는 평가 흐름으로 재설계했다."
+      }
     },
     {
       "id": "edtech-usage-058",
@@ -6772,11 +6803,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "국어, 과학",
       "category": "생성형 AI 활용",
       "tools": [
-        "캔바",
-        "틴커캐드",
-        "패들렛",
-        "Gemini"
-      ]
+        "패들렛"
+      ],
+      "evidence": {
+        "패들렛": "수학은 AI 코스웨어로 수준별 맞춤학습을 운영하고, 패들렛 기반 수업나눔과 교원학습공동체로 확산했다."
+      }
     },
     {
       "id": "edtech-usage-059",
@@ -6789,7 +6820,12 @@ export const edtechSnapshot: EdtechSnapshot = {
         "매쓰홀릭",
         "카훗",
         "ZEP·젭퀴즈"
-      ]
+      ],
+      "evidence": {
+        "매쓰홀릭": "매쓰홀릭·카훗·젭퀴즈 등 에듀테크로 참여형 상호작용 수업을 하고, VR 기반 체험형 안전교육도 병행했다.",
+        "카훗": "매쓰홀릭·카훗·젭퀴즈 등 에듀테크로 참여형 상호작용 수업을 하고, VR 기반 체험형 안전교육도 병행했다.",
+        "ZEP·젭퀴즈": "매쓰홀릭·카훗·젭퀴즈 등 에듀테크로 참여형 상호작용 수업을 하고, VR 기반 체험형 안전교육도 병행했다."
+      }
     },
     {
       "id": "edtech-usage-060",
@@ -6803,7 +6839,13 @@ export const edtechSnapshot: EdtechSnapshot = {
         "자작자작",
         "패들렛",
         "NotebookLM"
-      ]
+      ],
+      "evidence": {
+        "패들렛": "그림책 『지구 레스토랑』을 읽고 생성형 AI로 지구별 메뉴 이미지를 만들어 감각적 표현 글쓰기를 하고 Padlet에 공유했다.",
+        "아트봉봉": "아트봉봉스쿨 젠탱글 디지털 창작과 자작자작 기행문 개별 피드백으로 상호작용을 넓히고, 노트북LM 전 교직원 연수와 유사 홀로그램 과학 융합 탐구도 진행했다.",
+        "자작자작": "아트봉봉스쿨 젠탱글 디지털 창작과 자작자작 기행문 개별 피드백으로 상호작용을 넓히고, 노트북LM 전 교직원 연수와 유사 홀로그램 과학 융합 탐구도 진행했다.",
+        "NotebookLM": "아트봉봉스쿨 젠탱글 디지털 창작과 자작자작 기행문 개별 피드백으로 상호작용을 넓히고, 노트북LM 전 교직원 연수와 유사 홀로그램 과학 융합 탐구도 진행했다."
+      }
     },
     {
       "id": "edtech-usage-061",
@@ -6814,7 +6856,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "생성형 AI 활용",
       "tools": [
         "패들렛"
-      ]
+      ],
+      "evidence": {
+        "패들렛": "패들렛에 누적한 질문 기록을 AI와 함께 정리하고, AI와 만든 문해력 검사와 S-PLAN 검사로 문해력 데이터를 지속 수합했다."
+      }
     },
     {
       "id": "edtech-usage-062",
@@ -6827,7 +6872,12 @@ export const edtechSnapshot: EdtechSnapshot = {
         "구글 클래스룸",
         "심스페이스",
         "SEN스쿨"
-      ]
+      ],
+      "evidence": {
+        "구글 클래스룸": "구글 클래스룸 배움노트를 PDF로 모아 생성형 AI로 월별 학습 정리문제를 자동 생성하고, 심스페이스 글쓰기와 고쳐쓰기로 상호작용을 넓혔다.",
+        "심스페이스": "구글 클래스룸 배움노트를 PDF로 모아 생성형 AI로 월별 학습 정리문제를 자동 생성하고, 심스페이스 글쓰기와 고쳐쓰기로 상호작용을 넓혔다.",
+        "SEN스쿨": "센스쿨·생성형 AI 활용법을 연구하는 교원학습공동체와 구글 도구 기반 온라인 교무실을 운영했다."
+      }
     },
     {
       "id": "edtech-usage-063",
@@ -6840,9 +6890,14 @@ export const edtechSnapshot: EdtechSnapshot = {
         "클리포",
         "패들렛",
         "Gemini",
-        "MS Teams",
         "NotebookLM"
-      ]
+      ],
+      "evidence": {
+        "NotebookLM": "노트북LM에게 피동·사동·인용 표현 개념을 학습시켜 흥미로운 캐릭터 슬라이드를 만들게 하고, 학생도 같은 방식으로 자신만의 문법 슬라이드를 제작했다.",
+        "클리포": "클리포로 도서 감상문을 스캔·업로드해 AI 추천 피드백을 참고한 맞춤형 피드백을 제공하고, 팀즈·패들렛·제미나이로 박물관 굿즈 만들기 수업을 동료 장학으로 공개했다.",
+        "Gemini": "클리포로 도서 감상문을 스캔·업로드해 AI 추천 피드백을 참고한 맞춤형 피드백을 제공하고, 팀즈·패들렛·제미나이로 박물관 굿즈 만들기 수업을 동료 장학으로 공개했다.",
+        "패들렛": "클리포로 도서 감상문을 스캔·업로드해 AI 추천 피드백을 참고한 맞춤형 피드백을 제공하고, 팀즈·패들렛·제미나이로 박물관 굿즈 만들기 수업을 동료 장학으로 공개했다."
+      }
     },
     {
       "id": "edtech-usage-064",
@@ -6852,12 +6907,13 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "국어, 과학, 정보, 영어",
       "category": "생성형 AI 활용",
       "tools": [
-        "멘티미터",
-        "캔바",
-        "패들렛",
         "ChatGPT",
         "SUNO"
-      ]
+      ],
+      "evidence": {
+        "ChatGPT": "국어 시간 자신이 창작한 시를 \"ChatGPT AI 펜팔 친구 윤동주\"에 올려 대화하며 피드백을 받아 수정하고, SUNO AI로 노래를 만들어 모둠 뮤직비디오까지 제작했다.",
+        "SUNO": "국어 시간 자신이 창작한 시를 \"ChatGPT AI 펜팔 친구 윤동주\"에 올려 대화하며 피드백을 받아 수정하고, SUNO AI로 노래를 만들어 모둠 뮤직비디오까지 제작했다."
+      }
     },
     {
       "id": "edtech-usage-065",
@@ -6870,7 +6926,12 @@ export const edtechSnapshot: EdtechSnapshot = {
         "플랭스쿨",
         "Kuula",
         "Mizou"
-      ]
+      ],
+      "evidence": {
+        "Kuula": "코스웨어 기반 개별화 학습으로 도전과제와 즉시 피드백을 제공하고, Kuula 파노라마 가상지질답사와 Mizou 생성형 AI 챗봇 대화형 피드백을 결합한 몰입형 탐구수업을 운영했다.",
+        "Mizou": "코스웨어 기반 개별화 학습으로 도전과제와 즉시 피드백을 제공하고, Kuula 파노라마 가상지질답사와 Mizou 생성형 AI 챗봇 대화형 피드백을 결합한 몰입형 탐구수업을 운영했다.",
+        "플랭스쿨": "플랭스쿨 코스웨어로 영어 표현을 실제 매체 맥락에서 반복 연습하게 하고, 클라우드로 부서별 업무를 공유했다."
+      }
     },
     {
       "id": "edtech-usage-066",
@@ -6880,9 +6941,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "정보, 교원연수",
       "category": "생성형 AI 활용",
       "tools": [
-        "Claude",
-        "NotebookLM"
-      ]
+        "Claude"
+      ],
+      "evidence": {
+        "Claude": "\"김밥 먹으며 함께 공부해요\" 점심시간 자율연수를 9명의 리더교원이 매월 운영하고, 전 교사에게 클로드 유료 계정을 배부해 챗봇에서 AI 에이전트로 넘어가는 \"삼육 부트캠프\"를 열었다."
+      }
     },
     {
       "id": "edtech-usage-067",
@@ -6894,7 +6957,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "tools": [
         "앰플리파이 클래스룸",
         "패들렛"
-      ]
+      ],
+      "evidence": {
+        "패들렛": "패들렛으로 전 교직원이 협업해 설계한 과학·미술 융합 수업에서 운동에너지 개념과 이미지 생성 AI를 활용해 스쿨존 안전 포스터를 제작했다. 앰플리파이·패들렛 샌드박스로 원소기호 이모티콘 만들기 등 학생 상호작용을 넓히고, 부스별 실습형 AI디지털 워크숍과 사전 설문조사로 선도학교 운영을 준비했다.",
+        "앰플리파이 클래스룸": "앰플리파이·패들렛 샌드박스로 원소기호 이모티콘 만들기 등 학생 상호작용을 넓히고, 부스별 실습형 AI디지털 워크숍과 사전 설문조사로 선도학교 운영을 준비했다."
+      }
     },
     {
       "id": "edtech-usage-068",
@@ -6907,7 +6974,12 @@ export const edtechSnapshot: EdtechSnapshot = {
         "구글 클래스룸",
         "ChatGPT",
         "Veo3"
-      ]
+      ],
+      "evidence": {
+        "ChatGPT": "전교생 1인 1디벗과 구글 클래스룸으로 과정중심평가를 하고, \"AI 창작제\"에서 ChatGPT로 게임을 기획해 러버블(Lovable)로 웹게임을 구현하고 Veo3로 창작 영상까지 제작하는 도구 융합 프로젝트를 진행했다.",
+        "Veo3": "전교생 1인 1디벗과 구글 클래스룸으로 과정중심평가를 하고, \"AI 창작제\"에서 ChatGPT로 게임을 기획해 러버블(Lovable)로 웹게임을 구현하고 Veo3로 창작 영상까지 제작하는 도구 융합 프로젝트를 진행했다.",
+        "구글 클래스룸": "전교생 1인 1디벗과 구글 클래스룸으로 과정중심평가를 하고, \"AI 창작제\"에서 ChatGPT로 게임을 기획해 러버블(Lovable)로 웹게임을 구현하고 Veo3로 창작 영상까지 제작하는 도구 융합 프로젝트를 진행했다."
+      }
     },
     {
       "id": "edtech-usage-069",
@@ -6919,9 +6991,13 @@ export const edtechSnapshot: EdtechSnapshot = {
       "tools": [
         "데스모스",
         "Gemini",
-        "NotebookLM",
-        "Snorkl"
-      ]
+        "NotebookLM"
+      ],
+      "evidence": {
+        "Gemini": "스노클·구글 젬스·노트북LM·데스모스 등 교과 특성에 맞는 AI 활용 수업 사례를 교과별로 개발·나눔했다. 문학 수행평가에서 구글 젬스로 소설 기반 가치 논제의 입론·반론 논거를 만들고 서로 나누는 토론 수업을 공개하고, \"AI디지털 교학공\"에서 수업계획 공유부터 수업나눔까지 진행했다.",
+        "NotebookLM": "스노클·구글 젬스·노트북LM·데스모스 등 교과 특성에 맞는 AI 활용 수업 사례를 교과별로 개발·나눔했다.",
+        "데스모스": "스노클·구글 젬스·노트북LM·데스모스 등 교과 특성에 맞는 AI 활용 수업 사례를 교과별로 개발·나눔했다."
+      }
     },
     {
       "id": "edtech-usage-070",
@@ -6934,7 +7010,12 @@ export const edtechSnapshot: EdtechSnapshot = {
         "자작자작",
         "캔바",
         "패들렛"
-      ]
+      ],
+      "evidence": {
+        "자작자작": "DEEP 수업모형 확장 단계에서 자작자작으로 독서 감상을 쓰고 AI 캔바로 책 홍보 포스터를 만들어 패들렛에 공유·상호 피드백하는 과정중심평가를 실천했다.",
+        "캔바": "DEEP 수업모형 확장 단계에서 자작자작으로 독서 감상을 쓰고 AI 캔바로 책 홍보 포스터를 만들어 패들렛에 공유·상호 피드백하는 과정중심평가를 실천했다. 인권 침해 사례 캔바 실시간 공동편집 탐구, 국어·과학 연계 멸종위기생물 디지털 도감 만들기 등 탐색-정리-제작-공유-실천으로 확장한 수업을 운영했다.",
+        "패들렛": "DEEP 수업모형 확장 단계에서 자작자작으로 독서 감상을 쓰고 AI 캔바로 책 홍보 포스터를 만들어 패들렛에 공유·상호 피드백하는 과정중심평가를 실천했다."
+      }
     },
     {
       "id": "edtech-usage-096",
@@ -6944,9 +7025,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "평가/피드백",
       "category": "평가·피드백",
       "tools": [
-        "클리포",
-        "Brisk Teaching"
-      ]
+        "클리포"
+      ],
+      "evidence": {
+        "클리포": "Clipo AI로 서·논술형 답안 초벌 채점을 받아 교사는 최종 판단과 피드백에 집중하고, 280여 명 전원에게 근거 있는 평가를 제공하며 주말 채점이 사라졌다."
+      }
     },
     {
       "id": "edtech-usage-097",
@@ -6956,10 +7039,13 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "영어",
       "category": "평가·피드백",
       "tools": [
-        "채움AI",
         "Mizou",
         "QuillBot"
-      ]
+      ],
+      "evidence": {
+        "Mizou": "Mizou가 단계별 피드백하고 QuillBot으로 문법·어휘를 최종 점검하게 하여, 피드백을 받아 수정하는 과정까지 평가하는 역동적 평가를 운영했다.",
+        "QuillBot": "Mizou가 단계별 피드백하고 QuillBot으로 문법·어휘를 최종 점검하게 하여, 피드백을 받아 수정하는 과정까지 평가하는 역동적 평가를 운영했다."
+      }
     },
     {
       "id": "edtech-usage-098",
@@ -6972,20 +7058,12 @@ export const edtechSnapshot: EdtechSnapshot = {
         "채움AI",
         "Snorkl",
         "Typecast"
-      ]
-    },
-    {
-      "id": "edtech-usage-099",
-      "title": "퍼스널 피드백 중심 교수·학습과정안과 AI 윤리 모의재판",
-      "summary": "평가적→조언형→코칭형으로 이어지는 5단계 피드백 체계를 2~6학년 수업에 적용했다.",
-      "level": "elementary",
-      "subject": "전 교과",
-      "category": "평가·피드백",
-      "tools": [
-        "와우아이디어스",
-        "패들렛",
-        "AI마타수학"
-      ]
+      ],
+      "evidence": {
+        "Typecast": "Typecast 듣기, Snorkl 말하기, 채움AI 쓰기를 연계해 수학적 사고 과정을 과정 중심으로 평가했다.",
+        "Snorkl": "Typecast 듣기, Snorkl 말하기, 채움AI 쓰기를 연계해 수학적 사고 과정을 과정 중심으로 평가했다.",
+        "채움AI": "Typecast 듣기, Snorkl 말하기, 채움AI 쓰기를 연계해 수학적 사고 과정을 과정 중심으로 평가했다."
+      }
     },
     {
       "id": "edtech-usage-100",
@@ -6995,10 +7073,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "영어",
       "category": "평가·피드백",
       "tools": [
-        "패들렛",
-        "Brisk Teaching",
-        "NotebookLM"
-      ]
+        "Brisk Teaching"
+      ],
+      "evidence": {
+        "Brisk Teaching": "브리스크 티칭 AI 맞춤 피드백을 비판적으로 검토·반영하고, PQS 동료 피드백과 성찰 일지로 메타인지를 기르는 수업을 운영했다."
+      }
     },
     {
       "id": "edtech-usage-101",
@@ -7010,7 +7089,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "tools": [
         "채움AI",
         "클래스팅 AI"
-      ]
+      ],
+      "evidence": {
+        "클래스팅 AI": "클래스팅 AI 샌드박스로 통제된 AI 수업을 운영하고, 채움AI로 서논술형 평가를 실시해 AI·교사 채점을 비교했다.",
+        "채움AI": "클래스팅 AI 샌드박스로 통제된 AI 수업을 운영하고, 채움AI로 서논술형 평가를 실시해 AI·교사 채점을 비교했다."
+      }
     },
     {
       "id": "edtech-usage-102",
@@ -7020,11 +7103,13 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "기술가정, 국어",
       "category": "평가·피드백",
       "tools": [
-        "캔바",
         "클리포",
-        "Claude",
-        "VLLO"
-      ]
+        "Claude"
+      ],
+      "evidence": {
+        "Claude": "클로드의 스킬 기능에 성취수준·평가 목표를 매뉴얼화해 학습지를 공동 설계하고, 클리포로 서논형·그래프·수식까지 AI 채점했다.",
+        "클리포": "클로드의 스킬 기능에 성취수준·평가 목표를 매뉴얼화해 학습지를 공동 설계하고, 클리포로 서논형·그래프·수식까지 AI 채점했다."
+      }
     },
     {
       "id": "edtech-usage-103",
@@ -7034,11 +7119,13 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "도덕, 국어",
       "category": "평가·피드백",
       "tools": [
-        "띵커벨",
         "자작자작",
-        "캔바",
         "ZEP·젭퀴즈"
-      ]
+      ],
+      "evidence": {
+        "ZEP·젭퀴즈": "ZEP 방탈출 디지털 성범죄 예방과 자작자작 다층 글쓰기 피드백. \"자작자작\" 플랫폼에서 AI 피드백과 교사·동료 피드백을 연계한 다층적 글쓰기 평가를 실시했다.",
+        "자작자작": "\"자작자작\" 플랫폼에서 AI 피드백과 교사·동료 피드백을 연계한 다층적 글쓰기 평가를 실시했다."
+      }
     },
     {
       "id": "edtech-usage-104",
@@ -7048,9 +7135,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "정보",
       "category": "평가·피드백",
       "tools": [
-        "NotebookLM",
         "Snorkl"
-      ]
+      ],
+      "evidence": {
+        "Snorkl": "Snorkl AI로 150여 명이 1차 피드백을 받아 1인 교사의 개별 지도를 가능케 했다."
+      }
     },
     {
       "id": "edtech-usage-105",
@@ -7062,7 +7151,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "tools": [
         "심스페이스",
         "SEN스쿨"
-      ]
+      ],
+      "evidence": {
+        "SEN스쿨": "센스쿨로 학생 학습 과정을 실시간 확인하고 맞춤형 피드백을 제공하며, 심스페이스로 데이터 기반 상담을 실시했다.",
+        "심스페이스": "센스쿨로 학생 학습 과정을 실시간 확인하고 맞춤형 피드백을 제공하며, 심스페이스로 데이터 기반 상담을 실시했다."
+      }
     },
     {
       "id": "edtech-usage-106",
@@ -7073,7 +7166,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "평가·피드백",
       "tools": [
         "Google Workspace"
-      ]
+      ],
+      "evidence": {
+        "Google Workspace": "구글 문서·슬라이드로 모둠 협동 발표자료를 만들고, AI 피드백 데이터로 학년별 연구교과의 맞춤 피드백·상담을 제공했다."
+      }
     },
     {
       "id": "edtech-usage-108",
@@ -7084,7 +7180,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "평가·피드백",
       "tools": [
         "아이글"
-      ]
+      ],
+      "evidence": {
+        "아이글": "서술형 채점서비스 \"아이글\"의 기능과 채점 기준 설정·결과 분석 방법을 교원 연수로 공유해 평가 업무 효율성과 채점 일관성을 높였다."
+      }
     },
     {
       "id": "edtech-usage-109",
@@ -7094,9 +7193,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "국어, 과학",
       "category": "평가·피드백",
       "tools": [
-        "자작자작",
-        "SEN스쿨"
-      ]
+        "자작자작"
+      ],
+      "evidence": {
+        "자작자작": "국어 쓰기 수업에서 자작자작 등 AI 첨삭 도구로 학생 초고에 문장·구성·표현을 실시간 진단해 스스로 다듬는 과정중심 쓰기를 운영했다."
+      }
     },
     {
       "id": "edtech-usage-110",
@@ -7108,7 +7209,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "tools": [
         "키노트",
         "Snorkl"
-      ]
+      ],
+      "evidence": {
+        "Snorkl": "영어과에서 스노클(Snorkl)로 학생 말하기 연습에 AI 피드백을 제공하고, 디벗(아이패드)으로 자기주도 연습 후 실시간 답변 생성·녹음으로 말하기 수행평가를 진행했다.",
+        "키노트": "AI 자막으로 평가 편의성을 높이고, 키노트·페이지스 등 디벗 앱 협력학습 연수와 디지털 활동지 실시간 피드백·채점 사례를 교원학습공동체에서 나눴다."
+      }
     },
     {
       "id": "edtech-usage-111",
@@ -7118,10 +7223,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "수학",
       "category": "사회정서학습",
       "tools": [
-        "심스페이스",
-        "아트봉봉",
-        "SEN스쿨"
-      ]
+        "심스페이스"
+      ],
+      "evidence": {
+        "심스페이스": "3~6학년은 심스페이스로 감정·심리를 꾸준히 확인하고 데이터 기반 개인 상담을 진행했다."
+      }
     },
     {
       "id": "edtech-usage-112",
@@ -7134,30 +7240,12 @@ export const edtechSnapshot: EdtechSnapshot = {
         "우리반",
         "클래스팅 AI",
         "ZEP·젭퀴즈"
-      ]
-    },
-    {
-      "id": "edtech-usage-113",
-      "title": "생성형 AI 과학 마술 탐구와 JTCI 데이터 기반 맞춤 진로 상담",
-      "summary": "JTCI 기질·성격 검사 데이터를 AI와 교차 분석해 30명 학생의 개별 맞춤 진로 상담을 실현했다.",
-      "level": "high",
-      "subject": "과학, 진로",
-      "category": "사회정서학습",
-      "tools": [
-        "패들렛",
-        "Claude"
-      ]
-    },
-    {
-      "id": "edtech-usage-114",
-      "title": "생성형 AI 학교 생태지도·꽃말 감사카드와 3주체 리터러시 교육",
-      "summary": "구글 렌즈와 생성형 AI로 교내 식물을 탐색해 학교 생태지도를 만들고, 꽃말 감사카드를 제작·전달했다.",
-      "level": "middle",
-      "subject": "과학",
-      "category": "사회정서학습",
-      "tools": [
-        "캔바"
-      ]
+      ],
+      "evidence": {
+        "ZEP·젭퀴즈": "ZEP 방탈출·클래스팅 AI 라이팅과 \"우리반\" 교우관계 분석. AI 기반 \"우리반\"으로 월 1회 교우관계를 진단해 위기학생을 선제 파악하고 학급 갈등을 최소화했다.",
+        "클래스팅 AI": "ZEP 방탈출·클래스팅 AI 라이팅과 \"우리반\" 교우관계 분석. AI 기반 \"우리반\"으로 월 1회 교우관계를 진단해 위기학생을 선제 파악하고 학급 갈등을 최소화했다.",
+        "우리반": "AI 기반 \"우리반\"으로 월 1회 교우관계를 진단해 위기학생을 선제 파악하고 학급 갈등을 최소화했다."
+      }
     },
     {
       "id": "edtech-usage-115",
@@ -7169,35 +7257,15 @@ export const edtechSnapshot: EdtechSnapshot = {
       "tools": [
         "심스페이스",
         "우리반",
-        "캔바",
         "클래시파이",
         "패들렛"
-      ]
-    },
-    {
-      "id": "edtech-usage-116",
-      "title": "\"수.꺾.마\" 수학-상담 융합 회복탄력성 프로젝트와 AIDT 정서 교감",
-      "summary": "영어 AIDT \"오늘의 기분\" 체크로 정서적 교감을 나누고 진단 데이터 기반 수준별 맞춤 학습을 지원했다. \"수.꺾.마(수학에 꺾이지 않는 마음)\" 프로젝트로 멘탈 자가진단→실천 미션→성장함수 표현을 잇는 수학-상담 융합수업을 하고, 중국어 최애 소개 생성형 AI 작문 수업과 \"하이테크 하이터치 인사이드아웃\" 교원학습공동체를 운영했다.",
-      "level": "middle",
-      "subject": "수학, 영어, 중국어, SEL",
-      "category": "사회정서학습",
-      "tools": [
-        "캔바",
-        "파파고",
-        "패들렛"
-      ]
-    },
-    {
-      "id": "edtech-usage-117",
-      "title": "AI 사전진단 기반 맞춤 학습과 3!3!3! 디지털 실천 제스처",
-      "summary": "\"3!3!3! 디지털 실천 제스처\"로 학생 주도의 건강한 디벗 사용 문화를 만들었다.",
-      "level": "middle",
-      "subject": "전 교과",
-      "category": "디지털·AI 소양",
-      "tools": [
-        "클래스카드",
-        "Google Workspace"
-      ]
+      ],
+      "evidence": {
+        "심스페이스": "심스페이스 AI 챗봇 \"심스\"로 학생이 감정·고민을 표현하고 교사가 정서 상태를 파악해 상담에 연계하는 상호작용 중심 사회정서교육을 운영했다.",
+        "우리반": "우리반·클래시파이로 교우관계를 살피고, 교원학습공동체가 P.L.U.S.+ 수업모형(제시-연결-구조화-확장-성찰)과 학교 패들렛으로 데이터 기반 맞춤 교육을 확산했다.",
+        "클래시파이": "우리반·클래시파이로 교우관계를 살피고, 교원학습공동체가 P.L.U.S.+ 수업모형(제시-연결-구조화-확장-성찰)과 학교 패들렛으로 데이터 기반 맞춤 교육을 확산했다.",
+        "패들렛": "우리반·클래시파이로 교우관계를 살피고, 교원학습공동체가 P.L.U.S.+ 수업모형(제시-연결-구조화-확장-성찰)과 학교 패들렛으로 데이터 기반 맞춤 교육을 확산했다."
+      }
     },
     {
       "id": "edtech-usage-119",
@@ -7207,9 +7275,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "사회, 과학",
       "category": "디지털·AI 소양",
       "tools": [
-        "캔바",
         "Mizou"
-      ]
+      ],
+      "evidence": {
+        "Mizou": "미조우 활용 AI 윤리 토론, 디지털 리터러시 수업, 레고 스파이크 로봇 프로젝트를 폭넓게 전개했다."
+      }
     },
     {
       "id": "edtech-usage-120",
@@ -7219,9 +7289,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "영어",
       "category": "디지털·AI 소양",
       "tools": [
-        "토도한글",
         "패들렛"
-      ]
+      ],
+      "evidence": {
+        "패들렛": "6학년은 감염병 허위정보를 판별하고 카드뉴스를 제작해 패들렛에 공유하는 미디어 리터러시 프로젝트를 수행했다."
+      }
     },
     {
       "id": "edtech-usage-121",
@@ -7231,11 +7303,13 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "전 교과, 디지털 시민성",
       "category": "디지털·AI 소양",
       "tools": [
-        "캔바",
         "클리포",
-        "패들렛",
         "SUNO"
-      ]
+      ],
+      "evidence": {
+        "클리포": "조석현상 탐구, 카드뉴스 제작, SUNO 수학 노래 만들기 등 교과 연계 AI 융합수업을 하고, 클리포 데이터 기반 피드백과 2028 대입 개편 대비 교원학습공동체 연수로 확산했다.",
+        "SUNO": "조석현상 탐구, 카드뉴스 제작, SUNO 수학 노래 만들기 등 교과 연계 AI 융합수업을 하고, 클리포 데이터 기반 피드백과 2028 대입 개편 대비 교원학습공동체 연수로 확산했다."
+      }
     },
     {
       "id": "edtech-usage-122",
@@ -7245,12 +7319,15 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "전 교과, 디지털 리터러시",
       "category": "디지털·AI 소양",
       "tools": [
-        "멘티미터",
         "북크리에이터",
         "슬라이도",
-        "캔바",
-        "패들렛"
-      ]
+        "캔바"
+      ],
+      "evidence": {
+        "슬라이도": "슬라이도·캔바·북크리에이터·젭퀴즈로 이어지는 상호작용 중심 수업 흐름을 만들고, AI 학생 동아리에서 AI로 이야기·캐릭터를 창작하며 학생 주도성을 길렀다.",
+        "캔바": "슬라이도·캔바·북크리에이터·젭퀴즈로 이어지는 상호작용 중심 수업 흐름을 만들고, AI 학생 동아리에서 AI로 이야기·캐릭터를 창작하며 학생 주도성을 길렀다.",
+        "북크리에이터": "슬라이도·캔바·북크리에이터·젭퀴즈로 이어지는 상호작용 중심 수업 흐름을 만들고, AI 학생 동아리에서 AI로 이야기·캐릭터를 창작하며 학생 주도성을 길렀다."
+      }
     },
     {
       "id": "edtech-usage-123",
@@ -7260,10 +7337,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "영어, 사회",
       "category": "업무·수업 자동화",
       "tools": [
-        "마이클AI",
-        "Claude",
-        "Gemini"
-      ]
+        "마이클AI"
+      ],
+      "evidence": {
+        "마이클AI": "마이클AI로 가정통신문 작성을 자동화하고, 월별 팝업 연수로 교원의 디지털 수업·평가 전문성을 높였다."
+      }
     },
     {
       "id": "edtech-usage-125",
@@ -7273,9 +7351,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "과학, 업무경감",
       "category": "업무·수업 자동화",
       "tools": [
-        "Google Workspace",
         "NotebookLM"
-      ]
+      ],
+      "evidence": {
+        "NotebookLM": "노트북LM 기후 빅데이터 분석과 구글 기반 온라인교무실. 구글 도구 기반 온라인교무실 플랫폼을 구축해 업무 협업·인수인계 효율을 높였다."
+      }
     },
     {
       "id": "edtech-usage-126",
@@ -7285,9 +7365,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "전 교과",
       "category": "업무·수업 자동화",
       "tools": [
-        "Google Workspace",
-        "SEN스쿨"
-      ]
+        "Google Workspace"
+      ],
+      "evidence": {
+        "Google Workspace": "구글 드라이브 기반 온라인 교무실과 업무 질문·매뉴얼 챗봇 \"한강 가-히\"를 구축했다."
+      }
     },
     {
       "id": "edtech-usage-127",
@@ -7297,11 +7379,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "실과",
       "category": "업무·수업 자동화",
       "tools": [
-        "왓퀴즈",
-        "패들렛",
-        "Google Workspace",
-        "ZEP·젭퀴즈"
-      ]
+        "Google Workspace"
+      ],
+      "evidence": {
+        "Google Workspace": "구글 시트 기반 종이 없는 스마트 업무 시스템으로 교사 업무 부담을 줄였다."
+      }
     },
     {
       "id": "edtech-usage-128",
@@ -7312,7 +7394,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "업무·수업 자동화",
       "tools": [
         "온라인 교무실"
-      ]
+      ],
+      "evidence": {
+        "온라인 교무실": "온라인 교무실 공동작업·자료 공유로 업무 효율을 높이고, 학부모에게 자료를 체계적으로 공유해 소통을 넓혔다."
+      }
     },
     {
       "id": "edtech-usage-129",
@@ -7323,21 +7408,12 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "업무·수업 자동화",
       "tools": [
         "일프로 연산",
-        "캔바",
-        "패들렛",
         "Class1234"
-      ]
-    },
-    {
-      "id": "edtech-usage-131",
-      "title": "로봇을 움직이는 바이브 코딩과 AI 학습 에이전트 연수",
-      "summary": "학생들이 소형 로봇의 동작을 기획하고 AI로 제어 코드를 작성하는 \"로봇 바이브 코딩\" 수업을 운영했다.",
-      "level": "high",
-      "subject": "정보",
-      "category": "프로젝트·창작",
-      "tools": [
-        "노션"
-      ]
+      ],
+      "evidence": {
+        "일프로 연산": "\"일프로 연산\" 앱의 레벨별 문제와 오답노트로 학생 자기주도 학습을 지원하고, Class1234 틈새시간 소통으로 교사-학생 관계를 다졌다.",
+        "Class1234": "\"일프로 연산\" 앱의 레벨별 문제와 오답노트로 학생 자기주도 학습을 지원하고, Class1234 틈새시간 소통으로 교사-학생 관계를 다졌다."
+      }
     },
     {
       "id": "edtech-usage-132",
@@ -7347,9 +7423,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "수학, AI",
       "category": "프로젝트·창작",
       "tools": [
-        "스쿨플랫",
         "AICE"
-      ]
+      ],
+      "evidence": {
+        "AICE": "노코딩 AI 툴로 데이터 시각화와 AI 모델링을 체험하고 AICE 자격 과정과 연계했다."
+      }
     },
     {
       "id": "edtech-usage-133",
@@ -7360,9 +7438,12 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "프로젝트·창작",
       "tools": [
         "카훗",
-        "Clip Studio Paint",
         "Gemini"
-      ]
+      ],
+      "evidence": {
+        "카훗": "카훗→제미나이(영작)→이미지AI→클립스튜디오→패들렛으로 이어지는 3차시 융합 프로젝트를 운영했다.",
+        "Gemini": "카훗→제미나이(영작)→이미지AI→클립스튜디오→패들렛으로 이어지는 3차시 융합 프로젝트를 운영했다."
+      }
     },
     {
       "id": "edtech-usage-134",
@@ -7372,10 +7453,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "영어, 미용, 한국사",
       "category": "프로젝트·창작",
       "tools": [
-        "ChatGPT",
-        "Gemini",
         "SUNO"
-      ]
+      ],
+      "evidence": {
+        "SUNO": "영어 PBL, 미용 AI 얼굴형 분석·스마트미러, 바이브코딩 웹앱, Suno 역사 창작곡까지 다양한 융합 프로젝트를 운영했다."
+      }
     },
     {
       "id": "edtech-usage-135",
@@ -7385,9 +7467,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "정보, 과학",
       "category": "프로젝트·창작",
       "tools": [
-        "노션",
-        "패들렛"
-      ]
+        "노션"
+      ],
+      "evidence": {
+        "노션": "바이브코딩·노션 연수를 수업에 연결하고, AI 해커톤·STEAM 융합 프로젝트를 기획했다."
+      }
     },
     {
       "id": "edtech-usage-136",
@@ -7397,11 +7481,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "수학",
       "category": "프로젝트·창작",
       "tools": [
-        "통그라미",
-        "투닝",
-        "E-GPT",
-        "SUNO"
-      ]
+        "통그라미"
+      ],
+      "evidence": {
+        "통그라미": "통그라미로 전교생 설문을 수집·해석하고 결과를 실제 기업에 보내는 \"삶을 바꾸는 수학\"을 실현했다."
+      }
     },
     {
       "id": "edtech-usage-137",
@@ -7412,32 +7496,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "프로젝트·창작",
       "tools": [
         "투닝"
-      ]
-    },
-    {
-      "id": "edtech-usage-138",
-      "title": "MS 도구 기반 학습 포트폴리오와 디지털 과학 독서 전환",
-      "summary": "OneNote 학습 포트폴리오로 수준별 피드백을 제공하고, d라이브러리로 디지털 과학 독서를 전환했다.",
-      "level": "middle",
-      "subject": "과학, 수학",
-      "category": "프로젝트·창작",
-      "tools": [
-        "AlgeoMath",
-        "MS OneNote",
-        "MS Teams"
-      ]
-    },
-    {
-      "id": "edtech-usage-139",
-      "title": "매쓰-쿼리 개별화 수학과 스마트 줄넘기 데이터 체육, 바이브코딩 크리에이터",
-      "summary": "스마트 줄넘기 대시보드로 학생별 운동 데이터를 누적해 1:1 밀착 코칭을 했다.",
-      "level": "middle",
-      "subject": "수학, 체육",
-      "category": "프로젝트·창작",
-      "tools": [
-        "포커스팡",
-        "풀리수학"
-      ]
+      ],
+      "evidence": {
+        "투닝": "투닝의 AI 캐릭터 생성으로 \"미래의 나의 모습\"을 작품으로 만드는 진로 흥미 유발 활동을 운영했다."
+      }
     },
     {
       "id": "edtech-usage-140",
@@ -7448,7 +7510,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "프로젝트·창작",
       "tools": [
         "블루킷"
-      ]
+      ],
+      "evidence": {
+        "블루킷": "블루킷 게임형 복습과 AI 교원학습공동체 운영으로 협력 역량과 학교 단위 확산을 도모했다."
+      }
     },
     {
       "id": "edtech-usage-141",
@@ -7459,7 +7524,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "프로젝트·창작",
       "tools": [
         "캔바"
-      ]
+      ],
+      "evidence": {
+        "캔바": "캔바로 미술 교과서 표지 디자인, 국어 발표자료, 사회 카드뉴스를 만드는 교과 융합 프로젝트를 운영하고, 학급 뮤직비디오 제작으로 학급 공동체 유대감을 키웠다."
+      }
     },
     {
       "id": "edtech-usage-142",
@@ -7473,7 +7541,13 @@ export const edtechSnapshot: EdtechSnapshot = {
         "리틀팍스",
         "캔바",
         "패들렛"
-      ]
+      ],
+      "evidence": {
+        "캔바": "미술 비평 수업에서 캔바·패들렛으로 작품 분석·홍보 콘텐츠를 만드는 과정중심 수행평가를 실천했다. 5학년이 캔바 AI로 영어 학습 게임을 직접 만들어 3학년 동생에게 소개·멘토링하고, 리딩앤스쿨·리틀팍스로 방과후·방학 중 자기주도 영어학습 공백을 없앴다.",
+        "패들렛": "미술 비평 수업에서 캔바·패들렛으로 작품 분석·홍보 콘텐츠를 만드는 과정중심 수행평가를 실천했다.",
+        "리딩앤스쿨": "5학년이 캔바 AI로 영어 학습 게임을 직접 만들어 3학년 동생에게 소개·멘토링하고, 리딩앤스쿨·리틀팍스로 방과후·방학 중 자기주도 영어학습 공백을 없앴다.",
+        "리틀팍스": "5학년이 캔바 AI로 영어 학습 게임을 직접 만들어 3학년 동생에게 소개·멘토링하고, 리딩앤스쿨·리틀팍스로 방과후·방학 중 자기주도 영어학습 공백을 없앴다."
+      }
     },
     {
       "id": "edtech-usage-143",
@@ -7484,7 +7558,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "프로젝트·창작",
       "tools": [
         "ZEP·젭퀴즈"
-      ]
+      ],
+      "evidence": {
+        "ZEP·젭퀴즈": "중고 전자기기를 분해하며 생성형 AI와 부품 기능을 묻고 답하는 리버스 엔지니어링 수업을 진행하고, 젭퀴즈 게이미피케이션으로 수업을 마무리했다."
+      }
     },
     {
       "id": "edtech-usage-144",
@@ -7496,18 +7573,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "tools": [
         "캔바",
         "Gemini"
-      ]
-    },
-    {
-      "id": "edtech-usage-145",
-      "title": "AI 스포츠 데이터 분석 융합수업과 G-SEED 수업 나눔",
-      "summary": "AI 기반 스포츠 분석 플랫폼으로 이동거리·최고속도·스프린트 횟수 등 실제 경기 데이터를 수집·분석하는 탐구 중심 융합수업을 운영했다. 개인화 피드백 AI로 학생 수행과정을 분석해 교사 관찰과 결합한 맞춤 피드백을 제공하고, G-SEED(공유·실행·노력·확산) 수업나눔 행사와 찾아가는 AI 에듀테크 연수로 실천을 확산했다.",
-      "level": "middle",
-      "subject": "체육, 데이터 분석",
-      "category": "프로젝트·창작",
-      "tools": [
-        "Google Workspace"
-      ]
+      ],
+      "evidence": {
+        "Gemini": "2학년 역사과에서 모둠별로 기초자료조사·이야기창작(AI 미사용)과 Gemini 이미지 생성·Canva 편집(AI 활용)을 역할 분담해 고대사 네컷 웹툰을 제작하는 수행평가를 운영했다.",
+        "캔바": "2학년 역사과에서 모둠별로 기초자료조사·이야기창작(AI 미사용)과 Gemini 이미지 생성·Canva 편집(AI 활용)을 역할 분담해 고대사 네컷 웹툰을 제작하는 수행평가를 운영했다."
+      }
     },
     {
       "id": "edtech-usage-146",
@@ -7517,9 +7587,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "전문교과(웹툰·방송미디어·빅데이터마케팅 등)",
       "category": "프로젝트·창작",
       "tools": [
-        "캔바",
         "플랭스쿨"
-      ]
+      ],
+      "evidence": {
+        "플랭스쿨": "영어과 플랭스쿨로 AI 맞춤 피드백 자기주도학습을 지원하고, \"교학공의 날\"을 지정해 자율연구와 결과보고서 자료집 제작으로 실천을 확산했다."
+      }
     },
     {
       "id": "edtech-usage-147",
@@ -7532,7 +7604,12 @@ export const edtechSnapshot: EdtechSnapshot = {
         "북크리에이터",
         "캔바",
         "패들렛"
-      ]
+      ],
+      "evidence": {
+        "패들렛": "상업·관광·국어·사회·미술 등에서 생성형 AI, 패들렛, 캔바, 북크리에이터를 수업 단계별로 연결해 면접 시나리오 작성, 전통문화 굿즈 기획, 문학 작품 재구성 등 6회의 AI·디지털 융합 연구수업을 운영했다. 리더십팀과 10개 교원학습공동체가 학교 공동 패들렛에 수업 자료를 축적·공유하며 성과를 확산했다.",
+        "캔바": "상업·관광·국어·사회·미술 등에서 생성형 AI, 패들렛, 캔바, 북크리에이터를 수업 단계별로 연결해 면접 시나리오 작성, 전통문화 굿즈 기획, 문학 작품 재구성 등 6회의 AI·디지털 융합 연구수업을 운영했다.",
+        "북크리에이터": "상업·관광·국어·사회·미술 등에서 생성형 AI, 패들렛, 캔바, 북크리에이터를 수업 단계별로 연결해 면접 시나리오 작성, 전통문화 굿즈 기획, 문학 작품 재구성 등 6회의 AI·디지털 융합 연구수업을 운영했다."
+      }
     },
     {
       "id": "edtech-usage-148",
@@ -7542,12 +7619,17 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "보건간호, 전문교과",
       "category": "프로젝트·창작",
       "tools": [
-        "띵커벨",
         "이음AI",
         "키위티",
         "Gemini",
         "NotebookLM"
-      ]
+      ],
+      "evidence": {
+        "NotebookLM": "자아탐색글쓰기·피부미용·요양지원 교과에서 AI 피드백 글쓰기, 방탈출형 게이미피케이션, 환자 사례 PBL을 운영하고, NotebookLM·Gemini·키위티·이음AI 등을 융합해 학생 맞춤형 학습을 지원했다.",
+        "Gemini": "자아탐색글쓰기·피부미용·요양지원 교과에서 AI 피드백 글쓰기, 방탈출형 게이미피케이션, 환자 사례 PBL을 운영하고, NotebookLM·Gemini·키위티·이음AI 등을 융합해 학생 맞춤형 학습을 지원했다.",
+        "키위티": "자아탐색글쓰기·피부미용·요양지원 교과에서 AI 피드백 글쓰기, 방탈출형 게이미피케이션, 환자 사례 PBL을 운영하고, NotebookLM·Gemini·키위티·이음AI 등을 융합해 학생 맞춤형 학습을 지원했다.",
+        "이음AI": "자아탐색글쓰기·피부미용·요양지원 교과에서 AI 피드백 글쓰기, 방탈출형 게이미피케이션, 환자 사례 PBL을 운영하고, NotebookLM·Gemini·키위티·이음AI 등을 융합해 학생 맞춤형 학습을 지원했다."
+      }
     },
     {
       "id": "edtech-usage-149",
@@ -7559,7 +7641,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "tools": [
         "캔바",
         "패들렛"
-      ]
+      ],
+      "evidence": {
+        "캔바": "캔바·패들렛 모둠 작품을 디지털 갤러리 워크와 \"홍제 달달독서 전시관\" 웹사이트로 전교에 공유하고, 학교 구성원 모두가 참여하는 온가족 AI 독서캠프에서 AI 앱으로 가상배경 사진을 찍어 액자를 꾸미는 독후활동을 진행했다.",
+        "패들렛": "캔바·패들렛 모둠 작품을 디지털 갤러리 워크와 \"홍제 달달독서 전시관\" 웹사이트로 전교에 공유하고, 학교 구성원 모두가 참여하는 온가족 AI 독서캠프에서 AI 앱으로 가상배경 사진을 찍어 액자를 꾸미는 독후활동을 진행했다."
+      }
     },
     {
       "id": "edtech-usage-150",
@@ -7569,9 +7655,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "방송·영화, 보건, 음악, 수학",
       "category": "프로젝트·창작",
       "tools": [
-        "퀴즈앤",
-        "Snorkl"
-      ]
+        "퀴즈앤"
+      ],
+      "evidence": {
+        "퀴즈앤": "영화의 이해 수업에서 스노클 맞춤형 피드백과 퀴즈앤 실시간 퀴즈로 미장센을 탐구하고, 보건·음악·수학·방송 교과를 연계한 방탈출 융합수업으로 협업·문제해결력을 길렀다."
+      }
     },
     {
       "id": "edtech-usage-151",
@@ -7582,7 +7670,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "프로젝트·창작",
       "tools": [
         "NotebookLM"
-      ]
+      ],
+      "evidence": {
+        "NotebookLM": "NotebookLM으로 장치 아이디어를 발표자료로 시각화해 공유하고, 스포츠 과학 독서 교원학습공동체로 체육-디지털 융합을 연구했다."
+      }
     },
     {
       "id": "edtech-usage-152",
@@ -7595,7 +7686,12 @@ export const edtechSnapshot: EdtechSnapshot = {
         "노션",
         "카훗",
         "Manus"
-      ]
+      ],
+      "evidence": {
+        "Manus": "식품과 영양+과학 교과를 융합해 Manus로 개발한 웹앱으로 데이터 기반 혈당 변화를 탐구하는 수업을 진행했다.",
+        "카훗": "카훗 게이미피케이션으로 학생 주도성을 높이고, 노션으로 특성화고 자격증 대비 아카이빙·학생관리를 하며, 교사들이 각자 개발한 디지털 도구를 소개하는 동아리 친교 연수를 운영했다.",
+        "노션": "카훗 게이미피케이션으로 학생 주도성을 높이고, 노션으로 특성화고 자격증 대비 아카이빙·학생관리를 하며, 교사들이 각자 개발한 디지털 도구를 소개하는 동아리 친교 연수를 운영했다."
+      }
     },
     {
       "id": "edtech-usage-153",
@@ -7606,9 +7702,12 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "프로젝트·창작",
       "tools": [
         "클래스카드",
-        "Redmenta",
-        "Snorkl"
-      ]
+        "Redmenta"
+      ],
+      "evidence": {
+        "클래스카드": "스노클 구술평가로 말하기 문해력을 키우고, 신입생 진단평가 기반 방과후 프로그램에 스노클·클래스카드·레드멘타를 활용해 최소성취수준을 보장하며 수업공개·나눔에 95명이 누적 참여했다.",
+        "Redmenta": "스노클 구술평가로 말하기 문해력을 키우고, 신입생 진단평가 기반 방과후 프로그램에 스노클·클래스카드·레드멘타를 활용해 최소성취수준을 보장하며 수업공개·나눔에 95명이 누적 참여했다."
+      }
     },
     {
       "id": "edtech-usage-154",
@@ -7621,7 +7720,12 @@ export const edtechSnapshot: EdtechSnapshot = {
         "미리캔버스",
         "캡컷",
         "SUNO"
-      ]
+      ],
+      "evidence": {
+        "캡컷": "생성형 AI로 책의 후속 이야기를 창작해 실제 책으로 출판하는 \"AI와 함께 쓰는 다음 이야기\"와, 캡컷·SUNO·미리캔버스로 학급 영화를 만드는 \"AI 시네마 프로젝트\"를 운영했다.",
+        "SUNO": "생성형 AI로 책의 후속 이야기를 창작해 실제 책으로 출판하는 \"AI와 함께 쓰는 다음 이야기\"와, 캡컷·SUNO·미리캔버스로 학급 영화를 만드는 \"AI 시네마 프로젝트\"를 운영했다.",
+        "미리캔버스": "생성형 AI로 책의 후속 이야기를 창작해 실제 책으로 출판하는 \"AI와 함께 쓰는 다음 이야기\"와, 캡컷·SUNO·미리캔버스로 학급 영화를 만드는 \"AI 시네마 프로젝트\"를 운영했다."
+      }
     },
     {
       "id": "edtech-usage-155",
@@ -7633,20 +7737,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "tools": [
         "Delightex",
         "Skybox AI"
-      ]
-    },
-    {
-      "id": "edtech-usage-156",
-      "title": "3~6학년 29개 학급 전면의 AI·디지털 수업 연구와 나눔",
-      "summary": "3~6학년 29개 학급 전체에서 AI·디지털 도구 활용 수업 사례를 연구·나눔하고, 학년별 ACE 실천팀과 교원학습공동체로 모델을 공동 개발했다.",
-      "level": "elementary",
-      "subject": "전 교과",
-      "category": "학교 운영",
-      "tools": [
-        "알지오매스키즈",
-        "패들렛",
-        "ZEP·젭퀴즈"
-      ]
+      ],
+      "evidence": {
+        "Skybox AI": "\"디지털 짝꿍\"으로 위치·운동에너지를 탐구하며 종이 롤러코스터를 만들고, Skybox AI·Delightex로 360도 가상공간을 제작하는 실감형 콘텐츠 수업과 언플러그드 절차적 사고 수업을 운영했다.",
+        "Delightex": "\"디지털 짝꿍\"으로 위치·운동에너지를 탐구하며 종이 롤러코스터를 만들고, Skybox AI·Delightex로 360도 가상공간을 제작하는 실감형 콘텐츠 수업과 언플러그드 절차적 사고 수업을 운영했다."
+      }
     },
     {
       "id": "edtech-usage-157",
@@ -7656,36 +7751,13 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "간호, 영어",
       "category": "학교 운영",
       "tools": [
-        "리로스쿨",
-        "패들렛",
         "ChatGPT",
         "Claude"
-      ]
-    },
-    {
-      "id": "edtech-usage-158",
-      "title": "시즌별 공모전과 학생 맞춤형 프로젝트 수업 중심 선도학교 운영",
-      "summary": "시즌별 학생 공모전과 사례나눔 주간 운영으로 저·고학년 맞춤 사례를 전교에 확산했다.",
-      "level": "elementary",
-      "subject": "프로젝트 학습",
-      "category": "학교 운영",
-      "tools": [
-        "패들렛"
-      ]
-    },
-    {
-      "id": "edtech-usage-159",
-      "title": "대명DAEUM: 학년별 에듀테크 구독과 데이터 기반 상담·수업나눔",
-      "summary": "학년별 수요를 반영한 에듀테크를 구독하고, 서울시교육청 관내학교 대상 수업나눔을 실시했다.",
-      "level": "elementary",
-      "subject": "전 교과",
-      "category": "학교 운영",
-      "tools": [
-        "캔바",
-        "클래시파이",
-        "패들렛",
-        "ChatGPT"
-      ]
+      ],
+      "evidence": {
+        "ChatGPT": "전 교원이 참여하는 수업 나눔 주간을 운영하고, Google Pro, ChatGPT, Claude 등 AI 도구를 예산으로 전폭 지원했다.",
+        "Claude": "전 교원이 참여하는 수업 나눔 주간을 운영하고, Google Pro, ChatGPT, Claude 등 AI 도구를 예산으로 전폭 지원했다."
+      }
     },
     {
       "id": "edtech-usage-160",
@@ -7695,21 +7767,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "전문교과(AI)",
       "category": "학교 운영",
       "tools": [
-        "MS Teams",
         "ZEP·젭퀴즈"
-      ]
-    },
-    {
-      "id": "edtech-usage-161",
-      "title": "1~6학년 학년별 AI·디지털 기본소양 교육과정과 코딩 로봇 프로젝트",
-      "summary": "1학년 컴퓨터 기초부터 6학년 AI 코딩 로봇까지 학년별로 체계화된 교육과정을 운영했다.",
-      "level": "elementary",
-      "subject": "정보",
-      "category": "학교 운영",
-      "tools": [
-        "엔트리",
-        "Gemini"
-      ]
+      ],
+      "evidence": {
+        "ZEP·젭퀴즈": "학과별 교원학습공동체가 생성형 AI 연수를 공동 이수하고 AI 캐릭터·ZEP 퀴즈·Streamlit 수업을 운영했다."
+      }
     },
     {
       "id": "edtech-usage-162",
@@ -7720,7 +7782,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "학교 운영",
       "tools": [
         "엔트리"
-      ]
+      ],
+      "evidence": {
+        "엔트리": "학년군별 엔트리 코딩 수업과 설문·자료 제출 창구 일원화, 수업 자료 아카이브를 구축했다."
+      }
     },
     {
       "id": "edtech-usage-163",
@@ -7731,7 +7796,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "학교 운영",
       "tools": [
         "Google Workspace"
-      ]
+      ],
+      "evidence": {
+        "Google Workspace": "구글 워크스페이스와 Apple ADS 프로그램 기반의 iOS 디지털 학습환경을 구축했다."
+      }
     },
     {
       "id": "edtech-usage-165",
@@ -7742,9 +7810,12 @@ export const edtechSnapshot: EdtechSnapshot = {
       "category": "학교 운영",
       "tools": [
         "북크리에이터",
-        "NotebookLM",
         "SEN스쿨"
-      ]
+      ],
+      "evidence": {
+        "북크리에이터": "북크리에이터와 SEN스쿨 아트봉봉스쿨로 포용적 수업·평가를 운영하고 월례 교원학습공동체로 확산했다.",
+        "SEN스쿨": "북크리에이터와 SEN스쿨 아트봉봉스쿨로 포용적 수업·평가를 운영하고 월례 교원학습공동체로 확산했다."
+      }
     },
     {
       "id": "edtech-usage-167",
@@ -7754,12 +7825,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "범교과",
       "category": "학교 운영",
       "tools": [
-        "블루킷",
-        "클리포",
-        "ChatGPT",
-        "Claude",
-        "SUNO"
-      ]
+        "Claude"
+      ],
+      "evidence": {
+        "Claude": "클로드 Pro, GPT Plus 등 18종의 에듀테크를 구독해 다양한 수업에 적용했다."
+      }
     },
     {
       "id": "edtech-usage-168",
@@ -7769,11 +7839,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "전 교과",
       "category": "학교 운영",
       "tools": [
-        "엔트리",
-        "캔바",
-        "클래시파이",
-        "패들렛"
-      ]
+        "엔트리"
+      ],
+      "evidence": {
+        "엔트리": "생성형 AI·엔트리·북크리에이터로 AI 알고리즘 문제해결 융합수업을 개발하고, 공유 플랫폼 \"개운해\"와 성북강북 수업나눔으로 연구하는 학교 문화를 확산했다."
+      }
     },
     {
       "id": "edtech-usage-169",
@@ -7783,34 +7853,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "subject": "수학, 국어, SEL",
       "category": "학교 운영",
       "tools": [
-        "리드포스쿨",
-        "블루킷",
-        "엔트리",
-        "패들렛"
-      ]
-    },
-    {
-      "id": "edtech-usage-170",
-      "title": "에듀테크 구독 확대와 교원학습공동체 활용 사례 공유",
-      "summary": "교사 요구에 따라 새 에듀테크를 구독해 수업에 시도하고, 기존 도구의 프로버전으로 안정적인 AI 수업 환경을 구축했다. 교원학습공동체에서 에듀테크 활용 후기와 팁을 나누고, 디지털 리터러시 측정 시험을 사전 점검했다.",
-      "level": "elementary",
-      "subject": "전 교과, 교원연수",
-      "category": "학교 운영",
-      "tools": [
-        "패들렛"
-      ]
-    },
-    {
-      "id": "edtech-usage-171",
-      "title": "특성화고 에듀테크 맞춤학습과 AI 기반 다문화 학생 지원",
-      "summary": "Tikita 동시통역과 AI 챗봇 다문화 퀴즈 대회로 다문화 학생의 언어 장벽을 완화하는 포용적 교육을 실현했다.",
-      "level": "high",
-      "subject": "전문교과",
-      "category": "포용·특수교육",
-      "tools": [
-        "캔바",
-        "클리포"
-      ]
+        "리드포스쿨"
+      ],
+      "evidence": {
+        "리드포스쿨": "바이브코딩으로 만든 게임형 웹앱과 리드포스쿨 시선추적 문해력 진단으로 맞춤형 학습을 지원했다."
+      }
     },
     {
       "id": "edtech-usage-172",
@@ -7822,18 +7869,11 @@ export const edtechSnapshot: EdtechSnapshot = {
       "tools": [
         "매쓰홀릭",
         "패들렛"
-      ]
-    },
-    {
-      "id": "edtech-usage-173",
-      "title": "다문화 한글해득 지원과 IB 연계 AI·디지털 탐구 수업",
-      "summary": "다문화 학생이 많은 학교 특성을 반영해 한글 해득 프로그램과 AI 학습데이터 분석으로 다문화·1학년 학생의 한글 습득을 지원했다. AI·디지털 방과후 자율동아리로 디지털 소외 계층의 AI 리터러시를 키우고, IB 프로그램에 AI·디지털 도구를 결합해 학생의 사고 과정을 시각화하고 자기성찰·동료평가로 이어가는 수업을 운영했다.",
-      "level": "elementary",
-      "subject": "국어(한글해득), 다문화교육, IB",
-      "category": "포용·특수교육",
-      "tools": [
-        "SEN스쿨"
-      ]
+      ],
+      "evidence": {
+        "패들렛": "디벗과 패들렛으로 모든 학생이 참여하는 수업과 매쓰홀릭 공동 평가 문항 제작 문화를 조성했다.",
+        "매쓰홀릭": "디벗과 패들렛으로 모든 학생이 참여하는 수업과 매쓰홀릭 공동 평가 문항 제작 문화를 조성했다."
+      }
     },
     {
       "id": "edtech-usage-174",
@@ -7846,7 +7886,12 @@ export const edtechSnapshot: EdtechSnapshot = {
         "구글 클래스룸",
         "Gemini",
         "Read Along"
-      ]
+      ],
+      "evidence": {
+        "Read Along": "구글 클래스룸 Read Along으로 성취수준이 낮은 학생에게 쉬운 어휘·문장을 제공하고 튜터 Dia의 발음을 따라 읽기 정확도를 높이는 수준별 읽기 지원을 했다.",
+        "Gemini": "거울·렌즈 물건 만들기에서 Gems를 개별 튜터로 활용하고, 학교 간·학교 안 교원학습공동체와 찾아가는 컨설팅으로 디지털 전환을 확산했다.",
+        "구글 클래스룸": "구글 클래스룸 Read Along으로 성취수준이 낮은 학생에게 쉬운 어휘·문장을 제공하고 튜터 Dia의 발음을 따라 읽기 정확도를 높이는 수준별 읽기 지원을 했다."
+      }
     }
   ]
 };
