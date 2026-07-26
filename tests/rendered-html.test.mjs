@@ -24,7 +24,7 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.match(page, /src="\/case-hero\.png"/);
   assert.match(page, /1학기 사례에서 찾은/);
   assert.match(page, /예산 숫자를/);
-  assert.match(page, /에듀테크 선택 현황/);
+  assert.match(page, /에듀테크 구매·구독 현황/);
   assert.match(page, /7\.24 기준/);
   assert.match(page, /schoolLevelLabels/);
   assert.match(page, /교사개발 웹앱/);
@@ -63,7 +63,7 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.doesNotMatch(page, /58개 선도학교|58개교 익명|미집행|아직 지출 없음/);
   assert.match(page, /role="tab"/);
   assert.match(page, /hidden=\{activeTab !== "edutech"\}/);
-  assert.match(page, /자료 읽는 법/);
+  assert.match(page, /워드클라우드와 비율의 의미/);
   assert.match(page, /학교별 집행률을 낮은 순서부터 놓았을 때 정확히 절반이 지난 위치/);
   assert.match(page, /className="term-help"/);
   assert.doesNotMatch(page, /가운데 학교|가운데 수준|롱테일/);

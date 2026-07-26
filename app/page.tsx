@@ -96,7 +96,7 @@ const categories: BudgetCategory[] = [
     note: "가장 큰 예산 영역이며 학교들의 집행도 비교적 고르게 진행됐어요.",
     action: "구독 도구마다 수업 대상·활용 장면·결과물 계획을 연결해 보세요.",
     examples: ["에듀테크 구독", "AI 코스웨어", "수업 콘텐츠", "학생 캠프"],
-    headline: "학교들이 가장 넓고 비교적 고르게 집행한 핵심 수업 영역",
+    headline: "학교별 집행률 차이가 비교적 작고 평균 집행률이 가장 높은 영역",
     interpretation: "전체 계획액 대비 60.3%가 집행됐고 학교별 집행률의 중간 지점도 61.1%로 비슷합니다. 에듀테크 구독, AI 코스웨어, 수업 콘텐츠, 학생 캠프처럼 실제 교육활동에 바로 연결되는 항목이 상반기 집행을 이끈 것으로 볼 수 있습니다.",
     possibleReasons: [
       "학기 초부터 필요한 학생·교원 계정의 선구매",
@@ -404,17 +404,6 @@ const toolPurposes: Record<string, string> = {
   "후크패드": "코드 진행을 만들고 함께 작곡·편곡하는 웹 기반 음악 창작 도구",
 };
 
-const functionGroups = [
-  { name: "협업·공유", schools: 29, rate: 50.0, color: "#18a7e0", text: "학생 결과물과 아이디어를 함께 모아 공유" },
-  { name: "교과·맞춤형", schools: 27, rate: 46.6, color: "#7dbd35", text: "교과 진단과 개인별 연습을 수업에 연결" },
-  { name: "언어·문해", schools: 24, rate: 41.4, color: "#e39a20", text: "읽기·쓰기·영어 등 언어 기능이 분명한 선택" },
-  { name: "퀴즈·참여", schools: 23, rate: 39.7, color: "#f06a4e", text: "수업 중 참여·형성평가·피드백" },
-  { name: "생성형 AI", schools: 22, rate: 37.9, color: "#7b68d9", text: "여러 제품을 비교하며 교원 활용을 탐색" },
-  { name: "콘텐츠 제작", schools: 21, rate: 36.2, color: "#ef79b7", text: "학생과 교사의 디지털 결과물 제작" },
-  { name: "학습관리", schools: 16, rate: 27.6, color: "#9a6b32", text: "과제·진도·상담·학급 운영을 한 흐름으로 관리" },
-  { name: "코딩·컴퓨팅", schools: 5, rate: 8.6, color: "#66829a", text: "연수와 운영 여건을 함께 확인" },
-];
-
 const cloudFilters = [
   ["all", "전체"],
   ["협업·공유", "협업·공유"],
@@ -435,49 +424,49 @@ const groupMeta: Record<string, {
 }> = {
   "협업·공유": {
     className: "collab",
-    demand: "학생 결과물을 한곳에 모으고 서로 보고 반응하는 활동에 많이 활용됐습니다. 교사와 학생이 비교적 쉽게 시작할 수 있는 유형입니다.",
+    demand: "학생 결과물을 한곳에 모아 공유하고, 서로 의견을 나누는 활동을 지원하는 유형입니다. 실제 활용 방식은 도구별 사례에서 확인할 수 있습니다.",
     question: "게시 공간을 만든 뒤 학생의 읽기·댓글·수정 활동까지 설계되어 있나요?",
     actions: ["공개 범위와 개인정보 기준 정하기", "결과물에 반응하는 규칙 만들기", "학기 말 포트폴리오 활용 여부 점검하기"],
   },
   "퀴즈·참여": {
     className: "quiz",
-    demand: "즉시 참여와 빠른 확인을 원하는 선택입니다. 비슷한 기능의 제품이 많아 목적 없이 늘리면 중복 구독이 되기 쉽습니다.",
+    demand: "수업 중 학생의 참여와 이해 정도를 바로 확인하는 데 쓰이는 유형입니다. 비슷한 기능의 제품이 많아 기존 도구와의 중복을 확인할 필요가 있습니다.",
     question: "정답률을 보는 데서 끝나지 않고 다음 설명·모둠 활동을 바꾸는 데 쓰고 있나요?",
     actions: ["확인하려는 학습 목표 한 가지 정하기", "오답 뒤 재설명 방식을 함께 설계하기", "유사 퀴즈 도구와 기능 겹침 점검하기"],
   },
   "생성형 AI": {
     className: "ai",
-    demand: "여러 생성형 AI를 함께 선택한 학교가 확인됐습니다. 도구를 정할 때 개인정보·저작권·결과 검증 원칙도 함께 마련할 필요가 있습니다.",
+    demand: "자료 작성, 아이디어 구체화, 탐구 지원 등에 활용할 수 있는 유형입니다. 도입 전 이용 연령과 개인정보·저작권·결과 검증 기준을 함께 확인해야 합니다.",
     question: "교사의 자료 제작, 학생 탐구, 업무 지원 중 어떤 장면을 위해 구독했나요?",
     actions: ["개인정보·저작권·검증 원칙 합의하기", "도구별 강점을 한 장으로 비교하기", "좋은 활용 사례와 실패 사례를 함께 기록하기"],
   },
   "교과·맞춤형": {
     className: "math",
-    demand: "수학뿐 아니라 국어·영어 등 교과 진단과 개인별 연습을 지원하려는 선택입니다. 진단 결과가 보충·심화 수업으로 이어지는지 확인하는 것이 중요합니다.",
+    demand: "국어·수학·영어 등에서 학습 상태를 진단하고 개인별 연습을 지원하는 유형입니다. 진단 결과가 실제 보충·심화 수업으로 이어지는지 확인하는 것이 중요합니다.",
     question: "진단·추천 결과가 교사의 다음 차시 판단과 실제 개별 지원으로 연결되고 있나요?",
     actions: ["대상 학년·교과·단원을 좁혀 적용하기", "진단 뒤 교사 개입 장면 정하기", "학생별 변화 사례를 짧게 남기기"],
   },
   "언어·문해": {
     className: "literacy",
-    demand: "읽기·쓰기·영어 등 구체적인 교과 문제를 해결하려는 선택입니다. 제품 수가 많아 학년별로 흩어질 가능성도 큽니다.",
+    demand: "읽기, 쓰기, 어휘, 영어 학습을 지원하는 유형입니다. 대상 학년과 학습 목표가 분명하지 않으면 도구가 학년별로 나뉘어 활용될 수 있습니다.",
     question: "어휘·읽기 유창성·이해·쓰기 중 실제로 개선하려는 기능이 분명한가요?",
     actions: ["대상 학생과 언어 기능 명시하기", "교사 관찰 기록과 도구 결과 함께 보기", "학년 간 중복 구독과 연계성 점검하기"],
   },
   "콘텐츠 제작": {
     className: "create",
-    demand: "글·이미지·영상·음악을 결합한 결과물 제작을 위한 선택입니다. 학습 내용을 설명하고 수정하는 과정이 드러나야 합니다.",
+    demand: "글·이미지·영상·음악을 활용해 수업 자료나 학생 결과물을 만드는 유형입니다. 완성된 결과물뿐 아니라 생각을 발전시키고 수정하는 과정도 살펴볼 필요가 있습니다.",
     question: "예쁜 결과물보다 학생의 생각과 수정 과정이 보이도록 과제가 설계됐나요?",
     actions: ["결과물 평가 기준을 먼저 공유하기", "초안·피드백·수정 흔적 남기기", "저작권과 출처 표시 확인하기"],
   },
   "학습관리": {
     className: "manage",
-    demand: "과제 배부, 진도 확인, 학급 운영을 한 흐름으로 묶으려는 선택입니다. 기존 플랫폼과 역할이 겹치는지 확인해야 합니다.",
+    demand: "과제 배부, 진도 확인, 학급 운영을 지원하는 유형입니다. 학교에서 이미 사용하는 학습관리 플랫폼과 기능이 겹치는지 확인해야 합니다.",
     question: "교사와 학생의 어떤 반복 업무가 실제로 줄었는지 설명할 수 있나요?",
     actions: ["기존 LMS와 기능 중복 확인하기", "학생 로그인·접근 불편 점검하기", "사용 전후 교사 업무 변화를 기록하기"],
   },
   "코딩·컴퓨팅": {
     className: "coding",
-    demand: "코딩 활동과 컴퓨팅 사고를 지원하는 선택입니다. 도구만 구매하기보다 수업 차시와 교사 지원이 함께 필요합니다.",
+    demand: "코딩 활동과 컴퓨팅 사고력 학습을 지원하는 유형입니다. 도구 구매와 함께 수업 차시, 기기 환경, 교사 지원 계획도 마련해야 합니다.",
     question: "체험 한 번이 아니라 문제 해결 과정을 반복할 수 있는 수업 흐름이 있나요?",
     actions: ["교사 사전 체험 시간 확보하기", "단계별 산출물과 도움 기준 정하기", "기기·네트워크 여건 사전 점검하기"],
   },
@@ -490,11 +479,18 @@ const schoolLevelLabels: Record<SchoolLevel, string> = {
   high: "고등",
 };
 
+const schoolLevelSubjectLabels: Record<SchoolLevel, string> = {
+  all: "전체 학교",
+  elementary: "초등학교",
+  middle: "중학교",
+  high: "고등학교",
+};
+
 const schoolLevelInsightNotes: Record<SchoolLevel, string> = {
-  all: "함께 모으고 결과물을 만드는 기본 활동에 선택이 먼저 모인 흐름입니다.",
-  elementary: "결과물 공유와 일상적인 학급·학습 운영을 잇는 선택이 상대적으로 넓었습니다.",
-  middle: "교과 자료 제작·분석과 공동 활동을 함께 지원하려는 선택으로 읽을 수 있습니다.",
-  high: "탐구·프로젝트와 빠른 확인 활동을 함께 지원하는 흐름입니다.",
+  all: "함께 만들고 공유하는 도구와 교사의 자료 제작을 돕는 도구가 상위 세 유형을 차지했습니다.",
+  elementary: "결과물을 만들고 공유하는 도구와 과제·학급 운영을 돕는 도구가 함께 많이 확인됐습니다.",
+  middle: "생성형 AI와 공동 작업·콘텐츠 제작 도구가 상위 세 유형을 차지했습니다.",
+  high: "생성형 AI와 공동 작업·수업 참여 확인 도구가 상위 세 유형을 차지했습니다.",
 };
 
 const getWordSize = (count: number, maxCount: number) => {
@@ -679,15 +675,15 @@ export default function Home() {
     [schoolLevel],
   );
   const leadingFunctionGroup: EdtechGroupSummary = functionGroups[0];
-  const schoolLevelInsight = `${functionGroups[0].name} ${functionGroups[0].rates[schoolLevel]}%가 가장 넓었고, ${functionGroups[1].name} ${functionGroups[1].rates[schoolLevel]}%, ${functionGroups[2].name} ${functionGroups[2].rates[schoolLevel]}%가 뒤를 이었습니다. ${schoolLevelInsightNotes[schoolLevel]}`;
+  const schoolLevelInsight = `${functionGroups[0].name} 도구는 ${schoolLevelSubjectLabels[schoolLevel]}의 ${functionGroups[0].rates[schoolLevel]}%에서 구매·구독이 확인됐습니다. ${functionGroups[1].name} ${functionGroups[1].rates[schoolLevel]}%, ${functionGroups[2].name} ${functionGroups[2].rates[schoolLevel]}%가 뒤를 이었습니다. ${schoolLevelInsightNotes[schoolLevel]}`;
   const selectedRecipe = semesterRecipes.find((recipe) => recipe.number === selectedRecipeNumber) ?? semesterRecipes[0];
   const selectedExpenseDetails = expenseDetailsByCategory[selectedCategory.name];
   const selectedExpense = selectedExpenseDetails[selectedExpenseIndex] ?? selectedExpenseDetails[0];
   const selectionSignal = selectedRate >= 10
-    ? "여러 학교에서 넓게 확인된 선택"
+    ? "여러 학교의 구매·구독 기록에서 확인"
     : selectedCount >= 2
-      ? "두 곳 이상의 학교에서 확인된 선택"
-      : "한 학교에서 확인된 선택";
+      ? "2개 이상 학교의 구매·구독 기록에서 확인"
+      : "1개 학교의 구매·구독 기록에서 확인";
   const selectedSchoolRates = (["elementary", "middle", "high"] as const)
     .map((level) => ({ level, rate: selectedTool.rates[level] }))
     .sort((a, b) => b.rate - a.rate);
@@ -695,8 +691,8 @@ export default function Home() {
   const lowestSchoolRate = selectedSchoolRates[selectedSchoolRates.length - 1];
   const schoolRateGap = Math.round((highestSchoolRate.rate - lowestSchoolRate.rate) * 10) / 10;
   const selectedToolComparison = schoolRateGap >= 5
-    ? `${schoolLevelLabels[highestSchoolRate.level]}에서 ${highestSchoolRate.rate}%로 가장 넓고, ${schoolLevelLabels[lowestSchoolRate.level]} ${lowestSchoolRate.rate}%와는 ${schoolRateGap}%p 차이가 납니다. 학교급별 구매·구독 범위의 차이이며, 사용 효과의 차이를 뜻하지는 않습니다.`
-    : `초·중·고의 확인 비율 차이가 ${schoolRateGap}%p 안에 있습니다. 특정 학교급에만 집중된 선택이라고 단정하기보다 실제 활용 학년과 수업 장면을 함께 확인해 보세요.`;
+    ? `${schoolLevelLabels[highestSchoolRate.level]}의 확인 비율이 ${highestSchoolRate.rate}%로 가장 높고, ${schoolLevelLabels[lowestSchoolRate.level]} ${lowestSchoolRate.rate}%보다 ${schoolRateGap}%p 높습니다. 학교급별 구매·구독 기록의 차이이며, 실제 사용량이나 교육 효과의 차이를 뜻하지는 않습니다.`
+    : `초·중·고의 확인 비율 차이는 ${schoolRateGap}%p 이내입니다. 학교급별 차이가 크지 않으므로 실제 활용 학년과 수업 장면은 사례 자료에서 별도로 확인해 보세요.`;
   const detailTask = caseDetail ? caseTasks.find((task) => task.key === caseDetail.taskKey) : undefined;
   const detailPattern = detailTask?.patterns.find((pattern) => pattern.id === caseDetail?.patternId);
   const visibleCases = useMemo(() => {
@@ -888,7 +884,7 @@ export default function Home() {
             <div className="choice-scoops" aria-hidden="true"><i /><i /><i /><i /></div>
             <small>7월 1일 기준 예산 집행 현황</small>
             <h2>예산 데이터 분석</h2>
-            <p>네 영역의 평균 계획액과 집행 현황, 에듀테크 선택과 2학기 운영 계획을 살펴봅니다.</p>
+            <p>네 영역의 평균 계획액과 집행 현황, 에듀테크 구매·구독 현황과 2학기 운영 계획을 살펴봅니다.</p>
             <em>예산 분석 들어가기 →</em>
           </button>
           <button className="portal-choice case-choice" type="button" onClick={() => selectCaseTab("case-overview")}>
@@ -912,7 +908,7 @@ export default function Home() {
           </h1>
           <p>
             7월 1일 기준 예산 집행 현황을 살펴보고, 영역별 2학기 운영 계획과
-            에듀테크 선택을 점검해 보세요.
+            에듀테크 구매·구독 현황을 점검해 보세요.
           </p>
           <div className="hero-actions">
             <button className="button primary" type="button" onClick={() => selectTab("budget")}>4개 영역 살펴보기</button>
@@ -956,7 +952,7 @@ export default function Home() {
           </article>
         </div>
         <div className="insight-strip">
-          <div><span>01</span><p><b>교육활동운영비</b>가 전체 실행 흐름을 이끌고 있어요.</p></div>
+          <div><span>01</span><p><b>교육활동운영비</b>의 평균 집행률이 네 영역 중 가장 높아요.</p></div>
           <div><span>02</span><p><b>교원역량강화비</b>는 학교마다 시작 시점의 차이가 커요.</p></div>
           <div><span>03</span><p><b>사업추진경비</b>는 2학기 행사 일정과 함께 봐야 해요.</p></div>
         </div>
@@ -1141,11 +1137,11 @@ export default function Home() {
       <section className="edutech-section tab-panel" id="edutech" hidden={activeTab !== "edutech"} aria-labelledby="edutech-title">
         <div className="section-heading">
           <div className="section-kicker-row">
-            <span className="section-kicker">에듀테크 선택 현황</span>
+            <span className="section-kicker">에듀테크 구매·구독 현황</span>
             <small>7.24 기준</small>
           </div>
           <div className="edutech-heading-copy">
-            <h2 id="edutech-title">어떤 에듀테크를 많이 선택했을까요?</h2>
+            <h2 id="edutech-title">구매·구독 기록에서 어떤 에듀테크가 많이 확인됐을까요?</h2>
             <div className="school-level-toolbar">
               <div className="school-level-switch" role="tablist" aria-label="학교급 선택">
                 {(Object.keys(schoolLevelLabels) as SchoolLevel[]).map((level) => (
@@ -1163,7 +1159,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <p>구매·구독이 확인된 도구를 학교급별로 살펴보고, 2학기 선택에 필요한 질문을 함께 확인해 보세요.</p>
+          <p>구매·구독 기록에서 확인된 도구를 학교급별로 살펴보고, 2학기 도입 전에 점검할 사항을 함께 확인해 보세요.</p>
         </div>
         <section className="student-safety-gate" aria-labelledby="student-safety-title">
           <div className="student-safety-heading">
@@ -1195,9 +1191,9 @@ export default function Home() {
             </a>
           </nav>
         </section>
-        <div className="edutech-story-grid" aria-label={`${selectedLevelLabel} 에듀테크 선택 흐름`}>
+        <div className="edutech-story-grid" aria-label={`${selectedLevelLabel} 에듀테크 구매·구독 현황`}>
           <article className="edutech-story-card">
-            <span>{selectedLevelLabel}에서 가장 넓게 확인</span>
+            <span>{selectedLevelLabel}에서 확인 비율이 가장 높은 유형</span>
             <h3>{leadingFunctionGroup.name} <b>{leadingFunctionGroup.rates[schoolLevel]}%</b></h3>
             <p>{schoolLevelInsight}</p>
           </article>
@@ -1341,11 +1337,11 @@ export default function Home() {
               ))}
             </div>
             <div className="detail-block lilac">
-              <b>학교급 차이에서 읽을 점</b>
+              <b>학교급별 확인 비율 비교</b>
               <p>{selectedToolComparison}</p>
             </div>
             <div className="detail-block">
-              <b>이 도구를 선택한 수업 목적</b>
+              <b>이 유형의 도구가 지원하는 활동</b>
               <p>{selectedMeta.demand}</p>
             </div>
             <div className="detail-block lilac">
@@ -1359,7 +1355,7 @@ export default function Home() {
                   }
                 }}>{name}</button>)}</div>
                 : <p>함께 확인된 다른 제품명이 없습니다.</p>}
-              <small>동시 등장 순이며, 함께 사용했거나 효과가 있다는 뜻은 아닙니다.</small>
+              <small>같은 학교의 구매·구독 기록에 함께 나온 횟수가 많은 순입니다. 실제로 함께 사용했거나 교육 효과가 있다는 뜻은 아닙니다.</small>
             </div>
             <div className="detail-block mint">
               <b>2학기 점검 질문</b>
@@ -1367,7 +1363,7 @@ export default function Home() {
               <ul>{selectedMeta.actions.map((action) => <li key={action}>{action}</li>)}</ul>
             </div>
             <div className="reading-note">
-              <b>이 숫자를 읽는 법</b>
+              <b>확인 비율의 의미</b>
               <p>구매·구독 자료에서 제품명이 확인된 학교의 비율입니다. 실제 사용량·만족도·교육 효과는 별도 확인이 필요합니다.</p>
             </div>
             <p className="terms-reminder">사용 전 이용약관을 꼭 확인하세요.</p>
@@ -1375,9 +1371,9 @@ export default function Home() {
         </div>
 
         <details className="exact-list">
-          <summary>자료 읽는 법</summary>
+          <summary>워드클라우드와 비율의 의미</summary>
           <div className="reading-note">
-            <p>워드클라우드의 글자 크기는 선택한 학교급에서 해당 도구가 확인된 학교 수를 나타냅니다. 한 학교가 여러 도구를 구매·구독할 수 있어 비율의 합은 100%가 아닐 수 있습니다. 구매 빈도만으로 실제 사용량·만족도·교육 효과를 판단할 수는 없습니다.</p>
+            <p>워드클라우드의 글자 크기는 현재 선택한 학교급에서 해당 도구의 구매·구독이 확인된 학교 수를 나타냅니다. 한 학교에서 여러 도구가 확인될 수 있어 비율의 합은 100%가 아닐 수 있습니다. 구매·구독 기록만으로 실제 사용량·만족도·교육 효과를 판단할 수는 없습니다.</p>
           </div>
         </details>
         <details className="exact-list">
@@ -1406,7 +1402,7 @@ export default function Home() {
       <section className="preference-section tab-panel" hidden={activeTab !== "preference"} aria-labelledby="preference-title">
         <div className="section-heading">
           <span className="section-kicker">에듀테크 활용 유형</span>
-          <h2 id="preference-title">어떤 기능에 선택이 모였을까요?</h2>
+          <h2 id="preference-title">어떤 기능의 도구가 많이 확인됐을까요?</h2>
           <p>{selectedLevelLabel} 자료에서 확인된 도구를 기능별로 다시 묶었습니다.</p>
         </div>
         <div className="school-level-switch preference-level-switch" role="tablist" aria-label="활용 유형 학교급 선택">
@@ -1435,9 +1431,9 @@ export default function Home() {
           </div>
           <article className="preference-insight">
             <span className="mini-sprinkle">● ✦ ●</span>
-            <h3>{selectedLevelLabel}에서는<br />{leadingFunctionGroup.name}이 가장 넓었습니다</h3>
-            <p>{schoolLevelInsight} 학교에서 해결하려는 수업 문제를 먼저 정한 뒤 제품을 비교하는 것이 중요합니다.</p>
-            <small>※ 한 학교가 여러 유형에 포함될 수 있어 비율의 합은 100%가 아닙니다. 구매·구독 자료에서 확인된 선택 경향이며, 선호 이유를 조사한 결과는 아닙니다.</small>
+            <h3>{selectedLevelLabel}에서는<br />{leadingFunctionGroup.name} 도구의 확인 비율이 가장 높았습니다</h3>
+            <p>{schoolLevelInsight}</p>
+            <small>※ 한 학교에서 여러 유형의 도구가 확인될 수 있어 비율의 합은 100%가 아닙니다. 구매·구독 기록을 기능별로 묶은 결과이며, 실제 사용 빈도나 만족도를 뜻하지 않습니다.</small>
           </article>
         </div>
       </section>
