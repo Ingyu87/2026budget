@@ -1626,6 +1626,90 @@ h1 em {
   overflow-wrap: break-word;
 }
 
+.tool-usage-cases {
+  margin: 15px 0;
+  padding: 17px;
+  border: 2px solid #d9c8f0;
+  border-radius: 20px;
+  background: #fbf8ff;
+}
+
+.tool-case-preview-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tool-case-preview-head > div {
+  display: grid;
+  gap: 3px;
+}
+
+.tool-case-preview-head span {
+  color: var(--purple);
+  font-size: 16px;
+  font-weight: 950;
+}
+
+.tool-case-preview-head b {
+  font-size: 19px;
+}
+
+.tool-case-preview-head button {
+  flex: 0 0 auto;
+  padding: 9px 12px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--purple);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.tool-case-preview-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.tool-case-preview-list article {
+  padding: 14px;
+  border: 1px solid #e4daf2;
+  border-radius: 15px;
+  background: #fff;
+}
+
+.tool-case-preview-list small {
+  display: block;
+  margin-bottom: 7px;
+  color: #725d99;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.tool-case-preview-list b {
+  display: block;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.tool-case-preview-list p,
+.tool-case-empty {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.tool-case-preview-list p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
 .tool-share {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -3378,6 +3462,46 @@ footer p {
   color: var(--muted);
   font-size: 24px;
   line-height: 1.6;
+}
+
+.edtech-case-dialog {
+  width: min(860px, 96vw);
+  --case-accent: var(--purple);
+}
+
+.edtech-case-list > div {
+  display: grid;
+  gap: 16px;
+}
+
+.edtech-case-list article {
+  padding: 22px;
+  border: 2px solid #e5dcf0;
+  border-radius: 20px;
+  background: #fbf9ff;
+}
+
+.edtech-case-list article small {
+  display: block;
+  margin-bottom: 9px;
+  color: #725d99;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.edtech-case-list article h3 {
+  margin: 0 0 9px;
+  font-size: 24px;
+  line-height: 1.35;
+  letter-spacing: -0.035em;
+}
+
+.edtech-case-list article p,
+.edtech-case-empty p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1.7;
 }
 
 .case-dialog section {

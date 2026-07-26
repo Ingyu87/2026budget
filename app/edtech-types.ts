@@ -12,6 +12,16 @@ export type EdtechGroup =
 
 export type LevelMetric = Record<SchoolLevel, number>;
 
+export type EdtechUsageCase = {
+  id: string;
+  title: string;
+  summary: string;
+  level: Exclude<SchoolLevel, "all">;
+  subject: string;
+  category: string;
+  tools: string[];
+};
+
 export type EdtechTool = {
   id: string;
   name: string;
@@ -37,6 +47,7 @@ export type EdtechSnapshot = {
   denominators: LevelMetric;
   tools: EdtechTool[];
   groups: EdtechGroupSummary[];
+  usageCases: EdtechUsageCase[];
 };
 
 export type TeacherWebAppExample = {

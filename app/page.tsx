@@ -623,6 +623,7 @@ export default function Home() {
   const [caseCatalogQuery, setCaseCatalogQuery] = useState("");
   const [schoolLevel, setSchoolLevel] = useState<SchoolLevel>("all");
   const [selectedTool, setSelectedTool] = useState<EdtechTool>(edtechSnapshot.tools[0]);
+  const [edtechCasesOpen, setEdtechCasesOpen] = useState(false);
   const [teacherWebAppOpen, setTeacherWebAppOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
   const [selectedRecipeNumber, setSelectedRecipeNumber] = useState("1");
@@ -661,6 +662,14 @@ export default function Home() {
   const selectedRate = selectedTool.rates[schoolLevel];
   const selectedRank = selectedTool.ranks[schoolLevel];
   const selectedLevelLabel = schoolLevelLabels[schoolLevel];
+  const selectedToolCases = useMemo(
+    () => edtechSnapshot.usageCases.filter((usageCase) =>
+      usageCase.tools.includes(selectedTool.name)
+      && (schoolLevel === "all" || usageCase.level === schoolLevel),
+    ),
+    [schoolLevel, selectedTool.name],
+  );
+  const selectedToolCasePreview = selectedToolCases.slice(0, 2);
   const maxWordCount = Math.max(1, ...visibleTools.map((tool) => tool.counts[schoolLevel]));
   const functionGroups = useMemo(
     () => [...edtechSnapshot.groups].sort((a, b) =>
@@ -713,6 +722,7 @@ export default function Home() {
 
   const changeSchoolLevel = (level: SchoolLevel) => {
     setSchoolLevel(level);
+    setEdtechCasesOpen(false);
     setCloudPage(0);
     const firstTool = [...edtechSnapshot.tools]
       .filter((tool) => tool.counts[level] > 0)
@@ -755,6 +765,7 @@ export default function Home() {
       if (event.key === "Escape") {
         setCaseDetail(null);
         setCaseCatalogOpen(false);
+        setEdtechCasesOpen(false);
         setTeacherWebAppOpen(false);
       }
     };
@@ -763,13 +774,13 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if (!caseCatalogOpen && !caseDetail && !teacherWebAppOpen) return;
+    if (!caseCatalogOpen && !caseDetail && !edtechCasesOpen && !teacherWebAppOpen) return;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = previousOverflow;
     };
-  }, [caseCatalogOpen, caseDetail, teacherWebAppOpen]);
+  }, [caseCatalogOpen, caseDetail, edtechCasesOpen, teacherWebAppOpen]);
 
   const revealDetail = (id: string) => {
     window.requestAnimationFrame(() => {
@@ -1254,7 +1265,10 @@ export default function Home() {
                     } as React.CSSProperties}
                     onMouseEnter={() => setSelectedTool(tool)}
                     onFocus={() => setSelectedTool(tool)}
-                    onClick={() => setSelectedTool(tool)}
+                    onClick={() => {
+                      setSelectedTool(tool);
+                      setEdtechCasesOpen(true);
+                    }}
                     aria-pressed={selectedTool.name === tool.name}
                     aria-label={`${tool.name}, ${selectedLevelLabel} ${count}개교, ${rate}%, ${tool.group}`}
                   >
@@ -1283,6 +1297,32 @@ export default function Home() {
               <span>실제 핵심 기능</span>
               <p>{selectedTool.purpose}</p>
             </div>
+            <section className="tool-usage-cases" aria-label={`${selectedTool.name} 활용 사례`}>
+              <div className="tool-case-preview-head">
+                <div>
+                  <span>에듀테크 활용 사례</span>
+                  <b>{selectedLevelLabel} {selectedToolCases.length}건</b>
+                </div>
+                <button type="button" onClick={() => setEdtechCasesOpen(true)}>
+                  {selectedToolCases.length > 2 ? "전체 사례 보기" : "사례 자세히 보기"}
+                </button>
+              </div>
+              {selectedToolCasePreview.length > 0 ? (
+                <div className="tool-case-preview-list">
+                  {selectedToolCasePreview.map((usageCase) => (
+                    <article key={usageCase.id}>
+                      <small>{schoolLevelLabels[usageCase.level]} · {usageCase.subject} · {usageCase.category}</small>
+                      <b>{usageCase.title}</b>
+                      <p>{usageCase.summary}</p>
+                    </article>
+                  ))}
+                </div>
+              ) : (
+                <p className="tool-case-empty">
+                  구매·구독 기록은 확인됐지만, 현재 사례 원문에는 이 도구의 구체적인 활용 사례가 없습니다.
+                </p>
+              )}
+            </section>
             <div className="tool-share">
               <span>구매·구독 확인 비율</span>
               <b>{selectedRate}%</b>
@@ -1311,7 +1351,10 @@ export default function Home() {
               {selectedTool.related[schoolLevel].length > 0
                 ? <div className="related-tools">{selectedTool.related[schoolLevel].map((name) => <button type="button" key={name} onClick={() => {
                   const target = edtechSnapshot.tools.find((tool) => tool.name === name);
-                  if (target) setSelectedTool(target);
+                  if (target) {
+                    setSelectedTool(target);
+                    setEdtechCasesOpen(true);
+                  }
                 }}>{name}</button>)}</div>
                 : <p>함께 확인된 다른 제품명이 없습니다.</p>}
               <small>동시 등장 순이며, 함께 사용했거나 효과가 있다는 뜻은 아닙니다.</small>
@@ -1343,7 +1386,10 @@ export default function Home() {
               <tbody>{visibleTools.map((tool) => (
                 <tr key={tool.name}>
                   <td>{tool.ranks[schoolLevel]}</td>
-                  <th><button type="button" onClick={() => setSelectedTool(tool)}>{tool.name}</button></th>
+                  <th><button type="button" onClick={() => {
+                    setSelectedTool(tool);
+                    setEdtechCasesOpen(true);
+                  }}>{tool.name}</button></th>
                   <td>{tool.counts[schoolLevel]}개교</td>
                   <td>{tool.rates[schoolLevel]}%</td>
                   <td>{tool.group}</td>
@@ -1683,6 +1729,64 @@ export default function Home() {
           </div>
         </section>
       </div>
+
+      {edtechCasesOpen && (
+        <div className="case-dialog-backdrop" role="presentation" onMouseDown={() => setEdtechCasesOpen(false)}>
+          <aside
+            className="case-dialog edtech-case-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="edtech-case-dialog-title"
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <div className="case-dialog-head">
+              <div>
+                <span>{selectedTool.group}</span>
+                <small className="case-signal signal-repeat">{selectedLevelLabel} {selectedToolCases.length}건</small>
+              </div>
+              <button type="button" onClick={() => setEdtechCasesOpen(false)} aria-label="에듀테크 활용 사례 닫기">×</button>
+            </div>
+            <h2 id="edtech-case-dialog-title">{selectedTool.name} 활용 사례</h2>
+            <p className="case-dialog-summary">
+              이 도구를 수업·평가·학교 운영에 적용한 실제 사례를 살펴보세요.
+            </p>
+
+            {selectedToolCases.length > 0 ? (
+              <section className="edtech-case-list" aria-label={`${selectedTool.name} 전체 활용 사례`}>
+                <span>실제 활용 내용</span>
+                <div>
+                  {selectedToolCases.map((usageCase) => (
+                    <article key={usageCase.id}>
+                      <small>{schoolLevelLabels[usageCase.level]} · {usageCase.subject} · {usageCase.category}</small>
+                      <h3>{usageCase.title}</h3>
+                      <p>{usageCase.summary}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            ) : (
+              <section className="edtech-case-empty">
+                <span>현재 연결된 활용 사례가 없습니다</span>
+                <p>
+                  이 도구는 구매·구독 기록에서 확인됐지만, 구체적인 활용 내용은 확인되지 않았습니다.
+                </p>
+              </section>
+            )}
+
+            <section className="case-dialog-semester">
+              <span>2학기 운영 시 확인할 점</span>
+              <ul>
+                <li>도구를 먼저 정하기보다 수업 목표와 학생 활동을 먼저 정합니다.</li>
+                <li>비슷한 사례를 그대로 복제하기보다 학년·교과·학생 수준에 맞게 조정합니다.</li>
+                <li>사용 전 이용 연령, 계정 방식, 개인정보 처리와 학교 도입 절차를 확인합니다.</li>
+              </ul>
+            </section>
+            <div className="case-dialog-footer">
+              <button type="button" onClick={() => setEdtechCasesOpen(false)}>확인했어요</button>
+            </div>
+          </aside>
+        </div>
+      )}
 
       {teacherWebAppOpen && (
         <div className="case-dialog-backdrop" role="presentation" onMouseDown={() => setTeacherWebAppOpen(false)}>

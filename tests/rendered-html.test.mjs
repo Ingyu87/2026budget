@@ -30,6 +30,9 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.match(page, /교사개발 웹앱/);
   assert.match(page, /사용 전 이용약관을 꼭 확인하세요/);
   assert.match(page, /에듀테크 활용 전 안내/);
+  assert.match(page, /에듀테크 활용 사례/);
+  assert.match(page, /실제 활용 내용/);
+  assert.match(page, /selectedToolCases/);
   assert.match(page, /학교운영위원회 심의 대상 여부/);
   assert.match(page, /서울시교육청 AI·에듀테크 공교육 도입 및 활용 가이드라인·지원자료/);
   assert.doesNotMatch(page, /학생 사용 전 필수 확인/);

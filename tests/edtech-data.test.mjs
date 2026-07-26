@@ -30,6 +30,7 @@ test("keeps the 7.24 edtech snapshot internally consistent and anonymous", async
     high: 37,
   });
   assert.ok(snapshot.tools.length >= 100, "구매·구독 도구가 충분히 보존되어야 합니다.");
+  assert.ok(snapshot.usageCases.length >= 100, "도구별 익명 활용 사례가 함께 제공되어야 합니다.");
   assert.equal(snapshot.tools[0].name, "패들렛");
   assert.equal(snapshot.tools[0].counts.all, 76);
   assert.deepEqual(teacher.counts, {
@@ -65,6 +66,16 @@ test("keeps the 7.24 edtech snapshot internally consistent and anonymous", async
   });
   assert.equal(snapshot.tools.some((tool) => tool.name === "센스쿨"), false);
   assert.equal(snapshot.tools.some((tool) => tool.name === "SEN에듀"), false);
+
+  const padletCases = snapshot.usageCases.filter((usageCase) => usageCase.tools.includes("패들렛"));
+  assert.ok(padletCases.length >= 40, "패들렛의 실제 활용 사례가 연결되어야 합니다.");
+  assert.ok(padletCases.every((usageCase) =>
+    usageCase.title
+    && usageCase.summary
+    && usageCase.subject
+    && ["elementary", "middle", "high"].includes(usageCase.level)
+    && !Object.hasOwn(usageCase, "school"),
+  ));
 
   assert.doesNotMatch(source, /초등학교|중학교|고등학교|"school"/);
   assert.doesNotMatch(source, /학생 제작|학생개발/);
