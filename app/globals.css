@@ -5069,6 +5069,168 @@ body {
   .site-footer p { padding-left: 0; border-left: 0; }
 }
 
+/* Keep the analysis-selection screen at its established composition.
+   Readability and density changes apply inside the two analysis modes. */
+.app-home .site-header {
+  gap: 28px;
+  min-height: 72px;
+  padding: 12px clamp(20px, 5vw, 80px);
+}
+
+.app-home .brand {
+  font-size: 16px;
+}
+
+.app-home .brand > span:last-child {
+  max-width: 260px;
+}
+
+.app-home .brand-mark {
+  width: 38px;
+  height: 38px;
+  font-size: 16px;
+}
+
+.app-home .mode-navigation button {
+  font-size: 15px;
+}
+
+.app-home .date-chip,
+.app-home .eyebrow {
+  font-size: 15px;
+}
+
+.app-home .portal-section {
+  gap: 18px 28px;
+  min-height: calc(100vh - 72px);
+  padding: 38px clamp(24px, 6vw, 96px) 50px;
+}
+
+.app-home .portal-copy .eyebrow {
+  margin-bottom: 26px;
+}
+
+.app-home .portal-copy h1 {
+  font-size: clamp(52px, 5.2vw, 72px);
+  line-height: 0.98;
+}
+
+.app-home .portal-copy > p {
+  margin-top: 24px;
+  font-size: clamp(21px, 1.65vw, 25px);
+  line-height: 1.6;
+}
+
+.app-home .portal-visual {
+  min-height: 335px;
+  border-width: 9px;
+  border-radius: 46px;
+}
+
+.app-home .portal-choice-grid {
+  gap: 22px;
+  margin-top: 2px;
+}
+
+.app-home .portal-choice {
+  min-height: 270px;
+  padding: 28px;
+  border-radius: 34px;
+}
+
+.app-home .choice-scoops {
+  margin-bottom: 18px;
+}
+
+.app-home .portal-choice small {
+  font-size: 17px;
+}
+
+.app-home .portal-choice h2 {
+  font-size: clamp(32px, 2.7vw, 42px);
+}
+
+.app-home .portal-choice p {
+  margin-bottom: 16px;
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.app-home .portal-choice em {
+  font-size: 18px;
+}
+
+.app-home .site-footer {
+  padding: 18px clamp(20px, 5vw, 72px);
+}
+
+.app-home .site-footer b,
+.app-home .site-footer p {
+  font-size: 15px;
+}
+
+@media (max-width: 1000px) {
+  .app-home .portal-visual {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 720px) {
+  .app-home .site-header {
+    min-height: 62px;
+    padding: 9px 16px;
+  }
+
+  .app-home .brand {
+    gap: 7px;
+  }
+
+  .app-home .brand > span:last-child {
+    max-width: 195px;
+    font-size: 13px;
+  }
+
+  .app-home .date-chip {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .app-home .mode-navigation button {
+    font-size: 15px;
+  }
+
+  .app-home .portal-section {
+    padding: 52px 20px 62px;
+  }
+
+  .app-home .portal-copy h1 {
+    font-size: 50px;
+  }
+
+  .app-home .portal-copy > p {
+    font-size: 24px;
+  }
+
+  .app-home .portal-visual {
+    min-height: 390px;
+    border-width: 6px;
+    border-radius: 30px;
+  }
+
+  .app-home .portal-choice {
+    min-height: 0;
+    padding: 27px;
+  }
+
+  .app-home .portal-choice p {
+    font-size: 20px;
+  }
+
+  .app-home .site-footer {
+    padding: 16px 20px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {

@@ -796,7 +796,7 @@ export default function Home() {
   };
 
   return (
-    <main>
+    <main className={`app-shell app-${appMode}`}>
       <header className="site-header">
         <button className="brand" type="button" onClick={goHome} aria-label="분석 선택 화면으로">
           <span className="brand-mark">AI</span>
