@@ -7,6 +7,8 @@ import {
   type CaseCatalogTask,
 } from "./case-catalog-data";
 import { caseTasks, type CasePattern, type CaseTask } from "./case-data";
+import { edtechSnapshot, teacherWebAppSummary } from "./edtech-data";
+import type { EdtechGroupSummary, EdtechTool, SchoolLevel } from "./edtech-types";
 
 type BudgetCategory = {
   name: string;
@@ -481,16 +483,24 @@ const groupMeta: Record<string, {
   },
 };
 
-const getRate = (schools: number) => Number(((schools / 58) * 100).toFixed(1));
+const schoolLevelLabels: Record<SchoolLevel, string> = {
+  all: "전체",
+  elementary: "초등",
+  middle: "중등",
+  high: "고등",
+};
 
-const getWordSize = (schools: number) => {
-  if (schools >= 20) return 66;
-  if (schools >= 12) return 50;
-  if (schools >= 8) return 42;
-  if (schools >= 5) return 34;
-  if (schools >= 3) return 28;
-  if (schools >= 2) return 23;
-  return 17;
+const schoolLevelInsights: Record<SchoolLevel, string> = {
+  all: "협업·공유가 42.5%로 가장 넓었고 콘텐츠 제작 35.1%, 생성형 AI 28.7%가 뒤를 이었습니다. 함께 모으고 결과물을 만드는 기본 활동에 선택이 먼저 모인 흐름입니다.",
+  elementary: "초등은 협업·공유 47.7%, 콘텐츠 제작 38.4%, 학습관리 34.9% 순입니다. 결과물 공유와 일상적인 학급·학습 운영을 잇는 선택이 상대적으로 넓었습니다.",
+  middle: "중등은 생성형 AI 39.2%와 협업·공유 37.3%가 비슷하게 앞섰습니다. 교과 자료 제작·분석과 공동 활동을 함께 지원하려는 선택으로 읽을 수 있습니다.",
+  high: "고등은 생성형 AI가 45.9%로 가장 넓었고 협업·공유 37.8%, 퀴즈·참여 35.1%가 뒤를 이었습니다. 탐구·프로젝트와 빠른 확인 활동을 함께 지원하는 흐름입니다.",
+};
+
+const getWordSize = (count: number, maxCount: number) => {
+  if (maxCount <= 1) return 24;
+  const ratio = Math.sqrt(count) / Math.sqrt(maxCount);
+  return Math.round(18 + ratio * 46);
 };
 
 type TabKey = "overview" | "budget" | "diagnosis" | "edutech" | "preference" | "semester";
@@ -611,7 +621,9 @@ export default function Home() {
   const [caseCatalogOpen, setCaseCatalogOpen] = useState(false);
   const [caseCatalogFilter, setCaseCatalogFilter] = useState<CaseCatalogFilter>("all");
   const [caseCatalogQuery, setCaseCatalogQuery] = useState("");
-  const [selectedTool, setSelectedTool] = useState(edutech[0]);
+  const [schoolLevel, setSchoolLevel] = useState<SchoolLevel>("all");
+  const [selectedTool, setSelectedTool] = useState<EdtechTool>(edtechSnapshot.tools[0]);
+  const [teacherWebAppOpen, setTeacherWebAppOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
   const [selectedRecipeNumber, setSelectedRecipeNumber] = useState("1");
   const [filter, setFilter] = useState("all");
@@ -621,14 +633,23 @@ export default function Home() {
   const [selectedExpenseIndex, setSelectedExpenseIndex] = useState(0);
   const [checked, setChecked] = useState<Record<string, boolean>>({});
 
-  const visibleTools = useMemo(
-    () => edutech.filter((tool) =>
-      (filter === "all" || tool.group === filter)
-      && tool.name.toLocaleLowerCase("ko").includes(toolQuery.trim().toLocaleLowerCase("ko")),
+  const rankedEdutech = useMemo(
+    () => [...edtechSnapshot.tools].sort((a, b) =>
+      a.ranks[schoolLevel] - b.ranks[schoolLevel]
+      || a.name.localeCompare(b.name, "ko"),
     ),
-    [filter, toolQuery],
+    [schoolLevel],
   );
-  const cloudPageSize = 16;
+  const visibleTools = useMemo(
+    () => rankedEdutech.filter((tool) =>
+      tool.counts[schoolLevel] > 0
+      &&
+      (filter === "all" || tool.group === filter)
+      && `${tool.name} ${tool.purpose}`.toLocaleLowerCase("ko").includes(toolQuery.trim().toLocaleLowerCase("ko")),
+    ),
+    [filter, rankedEdutech, schoolLevel, toolQuery],
+  );
+  const cloudPageSize = 24;
   const cloudPageCount = Math.max(1, Math.ceil(visibleTools.length / cloudPageSize));
   const safeCloudPage = Math.min(cloudPage, cloudPageCount - 1);
   const cloudTools = visibleTools.slice(
@@ -636,16 +657,36 @@ export default function Home() {
     safeCloudPage * cloudPageSize + cloudPageSize,
   );
   const selectedMeta = groupMeta[selectedTool.group];
+  const selectedCount = selectedTool.counts[schoolLevel];
+  const selectedRate = selectedTool.rates[schoolLevel];
+  const selectedRank = selectedTool.ranks[schoolLevel];
+  const selectedLevelLabel = schoolLevelLabels[schoolLevel];
+  const maxWordCount = Math.max(1, ...visibleTools.map((tool) => tool.counts[schoolLevel]));
+  const functionGroups = useMemo(
+    () => [...edtechSnapshot.groups].sort((a, b) =>
+      b.counts[schoolLevel] - a.counts[schoolLevel]
+      || a.name.localeCompare(b.name, "ko"),
+    ),
+    [schoolLevel],
+  );
+  const leadingFunctionGroup: EdtechGroupSummary = functionGroups[0];
   const selectedRecipe = semesterRecipes.find((recipe) => recipe.number === selectedRecipeNumber) ?? semesterRecipes[0];
-  const selectedRank = edutech.findIndex((tool) => tool.name === selectedTool.name) + 1;
-  const selectedRate = getRate(selectedTool.schools);
   const selectedExpenseDetails = expenseDetailsByCategory[selectedCategory.name];
   const selectedExpense = selectedExpenseDetails[selectedExpenseIndex] ?? selectedExpenseDetails[0];
-  const selectionSignal = selectedTool.schools >= 8
-    ? "여러 학교에서 반복 확인된 공통 선택"
-    : selectedTool.schools >= 2
+  const selectionSignal = selectedRate >= 10
+    ? "여러 학교에서 넓게 확인된 선택"
+    : selectedCount >= 2
       ? "두 곳 이상의 학교에서 확인된 선택"
       : "한 학교에서 확인된 선택";
+  const selectedSchoolRates = (["elementary", "middle", "high"] as const)
+    .map((level) => ({ level, rate: selectedTool.rates[level] }))
+    .sort((a, b) => b.rate - a.rate);
+  const highestSchoolRate = selectedSchoolRates[0];
+  const lowestSchoolRate = selectedSchoolRates[selectedSchoolRates.length - 1];
+  const schoolRateGap = Math.round((highestSchoolRate.rate - lowestSchoolRate.rate) * 10) / 10;
+  const selectedToolComparison = schoolRateGap >= 5
+    ? `${schoolLevelLabels[highestSchoolRate.level]}에서 ${highestSchoolRate.rate}%로 가장 넓고, ${schoolLevelLabels[lowestSchoolRate.level]} ${lowestSchoolRate.rate}%와는 ${schoolRateGap}%p 차이가 납니다. 학교급별 구매·구독 범위의 차이이며, 사용 효과의 차이를 뜻하지는 않습니다.`
+    : `초·중·고의 확인 비율 차이가 ${schoolRateGap}%p 안에 있습니다. 특정 학교급에만 집중된 선택이라고 단정하기보다 실제 활용 학년과 수업 장면을 함께 확인해 보세요.`;
   const detailTask = caseDetail ? caseTasks.find((task) => task.key === caseDetail.taskKey) : undefined;
   const detailPattern = detailTask?.patterns.find((pattern) => pattern.id === caseDetail?.patternId);
   const visibleCases = useMemo(() => {
@@ -668,6 +709,15 @@ export default function Home() {
 
   const toggleCheck = (key: string) =>
     setChecked((current) => ({ ...current, [key]: !current[key] }));
+
+  const changeSchoolLevel = (level: SchoolLevel) => {
+    setSchoolLevel(level);
+    setCloudPage(0);
+    const firstTool = [...edtechSnapshot.tools]
+      .filter((tool) => tool.counts[level] > 0)
+      .sort((a, b) => a.ranks[level] - b.ranks[level])[0];
+    if (firstTool) setSelectedTool(firstTool);
+  };
 
   const selectTab = (tab: TabKey) => {
     setAppMode("budget");
@@ -704,6 +754,7 @@ export default function Home() {
       if (event.key === "Escape") {
         setCaseDetail(null);
         setCaseCatalogOpen(false);
+        setTeacherWebAppOpen(false);
       }
     };
     window.addEventListener("keydown", closeOnEscape);
@@ -711,13 +762,13 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if (!caseCatalogOpen && !caseDetail) return;
+    if (!caseCatalogOpen && !caseDetail && !teacherWebAppOpen) return;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = previousOverflow;
     };
-  }, [caseCatalogOpen, caseDetail]);
+  }, [caseCatalogOpen, caseDetail, teacherWebAppOpen]);
 
   const revealDetail = (id: string) => {
     window.requestAnimationFrame(() => {
@@ -1077,45 +1128,54 @@ export default function Home() {
 
       <section className="edutech-section tab-panel" id="edutech" hidden={activeTab !== "edutech"} aria-labelledby="edutech-title">
         <div className="section-heading">
-          <span className="section-kicker">에듀테크 선택 현황</span>
+          <div className="section-kicker-row">
+            <span className="section-kicker">에듀테크 선택 현황</span>
+            <small>7.24 기준</small>
+          </div>
           <h2 id="edutech-title">어떤 에듀테크를 많이 선택했을까요?</h2>
-          <p>협업·공유 도구가 가장 넓게 선택됐고, 교과·맞춤형 도구도 여러 학교에서 확인됐습니다.</p>
+          <p>구매·구독이 확인된 도구를 학교급별로 살펴보고, 2학기 선택에 필요한 질문을 함께 확인해 보세요.</p>
         </div>
-        <section className="student-safety-gate" aria-labelledby="student-safety-title">
-          <div className="student-safety-heading">
-            <span>학생 사용 전 필수 확인</span>
-            <h3 id="student-safety-title">도입보다 먼저, 연령·심의·개인정보를 확인하세요</h3>
-            <p>목록에 있다는 사실만으로 학생이 바로 사용할 수 있는 교육용 도구라는 뜻은 아닙니다. 확인이 끝나기 전에는 학생 계정을 만들거나 학생 개인정보·결과물을 업로드하지 마세요.</p>
+        <div className="school-level-toolbar">
+          <div className="school-level-switch" role="tablist" aria-label="학교급 선택">
+            {(Object.keys(schoolLevelLabels) as SchoolLevel[]).map((level) => (
+              <button
+                key={level}
+                type="button"
+                role="tab"
+                aria-selected={schoolLevel === level}
+                className={schoolLevel === level ? "active" : ""}
+                onClick={() => changeSchoolLevel(level)}
+              >
+                {schoolLevelLabels[level]}
+              </button>
+            ))}
           </div>
-          <ol className="student-safety-checks">
-            <li>
-              <b>① 사용 연령과 계정</b>
-              <p>공식 이용약관에서 최소 연령, 보호자 동의, 학생 직접 계정 사용 가능 여부를 확인합니다.</p>
-            </li>
-            <li>
-              <b>② 학교운영위원회 심의</b>
-              <p>학습지원 소프트웨어를 교육자료로 선정·도입하는 경우 학교운영위원회 심의 대상과 학교 절차를 확인합니다.</p>
-            </li>
-            <li>
-              <b>③ 개인정보와 동의서</b>
-              <p>이름·이메일·학년·음성·얼굴·과제·접속기록의 수집·전송 여부를 확인하고, 동의가 필요한 경우 학생과 법정대리인의 개인정보 활용 동의를 받은 뒤 사용합니다.</p>
-            </li>
-          </ol>
-          <nav className="student-safety-sources" aria-label="학생 에듀테크 사용 확인 자료">
-            <a href="https://buseo.sen.go.kr/buseo/bu10/user/bbs/BD_selectBbs.do?q_bbsDocNo=20251220202229742&q_bbsSn=1240" target="_blank" rel="noreferrer">서울시교육청: AI·에듀테크 공교육 도입 및 활용 가이드라인·지원자료 ↗</a>
-          </nav>
-        </section>
-        <div className="edutech-summary" aria-label="에듀테크 선택 현황 요약">
-          <div><b>78</b><span>확인된 에듀테크 종류</span></div>
-          <div><b>41</b><span>여러 학교가 함께 선택</span></div>
-          <div>
-            <b>37</b>
-            <span>
-              한 학교의 특색 있는{" "}
-              <TermHelp label="도구" explanation={otherToolsExplanation} />
-            </span>
-          </div>
-          <div><b>48.3%</b><span>1위 패들렛 확인 비율</span></div>
+          <a
+            className="edutech-guide-link"
+            href="https://buseo.sen.go.kr/buseo/bu10/user/bbs/BD_selectBbs.do?q_bbsDocNo=20251220202229742&q_bbsSn=1240"
+            target="_blank"
+            rel="noreferrer"
+          >
+            서울시교육청 활용 가이드라인 ↗
+          </a>
+        </div>
+        <div className="edutech-story-grid" aria-label={`${selectedLevelLabel} 에듀테크 선택 흐름`}>
+          <article className="edutech-story-card">
+            <span>{selectedLevelLabel}에서 가장 넓게 확인</span>
+            <h3>{leadingFunctionGroup.name} <b>{leadingFunctionGroup.rates[schoolLevel]}%</b></h3>
+            <p>{schoolLevelInsights[schoolLevel]}</p>
+          </article>
+          <button
+            type="button"
+            className="teacher-webapp-card"
+            onClick={() => setTeacherWebAppOpen(true)}
+            aria-haspopup="dialog"
+          >
+            <span>생성형 AI로 교사가 직접 제작</span>
+            <h3>교사개발 웹앱 <b>{teacherWebAppSummary.counts[schoolLevel]}건</b></h3>
+            <p>{teacherWebAppSummary.insights[schoolLevel].headline}</p>
+            <em>개발 유형과 사례 자세히 보기 →</em>
+          </button>
         </div>
         <div className="tool-toolbar">
           <div className="cloud-filters" aria-label="에듀테크 기능 필터">
@@ -1152,12 +1212,13 @@ export default function Home() {
               <span className="coding">코딩·컴퓨팅</span>
             </div>
             <p className="cloud-guide">
-              도구를 선택하면 비율과 활용 의미를 볼 수 있습니다. · <b>크기:</b> 선택 학교 수에 비례 · <b>현재:</b> {visibleTools.length}종
+              도구를 선택하면 {selectedLevelLabel} 비율과 학교급 비교를 볼 수 있습니다. · <b>크기:</b> 확인 학교 수에 비례 · <b>현재:</b> {visibleTools.length}종
               {visibleTools.length > 0 && <> · {safeCloudPage * cloudPageSize + 1}–{Math.min((safeCloudPage + 1) * cloudPageSize, visibleTools.length)}번째 표시</>}
             </p>
             <div className={`word-cloud ${visibleTools.length <= 10 ? "compact" : ""}`} aria-label={`에듀테크 워드클라우드, 현재 ${visibleTools.length}종`}>
               {cloudTools.map((tool, index) => {
-                const rate = getRate(tool.schools);
+                const count = tool.counts[schoolLevel];
+                const rate = tool.rates[schoolLevel];
                 const className = groupMeta[tool.group].className;
                 return (
                   <button
@@ -1165,14 +1226,14 @@ export default function Home() {
                     type="button"
                     className={`cloud-word ${className} ${selectedTool.name === tool.name ? "selected" : ""}`}
                     style={{
-                      "--word-size": `${getWordSize(tool.schools)}px`,
-                      "--word-rotate": `${tool.schools > 1 ? [-4, 0, 4, 0][index % 4] : 0}deg`,
+                      "--word-size": `${getWordSize(count, maxWordCount)}px`,
+                      "--word-rotate": `${count > 1 ? [-6, 0, 6, 0][index % 4] : 0}deg`,
                     } as React.CSSProperties}
                     onMouseEnter={() => setSelectedTool(tool)}
                     onFocus={() => setSelectedTool(tool)}
                     onClick={() => setSelectedTool(tool)}
                     aria-pressed={selectedTool.name === tool.name}
-                    aria-label={`${tool.name}, ${tool.schools}개교, ${rate}%, ${tool.group}`}
+                    aria-label={`${tool.name}, ${selectedLevelLabel} ${count}개교, ${rate}%, ${tool.group}`}
                   >
                     <span>{tool.name}</span>
                     {selectedTool.name === tool.name && <em>{rate}%</em>}
@@ -1192,28 +1253,41 @@ export default function Home() {
           <aside className="tool-detail" aria-live="polite">
             <div className="tool-detail-head">
               <span className={`tool-group ${selectedMeta.className}`}>{selectedTool.group}</span>
-              <span className="rank-chip">전체 {selectedRank}위</span>
+              <span className="rank-chip">{selectedLevelLabel} {selectedRank}위</span>
             </div>
             <h3>{selectedTool.name}</h3>
             <div className="tool-purpose">
               <span>실제 핵심 기능</span>
-              <p>{toolPurposes[selectedTool.name]}</p>
+              <p>{selectedTool.purpose}</p>
             </div>
             <div className="tool-share">
-              <span>선택 학교 비율</span>
+              <span>구매·구독 확인 비율</span>
               <b>{selectedRate}%</b>
-              <small>{selectedTool.schools}개교 / 58개교</small>
+              <small>{selectedCount}개교에서 확인</small>
             </div>
             <p className="signal-chip">{selectionSignal}</p>
+            <div className="level-comparison" aria-label={`${selectedTool.name} 학교급별 확인 비율`}>
+              {(["elementary", "middle", "high"] as const).map((level) => (
+                <div key={level}>
+                  <span>{schoolLevelLabels[level]}</span>
+                  <i><b style={{ width: `${Math.min(100, selectedTool.rates[level] * 2.2)}%` }} /></i>
+                  <strong>{selectedTool.rates[level]}%</strong>
+                </div>
+              ))}
+            </div>
+            <div className="detail-block lilac">
+              <b>학교급 차이에서 읽을 점</b>
+              <p>{selectedToolComparison}</p>
+            </div>
             <div className="detail-block">
               <b>이 도구를 선택한 수업 목적</b>
               <p>{selectedMeta.demand}</p>
             </div>
             <div className="detail-block lilac">
-              <b>같은 학교 지출내역에서 함께 확인된 도구</b>
-              {selectedTool.related.length > 0
-                ? <div className="related-tools">{selectedTool.related.map((name) => <button type="button" key={name} onClick={() => {
-                  const target = edutech.find((tool) => tool.name === name);
+              <b>{selectedLevelLabel} 자료에서 함께 확인된 도구</b>
+              {selectedTool.related[schoolLevel].length > 0
+                ? <div className="related-tools">{selectedTool.related[schoolLevel].map((name) => <button type="button" key={name} onClick={() => {
+                  const target = edtechSnapshot.tools.find((tool) => tool.name === name);
                   if (target) setSelectedTool(target);
                 }}>{name}</button>)}</div>
                 : <p>함께 확인된 다른 제품명이 없습니다.</p>}
@@ -1226,15 +1300,16 @@ export default function Home() {
             </div>
             <div className="reading-note">
               <b>이 숫자를 읽는 법</b>
-              <p>구매·지출내용에서 제품명이 확인된 학교의 비율입니다. 한 학교에서 확인된 도구도 새로운 수업 시도로 살펴볼 수 있습니다. 실제 사용량·만족도·교육 효과는 별도 확인이 필요합니다.</p>
+              <p>구매·구독 자료에서 제품명이 확인된 학교의 비율입니다. 실제 사용량·만족도·교육 효과는 별도 확인이 필요합니다.</p>
             </div>
+            <p className="terms-reminder">사용 전 이용약관을 꼭 확인하세요.</p>
           </aside>
         </div>
 
         <details className="exact-list">
           <summary>자료 읽는 법</summary>
           <div className="reading-note">
-            <p>에듀테크의 기능은 공식 제품 소개와 교육부·교육청 활용 자료를 바탕으로 분류했습니다. ‘생성형 AI’ 등 색상 범주는 구매내역을 기능별로 읽기 위한 분류이며, 교육용 제품 인증이나 학생 사용 가능 여부를 뜻하지 않습니다. 워드클라우드의 글자 크기는 해당 도구가 확인된 학교 수를 나타냅니다. 구매 내역만으로 실제 사용량·만족도·교육 효과를 판단할 수는 없습니다.</p>
+            <p>워드클라우드의 글자 크기는 선택한 학교급에서 해당 도구가 확인된 학교 수를 나타냅니다. 한 학교가 여러 도구를 구매·구독할 수 있어 비율의 합은 100%가 아닐 수 있습니다. 구매 빈도만으로 실제 사용량·만족도·교육 효과를 판단할 수는 없습니다.</p>
           </div>
         </details>
         <details className="exact-list">
@@ -1244,12 +1319,12 @@ export default function Home() {
               <thead><tr><th>순위</th><th>도구</th><th>학교 수</th><th>비율</th><th>대표 유형</th><th>실제 핵심 기능</th></tr></thead>
               <tbody>{visibleTools.map((tool) => (
                 <tr key={tool.name}>
-                  <td>{edutech.findIndex((item) => item.name === tool.name) + 1}</td>
+                  <td>{tool.ranks[schoolLevel]}</td>
                   <th><button type="button" onClick={() => setSelectedTool(tool)}>{tool.name}</button></th>
-                  <td>{tool.schools}개교</td>
-                  <td>{getRate(tool.schools)}%</td>
+                  <td>{tool.counts[schoolLevel]}개교</td>
+                  <td>{tool.rates[schoolLevel]}%</td>
                   <td>{tool.group}</td>
-                  <td>{toolPurposes[tool.name]}</td>
+                  <td>{tool.purpose}</td>
                 </tr>
               ))}</tbody>
             </table>
@@ -1261,23 +1336,37 @@ export default function Home() {
         <div className="section-heading">
           <span className="section-kicker">에듀테크 활용 유형</span>
           <h2 id="preference-title">어떤 기능에 선택이 모였을까요?</h2>
-          <p>협업·공유형과 교과·맞춤형 도구 선택이 두드러졌습니다.</p>
+          <p>{selectedLevelLabel} 자료에서 확인된 도구를 기능별로 다시 묶었습니다.</p>
+        </div>
+        <div className="school-level-switch preference-level-switch" role="tablist" aria-label="활용 유형 학교급 선택">
+          {(Object.keys(schoolLevelLabels) as SchoolLevel[]).map((level) => (
+            <button
+              key={level}
+              type="button"
+              role="tab"
+              aria-selected={schoolLevel === level}
+              className={schoolLevel === level ? "active" : ""}
+              onClick={() => changeSchoolLevel(level)}
+            >
+              {schoolLevelLabels[level]}
+            </button>
+          ))}
         </div>
         <div className="preference-layout">
           <div className="preference-chart">
             {functionGroups.map((group) => (
               <div className="preference-row" key={group.name}>
-                <div><b>{group.name}</b><span>{group.schools}개교 · {group.rate}%</span></div>
-                <div className="preference-track"><i style={{ width: `${group.rate * 2}%`, background: group.color }} /></div>
+                <div><b>{group.name}</b><span>{group.counts[schoolLevel]}개교 · {group.rates[schoolLevel]}%</span></div>
+                <div className="preference-track"><i style={{ width: `${Math.min(100, group.rates[schoolLevel] * 2)}%`, background: group.color }} /></div>
                 <p>{group.text}</p>
               </div>
             ))}
           </div>
           <article className="preference-insight">
             <span className="mini-sprinkle">● ✦ ●</span>
-            <h3>협업·공유 도구 선택이<br />가장 많았습니다</h3>
-            <p>협업·공유형이 50.0%로 가장 넓었고, 교과·맞춤형 46.6%, 언어·문해 41.4%, 퀴즈·참여 39.7%가 뒤를 이었습니다. 학교에서 해결하려는 수업 문제를 먼저 정한 뒤 제품을 비교하는 것이 중요합니다.</p>
-            <small>※ 한 학교가 여러 유형에 포함될 수 있어 비율의 합은 100%가 아닙니다. 구매 내역에서 확인된 선택 경향이며, 선호 이유를 조사한 결과는 아닙니다.</small>
+            <h3>{selectedLevelLabel}에서는<br />{leadingFunctionGroup.name}이 가장 넓었습니다</h3>
+            <p>{schoolLevelInsights[schoolLevel]} 학교에서 해결하려는 수업 문제를 먼저 정한 뒤 제품을 비교하는 것이 중요합니다.</p>
+            <small>※ 한 학교가 여러 유형에 포함될 수 있어 비율의 합은 100%가 아닙니다. 구매·구독 자료에서 확인된 선택 경향이며, 선호 이유를 조사한 결과는 아닙니다.</small>
           </article>
         </div>
       </section>
@@ -1571,6 +1660,74 @@ export default function Home() {
           </div>
         </section>
       </div>
+
+      {teacherWebAppOpen && (
+        <div className="case-dialog-backdrop" role="presentation" onMouseDown={() => setTeacherWebAppOpen(false)}>
+          <aside
+            className="case-dialog teacher-webapp-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="teacher-webapp-dialog-title"
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <div className="case-dialog-head">
+              <div>
+                <span>교사가 생성형 AI로 직접 만든 앱과 도구</span>
+                <small className="case-signal signal-repeat">{selectedLevelLabel} {teacherWebAppSummary.counts[schoolLevel]}건</small>
+              </div>
+              <button type="button" onClick={() => setTeacherWebAppOpen(false)} aria-label="교사개발 웹앱 상세 닫기">×</button>
+            </div>
+            <h2 id="teacher-webapp-dialog-title">교사개발 웹앱</h2>
+            <p className="case-dialog-summary">{teacherWebAppSummary.insights[schoolLevel].detail}</p>
+
+            <section className="teacher-webapp-levels" aria-label="교사개발 웹앱 학교급별 사례 수">
+              {(["elementary", "middle", "high"] as const).map((level) => (
+                <div className={schoolLevel === level ? "active" : ""} key={level}>
+                  <span>{schoolLevelLabels[level]}</span>
+                  <b>{teacherWebAppSummary.counts[level]}건</b>
+                </div>
+              ))}
+            </section>
+
+            <section className="teacher-purpose-grid">
+              {teacherWebAppSummary.purposes.map((purpose) => (
+                <article key={purpose.name}>
+                  <b>{purpose.name}</b>
+                  <p>{purpose.description}</p>
+                </article>
+              ))}
+            </section>
+
+            <section className="teacher-example-section">
+              <span>구체적인 개발 예시</span>
+              <div>
+                {teacherWebAppSummary.examples
+                  .filter((example) => schoolLevel === "all" || example.level === schoolLevel)
+                  .map((example) => (
+                    <article key={`${example.level}-${example.title}`}>
+                      <small>{schoolLevelLabels[example.level]} · {example.purpose}</small>
+                      <b>{example.title}</b>
+                      <p>{example.description}</p>
+                    </article>
+                  ))}
+              </div>
+            </section>
+
+            <section className="case-dialog-semester">
+              <span>2학기 운영 시 생각해볼 사안</span>
+              <p>{teacherWebAppSummary.insights[schoolLevel].question}</p>
+              <ul>
+                <li>담당자가 바뀌어도 사용할 수 있도록 사용법과 수정 기록을 남깁니다.</li>
+                <li>학생 정보가 저장되는 위치와 공개 범위를 먼저 확인합니다.</li>
+                <li>작은 수업에서 시험한 뒤 동료 교사의 피드백으로 고쳐 씁니다.</li>
+              </ul>
+            </section>
+            <div className="case-dialog-footer">
+              <button type="button" onClick={() => setTeacherWebAppOpen(false)}>확인했어요</button>
+            </div>
+          </aside>
+        </div>
+      )}
 
       {detailTask && detailPattern && (
         <div className="case-dialog-backdrop" role="presentation" onMouseDown={() => setCaseDetail(null)}>
