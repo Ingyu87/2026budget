@@ -29,9 +29,10 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.match(page, /schoolLevelLabels/);
   assert.match(page, /교사개발 웹앱/);
   assert.match(page, /사용 전 이용약관을 꼭 확인하세요/);
-  assert.match(page, /서울시교육청 활용 가이드라인/);
+  assert.match(page, /에듀테크 활용 전 안내/);
+  assert.match(page, /학교운영위원회 심의 대상 여부/);
+  assert.match(page, /서울시교육청 AI·에듀테크 공교육 도입 및 활용 가이드라인·지원자료/);
   assert.doesNotMatch(page, /학생 사용 전 필수 확인/);
-  assert.doesNotMatch(page, /학교운영위원회 심의/);
   assert.doesNotMatch(page, /법정대리인의 개인정보 활용 동의/);
   assert.doesNotMatch(page, /교육부: 학습지원 소프트웨어 선정 기준·학교운영위원회 심의/);
   assert.doesNotMatch(page, /교육부: 개인정보 동의서와 최소 수집 확인/);
@@ -84,8 +85,8 @@ test("builds a standard Next.js deployment and keeps the dashboard content", asy
   assert.equal((caseCatalog.match(/"id":/g) ?? []).length, 231);
   assert.doesNotMatch(caseCatalog, /초등학교|중학교|학교명|원본파일|PDF페이지/);
   assert.doesNotMatch(caseCatalog, /교사 는|피드백 과|제공하 였|이었습 니다|아 바타|유 행|디 지털|도 구|학 습|수 업/);
-  assert.match(edtechData, /"all": 174/);
-  assert.match(edtechData, /"elementary": 86/);
+  assert.match(edtechData, /"all": 177/);
+  assert.match(edtechData, /"elementary": 89/);
   assert.match(edtechData, /"middle": 51/);
   assert.match(edtechData, /"high": 37/);
   assert.match(edtechData, /"name": "패들렛"/);

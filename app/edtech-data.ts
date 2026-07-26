@@ -5,8 +5,8 @@ export const edtechSnapshot: EdtechSnapshot = {
   "asOf": "2026-07-24",
   "sourceCommit": "9819ddad0288e65279803c8523d37fdc0ea0b0d4",
   "denominators": {
-    "all": 174,
-    "elementary": 86,
+    "all": 177,
+    "elementary": 89,
     "middle": 51,
     "high": 37
   },
@@ -17,14 +17,14 @@ export const edtechSnapshot: EdtechSnapshot = {
       "group": "협업·공유",
       "purpose": "게시판과 캔버스에 자료·의견·결과물을 함께 모으는 실시간 협업 공간",
       "counts": {
-        "all": 54,
-        "elementary": 35,
+        "all": 76,
+        "elementary": 57,
         "middle": 13,
         "high": 6
       },
       "rates": {
-        "all": 31,
-        "elementary": 40.7,
+        "all": 42.9,
+        "elementary": 64,
         "middle": 25.5,
         "high": 16.2
       },
@@ -37,17 +37,17 @@ export const edtechSnapshot: EdtechSnapshot = {
       "related": {
         "all": [
           "캔바",
+          "북크리에이터",
           "Claude",
-          "심스페이스",
-          "ChatGPT",
-          "Gemini"
+          "Gemini",
+          "매쓰홀릭"
         ],
         "elementary": [
           "캔바",
-          "심스페이스",
+          "북크리에이터",
           "매쓰홀릭",
-          "아트봉봉",
-          "클래시파이"
+          "Gemini",
+          "ZEP·젭퀴즈"
         ],
         "middle": [
           "캔바",
@@ -77,8 +77,8 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 5
       },
       "rates": {
-        "all": 23.6,
-        "elementary": 27.9,
+        "all": 23.2,
+        "elementary": 27,
         "middle": 23.5,
         "high": 13.5
       },
@@ -91,17 +91,17 @@ export const edtechSnapshot: EdtechSnapshot = {
       "related": {
         "all": [
           "패들렛",
+          "Gemini",
+          "북크리에이터",
           "심스페이스",
-          "클리포",
-          "클래시파이",
-          "ChatGPT"
+          "ZEP·젭퀴즈"
         ],
         "elementary": [
           "패들렛",
-          "심스페이스",
-          "클래시파이",
-          "아트봉봉",
-          "자작자작"
+          "북크리에이터",
+          "Gemini",
+          "ZEP·젭퀴즈",
+          "심스페이스"
         ],
         "middle": [
           "패들렛",
@@ -125,37 +125,37 @@ export const edtechSnapshot: EdtechSnapshot = {
       "group": "생성형 AI",
       "purpose": "텍스트·이미지·자료 분석과 생성을 지원하는 멀티모달 생성형 AI",
       "counts": {
-        "all": 24,
-        "elementary": 5,
+        "all": 37,
+        "elementary": 18,
         "middle": 11,
         "high": 8
       },
       "rates": {
-        "all": 13.8,
-        "elementary": 5.8,
+        "all": 20.9,
+        "elementary": 20.2,
         "middle": 21.6,
         "high": 21.6
       },
       "ranks": {
         "all": 3,
-        "elementary": 9,
+        "elementary": 3,
         "middle": 3,
         "high": 2
       },
       "related": {
         "all": [
-          "ChatGPT",
-          "Claude",
           "패들렛",
-          "NotebookLM",
-          "노션"
+          "Claude",
+          "캔바",
+          "ChatGPT",
+          "북크리에이터"
         ],
         "elementary": [
-          "구글 클래스룸",
-          "매쓰홀릭",
-          "엔트리",
           "패들렛",
-          "Brisk Teaching"
+          "Claude",
+          "북크리에이터",
+          "캔바",
+          "ZEP·젭퀴즈"
         ],
         "middle": [
           "캔바",
@@ -179,37 +179,37 @@ export const edtechSnapshot: EdtechSnapshot = {
       "group": "생성형 AI",
       "purpose": "긴 문서 분석·글쓰기·아이디어 정리와 코딩을 지원하는 생성형 AI",
       "counts": {
-        "all": 16,
-        "elementary": 3,
+        "all": 27,
+        "elementary": 14,
         "middle": 5,
         "high": 8
       },
       "rates": {
-        "all": 9.2,
-        "elementary": 3.5,
+        "all": 15.3,
+        "elementary": 15.7,
         "middle": 9.8,
         "high": 21.6
       },
       "ranks": {
         "all": 4,
-        "elementary": 21,
+        "elementary": 7,
         "middle": 5,
         "high": 1
       },
       "related": {
         "all": [
-          "Gemini",
           "패들렛",
+          "Gemini",
           "ChatGPT",
-          "클리포",
-          "노션"
+          "북크리에이터",
+          "블루킷"
         ],
         "elementary": [
+          "패들렛",
+          "북크리에이터",
+          "Gemini",
           "블루킷",
-          "ChatGPT",
-          "클래스카드",
-          "클리포",
-          "패들렛"
+          "ChatGPT"
         ],
         "middle": [
           "캔바",
@@ -228,6 +228,202 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
+      "id": "zep-젭퀴즈",
+      "name": "ZEP·젭퀴즈",
+      "group": "퀴즈·참여",
+      "purpose": "메타버스형 참여 공간과 게임형 퀴즈를 결합한 수업 참여 도구",
+      "counts": {
+        "all": 19,
+        "elementary": 15,
+        "middle": 3,
+        "high": 1
+      },
+      "rates": {
+        "all": 10.7,
+        "elementary": 16.9,
+        "middle": 5.9,
+        "high": 2.7
+      },
+      "ranks": {
+        "all": 5,
+        "elementary": 4,
+        "middle": 12,
+        "high": 42
+      },
+      "related": {
+        "all": [
+          "패들렛",
+          "북크리에이터",
+          "띵커벨",
+          "블루킷",
+          "캔바"
+        ],
+        "elementary": [
+          "패들렛",
+          "북크리에이터",
+          "띵커벨",
+          "블루킷",
+          "캔바"
+        ],
+        "middle": [
+          "매쓰홀릭",
+          "우리반",
+          "카훗",
+          "클래스팅 AI"
+        ],
+        "high": [
+          "MS Teams"
+        ]
+      }
+    },
+    {
+      "id": "북크리에이터",
+      "name": "북크리에이터",
+      "group": "콘텐츠 제작",
+      "purpose": "글·이미지·음성·영상을 엮어 전자책과 학습 결과물을 만드는 저작 도구",
+      "counts": {
+        "all": 16,
+        "elementary": 14,
+        "middle": 1,
+        "high": 1
+      },
+      "rates": {
+        "all": 9,
+        "elementary": 15.7,
+        "middle": 2,
+        "high": 2.7
+      },
+      "ranks": {
+        "all": 6,
+        "elementary": 6,
+        "middle": 29,
+        "high": 21
+      },
+      "related": {
+        "all": [
+          "패들렛",
+          "블루킷",
+          "캔바",
+          "Claude",
+          "ZEP·젭퀴즈"
+        ],
+        "elementary": [
+          "패들렛",
+          "블루킷",
+          "Claude",
+          "ZEP·젭퀴즈",
+          "매쓰홀릭"
+        ],
+        "middle": [
+          "NotebookLM",
+          "SEN스쿨"
+        ],
+        "high": [
+          "캔바",
+          "패들렛"
+        ]
+      }
+    },
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "group": "생성형 AI",
+      "purpose": "대화형 자료 생성·분석·아이디어 탐색을 지원하는 생성형 AI",
+      "counts": {
+        "all": 16,
+        "elementary": 8,
+        "middle": 3,
+        "high": 5
+      },
+      "rates": {
+        "all": 9,
+        "elementary": 9,
+        "middle": 5.9,
+        "high": 13.5
+      },
+      "ranks": {
+        "all": 7,
+        "elementary": 11,
+        "middle": 10,
+        "high": 6
+      },
+      "related": {
+        "all": [
+          "패들렛",
+          "Claude",
+          "Gemini",
+          "SUNO",
+          "매쓰홀릭"
+        ],
+        "elementary": [
+          "패들렛",
+          "Claude",
+          "매쓰홀릭",
+          "북크리에이터",
+          "블루킷"
+        ],
+        "middle": [
+          "캔바",
+          "Gemini",
+          "멘티미터",
+          "심스페이스",
+          "패들렛"
+        ],
+        "high": [
+          "Claude",
+          "Gemini",
+          "구글 클래스룸",
+          "노션",
+          "리로스쿨"
+        ]
+      }
+    },
+    {
+      "id": "매쓰홀릭",
+      "name": "매쓰홀릭",
+      "group": "교과·맞춤형",
+      "purpose": "수학 문제은행과 진단·추천 학습을 제공하는 수학 AI 코스웨어",
+      "counts": {
+        "all": 15,
+        "elementary": 14,
+        "middle": 1,
+        "high": 0
+      },
+      "rates": {
+        "all": 8.5,
+        "elementary": 15.7,
+        "middle": 2,
+        "high": 0
+      },
+      "ranks": {
+        "all": 8,
+        "elementary": 5,
+        "middle": 28,
+        "high": 60
+      },
+      "related": {
+        "all": [
+          "패들렛",
+          "북크리에이터",
+          "카훗",
+          "Gemini",
+          "블루킷"
+        ],
+        "elementary": [
+          "패들렛",
+          "북크리에이터",
+          "Gemini",
+          "블루킷",
+          "심스페이스"
+        ],
+        "middle": [
+          "카훗",
+          "ZEP·젭퀴즈"
+        ],
+        "high": []
+      }
+    },
+    {
       "id": "심스페이스",
       "name": "심스페이스",
       "group": "학습관리",
@@ -239,37 +435,37 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 0
       },
       "rates": {
-        "all": 7.5,
-        "elementary": 12.8,
+        "all": 7.3,
+        "elementary": 12.4,
         "middle": 3.9,
         "high": 0
       },
       "ranks": {
-        "all": 5,
-        "elementary": 3,
-        "middle": 16,
-        "high": 63
+        "all": 9,
+        "elementary": 9,
+        "middle": 17,
+        "high": 72
       },
       "related": {
         "all": [
-          "캔바",
           "패들렛",
-          "매쓰홀릭",
-          "센스쿨",
-          "풀리수학"
-        ],
-        "elementary": [
           "캔바",
-          "패들렛",
           "매쓰홀릭",
           "풀리수학",
-          "센스쿨"
+          "Gemini"
+        ],
+        "elementary": [
+          "패들렛",
+          "캔바",
+          "매쓰홀릭",
+          "풀리수학",
+          "아트봉봉"
         ],
         "middle": [
-          "센스쿨",
           "캔바",
           "ChatGPT",
-          "Gemini"
+          "Gemini",
+          "SEN스쿨"
         ],
         "high": []
       }
@@ -286,14 +482,14 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 5
       },
       "rates": {
-        "all": 6.9,
-        "elementary": 2.3,
+        "all": 6.8,
+        "elementary": 2.2,
         "middle": 9.8,
         "high": 13.5
       },
       "ranks": {
-        "all": 6,
-        "elementary": 35,
+        "all": 10,
+        "elementary": 60,
         "middle": 6,
         "high": 7
       },
@@ -327,105 +523,248 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
-      "id": "chatgpt",
-      "name": "ChatGPT",
-      "group": "생성형 AI",
-      "purpose": "대화형 자료 생성·분석·아이디어 탐색을 지원하는 생성형 AI",
+      "id": "suno",
+      "name": "SUNO",
+      "group": "콘텐츠 제작",
+      "purpose": "텍스트 지시로 노래와 배경음악을 만드는 생성형 음악 도구",
       "counts": {
-        "all": 11,
-        "elementary": 3,
-        "middle": 3,
-        "high": 5
+        "all": 12,
+        "elementary": 8,
+        "middle": 2,
+        "high": 2
       },
       "rates": {
-        "all": 6.3,
-        "elementary": 3.5,
-        "middle": 5.9,
-        "high": 13.5
+        "all": 6.8,
+        "elementary": 9,
+        "middle": 3.9,
+        "high": 5.4
       },
       "ranks": {
-        "all": 7,
-        "elementary": 20,
-        "middle": 10,
-        "high": 6
+        "all": 11,
+        "elementary": 12,
+        "middle": 24,
+        "high": 16
       },
       "related": {
         "all": [
-          "Gemini",
-          "Claude",
           "패들렛",
-          "캔바",
-          "SUNO"
+          "북크리에이터",
+          "ChatGPT",
+          "Claude",
+          "블루킷"
         ],
         "elementary": [
+          "북크리에이터",
           "패들렛",
           "Claude",
           "블루킷",
-          "캔바",
-          "클래시파이"
+          "ChatGPT"
         ],
         "middle": [
-          "캔바",
-          "Gemini",
+          "패들렛",
           "멘티미터",
-          "심스페이스",
-          "패들렛"
+          "캔바",
+          "ChatGPT"
         ],
         "high": [
-          "Claude",
-          "Gemini",
-          "구글 클래스룸",
-          "노션",
-          "리로스쿨"
+          "캔바",
+          "클리포",
+          "패들렛",
+          "ChatGPT",
+          "Gemini"
         ]
       }
     },
     {
-      "id": "zep-젭퀴즈",
-      "name": "ZEP·젭퀴즈",
+      "id": "블루킷",
+      "name": "블루킷",
       "group": "퀴즈·참여",
-      "purpose": "메타버스형 참여 공간과 게임형 퀴즈를 결합한 수업 참여 도구",
+      "purpose": "문항 세트를 여러 게임 모드로 운영하는 실시간 퀴즈 플랫폼",
       "counts": {
         "all": 11,
-        "elementary": 7,
-        "middle": 3,
-        "high": 1
+        "elementary": 11,
+        "middle": 0,
+        "high": 0
       },
       "rates": {
-        "all": 6.3,
-        "elementary": 8.1,
-        "middle": 5.9,
-        "high": 2.7
+        "all": 6.2,
+        "elementary": 12.4,
+        "middle": 0,
+        "high": 0
       },
       "ranks": {
-        "all": 8,
-        "elementary": 6,
-        "middle": 11,
-        "high": 42
+        "all": 12,
+        "elementary": 8,
+        "middle": 68,
+        "high": 66
       },
       "related": {
         "all": [
           "패들렛",
-          "캔바",
-          "토도한글",
-          "띵커벨",
-          "매쓰홀릭"
+          "북크리에이터",
+          "Claude",
+          "ZEP·젭퀴즈",
+          "카훗"
         ],
         "elementary": [
           "패들렛",
+          "북크리에이터",
+          "Claude",
+          "ZEP·젭퀴즈",
+          "카훗"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "띵커벨",
+      "name": "띵커벨",
+      "group": "퀴즈·참여",
+      "purpose": "퀴즈·토론·설문·워드클라우드·보드를 제공하는 수업 상호작용 도구",
+      "counts": {
+        "all": 10,
+        "elementary": 8,
+        "middle": 1,
+        "high": 1
+      },
+      "rates": {
+        "all": 5.6,
+        "elementary": 9,
+        "middle": 2,
+        "high": 2.7
+      },
+      "ranks": {
+        "all": 13,
+        "elementary": 10,
+        "middle": 25,
+        "high": 19
+      },
+      "related": {
+        "all": [
+          "패들렛",
+          "ZEP·젭퀴즈",
+          "북크리에이터",
           "캔바",
-          "토도한글",
-          "띵커벨",
-          "빅카인즈"
+          "Gemini"
+        ],
+        "elementary": [
+          "패들렛",
+          "ZEP·젭퀴즈",
+          "북크리에이터",
+          "캔바",
+          "아이쌤GPT"
+        ],
+        "middle": [
+          "클래스팅"
+        ],
+        "high": [
+          "이음AI",
+          "키위티",
+          "Gemini",
+          "NotebookLM"
+        ]
+      }
+    },
+    {
+      "id": "카훗",
+      "name": "카훗",
+      "group": "퀴즈·참여",
+      "purpose": "실시간 퀴즈와 설문으로 이해도와 참여를 확인하는 게임형 평가 도구",
+      "counts": {
+        "all": 10,
+        "elementary": 7,
+        "middle": 1,
+        "high": 2
+      },
+      "rates": {
+        "all": 5.6,
+        "elementary": 7.9,
+        "middle": 2,
+        "high": 5.4
+      },
+      "ranks": {
+        "all": 14,
+        "elementary": 15,
+        "middle": 34,
+        "high": 11
+      },
+      "related": {
+        "all": [
+          "패들렛",
+          "북크리에이터",
+          "매쓰홀릭",
+          "블루킷",
+          "Gemini"
+        ],
+        "elementary": [
+          "패들렛",
+          "북크리에이터",
+          "블루킷",
+          "매쓰홀릭",
+          "Gemini"
         ],
         "middle": [
           "매쓰홀릭",
-          "우리반",
-          "카훗",
-          "클래스팅 AI"
+          "ZEP·젭퀴즈"
         ],
         "high": [
-          "MS Teams"
+          "노션",
+          "Clip Studio Paint",
+          "Gemini",
+          "Manus"
+        ]
+      }
+    },
+    {
+      "id": "클래스카드",
+      "name": "클래스카드",
+      "group": "언어·문해",
+      "purpose": "영어 어휘·문장 세트를 게임과 반복 학습으로 익히는 언어 학습 도구",
+      "counts": {
+        "all": 10,
+        "elementary": 6,
+        "middle": 2,
+        "high": 2
+      },
+      "rates": {
+        "all": 5.6,
+        "elementary": 6.7,
+        "middle": 3.9,
+        "high": 5.4
+      },
+      "ranks": {
+        "all": 15,
+        "elementary": 17,
+        "middle": 19,
+        "high": 12
+      },
+      "related": {
+        "all": [
+          "패들렛",
+          "블루킷",
+          "토도한글",
+          "Claude",
+          "Gemini"
+        ],
+        "elementary": [
+          "패들렛",
+          "블루킷",
+          "토도한글",
+          "Claude",
+          "Gemini"
+        ],
+        "middle": [
+          "러니",
+          "체리팟",
+          "Brisk Teaching",
+          "Google Workspace"
+        ],
+        "high": [
+          "원아워",
+          "클리포",
+          "Redmenta",
+          "Snorkl"
         ]
       }
     },
@@ -441,14 +780,14 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 3
       },
       "rates": {
-        "all": 5.7,
-        "elementary": 3.5,
+        "all": 5.6,
+        "elementary": 3.4,
         "middle": 7.8,
         "high": 8.1
       },
       "ranks": {
-        "all": 9,
-        "elementary": 22,
+        "all": 16,
+        "elementary": 43,
         "middle": 7,
         "high": 10
       },
@@ -456,14 +795,16 @@ export const edtechSnapshot: EdtechSnapshot = {
         "all": [
           "노션",
           "캔바",
-          "왓퀴즈",
-          "클래스카드",
-          "패들렛"
+          "패들렛",
+          "Claude",
+          "Gemini"
         ],
         "elementary": [
-          "왓퀴즈",
           "패들렛",
-          "ZEP·젭퀴즈"
+          "다했니·다했어요",
+          "띵커벨",
+          "마이클AI",
+          "북크리에이터"
         ],
         "middle": [
           "캔바",
@@ -480,51 +821,6 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
-      "id": "매쓰홀릭",
-      "name": "매쓰홀릭",
-      "group": "교과·맞춤형",
-      "purpose": "수학 문제은행과 진단·추천 학습을 제공하는 수학 AI 코스웨어",
-      "counts": {
-        "all": 9,
-        "elementary": 8,
-        "middle": 1,
-        "high": 0
-      },
-      "rates": {
-        "all": 5.2,
-        "elementary": 9.3,
-        "middle": 2,
-        "high": 0
-      },
-      "ranks": {
-        "all": 10,
-        "elementary": 4,
-        "middle": 28,
-        "high": 54
-      },
-      "related": {
-        "all": [
-          "심스페이스",
-          "패들렛",
-          "구글 클래스룸",
-          "문제G",
-          "우리반"
-        ],
-        "elementary": [
-          "심스페이스",
-          "패들렛",
-          "구글 클래스룸",
-          "문제G",
-          "우리반"
-        ],
-        "middle": [
-          "카훗",
-          "ZEP·젭퀴즈"
-        ],
-        "high": []
-      }
-    },
-    {
       "id": "클리포",
       "name": "클리포",
       "group": "퀴즈·참여",
@@ -536,14 +832,14 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 3
       },
       "rates": {
-        "all": 5.2,
-        "elementary": 1.2,
+        "all": 5.1,
+        "elementary": 1.1,
         "middle": 9.8,
         "high": 8.1
       },
       "ranks": {
-        "all": 11,
-        "elementary": 59,
+        "all": 17,
+        "elementary": 92,
         "middle": 4,
         "high": 9
       },
@@ -553,13 +849,14 @@ export const edtechSnapshot: EdtechSnapshot = {
           "패들렛",
           "Claude",
           "SUNO",
-          "블루킷"
+          "멘티미터"
         ],
         "elementary": [
+          "멘티미터",
           "블루킷",
-          "ChatGPT",
-          "Claude",
-          "SUNO"
+          "젠스파크",
+          "큐리팟",
+          "ChatGPT"
         ],
         "middle": [
           "캔바",
@@ -578,6 +875,53 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
+      "id": "sen스쿨",
+      "name": "SEN스쿨",
+      "group": "학습관리",
+      "purpose": "서울교육 계정과 여러 교육 서비스를 연결해 수업·학급 운영을 지원하는 플랫폼",
+      "counts": {
+        "all": 9,
+        "elementary": 6,
+        "middle": 3,
+        "high": 0
+      },
+      "rates": {
+        "all": 5.1,
+        "elementary": 6.7,
+        "middle": 5.9,
+        "high": 0
+      },
+      "ranks": {
+        "all": 18,
+        "elementary": 19,
+        "middle": 11,
+        "high": 132
+      },
+      "related": {
+        "all": [
+          "구글 클래스룸",
+          "심스페이스",
+          "패들렛",
+          "북크리에이터",
+          "아트봉봉"
+        ],
+        "elementary": [
+          "구글 클래스룸",
+          "심스페이스",
+          "패들렛",
+          "아트봉봉",
+          "엘리프"
+        ],
+        "middle": [
+          "북크리에이터",
+          "심스페이스",
+          "Google Workspace",
+          "NotebookLM"
+        ],
+        "high": []
+      }
+    },
+    {
       "id": "구글-클래스룸",
       "name": "구글 클래스룸",
       "group": "학습관리",
@@ -589,31 +933,31 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 1
       },
       "rates": {
-        "all": 4.6,
-        "elementary": 8.1,
+        "all": 4.5,
+        "elementary": 7.9,
         "middle": 0,
         "high": 2.7
       },
       "ranks": {
-        "all": 12,
-        "elementary": 5,
+        "all": 19,
+        "elementary": 13,
         "middle": 48,
         "high": 17
       },
       "related": {
         "all": [
+          "패들렛",
+          "SEN스쿨",
           "매쓰홀릭",
-          "센스쿨",
-          "똑똑수학탐험대",
-          "문제G",
-          "심스페이스"
+          "ChatGPT",
+          "Gemini"
         ],
         "elementary": [
+          "패들렛",
+          "SEN스쿨",
           "매쓰홀릭",
-          "센스쿨",
-          "똑똑수학탐험대",
-          "문제G",
-          "심스페이스"
+          "Gemini",
+          "Zoom Pro"
         ],
         "middle": [],
         "high": [
@@ -628,32 +972,38 @@ export const edtechSnapshot: EdtechSnapshot = {
       "group": "협업·공유",
       "purpose": "문서·데이터베이스·일정·업무를 함께 관리하는 협업 공간",
       "counts": {
-        "all": 7,
-        "elementary": 0,
+        "all": 8,
+        "elementary": 1,
         "middle": 2,
         "high": 5
       },
       "rates": {
-        "all": 4,
-        "elementary": 0,
+        "all": 4.5,
+        "elementary": 1.1,
         "middle": 3.9,
         "high": 13.5
       },
       "ranks": {
-        "all": 13,
-        "elementary": 74,
-        "middle": 12,
+        "all": 20,
+        "elementary": 66,
+        "middle": 13,
         "high": 4
       },
       "related": {
         "all": [
           "Gemini",
-          "Claude",
-          "Google Workspace",
-          "오르조 클래스",
-          "카훗"
+          "카훗",
+          "캔바",
+          "패들렛",
+          "Claude"
         ],
-        "elementary": [],
+        "elementary": [
+          "매쓰홀릭",
+          "북크리에이터",
+          "블루킷",
+          "카훗",
+          "캔바"
+        ],
         "middle": [
           "패들렛",
           "Gemini"
@@ -665,6 +1015,195 @@ export const edtechSnapshot: EdtechSnapshot = {
           "오르조 클래스",
           "카훗"
         ]
+      }
+    },
+    {
+      "id": "스쿨플랫",
+      "name": "스쿨플랫",
+      "group": "교과·맞춤형",
+      "purpose": "문제은행·과제·성취 분석을 제공하는 학교 맞춤형 수학 코스웨어",
+      "counts": {
+        "all": 8,
+        "elementary": 5,
+        "middle": 2,
+        "high": 1
+      },
+      "rates": {
+        "all": 4.5,
+        "elementary": 5.6,
+        "middle": 3.9,
+        "high": 2.7
+      },
+      "ranks": {
+        "all": 21,
+        "elementary": 20,
+        "middle": 16,
+        "high": 22
+      },
+      "related": {
+        "all": [
+          "패들렛",
+          "캔바",
+          "리딩오션스쿨",
+          "키위티",
+          "다했니·다했어요"
+        ],
+        "elementary": [
+          "패들렛",
+          "리딩오션스쿨",
+          "캔바",
+          "키위티",
+          "다했니·다했어요"
+        ],
+        "middle": [
+          "캔바",
+          "NotebookLM"
+        ],
+        "high": [
+          "AICE"
+        ]
+      }
+    },
+    {
+      "id": "아트봉봉",
+      "name": "아트봉봉",
+      "group": "콘텐츠 제작",
+      "purpose": "디지털 드로잉과 미술 활동 결과물 제작을 지원하는 예술교육 도구",
+      "counts": {
+        "all": 7,
+        "elementary": 7,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 4,
+        "elementary": 7.9,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 22,
+        "elementary": 14,
+        "middle": 76,
+        "high": 74
+      },
+      "related": {
+        "all": [
+          "패들렛",
+          "Gemini",
+          "리드포스쿨",
+          "마이클AI",
+          "심스페이스"
+        ],
+        "elementary": [
+          "패들렛",
+          "Gemini",
+          "리드포스쿨",
+          "마이클AI",
+          "심스페이스"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "클래스팅-ai",
+      "name": "클래스팅 AI",
+      "group": "학습관리",
+      "purpose": "학급관리와 AI 기반 진단·맞춤 학습을 결합한 교육 플랫폼",
+      "counts": {
+        "all": 7,
+        "elementary": 4,
+        "middle": 2,
+        "high": 1
+      },
+      "rates": {
+        "all": 4,
+        "elementary": 4.5,
+        "middle": 3.9,
+        "high": 2.7
+      },
+      "ranks": {
+        "all": 23,
+        "elementary": 33,
+        "middle": 20,
+        "high": 30
+      },
+      "related": {
+        "all": [
+          "패들렛",
+          "Claude",
+          "Gemini",
+          "매쓰홀릭",
+          "북크리에이터"
+        ],
+        "elementary": [
+          "패들렛",
+          "매쓰홀릭",
+          "북크리에이터",
+          "슬라이도",
+          "캔바"
+        ],
+        "middle": [
+          "우리반",
+          "채움AI",
+          "ZEP·젭퀴즈"
+        ],
+        "high": [
+          "ChatGPT",
+          "Claude",
+          "Gamma",
+          "Gemini",
+          "MS Teams"
+        ]
+      }
+    },
+    {
+      "id": "투닝",
+      "name": "투닝",
+      "group": "콘텐츠 제작",
+      "purpose": "웹툰·스토리·이미지 콘텐츠를 만드는 교육용 창작 도구",
+      "counts": {
+        "all": 7,
+        "elementary": 5,
+        "middle": 2,
+        "high": 0
+      },
+      "rates": {
+        "all": 4,
+        "elementary": 5.6,
+        "middle": 3.9,
+        "high": 0
+      },
+      "ranks": {
+        "all": 24,
+        "elementary": 24,
+        "middle": 21,
+        "high": 106
+      },
+      "related": {
+        "all": [
+          "Gemini",
+          "북크리에이터",
+          "캔바",
+          "지니아튜터",
+          "패들렛"
+        ],
+        "elementary": [
+          "Gemini",
+          "북크리에이터",
+          "지니아튜터",
+          "캔바",
+          "패들렛"
+        ],
+        "middle": [
+          "뤼튼",
+          "왓퀴즈",
+          "캔바",
+          "클리포",
+          "Gemini"
+        ],
+        "high": []
       }
     },
     {
@@ -680,26 +1219,28 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 4,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 2,
         "high": 13.5
       },
       "ranks": {
-        "all": 14,
-        "elementary": 73,
-        "middle": 45,
+        "all": 25,
+        "elementary": 109,
+        "middle": 44,
         "high": 8
       },
       "related": {
         "all": [
+          "Gemini",
           "NotebookLM",
           "데스모스",
           "심스페이스",
-          "채움AI",
-          "퀴즈앤"
+          "채움AI"
         ],
         "elementary": [
           "심스페이스",
+          "키위티",
+          "투닝",
           "풀리수학",
           "E-GPT"
         ],
@@ -717,386 +1258,310 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
-      "id": "suno",
-      "name": "SUNO",
+      "id": "캡컷",
+      "name": "캡컷",
       "group": "콘텐츠 제작",
-      "purpose": "텍스트 지시로 노래와 배경음악을 만드는 생성형 음악 도구",
-      "counts": {
-        "all": 7,
-        "elementary": 3,
-        "middle": 2,
-        "high": 2
-      },
-      "rates": {
-        "all": 4,
-        "elementary": 3.5,
-        "middle": 3.9,
-        "high": 5.4
-      },
-      "ranks": {
-        "all": 15,
-        "elementary": 23,
-        "middle": 24,
-        "high": 16
-      },
-      "related": {
-        "all": [
-          "패들렛",
-          "ChatGPT",
-          "캔바",
-          "클리포",
-          "멘티미터"
-        ],
-        "elementary": [
-          "미리캔버스",
-          "블루킷",
-          "캡컷",
-          "클리포",
-          "통그라미"
-        ],
-        "middle": [
-          "패들렛",
-          "멘티미터",
-          "캔바",
-          "ChatGPT"
-        ],
-        "high": [
-          "캔바",
-          "클리포",
-          "패들렛",
-          "ChatGPT",
-          "Gemini"
-        ]
-      }
-    },
-    {
-      "id": "클래스카드",
-      "name": "클래스카드",
-      "group": "언어·문해",
-      "purpose": "영어 어휘·문장 세트를 게임과 반복 학습으로 익히는 언어 학습 도구",
+      "purpose": "자막·효과·AI 기능을 갖춘 영상 편집과 숏폼 제작 도구",
       "counts": {
         "all": 6,
-        "elementary": 2,
-        "middle": 2,
-        "high": 2
+        "elementary": 6,
+        "middle": 0,
+        "high": 0
       },
       "rates": {
         "all": 3.4,
-        "elementary": 2.3,
-        "middle": 3.9,
-        "high": 5.4
+        "elementary": 6.7,
+        "middle": 0,
+        "high": 0
       },
       "ranks": {
-        "all": 16,
-        "elementary": 30,
-        "middle": 18,
-        "high": 12
+        "all": 26,
+        "elementary": 16,
+        "middle": 96,
+        "high": 96
       },
       "related": {
         "all": [
-          "러니",
-          "블루킷",
-          "원아워",
-          "체리팟",
-          "클리포"
-        ],
-        "elementary": [
-          "블루킷",
-          "토도한글",
+          "띵커벨",
+          "미리캔버스",
+          "캔바",
           "패들렛",
-          "플랭스쿨",
           "Claude"
         ],
-        "middle": [
-          "러니",
-          "체리팟",
-          "Brisk Teaching",
-          "Google Workspace"
+        "elementary": [
+          "띵커벨",
+          "미리캔버스",
+          "캔바",
+          "패들렛",
+          "Claude"
         ],
-        "high": [
-          "원아워",
-          "클리포",
-          "Redmenta",
-          "Snorkl"
-        ]
+        "middle": [],
+        "high": []
       }
     },
     {
-      "id": "클래스팅-ai",
-      "name": "클래스팅 AI",
-      "group": "학습관리",
-      "purpose": "학급관리와 AI 기반 진단·맞춤 학습을 결합한 교육 플랫폼",
+      "id": "키위티",
+      "name": "키위티",
+      "group": "언어·문해",
+      "purpose": "학생 글쓰기 제출과 AI 대화·피드백을 지원하는 AI 글쓰기 코스웨어",
       "counts": {
         "all": 6,
-        "elementary": 3,
-        "middle": 2,
+        "elementary": 5,
+        "middle": 0,
         "high": 1
       },
       "rates": {
         "all": 3.4,
-        "elementary": 3.5,
-        "middle": 3.9,
+        "elementary": 5.6,
+        "middle": 0,
         "high": 2.7
       },
       "ranks": {
-        "all": 17,
-        "elementary": 16,
-        "middle": 19,
-        "high": 30
+        "all": 27,
+        "elementary": 23,
+        "middle": 104,
+        "high": 33
       },
       "related": {
         "all": [
-          "우리반",
-          "채움AI",
-          "캔바",
-          "토도 시리즈",
-          "패들렛"
-        ],
-        "elementary": [
-          "캔바",
-          "토도 시리즈",
           "패들렛",
-          "포커스팡"
-        ],
-        "middle": [
-          "우리반",
-          "채움AI",
-          "ZEP·젭퀴즈"
-        ],
-        "high": [
-          "ChatGPT",
-          "Claude",
-          "Gamma",
-          "Gemini",
-          "MS Teams"
-        ]
-      }
-    },
-    {
-      "id": "띵커벨",
-      "name": "띵커벨",
-      "group": "퀴즈·참여",
-      "purpose": "퀴즈·토론·설문·워드클라우드·보드를 제공하는 수업 상호작용 도구",
-      "counts": {
-        "all": 5,
-        "elementary": 3,
-        "middle": 1,
-        "high": 1
-      },
-      "rates": {
-        "all": 2.9,
-        "elementary": 3.5,
-        "middle": 2,
-        "high": 2.7
-      },
-      "ranks": {
-        "all": 18,
-        "elementary": 14,
-        "middle": 25,
-        "high": 19
-      },
-      "related": {
-        "all": [
-          "똑똑수학탐험대",
-          "마인크래프트",
           "북크리에이터",
-          "아이쌤GPT",
-          "이음AI"
+          "띵커벨",
+          "스쿨플랫",
+          "심스페이스"
         ],
         "elementary": [
-          "똑똑수학탐험대",
-          "마인크래프트",
+          "패들렛",
           "북크리에이터",
-          "아이쌤GPT",
-          "자작자작"
+          "스쿨플랫",
+          "심스페이스",
+          "Claude"
         ],
-        "middle": [
-          "클래스팅"
-        ],
+        "middle": [],
         "high": [
+          "띵커벨",
           "이음AI",
-          "키위티",
           "Gemini",
           "NotebookLM"
         ]
       }
     },
     {
-      "id": "블루킷",
-      "name": "블루킷",
-      "group": "퀴즈·참여",
-      "purpose": "문항 세트를 여러 게임 모드로 운영하는 실시간 퀴즈 플랫폼",
+      "id": "토도한글",
+      "name": "토도한글",
+      "group": "언어·문해",
+      "purpose": "유아·초등 초기 문해의 한글 읽기와 쓰기를 돕는 단계형 학습 앱",
       "counts": {
-        "all": 5,
-        "elementary": 5,
+        "all": 6,
+        "elementary": 6,
         "middle": 0,
         "high": 0
       },
       "rates": {
-        "all": 2.9,
-        "elementary": 5.8,
+        "all": 3.4,
+        "elementary": 6.7,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 19,
-        "elementary": 7,
-        "middle": 61,
-        "high": 58
-      },
-      "related": {
-        "all": [
-          "패들렛",
-          "Claude",
-          "리드포스쿨",
-          "엔트리",
-          "클래스카드"
-        ],
-        "elementary": [
-          "패들렛",
-          "Claude",
-          "리드포스쿨",
-          "엔트리",
-          "클래스카드"
-        ],
-        "middle": [],
-        "high": []
-      }
-    },
-    {
-      "id": "스쿨플랫",
-      "name": "스쿨플랫",
-      "group": "교과·맞춤형",
-      "purpose": "문제은행·과제·성취 분석을 제공하는 학교 맞춤형 수학 코스웨어",
-      "counts": {
-        "all": 5,
-        "elementary": 2,
-        "middle": 2,
-        "high": 1
-      },
-      "rates": {
-        "all": 2.9,
-        "elementary": 2.3,
-        "middle": 3.9,
-        "high": 2.7
-      },
-      "ranks": {
-        "all": 20,
-        "elementary": 26,
-        "middle": 15,
-        "high": 22
-      },
-      "related": {
-        "all": [
-          "캔바",
-          "다했니·다했어요",
-          "달달독해",
-          "리딩오션스쿨",
-          "토도한글"
-        ],
-        "elementary": [
-          "다했니·다했어요",
-          "달달독해",
-          "리딩오션스쿨",
-          "캔바",
-          "토도한글"
-        ],
-        "middle": [
-          "캔바",
-          "NotebookLM"
-        ],
-        "high": [
-          "AICE"
-        ]
-      }
-    },
-    {
-      "id": "아트봉봉",
-      "name": "아트봉봉",
-      "group": "콘텐츠 제작",
-      "purpose": "디지털 드로잉과 미술 활동 결과물 제작을 지원하는 예술교육 도구",
-      "counts": {
-        "all": 5,
-        "elementary": 5,
-        "middle": 0,
-        "high": 0
-      },
-      "rates": {
-        "all": 2.9,
-        "elementary": 5.8,
-        "middle": 0,
-        "high": 0
-      },
-      "ranks": {
-        "all": 21,
-        "elementary": 8,
-        "middle": 67,
-        "high": 65
-      },
-      "related": {
-        "all": [
-          "패들렛",
-          "심스페이스",
-          "캔바",
-          "센스쿨",
-          "자작자작"
-        ],
-        "elementary": [
-          "패들렛",
-          "심스페이스",
-          "캔바",
-          "센스쿨",
-          "자작자작"
-        ],
-        "middle": [],
-        "high": []
-      }
-    },
-    {
-      "id": "투닝",
-      "name": "투닝",
-      "group": "콘텐츠 제작",
-      "purpose": "웹툰·스토리·이미지 콘텐츠를 만드는 교육용 창작 도구",
-      "counts": {
-        "all": 5,
-        "elementary": 3,
-        "middle": 2,
-        "high": 0
-      },
-      "rates": {
-        "all": 2.9,
-        "elementary": 3.5,
-        "middle": 3.9,
-        "high": 0
-      },
-      "ranks": {
-        "all": 22,
+        "all": 28,
         "elementary": 18,
-        "middle": 20,
-        "high": 86
+        "middle": 108,
+        "high": 104
       },
       "related": {
         "all": [
+          "알공",
+          "패들렛",
+          "ZEP·젭퀴즈",
           "캔바",
-          "뤼튼",
-          "와우아이디어스",
-          "왓퀴즈",
-          "클리포"
+          "클래스카드"
         ],
         "elementary": [
-          "와우아이디어스",
+          "알공",
+          "패들렛",
+          "ZEP·젭퀴즈",
           "캔바",
-          "통그라미",
-          "E-GPT",
-          "SUNO"
+          "클래스카드"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "마이클ai",
+      "name": "마이클AI",
+      "group": "생성형 AI",
+      "purpose": "학교 문서와 수업·업무 자료 작성을 지원하는 교원 업무 특화 AI",
+      "counts": {
+        "all": 5,
+        "elementary": 4,
+        "middle": 1,
+        "high": 0
+      },
+      "rates": {
+        "all": 2.8,
+        "elementary": 4.5,
+        "middle": 2,
+        "high": 0
+      },
+      "ranks": {
+        "all": 29,
+        "elementary": 28,
+        "middle": 27,
+        "high": 57
+      },
+      "related": {
+        "all": [
+          "패들렛",
+          "아트봉봉",
+          "Claude",
+          "Gemini",
+          "그림한글받아쓰기"
+        ],
+        "elementary": [
+          "패들렛",
+          "아트봉봉",
+          "그림한글받아쓰기",
+          "띵커벨",
+          "라포라포"
         ],
         "middle": [
-          "뤼튼",
-          "왓퀴즈",
-          "캔바",
-          "클리포",
+          "Claude",
           "Gemini"
         ],
+        "high": []
+      }
+    },
+    {
+      "id": "멘티미터",
+      "name": "멘티미터",
+      "group": "퀴즈·참여",
+      "purpose": "실시간 투표·설문·퀴즈·워드클라우드로 의견을 모으는 참여 도구",
+      "counts": {
+        "all": 5,
+        "elementary": 3,
+        "middle": 2,
+        "high": 0
+      },
+      "rates": {
+        "all": 2.8,
+        "elementary": 3.4,
+        "middle": 3.9,
+        "high": 0
+      },
+      "ranks": {
+        "all": 30,
+        "elementary": 36,
+        "middle": 15,
+        "high": 62
+      },
+      "related": {
+        "all": [
+          "패들렛",
+          "SUNO",
+          "캔바",
+          "ChatGPT",
+          "Claude"
+        ],
+        "elementary": [
+          "Claude",
+          "SUNO",
+          "미리캔버스",
+          "북크리에이터",
+          "블루킷"
+        ],
+        "middle": [
+          "패들렛",
+          "캔바",
+          "ChatGPT",
+          "Gemini",
+          "SUNO"
+        ],
+        "high": []
+      }
+    },
+    {
+      "id": "알공",
+      "name": "알공",
+      "group": "교과·맞춤형",
+      "purpose": "초등 영어·수학을 게임과 AI 맞춤 복습으로 지원하는 교과 코스웨어",
+      "counts": {
+        "all": 5,
+        "elementary": 5,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 2.8,
+        "elementary": 5.6,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 31,
+        "elementary": 21,
+        "middle": 77,
+        "high": 75
+      },
+      "related": {
+        "all": [
+          "토도한글",
+          "패들렛",
+          "ZEP·젭퀴즈",
+          "북크리에이터",
+          "캔바"
+        ],
+        "elementary": [
+          "토도한글",
+          "패들렛",
+          "ZEP·젭퀴즈",
+          "북크리에이터",
+          "캔바"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "클래시파이",
+      "name": "클래시파이",
+      "group": "학습관리",
+      "purpose": "학생 성향·관계 검사 결과로 상담과 생활지도를 돕는 학급관리 도구",
+      "counts": {
+        "all": 5,
+        "elementary": 5,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 2.8,
+        "elementary": 5.6,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 32,
+        "elementary": 22,
+        "middle": 101,
+        "high": 100
+      },
+      "related": {
+        "all": [
+          "패들렛",
+          "캔바",
+          "띵커벨",
+          "북크리에이터",
+          "Claude"
+        ],
+        "elementary": [
+          "패들렛",
+          "캔바",
+          "띵커벨",
+          "북크리에이터",
+          "Claude"
+        ],
+        "middle": [],
         "high": []
       }
     },
@@ -1112,37 +1577,83 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 0
       },
       "rates": {
-        "all": 2.9,
-        "elementary": 3.5,
+        "all": 2.8,
+        "elementary": 3.4,
         "middle": 3.9,
         "high": 0
       },
       "ranks": {
-        "all": 23,
-        "elementary": 19,
-        "middle": 21,
-        "high": 90
+        "all": 33,
+        "elementary": 40,
+        "middle": 22,
+        "high": 111
       },
       "related": {
         "all": [
           "심스페이스",
+          "패들렛",
+          "Gemini",
           "아트봉봉",
-          "앰플리파이 클래스룸",
-          "캔바",
-          "패들렛"
+          "앰플리파이 클래스룸"
         ],
         "elementary": [
           "심스페이스",
-          "아트봉봉",
-          "캔바",
           "패들렛",
-          "E-GPT"
+          "Gemini",
+          "아트봉봉",
+          "캔바"
         ],
         "middle": [
           "앰플리파이 클래스룸",
           "포커스팡"
         ],
         "high": []
+      }
+    },
+    {
+      "id": "플랭스쿨",
+      "name": "플랭스쿨",
+      "group": "학습관리",
+      "purpose": "교과 학습 콘텐츠와 학생 진도·과제를 운영하는 학교용 학습 플랫폼",
+      "counts": {
+        "all": 5,
+        "elementary": 3,
+        "middle": 0,
+        "high": 2
+      },
+      "rates": {
+        "all": 2.8,
+        "elementary": 3.4,
+        "middle": 0,
+        "high": 5.4
+      },
+      "ranks": {
+        "all": 34,
+        "elementary": 41,
+        "middle": 111,
+        "high": 13
+      },
+      "related": {
+        "all": [
+          "패들렛",
+          "블루킷",
+          "캔바",
+          "북크리에이터",
+          "아트봉봉"
+        ],
+        "elementary": [
+          "패들렛",
+          "블루킷",
+          "북크리에이터",
+          "아트봉봉",
+          "와우아이디어스"
+        ],
+        "middle": [],
+        "high": [
+          "캔바",
+          "Kuula",
+          "Mizou"
+        ]
       }
     },
     {
@@ -1157,31 +1668,31 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 0
       },
       "rates": {
-        "all": 2.9,
-        "elementary": 2.3,
+        "all": 2.8,
+        "elementary": 2.2,
         "middle": 5.9,
         "high": 0
       },
       "ranks": {
-        "all": 24,
-        "elementary": 32,
+        "all": 35,
+        "elementary": 57,
         "middle": 9,
-        "high": 95
+        "high": 118
       },
       "related": {
         "all": [
+          "카훗",
+          "패들렛",
+          "Claude",
           "구글 클래스룸",
-          "러니",
-          "매쓰홀릭",
-          "문제G",
-          "이퓨처라이브러리"
+          "러니"
         ],
         "elementary": [
+          "카훗",
+          "Claude",
           "구글 클래스룸",
           "매쓰홀릭",
-          "문제G",
-          "이퓨처라이브러리",
-          "Gemini"
+          "문제G"
         ],
         "middle": [
           "러니",
@@ -1194,90 +1705,128 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
-      "id": "북크리에이터",
-      "name": "북크리에이터",
-      "group": "콘텐츠 제작",
-      "purpose": "글·이미지·음성·영상을 엮어 전자책과 학습 결과물을 만드는 저작 도구",
+      "id": "zoom-pro",
+      "name": "Zoom Pro",
+      "group": "협업·공유",
+      "purpose": "화상수업·회의·화면 공유·소그룹 활동을 지원하는 원격 협업 도구",
       "counts": {
-        "all": 4,
-        "elementary": 2,
-        "middle": 1,
-        "high": 1
+        "all": 5,
+        "elementary": 5,
+        "middle": 0,
+        "high": 0
       },
       "rates": {
-        "all": 2.3,
-        "elementary": 2.3,
-        "middle": 2,
-        "high": 2.7
+        "all": 2.8,
+        "elementary": 5.6,
+        "middle": 0,
+        "high": 0
       },
       "ranks": {
-        "all": 25,
+        "all": 36,
         "elementary": 25,
-        "middle": 29,
-        "high": 21
+        "middle": 141,
+        "high": 141
       },
       "related": {
         "all": [
-          "캔바",
+          "북크리에이터",
           "패들렛",
-          "똑똑수학탐험대",
-          "띵커벨",
-          "멘티미터"
+          "매쓰홀릭",
+          "Claude",
+          "Gemini"
         ],
         "elementary": [
-          "똑똑수학탐험대",
-          "띵커벨",
-          "멘티미터",
-          "슬라이도",
-          "캔바"
+          "북크리에이터",
+          "패들렛",
+          "매쓰홀릭",
+          "Claude",
+          "Gemini"
         ],
-        "middle": [
-          "NotebookLM",
-          "SEN스쿨"
-        ],
-        "high": [
-          "캔바",
-          "패들렛"
-        ]
+        "middle": [],
+        "high": []
       }
     },
     {
-      "id": "센스쿨",
-      "name": "센스쿨",
+      "id": "다했니-다했어요",
+      "name": "다했니·다했어요",
       "group": "학습관리",
-      "purpose": "학교 계정과 여러 교육 서비스를 연결해 수업·학급 운영을 지원하는 플랫폼",
+      "purpose": "과제 배부·제출·확인과 학급 활동 기록을 돕는 학급관리 플랫폼",
       "counts": {
         "all": 4,
-        "elementary": 3,
-        "middle": 1,
+        "elementary": 4,
+        "middle": 0,
         "high": 0
       },
       "rates": {
         "all": 2.3,
-        "elementary": 3.5,
-        "middle": 2,
+        "elementary": 4.5,
+        "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 26,
-        "elementary": 15,
-        "middle": 30,
-        "high": 60
+        "all": 37,
+        "elementary": 26,
+        "middle": 51,
+        "high": 46
       },
       "related": {
         "all": [
-          "심스페이스",
-          "구글 클래스룸",
-          "아트봉봉"
+          "패들렛",
+          "매쓰홀릭",
+          "북크리에이터",
+          "Gemini",
+          "ZEP·젭퀴즈"
         ],
         "elementary": [
-          "구글 클래스룸",
-          "심스페이스",
-          "아트봉봉"
+          "패들렛",
+          "매쓰홀릭",
+          "북크리에이터",
+          "Gemini",
+          "ZEP·젭퀴즈"
         ],
-        "middle": [
-          "심스페이스"
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "리드포스쿨",
+      "name": "리드포스쿨",
+      "group": "언어·문해",
+      "purpose": "시선추적과 AI 분석을 활용해 읽기 과정을 진단하는 문해력 코스웨어",
+      "counts": {
+        "all": 4,
+        "elementary": 4,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 2.3,
+        "elementary": 4.5,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 38,
+        "elementary": 27,
+        "middle": 56,
+        "high": 52
+      },
+      "related": {
+        "all": [
+          "패들렛",
+          "아트봉봉",
+          "캔바",
+          "그림한글받아쓰기",
+          "띵커벨"
         ],
+        "elementary": [
+          "패들렛",
+          "아트봉봉",
+          "캔바",
+          "그림한글받아쓰기",
+          "띵커벨"
+        ],
+        "middle": [],
         "high": []
       }
     },
@@ -1294,30 +1843,72 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 2.3,
-        "elementary": 4.7,
+        "elementary": 4.5,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 27,
-        "elementary": 10,
-        "middle": 70,
-        "high": 69
+        "all": 39,
+        "elementary": 29,
+        "middle": 80,
+        "high": 79
       },
       "related": {
         "all": [
           "패들렛",
           "리드포스쿨",
+          "매쓰홀릭",
           "블루킷",
-          "캔바",
-          "클래시파이"
+          "캔바"
         ],
         "elementary": [
           "패들렛",
           "리드포스쿨",
+          "매쓰홀릭",
           "블루킷",
-          "캔바",
-          "클래시파이"
+          "캔바"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "와우아이디어스",
+      "name": "와우아이디어스",
+      "group": "협업·공유",
+      "purpose": "온라인 브레인스토밍으로 아이디어 생성·정리·평가·공유를 잇는 PBL 협업 도구",
+      "counts": {
+        "all": 4,
+        "elementary": 4,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 2.3,
+        "elementary": 4.5,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 40,
+        "elementary": 30,
+        "middle": 85,
+        "high": 83
+      },
+      "related": {
+        "all": [
+          "북크리에이터",
+          "패들렛",
+          "카훗",
+          "ZEP·젭퀴즈",
+          "그림한글받아쓰기"
+        ],
+        "elementary": [
+          "북크리에이터",
+          "패들렛",
+          "카훗",
+          "ZEP·젭퀴즈",
+          "그림한글받아쓰기"
         ],
         "middle": [],
         "high": []
@@ -1336,15 +1927,15 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 2.3,
-        "elementary": 4.7,
+        "elementary": 4.5,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 28,
-        "elementary": 11,
-        "middle": 78,
-        "high": 76
+        "all": 41,
+        "elementary": 31,
+        "middle": 90,
+        "high": 88
       },
       "related": {
         "all": [
@@ -1366,10 +1957,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
-      "id": "토도한글",
-      "name": "토도한글",
-      "group": "언어·문해",
-      "purpose": "유아·초등 초기 문해의 한글 읽기와 쓰기를 돕는 단계형 학습 앱",
+      "id": "지니아튜터",
+      "name": "지니아튜터",
+      "group": "교과·맞춤형",
+      "purpose": "국·영·수·사·과 과정과 AI 글쓰기 평가를 제공하는 교과 코스웨어",
       "counts": {
         "all": 4,
         "elementary": 4,
@@ -1378,79 +1969,33 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 2.3,
-        "elementary": 4.7,
+        "elementary": 4.5,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 29,
-        "elementary": 12,
-        "middle": 88,
-        "high": 84
+        "all": 42,
+        "elementary": 32,
+        "middle": 92,
+        "high": 90
       },
       "related": {
         "all": [
           "캔바",
           "패들렛",
-          "ZEP·젭퀴즈",
-          "다했니·다했어요",
-          "달달독해"
+          "Gemini",
+          "북크리에이터",
+          "투닝"
         ],
         "elementary": [
           "캔바",
           "패들렛",
-          "ZEP·젭퀴즈",
-          "다했니·다했어요",
-          "달달독해"
+          "Gemini",
+          "북크리에이터",
+          "투닝"
         ],
         "middle": [],
         "high": []
-      }
-    },
-    {
-      "id": "플랭스쿨",
-      "name": "플랭스쿨",
-      "group": "학습관리",
-      "purpose": "교과 학습 콘텐츠와 학생 진도·과제를 운영하는 학교용 학습 플랫폼",
-      "counts": {
-        "all": 4,
-        "elementary": 2,
-        "middle": 0,
-        "high": 2
-      },
-      "rates": {
-        "all": 2.3,
-        "elementary": 2.3,
-        "middle": 0,
-        "high": 5.4
-      },
-      "ranks": {
-        "all": 30,
-        "elementary": 31,
-        "middle": 90,
-        "high": 13
-      },
-      "related": {
-        "all": [
-          "캔바",
-          "블루킷",
-          "아트봉봉",
-          "클래스카드",
-          "패들렛"
-        ],
-        "elementary": [
-          "블루킷",
-          "아트봉봉",
-          "캔바",
-          "클래스카드",
-          "패들렛"
-        ],
-        "middle": [],
-        "high": [
-          "캔바",
-          "Kuula",
-          "Mizou"
-        ]
       }
     },
     {
@@ -1466,28 +2011,30 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 2.3,
-        "elementary": 2.3,
+        "elementary": 2.2,
         "middle": 2,
         "high": 2.7
       },
       "ranks": {
-        "all": 31,
-        "elementary": 34,
-        "middle": 42,
+        "all": 43,
+        "elementary": 59,
+        "middle": 41,
         "high": 40
       },
       "related": {
         "all": [
-          "채움AI",
-          "캔바",
-          "플랭스쿨",
-          "Brisk Teaching",
-          "Gemini"
+          "카훗",
+          "노션",
+          "매쓰홀릭",
+          "북크리에이터",
+          "블루킷"
         ],
         "elementary": [
-          "캔바",
-          "Brisk Teaching",
-          "Gemini"
+          "카훗",
+          "노션",
+          "매쓰홀릭",
+          "북크리에이터",
+          "블루킷"
         ],
         "middle": [
           "채움AI",
@@ -1517,9 +2064,9 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 5.4
       },
       "ranks": {
-        "all": 32,
-        "elementary": 103,
-        "middle": 22,
+        "all": 44,
+        "elementary": 137,
+        "middle": 23,
         "high": 14
       },
       "related": {
@@ -1548,47 +2095,6 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
-      "id": "sen스쿨",
-      "name": "SEN스쿨",
-      "group": "학습관리",
-      "purpose": "서울 교육 환경에서 수업과 학교 업무 운영을 지원하는 플랫폼",
-      "counts": {
-        "all": 4,
-        "elementary": 2,
-        "middle": 2,
-        "high": 0
-      },
-      "rates": {
-        "all": 2.3,
-        "elementary": 2.3,
-        "middle": 3.9,
-        "high": 0
-      },
-      "ranks": {
-        "all": 33,
-        "elementary": 36,
-        "middle": 23,
-        "high": 104
-      },
-      "related": {
-        "all": [
-          "북크리에이터",
-          "자작자작",
-          "Google Workspace",
-          "NotebookLM"
-        ],
-        "elementary": [
-          "자작자작"
-        ],
-        "middle": [
-          "북크리에이터",
-          "Google Workspace",
-          "NotebookLM"
-        ],
-        "high": []
-      }
-    },
-    {
       "id": "똑똑수학탐험대",
       "name": "똑똑수학탐험대",
       "group": "교과·맞춤형",
@@ -1601,79 +2107,116 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 1.7,
-        "elementary": 3.5,
+        "elementary": 3.4,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 34,
-        "elementary": 13,
-        "middle": 52,
-        "high": 45
+        "all": 45,
+        "elementary": 34,
+        "middle": 54,
+        "high": 48
       },
       "related": {
         "all": [
+          "패들렛",
           "구글 클래스룸",
           "띵커벨",
-          "북크리에이터",
-          "심스페이스",
-          "알지오매스키즈"
+          "매쓰플랫",
+          "매쓰홀릭"
         ],
         "elementary": [
+          "패들렛",
           "구글 클래스룸",
           "띵커벨",
-          "북크리에이터",
-          "심스페이스",
-          "알지오매스키즈"
+          "매쓰플랫",
+          "매쓰홀릭"
         ],
         "middle": [],
         "high": []
       }
     },
     {
-      "id": "멘티미터",
-      "name": "멘티미터",
-      "group": "퀴즈·참여",
-      "purpose": "실시간 투표·설문·퀴즈·워드클라우드로 의견을 모으는 참여 도구",
+      "id": "리딩오션스쿨",
+      "name": "리딩오션스쿨",
+      "group": "언어·문해",
+      "purpose": "전자책 읽기와 독서 활동·학습 관리를 제공하는 디지털 독서 플랫폼",
       "counts": {
         "all": 3,
-        "elementary": 1,
-        "middle": 2,
+        "elementary": 3,
+        "middle": 0,
         "high": 0
       },
       "rates": {
         "all": 1.7,
-        "elementary": 1.2,
-        "middle": 3.9,
+        "elementary": 3.4,
+        "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 35,
-        "elementary": 43,
-        "middle": 14,
+        "all": 46,
+        "elementary": 35,
+        "middle": 59,
         "high": 55
       },
       "related": {
         "all": [
-          "패들렛",
+          "스쿨플랫",
           "캔바",
-          "북크리에이터",
-          "슬라이도",
-          "ChatGPT"
+          "패들렛",
+          "다했니·다했어요",
+          "달달독해"
         ],
         "elementary": [
-          "북크리에이터",
-          "슬라이도",
+          "스쿨플랫",
           "캔바",
-          "패들렛"
-        ],
-        "middle": [
           "패들렛",
-          "캔바",
-          "ChatGPT",
-          "Gemini",
-          "SUNO"
+          "다했니·다했어요",
+          "달달독해"
         ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "미리캔버스",
+      "name": "미리캔버스",
+      "group": "콘텐츠 제작",
+      "purpose": "발표자료·카드뉴스·학습자료를 만드는 웹 기반 디자인 도구",
+      "counts": {
+        "all": 3,
+        "elementary": 3,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 1.7,
+        "elementary": 3.4,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 47,
+        "elementary": 37,
+        "middle": 66,
+        "high": 64
+      },
+      "related": {
+        "all": [
+          "캡컷",
+          "SUNO",
+          "매쓰홀릭",
+          "멘티미터",
+          "블루킷"
+        ],
+        "elementary": [
+          "캡컷",
+          "SUNO",
+          "매쓰홀릭",
+          "멘티미터",
+          "블루킷"
+        ],
+        "middle": [],
         "high": []
       }
     },
@@ -1690,36 +2233,83 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 1.7,
-        "elementary": 2.3,
+        "elementary": 2.2,
         "middle": 2,
         "high": 0
       },
       "ranks": {
-        "all": 36,
-        "elementary": 29,
-        "middle": 32,
-        "high": 73
+        "all": 48,
+        "elementary": 51,
+        "middle": 31,
+        "high": 85
       },
       "related": {
         "all": [
           "심스페이스",
+          "패들렛",
           "매쓰홀릭",
           "캔바",
-          "클래스팅 AI",
-          "클래시파이"
+          "클래스팅 AI"
         ],
         "elementary": [
           "심스페이스",
+          "패들렛",
           "매쓰홀릭",
           "캔바",
-          "클래시파이",
-          "패들렛"
+          "클래시파이"
         ],
         "middle": [
           "클래스팅 AI",
           "ZEP·젭퀴즈"
         ],
         "high": []
+      }
+    },
+    {
+      "id": "원아워",
+      "name": "원아워",
+      "group": "학습관리",
+      "purpose": "과제 배부·제출·피드백과 진도 확인을 지원하는 학습관리 도구",
+      "counts": {
+        "all": 3,
+        "elementary": 1,
+        "middle": 1,
+        "high": 1
+      },
+      "rates": {
+        "all": 1.7,
+        "elementary": 1.1,
+        "middle": 2,
+        "high": 2.7
+      },
+      "ranks": {
+        "all": 49,
+        "elementary": 83,
+        "middle": 32,
+        "high": 25
+      },
+      "related": {
+        "all": [
+          "똑똑수학탐험대",
+          "띵커벨",
+          "러니",
+          "매쓰홀릭",
+          "북크리에이터"
+        ],
+        "elementary": [
+          "똑똑수학탐험대",
+          "띵커벨",
+          "매쓰홀릭",
+          "북크리에이터",
+          "아이쌤GPT"
+        ],
+        "middle": [
+          "러니"
+        ],
+        "high": [
+          "클래스카드",
+          "클리포"
+        ]
       }
     },
     {
@@ -1740,10 +2330,10 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 0
       },
       "ranks": {
-        "all": 37,
-        "elementary": 86,
+        "all": 50,
+        "elementary": 123,
         "middle": 8,
-        "high": 78
+        "high": 92
       },
       "related": {
         "all": [
@@ -1765,54 +2355,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
-      "id": "카훗",
-      "name": "카훗",
-      "group": "퀴즈·참여",
-      "purpose": "실시간 퀴즈와 설문으로 이해도와 참여를 확인하는 게임형 평가 도구",
-      "counts": {
-        "all": 3,
-        "elementary": 0,
-        "middle": 1,
-        "high": 2
-      },
-      "rates": {
-        "all": 1.7,
-        "elementary": 0,
-        "middle": 2,
-        "high": 5.4
-      },
-      "ranks": {
-        "all": 38,
-        "elementary": 88,
-        "middle": 35,
-        "high": 11
-      },
-      "related": {
-        "all": [
-          "노션",
-          "매쓰홀릭",
-          "Clip Studio Paint",
-          "Gemini",
-          "Manus"
-        ],
-        "elementary": [],
-        "middle": [
-          "매쓰홀릭",
-          "ZEP·젭퀴즈"
-        ],
-        "high": [
-          "노션",
-          "Clip Studio Paint",
-          "Gemini",
-          "Manus"
-        ]
-      }
-    },
-    {
-      "id": "클래시파이",
-      "name": "클래시파이",
-      "group": "학습관리",
-      "purpose": "학생 성향·관계 검사 결과로 상담과 생활지도를 돕는 학급관리 도구",
+      "id": "코드모스",
+      "name": "코드모스",
+      "group": "코딩·컴퓨팅",
+      "purpose": "학교 수업용 단계형 SW·AI 학습 콘텐츠를 제공하는 코딩 코스웨어",
       "counts": {
         "all": 3,
         "elementary": 3,
@@ -1821,30 +2367,202 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 1.7,
-        "elementary": 3.5,
+        "elementary": 3.4,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 39,
-        "elementary": 17,
-        "middle": 83,
-        "high": 82
+        "all": 51,
+        "elementary": 38,
+        "middle": 97,
+        "high": 97
       },
       "related": {
         "all": [
-          "캔바",
-          "패들렛",
-          "심스페이스",
-          "엔트리",
-          "우리반"
+          "띵커벨",
+          "북크리에이터",
+          "아이쌤GPT",
+          "똑똑수학탐험대",
+          "마인크래프트"
         ],
         "elementary": [
-          "캔바",
+          "띵커벨",
+          "북크리에이터",
+          "아이쌤GPT",
+          "똑똑수학탐험대",
+          "마인크래프트"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "클래스툴",
+      "name": "클래스툴",
+      "group": "학습관리",
+      "purpose": "수업 활동과 학생 참여를 운영하는 교실 지원 도구",
+      "counts": {
+        "all": 3,
+        "elementary": 3,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 1.7,
+        "elementary": 3.4,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 52,
+        "elementary": 39,
+        "middle": 100,
+        "high": 99
+      },
+      "related": {
+        "all": [
           "패들렛",
-          "심스페이스",
-          "엔트리",
-          "우리반"
+          "띵커벨",
+          "그림한글받아쓰기",
+          "라포라포",
+          "리드포스쿨"
+        ],
+        "elementary": [
+          "패들렛",
+          "띵커벨",
+          "그림한글받아쓰기",
+          "라포라포",
+          "리드포스쿨"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "클래스팅",
+      "name": "클래스팅",
+      "group": "학습관리",
+      "purpose": "수업 자료·과제·공지와 학생 소통을 지원하는 학습관리 플랫폼",
+      "counts": {
+        "all": 3,
+        "elementary": 1,
+        "middle": 1,
+        "high": 1
+      },
+      "rates": {
+        "all": 1.7,
+        "elementary": 1.1,
+        "middle": 2,
+        "high": 2.7
+      },
+      "ranks": {
+        "all": 53,
+        "elementary": 91,
+        "middle": 35,
+        "high": 29
+      },
+      "related": {
+        "all": [
+          "패들렛",
+          "띵커벨",
+          "마이클AI",
+          "스쿨플랫",
+          "임팩트스페이스"
+        ],
+        "elementary": [
+          "마이클AI",
+          "스쿨플랫",
+          "키위티",
+          "패들렛"
+        ],
+        "middle": [
+          "띵커벨"
+        ],
+        "high": [
+          "임팩트스페이스",
+          "패들렛"
+        ]
+      }
+    },
+    {
+      "id": "delightex",
+      "name": "Delightex",
+      "group": "코딩·컴퓨팅",
+      "purpose": "3D 공간을 만들고 코딩·VR·AR로 확장하는 실감형 창작 플랫폼",
+      "counts": {
+        "all": 3,
+        "elementary": 3,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 1.7,
+        "elementary": 3.4,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 54,
+        "elementary": 42,
+        "middle": 119,
+        "high": 120
+      },
+      "related": {
+        "all": [
+          "다했니·다했어요",
+          "멘티미터",
+          "미리캔버스",
+          "스픽AI",
+          "알지오매스키즈"
+        ],
+        "elementary": [
+          "다했니·다했어요",
+          "멘티미터",
+          "미리캔버스",
+          "스픽AI",
+          "알지오매스키즈"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "youtube-premium",
+      "name": "YouTube Premium",
+      "group": "콘텐츠 제작",
+      "purpose": "광고 없이 교육 영상을 탐색·재생·저장하는 영상 콘텐츠 이용 서비스",
+      "counts": {
+        "all": 3,
+        "elementary": 3,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 1.7,
+        "elementary": 3.4,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 55,
+        "elementary": 44,
+        "middle": 140,
+        "high": 140
+      },
+      "related": {
+        "all": [
+          "Claude",
+          "북크리에이터",
+          "클래시파이",
+          "패들렛",
+          "Gemini"
+        ],
+        "elementary": [
+          "Claude",
+          "북크리에이터",
+          "클래시파이",
+          "패들렛",
+          "Gemini"
         ],
         "middle": [],
         "high": []
@@ -1868,10 +2586,10 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 0
       },
       "ranks": {
-        "all": 40,
-        "elementary": 76,
-        "middle": 13,
-        "high": 46
+        "all": 56,
+        "elementary": 115,
+        "middle": 14,
+        "high": 50
       },
       "related": {
         "all": [
@@ -1891,10 +2609,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
-      "id": "리드포스쿨",
-      "name": "리드포스쿨",
+      "id": "리딩게이트",
+      "name": "리딩게이트",
       "group": "언어·문해",
-      "purpose": "시선추적과 AI 분석을 활용해 읽기 과정을 진단하는 문해력 코스웨어",
+      "purpose": "레벨별 영어 원서 읽기와 독후 활동을 제공하는 영어 독서 프로그램",
       "counts": {
         "all": 2,
         "elementary": 2,
@@ -1903,28 +2621,194 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 1.1,
-        "elementary": 2.3,
+        "elementary": 2.2,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 41,
-        "elementary": 24,
-        "middle": 53,
-        "high": 48
+        "all": 57,
+        "elementary": 45,
+        "middle": 57,
+        "high": 53
+      },
+      "related": {
+        "all": [
+          "클래스툴",
+          "패들렛",
+          "U클래스"
+        ],
+        "elementary": [
+          "클래스툴",
+          "패들렛",
+          "U클래스"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "리틀팍스",
+      "name": "리틀팍스",
+      "group": "언어·문해",
+      "purpose": "애니메이션 영어동화와 단계별 읽기·듣기 콘텐츠를 제공하는 영어 학습 서비스",
+      "counts": {
+        "all": 2,
+        "elementary": 2,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 1.1,
+        "elementary": 2.2,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 58,
+        "elementary": 46,
+        "middle": 61,
+        "high": 56
+      },
+      "related": {
+        "all": [
+          "캔바",
+          "다했니·다했어요",
+          "달달독해",
+          "리딩앤스쿨",
+          "리딩오션스쿨"
+        ],
+        "elementary": [
+          "캔바",
+          "다했니·다했어요",
+          "달달독해",
+          "리딩앤스쿨",
+          "리딩오션스쿨"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "매일국어-독도",
+      "name": "매일국어·독도",
+      "group": "언어·문해",
+      "purpose": "국어 기초 학습과 독해·어휘 연습을 지원하는 교과 학습 콘텐츠",
+      "counts": {
+        "all": 2,
+        "elementary": 2,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 1.1,
+        "elementary": 2.2,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 59,
+        "elementary": 47,
+        "middle": 64,
+        "high": 61
       },
       "related": {
         "all": [
           "패들렛",
-          "블루킷",
-          "엔트리",
-          "캔바"
+          "그림한글받아쓰기",
+          "띵커벨",
+          "라포라포",
+          "리드포스쿨"
         ],
         "elementary": [
           "패들렛",
-          "블루킷",
-          "엔트리",
+          "그림한글받아쓰기",
+          "띵커벨",
+          "라포라포",
+          "리드포스쿨"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "슬라이도",
+      "name": "슬라이도",
+      "group": "퀴즈·참여",
+      "purpose": "질문·투표·퀴즈·워드클라우드로 발표 참여를 높이는 상호작용 도구",
+      "counts": {
+        "all": 2,
+        "elementary": 2,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 1.1,
+        "elementary": 2.2,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 60,
+        "elementary": 48,
+        "middle": 73,
+        "high": 71
+      },
+      "related": {
+        "all": [
+          "북크리에이터",
+          "패들렛",
+          "매쓰홀릭",
+          "멘티미터",
           "캔바"
+        ],
+        "elementary": [
+          "북크리에이터",
+          "패들렛",
+          "매쓰홀릭",
+          "멘티미터",
+          "캔바"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "아이쌤gpt",
+      "name": "아이쌤GPT",
+      "group": "생성형 AI",
+      "purpose": "교사의 수업 준비와 학교 업무를 지원하는 교육 특화 생성형 AI",
+      "counts": {
+        "all": 2,
+        "elementary": 2,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 1.1,
+        "elementary": 2.2,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 61,
+        "elementary": 49,
+        "middle": 75,
+        "high": 73
+      },
+      "related": {
+        "all": [
+          "띵커벨",
+          "코드모스",
+          "똑똑수학탐험대",
+          "마인크래프트",
+          "매쓰홀릭"
+        ],
+        "elementary": [
+          "띵커벨",
+          "코드모스",
+          "똑똑수학탐험대",
+          "마인크래프트",
+          "매쓰홀릭"
         ],
         "middle": [],
         "high": []
@@ -1943,28 +2827,30 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 1.1,
-        "elementary": 2.3,
+        "elementary": 2.2,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 42,
-        "elementary": 27,
-        "middle": 68,
-        "high": 66
+        "all": 62,
+        "elementary": 50,
+        "middle": 78,
+        "high": 76
       },
       "related": {
         "all": [
-          "똑똑수학탐험대",
-          "심스페이스",
           "패들렛",
-          "ZEP·젭퀴즈"
+          "다했니·다했어요",
+          "똑똑수학탐험대",
+          "매쓰플랫",
+          "심스페이스"
         ],
         "elementary": [
-          "똑똑수학탐험대",
-          "심스페이스",
           "패들렛",
-          "ZEP·젭퀴즈"
+          "다했니·다했어요",
+          "똑똑수학탐험대",
+          "매쓰플랫",
+          "심스페이스"
         ],
         "middle": [],
         "high": []
@@ -1988,10 +2874,10 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 0
       },
       "ranks": {
-        "all": 43,
-        "elementary": 81,
-        "middle": 17,
-        "high": 68
+        "all": 63,
+        "elementary": 119,
+        "middle": 18,
+        "high": 78
       },
       "related": {
         "all": [
@@ -2003,46 +2889,6 @@ export const edtechSnapshot: EdtechSnapshot = {
           "패들렛",
           "풀리수학"
         ],
-        "high": []
-      }
-    },
-    {
-      "id": "와우아이디어스",
-      "name": "와우아이디어스",
-      "group": "협업·공유",
-      "purpose": "온라인 브레인스토밍으로 아이디어 생성·정리·평가·공유를 잇는 PBL 협업 도구",
-      "counts": {
-        "all": 2,
-        "elementary": 2,
-        "middle": 0,
-        "high": 0
-      },
-      "rates": {
-        "all": 1.1,
-        "elementary": 2.3,
-        "middle": 0,
-        "high": 0
-      },
-      "ranks": {
-        "all": 44,
-        "elementary": 28,
-        "middle": 73,
-        "high": 71
-      },
-      "related": {
-        "all": [
-          "캔바",
-          "투닝",
-          "패들렛",
-          "AI마타수학"
-        ],
-        "elementary": [
-          "캔바",
-          "투닝",
-          "패들렛",
-          "AI마타수학"
-        ],
-        "middle": [],
         "high": []
       }
     },
@@ -2059,28 +2905,30 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 1.1,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 2,
         "high": 0
       },
       "ranks": {
-        "all": 45,
-        "elementary": 52,
-        "middle": 31,
-        "high": 72
+        "all": 64,
+        "elementary": 82,
+        "middle": 30,
+        "high": 84
       },
       "related": {
         "all": [
-          "뤼튼",
-          "투닝",
-          "패들렛",
           "Gemini",
-          "Google Workspace"
+          "다했니·다했어요",
+          "띵커벨",
+          "뤼튼",
+          "북크리에이터"
         ],
         "elementary": [
-          "패들렛",
-          "Google Workspace",
-          "ZEP·젭퀴즈"
+          "다했니·다했어요",
+          "띵커벨",
+          "북크리에이터",
+          "블루킷",
+          "패들렛"
         ],
         "middle": [
           "뤼튼",
@@ -2092,42 +2940,45 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
-      "id": "원아워",
-      "name": "원아워",
+      "id": "초코클래스",
+      "name": "초코클래스",
       "group": "학습관리",
-      "purpose": "과제 배부·제출·피드백과 진도 확인을 지원하는 학습관리 도구",
+      "purpose": "수업 콘텐츠·학생 활동·학습 데이터를 운영하는 교실 학습 플랫폼",
       "counts": {
         "all": 2,
-        "elementary": 0,
-        "middle": 1,
-        "high": 1
+        "elementary": 2,
+        "middle": 0,
+        "high": 0
       },
       "rates": {
         "all": 1.1,
-        "elementary": 0,
-        "middle": 2,
-        "high": 2.7
+        "elementary": 2.2,
+        "middle": 0,
+        "high": 0
       },
       "ranks": {
-        "all": 46,
-        "elementary": 83,
-        "middle": 33,
-        "high": 25
+        "all": 65,
+        "elementary": 52,
+        "middle": 95,
+        "high": 95
       },
       "related": {
         "all": [
-          "러니",
-          "클래스카드",
-          "클리포"
+          "카훗",
+          "패들렛",
+          "북크리에이터",
+          "블루킷",
+          "수학 아레나"
         ],
-        "elementary": [],
-        "middle": [
-          "러니"
+        "elementary": [
+          "카훗",
+          "패들렛",
+          "북크리에이터",
+          "블루킷",
+          "수학 아레나"
         ],
-        "high": [
-          "클래스카드",
-          "클리포"
-        ]
+        "middle": [],
+        "high": []
       }
     },
     {
@@ -2143,14 +2994,14 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 1.1,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 2.7
       },
       "ranks": {
-        "all": 47,
-        "elementary": 57,
-        "middle": 81,
+        "all": 66,
+        "elementary": 89,
+        "middle": 98,
         "high": 28
       },
       "related": {
@@ -2168,86 +3019,45 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
-      "id": "클래스팅",
-      "name": "클래스팅",
-      "group": "학습관리",
-      "purpose": "수업 자료·과제·공지와 학생 소통을 지원하는 학습관리 플랫폼",
+      "id": "토도수학",
+      "name": "토도수학",
+      "group": "교과·맞춤형",
+      "purpose": "초등 수 개념과 연산을 단계별 활동으로 익히는 수학 학습 앱",
       "counts": {
         "all": 2,
-        "elementary": 0,
-        "middle": 1,
-        "high": 1
+        "elementary": 2,
+        "middle": 0,
+        "high": 0
       },
       "rates": {
         "all": 1.1,
-        "elementary": 0,
-        "middle": 2,
-        "high": 2.7
+        "elementary": 2.2,
+        "middle": 0,
+        "high": 0
       },
       "ranks": {
-        "all": 48,
-        "elementary": 89,
-        "middle": 36,
-        "high": 29
+        "all": 67,
+        "elementary": 53,
+        "middle": 107,
+        "high": 103
       },
       "related": {
         "all": [
-          "띵커벨",
-          "임팩트스페이스",
-          "패들렛"
-        ],
-        "elementary": [],
-        "middle": [
-          "띵커벨"
-        ],
-        "high": [
-          "임팩트스페이스",
-          "패들렛"
-        ]
-      }
-    },
-    {
-      "id": "키위티",
-      "name": "키위티",
-      "group": "언어·문해",
-      "purpose": "학생 글쓰기 제출과 AI 대화·피드백을 지원하는 AI 글쓰기 코스웨어",
-      "counts": {
-        "all": 2,
-        "elementary": 1,
-        "middle": 0,
-        "high": 1
-      },
-      "rates": {
-        "all": 1.1,
-        "elementary": 1.2,
-        "middle": 0,
-        "high": 2.7
-      },
-      "ranks": {
-        "all": 49,
-        "elementary": 60,
-        "middle": 86,
-        "high": 33
-      },
-      "related": {
-        "all": [
-          "띵커벨",
-          "매쓰홀릭",
-          "심스페이스",
-          "이음AI",
-          "Gemini"
+          "알공",
+          "토도한글",
+          "다했니·다했어요",
+          "달달독해",
+          "리딩오션스쿨"
         ],
         "elementary": [
-          "매쓰홀릭",
-          "심스페이스"
+          "알공",
+          "토도한글",
+          "다했니·다했어요",
+          "달달독해",
+          "리딩오션스쿨"
         ],
         "middle": [],
-        "high": [
-          "띵커벨",
-          "이음AI",
-          "Gemini",
-          "NotebookLM"
-        ]
+        "high": []
       }
     },
     {
@@ -2263,15 +3073,15 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 1.1,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 2,
         "high": 0
       },
       "ranks": {
-        "all": 50,
-        "elementary": 63,
-        "middle": 39,
-        "high": 89
+        "all": 68,
+        "elementary": 97,
+        "middle": 38,
+        "high": 110
       },
       "related": {
         "all": [
@@ -2290,6 +3100,132 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
+      "id": "adobe-creative-cloud",
+      "name": "Adobe Creative Cloud",
+      "group": "콘텐츠 제작",
+      "purpose": "이미지·영상·문서 제작에 필요한 Adobe 앱과 클라우드 서비스를 제공하는 창작 도구",
+      "counts": {
+        "all": 2,
+        "elementary": 2,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 1.1,
+        "elementary": 2.2,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 69,
+        "elementary": 54,
+        "middle": 113,
+        "high": 114
+      },
+      "related": {
+        "all": [
+          "북크리에이터",
+          "블루킷",
+          "카훗",
+          "패들렛",
+          "SUNO"
+        ],
+        "elementary": [
+          "북크리에이터",
+          "블루킷",
+          "카훗",
+          "패들렛",
+          "SUNO"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "ai-아크수학",
+      "name": "AI 아크수학",
+      "group": "교과·맞춤형",
+      "purpose": "학생 수준 진단과 맞춤형 수학 학습을 지원하는 AI 코스웨어",
+      "counts": {
+        "all": 2,
+        "elementary": 2,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 1.1,
+        "elementary": 2.2,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 70,
+        "elementary": 55,
+        "middle": 114,
+        "high": 115
+      },
+      "related": {
+        "all": [
+          "패들렛",
+          "그라운드",
+          "띵커벨",
+          "블루킷",
+          "알공"
+        ],
+        "elementary": [
+          "패들렛",
+          "그라운드",
+          "띵커벨",
+          "블루킷",
+          "알공"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "ai마타수학",
+      "name": "AI마타수학",
+      "group": "교과·맞춤형",
+      "purpose": "진단 결과에 따라 개별 수학 문항과 학습 경로를 제공하는 AI 코스웨어",
+      "counts": {
+        "all": 2,
+        "elementary": 2,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 1.1,
+        "elementary": 2.2,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 71,
+        "elementary": 56,
+        "middle": 115,
+        "high": 116
+      },
+      "related": {
+        "all": [
+          "패들렛",
+          "리드포스쿨",
+          "리딩오션스쿨",
+          "북크리에이터",
+          "블루킷"
+        ],
+        "elementary": [
+          "패들렛",
+          "리드포스쿨",
+          "리딩오션스쿨",
+          "북크리에이터",
+          "블루킷"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
       "id": "e-gpt",
       "name": "E-GPT",
       "group": "생성형 AI",
@@ -2302,30 +3238,120 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 1.1,
-        "elementary": 2.3,
+        "elementary": 2.2,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 51,
-        "elementary": 33,
-        "middle": 97,
-        "high": 98
+        "all": 72,
+        "elementary": 58,
+        "middle": 120,
+        "high": 121
       },
       "related": {
         "all": [
-          "심스페이스",
-          "통그라미",
           "투닝",
-          "풀리수학",
-          "Snorkl"
+          "Gemini",
+          "매쓰홀릭",
+          "북크리에이터",
+          "슬라이도"
         ],
         "elementary": [
-          "심스페이스",
-          "통그라미",
           "투닝",
-          "풀리수학",
-          "Snorkl"
+          "Gemini",
+          "매쓰홀릭",
+          "북크리에이터",
+          "슬라이도"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "gamma",
+      "name": "Gamma",
+      "group": "콘텐츠 제작",
+      "purpose": "AI로 발표자료·문서·웹페이지 초안을 만드는 프레젠테이션 저작 도구",
+      "counts": {
+        "all": 2,
+        "elementary": 1,
+        "middle": 0,
+        "high": 1
+      },
+      "rates": {
+        "all": 1.1,
+        "elementary": 1.1,
+        "middle": 0,
+        "high": 2.7
+      },
+      "ranks": {
+        "all": 73,
+        "elementary": 102,
+        "middle": 124,
+        "high": 37
+      },
+      "related": {
+        "all": [
+          "Claude",
+          "멘티미터",
+          "미리캔버스",
+          "스픽AI",
+          "캡컷"
+        ],
+        "elementary": [
+          "멘티미터",
+          "미리캔버스",
+          "스픽AI",
+          "캡컷",
+          "Claude"
+        ],
+        "middle": [],
+        "high": [
+          "클래스팅 AI",
+          "ChatGPT",
+          "Claude",
+          "Gemini",
+          "MS Teams"
+        ]
+      }
+    },
+    {
+      "id": "openai-api",
+      "name": "OpenAI API",
+      "group": "생성형 AI",
+      "purpose": "생성형 AI 모델을 맞춤형 앱·자동화·수업 도구에 연결하는 개발 인터페이스",
+      "counts": {
+        "all": 2,
+        "elementary": 2,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 1.1,
+        "elementary": 2.2,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 74,
+        "elementary": 61,
+        "middle": 131,
+        "high": 129
+      },
+      "related": {
+        "all": [
+          "패들렛",
+          "Claude",
+          "4K Video Downloader+",
+          "마이클AI",
+          "북크리에이터"
+        ],
+        "elementary": [
+          "패들렛",
+          "Claude",
+          "4K Video Downloader+",
+          "마이클AI",
+          "북크리에이터"
         ],
         "middle": [],
         "high": []
@@ -2349,9 +3375,9 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 5.4
       },
       "ranks": {
-        "all": 52,
-        "elementary": 105,
-        "middle": 105,
+        "all": 75,
+        "elementary": 139,
+        "middle": 133,
         "high": 15
       },
       "related": {
@@ -2368,10 +3394,98 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
-      "id": "다했니-다했어요",
-      "name": "다했니·다했어요",
-      "group": "학습관리",
-      "purpose": "과제 배부·제출·확인과 학급 활동 기록을 돕는 학급관리 플랫폼",
+      "id": "vllo",
+      "name": "VLLO",
+      "group": "콘텐츠 제작",
+      "purpose": "모바일에서 자막·효과·음악을 편집하는 쉬운 영상 제작 앱",
+      "counts": {
+        "all": 2,
+        "elementary": 1,
+        "middle": 1,
+        "high": 0
+      },
+      "rates": {
+        "all": 1.1,
+        "elementary": 1.1,
+        "middle": 2,
+        "high": 0
+      },
+      "ranks": {
+        "all": 76,
+        "elementary": 112,
+        "middle": 46,
+        "high": 137
+      },
+      "related": {
+        "all": [
+          "캔바",
+          "리드포스쿨",
+          "리딩오션스쿨",
+          "클리포",
+          "패들렛"
+        ],
+        "elementary": [
+          "리드포스쿨",
+          "리딩오션스쿨",
+          "캔바",
+          "패들렛",
+          "AI마타수학"
+        ],
+        "middle": [
+          "캔바",
+          "클리포",
+          "Claude"
+        ],
+        "high": []
+      }
+    },
+    {
+      "id": "wordwall",
+      "name": "Wordwall",
+      "group": "퀴즈·참여",
+      "purpose": "교사가 만든 문항을 게임·활동지 형태로 바꾸는 퀴즈 저작 도구",
+      "counts": {
+        "all": 2,
+        "elementary": 2,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 1.1,
+        "elementary": 2.2,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 77,
+        "elementary": 62,
+        "middle": 138,
+        "high": 138
+      },
+      "related": {
+        "all": [
+          "북크리에이터",
+          "블루킷",
+          "카훗",
+          "패들렛",
+          "Adobe Creative Cloud"
+        ],
+        "elementary": [
+          "북크리에이터",
+          "블루킷",
+          "카훗",
+          "패들렛",
+          "Adobe Creative Cloud"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "4k-video-downloader-",
+      "name": "4K Video Downloader+",
+      "group": "콘텐츠 제작",
+      "purpose": "온라인 영상·음원을 내려받아 수업 자료로 관리하는 미디어 보조 도구",
       "counts": {
         "all": 1,
         "elementary": 1,
@@ -2380,28 +3494,114 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 53,
-        "elementary": 37,
-        "middle": 49,
+        "all": 78,
+        "elementary": 63,
+        "middle": 47,
         "high": 43
       },
       "related": {
         "all": [
-          "달달독해",
-          "스쿨플랫",
-          "캔바",
-          "토도한글"
+          "북크리에이터",
+          "블루킷",
+          "알공",
+          "키위티",
+          "패들렛"
         ],
         "elementary": [
-          "달달독해",
-          "스쿨플랫",
-          "캔바",
-          "토도한글"
+          "북크리에이터",
+          "블루킷",
+          "알공",
+          "키위티",
+          "패들렛"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "그라운드",
+      "name": "그라운드",
+      "group": "학습관리",
+      "purpose": "학생 학습 활동과 진도를 운영·확인하는 교육 플랫폼",
+      "counts": {
+        "all": 1,
+        "elementary": 1,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 0.6,
+        "elementary": 1.1,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 79,
+        "elementary": 64,
+        "middle": 49,
+        "high": 44
+      },
+      "related": {
+        "all": [
+          "띵커벨",
+          "알공",
+          "토도한글",
+          "패들렛",
+          "AI 아크수학"
+        ],
+        "elementary": [
+          "띵커벨",
+          "알공",
+          "토도한글",
+          "패들렛",
+          "AI 아크수학"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "그림한글받아쓰기",
+      "name": "그림한글받아쓰기",
+      "group": "언어·문해",
+      "purpose": "그림 단서와 받아쓰기로 초기 한글 쓰기를 연습하는 문해 학습 도구",
+      "counts": {
+        "all": 1,
+        "elementary": 1,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 0.6,
+        "elementary": 1.1,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 80,
+        "elementary": 65,
+        "middle": 50,
+        "high": 45
+      },
+      "related": {
+        "all": [
+          "띵커벨",
+          "라포라포",
+          "리드포스쿨",
+          "마이클AI",
+          "매일국어·독도"
+        ],
+        "elementary": [
+          "띵커벨",
+          "라포라포",
+          "리드포스쿨",
+          "마이클AI",
+          "매일국어·독도"
         ],
         "middle": [],
         "high": []
@@ -2420,28 +3620,30 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 54,
-        "elementary": 38,
-        "middle": 50,
-        "high": 44
+        "all": 81,
+        "elementary": 67,
+        "middle": 52,
+        "high": 47
       },
       "related": {
         "all": [
           "다했니·다했어요",
-          "스쿨플랫",
-          "캔바",
-          "토도한글"
+          "리딩오션스쿨",
+          "리틀팍스",
+          "매쓰홀릭",
+          "스쿨플랫"
         ],
         "elementary": [
           "다했니·다했어요",
-          "스쿨플랫",
-          "캔바",
-          "토도한글"
+          "리딩오션스쿨",
+          "리틀팍스",
+          "매쓰홀릭",
+          "스쿨플랫"
         ],
         "middle": [],
         "high": []
@@ -2465,9 +3667,9 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 2.7
       },
       "ranks": {
-        "all": 55,
-        "elementary": 75,
-        "middle": 51,
+        "all": 82,
+        "elementary": 114,
+        "middle": 53,
         "high": 18
       },
       "related": {
@@ -2483,6 +3685,48 @@ export const edtechSnapshot: EdtechSnapshot = {
           "NotebookLM",
           "Snorkl"
         ]
+      }
+    },
+    {
+      "id": "라포라포",
+      "name": "라포라포",
+      "group": "언어·문해",
+      "purpose": "학생의 읽기·쓰기 및 의사소통 활동을 지원하는 언어 학습 도구",
+      "counts": {
+        "all": 1,
+        "elementary": 1,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 0.6,
+        "elementary": 1.1,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 83,
+        "elementary": 68,
+        "middle": 55,
+        "high": 49
+      },
+      "related": {
+        "all": [
+          "그림한글받아쓰기",
+          "띵커벨",
+          "리드포스쿨",
+          "마이클AI",
+          "매일국어·독도"
+        ],
+        "elementary": [
+          "그림한글받아쓰기",
+          "띵커벨",
+          "리드포스쿨",
+          "마이클AI",
+          "매일국어·독도"
+        ],
+        "middle": [],
+        "high": []
       }
     },
     {
@@ -2503,10 +3747,10 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 0
       },
       "ranks": {
-        "all": 56,
-        "elementary": 77,
+        "all": 84,
+        "elementary": 116,
         "middle": 26,
-        "high": 47
+        "high": 51
       },
       "related": {
         "all": [
@@ -2538,61 +3782,27 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 57,
-        "elementary": 39,
-        "middle": 54,
-        "high": 49
+        "all": 85,
+        "elementary": 69,
+        "middle": 58,
+        "high": 54
       },
       "related": {
         "all": [
           "리틀팍스",
           "캔바",
+          "클래스카드",
           "패들렛"
         ],
         "elementary": [
           "리틀팍스",
           "캔바",
-          "패들렛"
-        ],
-        "middle": [],
-        "high": []
-      }
-    },
-    {
-      "id": "리딩오션스쿨",
-      "name": "리딩오션스쿨",
-      "group": "언어·문해",
-      "purpose": "전자책 읽기와 독서 활동·학습 관리를 제공하는 디지털 독서 플랫폼",
-      "counts": {
-        "all": 1,
-        "elementary": 1,
-        "middle": 0,
-        "high": 0
-      },
-      "rates": {
-        "all": 0.6,
-        "elementary": 1.2,
-        "middle": 0,
-        "high": 0
-      },
-      "ranks": {
-        "all": 58,
-        "elementary": 40,
-        "middle": 55,
-        "high": 50
-      },
-      "related": {
-        "all": [
-          "스쿨플랫",
-          "패들렛"
-        ],
-        "elementary": [
-          "스쿨플랫",
+          "클래스카드",
           "패들렛"
         ],
         "middle": [],
@@ -2617,9 +3827,9 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 2.7
       },
       "ranks": {
-        "all": 59,
-        "elementary": 78,
-        "middle": 56,
+        "all": 86,
+        "elementary": 117,
+        "middle": 60,
         "high": 20
       },
       "related": {
@@ -2638,80 +3848,6 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
-      "id": "리틀팍스",
-      "name": "리틀팍스",
-      "group": "언어·문해",
-      "purpose": "애니메이션 영어동화와 단계별 읽기·듣기 콘텐츠를 제공하는 영어 학습 서비스",
-      "counts": {
-        "all": 1,
-        "elementary": 1,
-        "middle": 0,
-        "high": 0
-      },
-      "rates": {
-        "all": 0.6,
-        "elementary": 1.2,
-        "middle": 0,
-        "high": 0
-      },
-      "ranks": {
-        "all": 60,
-        "elementary": 41,
-        "middle": 57,
-        "high": 51
-      },
-      "related": {
-        "all": [
-          "리딩앤스쿨",
-          "캔바",
-          "패들렛"
-        ],
-        "elementary": [
-          "리딩앤스쿨",
-          "캔바",
-          "패들렛"
-        ],
-        "middle": [],
-        "high": []
-      }
-    },
-    {
-      "id": "마이클ai",
-      "name": "마이클AI",
-      "group": "생성형 AI",
-      "purpose": "학교 문서와 수업·업무 자료 작성을 지원하는 교원 업무 특화 AI",
-      "counts": {
-        "all": 1,
-        "elementary": 0,
-        "middle": 1,
-        "high": 0
-      },
-      "rates": {
-        "all": 0.6,
-        "elementary": 0,
-        "middle": 2,
-        "high": 0
-      },
-      "ranks": {
-        "all": 61,
-        "elementary": 79,
-        "middle": 27,
-        "high": 52
-      },
-      "related": {
-        "all": [
-          "Claude",
-          "Gemini"
-        ],
-        "elementary": [],
-        "middle": [
-          "Claude",
-          "Gemini"
-        ],
-        "high": []
-      }
-    },
-    {
       "id": "마인크래프트",
       "name": "마인크래프트",
       "group": "코딩·컴퓨팅",
@@ -2724,24 +3860,66 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 62,
-        "elementary": 42,
-        "middle": 58,
-        "high": 53
+        "all": 87,
+        "elementary": 70,
+        "middle": 62,
+        "high": 58
       },
       "related": {
         "all": [
           "띵커벨",
-          "아이쌤GPT"
+          "아이쌤GPT",
+          "코드모스"
         ],
         "elementary": [
           "띵커벨",
-          "아이쌤GPT"
+          "아이쌤GPT",
+          "코드모스"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "매쓰플랫",
+      "name": "매쓰플랫",
+      "group": "교과·맞춤형",
+      "purpose": "수학 문제은행·오답 관리·개인별 추천을 제공하는 맞춤형 수학 플랫폼",
+      "counts": {
+        "all": 1,
+        "elementary": 1,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 0.6,
+        "elementary": 1.1,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 88,
+        "elementary": 71,
+        "middle": 63,
+        "high": 59
+      },
+      "related": {
+        "all": [
+          "똑똑수학탐험대",
+          "심스페이스",
+          "알지오매스키즈",
+          "패들렛"
+        ],
+        "elementary": [
+          "똑똑수학탐험대",
+          "심스페이스",
+          "알지오매스키즈",
+          "패들렛"
         ],
         "middle": [],
         "high": []
@@ -2760,38 +3938,40 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 63,
-        "elementary": 44,
-        "middle": 59,
-        "high": 56
+        "all": 89,
+        "elementary": 72,
+        "middle": 65,
+        "high": 63
       },
       "related": {
         "all": [
           "구글 클래스룸",
           "매쓰홀릭",
-          "이퓨처라이브러리",
-          "Brisk Teaching"
+          "북크리에이터",
+          "블루킷",
+          "이퓨처라이브러리"
         ],
         "elementary": [
           "구글 클래스룸",
           "매쓰홀릭",
-          "이퓨처라이브러리",
-          "Brisk Teaching"
+          "북크리에이터",
+          "블루킷",
+          "이퓨처라이브러리"
         ],
         "middle": [],
         "high": []
       }
     },
     {
-      "id": "미리캔버스",
-      "name": "미리캔버스",
-      "group": "콘텐츠 제작",
-      "purpose": "발표자료·카드뉴스·학습자료를 만드는 웹 기반 디자인 도구",
+      "id": "밀리의-서재",
+      "name": "밀리의 서재",
+      "group": "언어·문해",
+      "purpose": "전자책·오디오북을 읽고 듣는 디지털 독서 구독 서비스",
       "counts": {
         "all": 1,
         "elementary": 1,
@@ -2800,24 +3980,24 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 64,
-        "elementary": 45,
-        "middle": 60,
-        "high": 57
+        "all": 90,
+        "elementary": 73,
+        "middle": 67,
+        "high": 65
       },
       "related": {
         "all": [
-          "캡컷",
-          "SUNO"
+          "패들렛",
+          "Claude"
         ],
         "elementary": [
-          "캡컷",
-          "SUNO"
+          "패들렛",
+          "Claude"
         ],
         "middle": [],
         "high": []
@@ -2836,26 +4016,30 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 65,
-        "elementary": 46,
-        "middle": 62,
-        "high": 59
+        "all": 91,
+        "elementary": 74,
+        "middle": 69,
+        "high": 67
       },
       "related": {
         "all": [
+          "북크리에이터",
+          "알공",
+          "지니아튜터",
           "캔바",
-          "토도한글",
-          "ZEP·젭퀴즈"
+          "토도한글"
         ],
         "elementary": [
+          "북크리에이터",
+          "알공",
+          "지니아튜터",
           "캔바",
-          "토도한글",
-          "ZEP·젭퀴즈"
+          "토도한글"
         ],
         "middle": [],
         "high": []
@@ -2874,32 +4058,40 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 66,
-        "elementary": 47,
-        "middle": 63,
-        "high": 61
+        "all": 92,
+        "elementary": 75,
+        "middle": 70,
+        "high": 68
       },
       "related": {
         "all": [
-          "KOSIS"
+          "초코클래스",
+          "카훗",
+          "캡컷",
+          "패들렛",
+          "EBS영어"
         ],
         "elementary": [
-          "KOSIS"
+          "초코클래스",
+          "카훗",
+          "캡컷",
+          "패들렛",
+          "EBS영어"
         ],
         "middle": [],
         "high": []
       }
     },
     {
-      "id": "슬라이도",
-      "name": "슬라이도",
-      "group": "퀴즈·참여",
-      "purpose": "질문·투표·퀴즈·워드클라우드로 발표 참여를 높이는 상호작용 도구",
+      "id": "수학대왕",
+      "name": "수학대왕",
+      "group": "교과·맞춤형",
+      "purpose": "AI 진단과 개인별 문제 추천을 제공하는 수학 맞춤 학습 플랫폼",
       "counts": {
         "all": 1,
         "elementary": 1,
@@ -2908,28 +4100,72 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 67,
-        "elementary": 48,
-        "middle": 64,
-        "high": 62
+        "all": 93,
+        "elementary": 76,
+        "middle": 71,
+        "high": 69
+      },
+      "related": {
+        "all": [
+          "리드포스쿨",
+          "아트봉봉",
+          "캔바",
+          "패들렛",
+          "Gemini"
+        ],
+        "elementary": [
+          "리드포스쿨",
+          "아트봉봉",
+          "캔바",
+          "패들렛",
+          "Gemini"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "스픽ai",
+      "name": "스픽AI",
+      "group": "언어·문해",
+      "purpose": "AI 튜터와 대화하며 영어 말하기·발음을 연습하는 회화 학습 앱",
+      "counts": {
+        "all": 1,
+        "elementary": 1,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 0.6,
+        "elementary": 1.1,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 94,
+        "elementary": 77,
+        "middle": 72,
+        "high": 70
       },
       "related": {
         "all": [
           "멘티미터",
-          "북크리에이터",
-          "캔바",
-          "패들렛"
+          "미리캔버스",
+          "캡컷",
+          "Claude",
+          "Delightex"
         ],
         "elementary": [
           "멘티미터",
-          "북크리에이터",
-          "캔바",
-          "패들렛"
+          "미리캔버스",
+          "캡컷",
+          "Claude",
+          "Delightex"
         ],
         "middle": [],
         "high": []
@@ -2953,50 +4189,14 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 2.7
       },
       "ranks": {
-        "all": 68,
-        "elementary": 80,
-        "middle": 65,
+        "all": 95,
+        "elementary": 118,
+        "middle": 74,
         "high": 23
       },
       "related": {
         "all": [],
         "elementary": [],
-        "middle": [],
-        "high": []
-      }
-    },
-    {
-      "id": "아이쌤gpt",
-      "name": "아이쌤GPT",
-      "group": "생성형 AI",
-      "purpose": "교사의 수업 준비와 학교 업무를 지원하는 교육 특화 생성형 AI",
-      "counts": {
-        "all": 1,
-        "elementary": 1,
-        "middle": 0,
-        "high": 0
-      },
-      "rates": {
-        "all": 0.6,
-        "elementary": 1.2,
-        "middle": 0,
-        "high": 0
-      },
-      "ranks": {
-        "all": 69,
-        "elementary": 49,
-        "middle": 66,
-        "high": 64
-      },
-      "related": {
-        "all": [
-          "띵커벨",
-          "마인크래프트"
-        ],
-        "elementary": [
-          "띵커벨",
-          "마인크래프트"
-        ],
         "middle": [],
         "high": []
       }
@@ -3014,15 +4214,15 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 70,
-        "elementary": 50,
-        "middle": 69,
-        "high": 67
+        "all": 96,
+        "elementary": 78,
+        "middle": 79,
+        "high": 77
       },
       "related": {
         "all": [
@@ -3034,6 +4234,48 @@ export const edtechSnapshot: EdtechSnapshot = {
           "지니아튜터",
           "캔바",
           "패들렛"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "엘리프",
+      "name": "엘리프",
+      "group": "언어·문해",
+      "purpose": "양방향 수업과 예습·복습을 결합한 초등 영어 디지털 학습 솔루션",
+      "counts": {
+        "all": 1,
+        "elementary": 1,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 0.6,
+        "elementary": 1.1,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 97,
+        "elementary": 79,
+        "middle": 81,
+        "high": 80
+      },
+      "related": {
+        "all": [
+          "심스페이스",
+          "아트봉봉",
+          "패들렛",
+          "퍼플 경제교실",
+          "ChatGPT"
+        ],
+        "elementary": [
+          "심스페이스",
+          "아트봉봉",
+          "패들렛",
+          "퍼플 경제교실",
+          "ChatGPT"
         ],
         "middle": [],
         "high": []
@@ -3057,9 +4299,9 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 2.7
       },
       "ranks": {
-        "all": 71,
-        "elementary": 82,
-        "middle": 71,
+        "all": 98,
+        "elementary": 120,
+        "middle": 82,
         "high": 24
       },
       "related": {
@@ -3080,6 +4322,46 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
+      "id": "옥수수",
+      "name": "옥수수",
+      "group": "교과·맞춤형",
+      "purpose": "진단평가 후 학생별 학습을 추천하는 학교 전용 수학 AI 코스웨어",
+      "counts": {
+        "all": 1,
+        "elementary": 1,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 0.6,
+        "elementary": 1.1,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 99,
+        "elementary": 80,
+        "middle": 83,
+        "high": 81
+      },
+      "related": {
+        "all": [
+          "일프로 연산",
+          "캔바",
+          "패들렛",
+          "Class1234"
+        ],
+        "elementary": [
+          "일프로 연산",
+          "캔바",
+          "패들렛",
+          "Class1234"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
       "id": "온라인-교무실",
       "name": "온라인 교무실",
       "group": "학습관리",
@@ -3092,15 +4374,15 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 72,
-        "elementary": 51,
-        "middle": 72,
-        "high": 70
+        "all": 100,
+        "elementary": 81,
+        "middle": 84,
+        "high": 82
       },
       "related": {
         "all": [],
@@ -3127,9 +4409,9 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 2.7
       },
       "ranks": {
-        "all": 73,
-        "elementary": 84,
-        "middle": 74,
+        "all": 101,
+        "elementary": 121,
+        "middle": 86,
         "high": 26
       },
       "related": {
@@ -3162,28 +4444,30 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 74,
-        "elementary": 53,
-        "middle": 75,
-        "high": 74
+        "all": 102,
+        "elementary": 84,
+        "middle": 87,
+        "high": 86
       },
       "related": {
         "all": [
           "구글 클래스룸",
           "매쓰홀릭",
           "문제G",
-          "Brisk Teaching"
+          "북크리에이터",
+          "블루킷"
         ],
         "elementary": [
           "구글 클래스룸",
           "매쓰홀릭",
           "문제G",
-          "Brisk Teaching"
+          "북크리에이터",
+          "블루킷"
         ],
         "middle": [],
         "high": []
@@ -3202,23 +4486,25 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 75,
-        "elementary": 54,
-        "middle": 76,
-        "high": 75
+        "all": 103,
+        "elementary": 85,
+        "middle": 88,
+        "high": 87
       },
       "related": {
         "all": [
+          "옥수수",
           "캔바",
           "패들렛",
           "Class1234"
         ],
         "elementary": [
+          "옥수수",
           "캔바",
           "패들렛",
           "Class1234"
@@ -3245,9 +4531,9 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 2.7
       },
       "ranks": {
-        "all": 76,
-        "elementary": 85,
-        "middle": 77,
+        "all": 104,
+        "elementary": 122,
+        "middle": 89,
         "high": 27
       },
       "related": {
@@ -3264,10 +4550,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
-      "id": "지니아튜터",
-      "name": "지니아튜터",
-      "group": "교과·맞춤형",
-      "purpose": "국·영·수·사·과 과정과 AI 글쓰기 평가를 제공하는 교과 코스웨어",
+      "id": "젠스파크",
+      "name": "젠스파크",
+      "group": "생성형 AI",
+      "purpose": "검색·자료 조사·문서와 프레젠테이션 생성을 수행하는 AI 에이전트",
       "counts": {
         "all": 1,
         "elementary": 1,
@@ -3276,26 +4562,72 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 77,
-        "elementary": 55,
-        "middle": 79,
-        "high": 77
+        "all": 105,
+        "elementary": 86,
+        "middle": 91,
+        "high": 89
       },
       "related": {
         "all": [
-          "알지오매쓰2D",
-          "캔바",
-          "패들렛"
+          "멘티미터",
+          "블루킷",
+          "큐리팟",
+          "클리포",
+          "ChatGPT"
         ],
         "elementary": [
-          "알지오매쓰2D",
-          "캔바",
-          "패들렛"
+          "멘티미터",
+          "블루킷",
+          "큐리팟",
+          "클리포",
+          "ChatGPT"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "지학사-aidt",
+      "name": "지학사 AIDT",
+      "group": "교과·맞춤형",
+      "purpose": "교과 학습·AI 튜터·학습 분석을 결합한 지학사 AI 디지털교과서",
+      "counts": {
+        "all": 1,
+        "elementary": 1,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 0.6,
+        "elementary": 1.1,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 106,
+        "elementary": 87,
+        "middle": 93,
+        "high": 91
+      },
+      "related": {
+        "all": [
+          "똑똑수학탐험대",
+          "띵커벨",
+          "매쓰홀릭",
+          "북크리에이터",
+          "아이쌤GPT"
+        ],
+        "elementary": [
+          "똑똑수학탐험대",
+          "띵커벨",
+          "매쓰홀릭",
+          "북크리에이터",
+          "아이쌤GPT"
         ],
         "middle": [],
         "high": []
@@ -3319,10 +4651,10 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 0
       },
       "ranks": {
-        "all": 78,
-        "elementary": 87,
-        "middle": 34,
-        "high": 79
+        "all": 107,
+        "elementary": 124,
+        "middle": 33,
+        "high": 93
       },
       "related": {
         "all": [
@@ -3340,10 +4672,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
-      "id": "캡컷",
-      "name": "캡컷",
-      "group": "콘텐츠 제작",
-      "purpose": "자막·효과·AI 기능을 갖춘 영상 편집과 숏폼 제작 도구",
+      "id": "초등문해력",
+      "name": "초등문해력",
+      "group": "언어·문해",
+      "purpose": "초등 읽기 이해·어휘·독해를 단계적으로 연습하는 문해력 콘텐츠",
       "counts": {
         "all": 1,
         "elementary": 1,
@@ -3352,34 +4684,40 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 79,
-        "elementary": 56,
-        "middle": 80,
-        "high": 80
+        "all": 108,
+        "elementary": 88,
+        "middle": 94,
+        "high": 94
       },
       "related": {
         "all": [
-          "미리캔버스",
-          "SUNO"
+          "다했니·다했어요",
+          "달달독해",
+          "리딩오션스쿨",
+          "리틀팍스",
+          "매쓰홀릭"
         ],
         "elementary": [
-          "미리캔버스",
-          "SUNO"
+          "다했니·다했어요",
+          "달달독해",
+          "리딩오션스쿨",
+          "리틀팍스",
+          "매쓰홀릭"
         ],
         "middle": [],
         "high": []
       }
     },
     {
-      "id": "클래스툴",
-      "name": "클래스툴",
-      "group": "학습관리",
-      "purpose": "수업 활동과 학생 참여를 운영하는 교실 지원 도구",
+      "id": "큐리팟",
+      "name": "큐리팟",
+      "group": "생성형 AI",
+      "purpose": "질문 생성과 탐구 활동 설계를 지원하는 교육용 AI 도구",
       "counts": {
         "all": 1,
         "elementary": 1,
@@ -3388,22 +4726,30 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 80,
-        "elementary": 58,
-        "middle": 82,
-        "high": 81
+        "all": 109,
+        "elementary": 90,
+        "middle": 99,
+        "high": 98
       },
       "related": {
         "all": [
-          "패들렛"
+          "멘티미터",
+          "블루킷",
+          "젠스파크",
+          "클리포",
+          "ChatGPT"
         ],
         "elementary": [
-          "패들렛"
+          "멘티미터",
+          "블루킷",
+          "젠스파크",
+          "클리포",
+          "ChatGPT"
         ],
         "middle": [],
         "high": []
@@ -3427,9 +4773,9 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 2.7
       },
       "ranks": {
-        "all": 81,
-        "elementary": 90,
-        "middle": 84,
+        "all": 110,
+        "elementary": 125,
+        "middle": 102,
         "high": 31
       },
       "related": {
@@ -3461,9 +4807,9 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 2.7
       },
       "ranks": {
-        "all": 82,
-        "elementary": 91,
-        "middle": 85,
+        "all": 111,
+        "elementary": 126,
+        "middle": 103,
         "high": 32
       },
       "related": {
@@ -3490,22 +4836,66 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 83,
-        "elementary": 61,
-        "middle": 87,
-        "high": 83
+        "all": 112,
+        "elementary": 93,
+        "middle": 105,
+        "high": 101
       },
       "related": {
         "all": [
-          "클래스팅 AI"
+          "클래스팅 AI",
+          "토도한글"
         ],
         "elementary": [
-          "클래스팅 AI"
+          "클래스팅 AI",
+          "토도한글"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "토도국어",
+      "name": "토도국어",
+      "group": "언어·문해",
+      "purpose": "초등 국어 읽기·쓰기·어휘를 단계별로 학습하는 교과 앱",
+      "counts": {
+        "all": 1,
+        "elementary": 1,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 0.6,
+        "elementary": 1.1,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 113,
+        "elementary": 94,
+        "middle": 106,
+        "high": 102
+      },
+      "related": {
+        "all": [
+          "매일국어·독도",
+          "알공",
+          "클래스카드",
+          "토도수학",
+          "토도한글"
+        ],
+        "elementary": [
+          "매일국어·독도",
+          "알공",
+          "클래스카드",
+          "토도수학",
+          "토도한글"
         ],
         "middle": [],
         "high": []
@@ -3524,26 +4914,30 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 84,
-        "elementary": 62,
-        "middle": 89,
-        "high": 85
+        "all": 114,
+        "elementary": 95,
+        "middle": 109,
+        "high": 105
       },
       "related": {
         "all": [
-          "투닝",
-          "E-GPT",
-          "SUNO"
+          "매쓰홀릭",
+          "북크리에이터",
+          "슬라이도",
+          "클래스팅 AI",
+          "투닝"
         ],
         "elementary": [
-          "투닝",
-          "E-GPT",
-          "SUNO"
+          "매쓰홀릭",
+          "북크리에이터",
+          "슬라이도",
+          "클래스팅 AI",
+          "투닝"
         ],
         "middle": [],
         "high": []
@@ -3567,10 +4961,10 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 0
       },
       "ranks": {
-        "all": 85,
-        "elementary": 92,
-        "middle": 37,
-        "high": 87
+        "all": 115,
+        "elementary": 127,
+        "middle": 36,
+        "high": 107
       },
       "related": {
         "all": [
@@ -3605,10 +4999,10 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 0
       },
       "ranks": {
-        "all": 86,
-        "elementary": 93,
-        "middle": 38,
-        "high": 88
+        "all": 116,
+        "elementary": 128,
+        "middle": 37,
+        "high": 108
       },
       "related": {
         "all": [
@@ -3620,6 +5014,48 @@ export const edtechSnapshot: EdtechSnapshot = {
           "캔바",
           "패들렛"
         ],
+        "high": []
+      }
+    },
+    {
+      "id": "퍼플-경제교실",
+      "name": "퍼플 경제교실",
+      "group": "학습관리",
+      "purpose": "학생 참여형 경제·금융 수업 콘텐츠와 활동을 제공하는 교과 플랫폼",
+      "counts": {
+        "all": 1,
+        "elementary": 1,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 0.6,
+        "elementary": 1.1,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 117,
+        "elementary": 96,
+        "middle": 110,
+        "high": 109
+      },
+      "related": {
+        "all": [
+          "심스페이스",
+          "아트봉봉",
+          "엘리프",
+          "패들렛",
+          "ChatGPT"
+        ],
+        "elementary": [
+          "심스페이스",
+          "아트봉봉",
+          "엘리프",
+          "패들렛",
+          "ChatGPT"
+        ],
+        "middle": [],
         "high": []
       }
     },
@@ -3641,10 +5077,10 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 0
       },
       "ranks": {
-        "all": 87,
-        "elementary": 94,
-        "middle": 40,
-        "high": 91
+        "all": 118,
+        "elementary": 129,
+        "middle": 39,
+        "high": 112
       },
       "related": {
         "all": [
@@ -3660,10 +5096,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
-      "id": "ai-아크수학",
-      "name": "AI 아크수학",
-      "group": "교과·맞춤형",
-      "purpose": "학생 수준 진단과 맞춤형 수학 학습을 지원하는 AI 코스웨어",
+      "id": "후크패드",
+      "name": "후크패드",
+      "group": "콘텐츠 제작",
+      "purpose": "코드 진행을 만들고 함께 작곡·편곡하는 웹 기반 음악 창작 도구",
       "counts": {
         "all": 1,
         "elementary": 1,
@@ -3672,58 +5108,30 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 88,
-        "elementary": 64,
-        "middle": 91,
-        "high": 92
+        "all": 119,
+        "elementary": 98,
+        "middle": 112,
+        "high": 113
       },
       "related": {
         "all": [
-          "ZEP·젭퀴즈"
+          "구글 클래스룸",
+          "매쓰홀릭",
+          "문제G",
+          "북크리에이터",
+          "블루킷"
         ],
         "elementary": [
-          "ZEP·젭퀴즈"
-        ],
-        "middle": [],
-        "high": []
-      }
-    },
-    {
-      "id": "ai마타수학",
-      "name": "AI마타수학",
-      "group": "교과·맞춤형",
-      "purpose": "진단 결과에 따라 개별 수학 문항과 학습 경로를 제공하는 AI 코스웨어",
-      "counts": {
-        "all": 1,
-        "elementary": 1,
-        "middle": 0,
-        "high": 0
-      },
-      "rates": {
-        "all": 0.6,
-        "elementary": 1.2,
-        "middle": 0,
-        "high": 0
-      },
-      "ranks": {
-        "all": 89,
-        "elementary": 65,
-        "middle": 92,
-        "high": 93
-      },
-      "related": {
-        "all": [
-          "와우아이디어스",
-          "패들렛"
-        ],
-        "elementary": [
-          "와우아이디어스",
-          "패들렛"
+          "구글 클래스룸",
+          "매쓰홀릭",
+          "문제G",
+          "북크리에이터",
+          "블루킷"
         ],
         "middle": [],
         "high": []
@@ -3747,9 +5155,9 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 2.7
       },
       "ranks": {
-        "all": 90,
-        "elementary": 95,
-        "middle": 93,
+        "all": 120,
+        "elementary": 130,
+        "middle": 116,
         "high": 34
       },
       "related": {
@@ -3781,10 +5189,10 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 0
       },
       "ranks": {
-        "all": 91,
-        "elementary": 96,
-        "middle": 41,
-        "high": 94
+        "all": 121,
+        "elementary": 131,
+        "middle": 40,
+        "high": 117
       },
       "related": {
         "all": [
@@ -3812,23 +5220,25 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 92,
-        "elementary": 66,
-        "middle": 94,
-        "high": 96
+        "all": 122,
+        "elementary": 99,
+        "middle": 117,
+        "high": 119
       },
       "related": {
         "all": [
+          "옥수수",
           "일프로 연산",
           "캔바",
           "패들렛"
         ],
         "elementary": [
+          "옥수수",
           "일프로 연산",
           "캔바",
           "패들렛"
@@ -3855,9 +5265,9 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 2.7
       },
       "ranks": {
-        "all": 93,
-        "elementary": 97,
-        "middle": 95,
+        "all": 123,
+        "elementary": 132,
+        "middle": 118,
         "high": 35
       },
       "related": {
@@ -3874,10 +5284,10 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
-      "id": "delightex",
-      "name": "Delightex",
-      "group": "코딩·컴퓨팅",
-      "purpose": "3D 공간을 만들고 코딩·VR·AR로 확장하는 실감형 창작 플랫폼",
+      "id": "ebs영어",
+      "name": "EBS영어",
+      "group": "언어·문해",
+      "purpose": "EBS 영어 영상·음원·학습 콘텐츠를 활용하는 영어 학습 서비스",
       "counts": {
         "all": 1,
         "elementary": 1,
@@ -3886,22 +5296,72 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 94,
-        "elementary": 67,
-        "middle": 96,
-        "high": 97
+        "all": 124,
+        "elementary": 100,
+        "middle": 121,
+        "high": 122
       },
       "related": {
         "all": [
-          "Skybox AI"
+          "수학 아레나",
+          "초코클래스",
+          "카훗",
+          "캡컷",
+          "패들렛"
         ],
         "elementary": [
-          "Skybox AI"
+          "수학 아레나",
+          "초코클래스",
+          "카훗",
+          "캡컷",
+          "패들렛"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs",
+      "group": "콘텐츠 제작",
+      "purpose": "텍스트를 자연스러운 음성으로 변환하고 보이스를 생성하는 AI 오디오 도구",
+      "counts": {
+        "all": 1,
+        "elementary": 1,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 0.6,
+        "elementary": 1.1,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 125,
+        "elementary": 101,
+        "middle": 122,
+        "high": 123
+      },
+      "related": {
+        "all": [
+          "구글 클래스룸",
+          "매쓰홀릭",
+          "문제G",
+          "북크리에이터",
+          "블루킷"
+        ],
+        "elementary": [
+          "구글 클래스룸",
+          "매쓰홀릭",
+          "문제G",
+          "북크리에이터",
+          "블루킷"
         ],
         "middle": [],
         "high": []
@@ -3925,9 +5385,9 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 2.7
       },
       "ranks": {
-        "all": 95,
-        "elementary": 98,
-        "middle": 98,
+        "all": 126,
+        "elementary": 133,
+        "middle": 123,
         "high": 36
       },
       "related": {
@@ -3938,48 +5398,6 @@ export const edtechSnapshot: EdtechSnapshot = {
         "middle": [],
         "high": [
           "키네마스터"
-        ]
-      }
-    },
-    {
-      "id": "gamma",
-      "name": "Gamma",
-      "group": "콘텐츠 제작",
-      "purpose": "AI로 발표자료·문서·웹페이지 초안을 만드는 프레젠테이션 저작 도구",
-      "counts": {
-        "all": 1,
-        "elementary": 0,
-        "middle": 0,
-        "high": 1
-      },
-      "rates": {
-        "all": 0.6,
-        "elementary": 0,
-        "middle": 0,
-        "high": 2.7
-      },
-      "ranks": {
-        "all": 96,
-        "elementary": 99,
-        "middle": 99,
-        "high": 37
-      },
-      "related": {
-        "all": [
-          "클래스팅 AI",
-          "ChatGPT",
-          "Claude",
-          "Gemini",
-          "MS Teams"
-        ],
-        "elementary": [],
-        "middle": [],
-        "high": [
-          "클래스팅 AI",
-          "ChatGPT",
-          "Claude",
-          "Gemini",
-          "MS Teams"
         ]
       }
     },
@@ -3996,22 +5414,30 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 97,
-        "elementary": 68,
-        "middle": 100,
-        "high": 99
+        "all": 127,
+        "elementary": 103,
+        "middle": 125,
+        "high": 124
       },
       "related": {
         "all": [
-          "수학 아레나"
+          "수학 아레나",
+          "초코클래스",
+          "카훗",
+          "캡컷",
+          "패들렛"
         ],
         "elementary": [
-          "수학 아레나"
+          "수학 아레나",
+          "초코클래스",
+          "카훗",
+          "캡컷",
+          "패들렛"
         ],
         "middle": [],
         "high": []
@@ -4035,9 +5461,9 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 2.7
       },
       "ranks": {
-        "all": 98,
-        "elementary": 100,
-        "middle": 101,
+        "all": 128,
+        "elementary": 134,
+        "middle": 126,
         "high": 38
       },
       "related": {
@@ -4051,6 +5477,90 @@ export const edtechSnapshot: EdtechSnapshot = {
           "플랭스쿨",
           "Mizou"
         ]
+      }
+    },
+    {
+      "id": "learney",
+      "name": "Learney",
+      "group": "언어·문해",
+      "purpose": "성취기준 기반 국어·문해 학습과 AI 피드백·진도 분석을 제공하는 플랫폼",
+      "counts": {
+        "all": 1,
+        "elementary": 1,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 0.6,
+        "elementary": 1.1,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 129,
+        "elementary": 104,
+        "middle": 127,
+        "high": 125
+      },
+      "related": {
+        "all": [
+          "구글 클래스룸",
+          "매쓰홀릭",
+          "문제G",
+          "북크리에이터",
+          "블루킷"
+        ],
+        "elementary": [
+          "구글 클래스룸",
+          "매쓰홀릭",
+          "문제G",
+          "북크리에이터",
+          "블루킷"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "lily-s-ai",
+      "name": "Lily's AI",
+      "group": "생성형 AI",
+      "purpose": "영상·문서·웹 자료를 요약하고 지식 노트로 정리하는 AI 학습 보조 도구",
+      "counts": {
+        "all": 1,
+        "elementary": 1,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 0.6,
+        "elementary": 1.1,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 130,
+        "elementary": 105,
+        "middle": 128,
+        "high": 126
+      },
+      "related": {
+        "all": [
+          "4K Video Downloader+",
+          "북크리에이터",
+          "블루킷",
+          "알공",
+          "키위티"
+        ],
+        "elementary": [
+          "4K Video Downloader+",
+          "북크리에이터",
+          "블루킷",
+          "알공",
+          "키위티"
+        ],
+        "middle": [],
+        "high": []
       }
     },
     {
@@ -4071,9 +5581,9 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 2.7
       },
       "ranks": {
-        "all": 99,
-        "elementary": 101,
-        "middle": 102,
+        "all": 131,
+        "elementary": 135,
+        "middle": 129,
         "high": 39
       },
       "related": {
@@ -4102,23 +5612,29 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 100,
-        "elementary": 69,
-        "middle": 103,
-        "high": 100
+        "all": 132,
+        "elementary": 106,
+        "middle": 130,
+        "high": 127
       },
       "related": {
         "all": [
           "매쓰홀릭",
+          "미리캔버스",
+          "블루킷",
+          "패들렛",
           "Gemini"
         ],
         "elementary": [
           "매쓰홀릭",
+          "미리캔버스",
+          "블루킷",
+          "패들렛",
           "Gemini"
         ],
         "middle": [],
@@ -4143,10 +5659,10 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 0
       },
       "ranks": {
-        "all": 101,
-        "elementary": 102,
-        "middle": 43,
-        "high": 101
+        "all": 133,
+        "elementary": 136,
+        "middle": 42,
+        "high": 128
       },
       "related": {
         "all": [
@@ -4179,10 +5695,10 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 0
       },
       "ranks": {
-        "all": 102,
-        "elementary": 104,
-        "middle": 44,
-        "high": 102
+        "all": 134,
+        "elementary": 138,
+        "middle": 43,
+        "high": 130
       },
       "related": {
         "all": [
@@ -4210,15 +5726,15 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 103,
-        "elementary": 70,
-        "middle": 104,
-        "high": 103
+        "all": 135,
+        "elementary": 107,
+        "middle": 132,
+        "high": 131
       },
       "related": {
         "all": [
@@ -4228,42 +5744,6 @@ export const edtechSnapshot: EdtechSnapshot = {
         "elementary": [
           "구글 클래스룸",
           "Gemini"
-        ],
-        "middle": [],
-        "high": []
-      }
-    },
-    {
-      "id": "sen에듀",
-      "name": "SEN에듀",
-      "group": "학습관리",
-      "purpose": "교육 자료와 학교 수업 운영을 지원하는 서울교육 플랫폼",
-      "counts": {
-        "all": 1,
-        "elementary": 1,
-        "middle": 0,
-        "high": 0
-      },
-      "rates": {
-        "all": 0.6,
-        "elementary": 1.2,
-        "middle": 0,
-        "high": 0
-      },
-      "ranks": {
-        "all": 104,
-        "elementary": 71,
-        "middle": 106,
-        "high": 105
-      },
-      "related": {
-        "all": [
-          "구글 클래스룸",
-          "패들렛"
-        ],
-        "elementary": [
-          "구글 클래스룸",
-          "패들렛"
         ],
         "middle": [],
         "high": []
@@ -4282,15 +5762,15 @@ export const edtechSnapshot: EdtechSnapshot = {
       },
       "rates": {
         "all": 0.6,
-        "elementary": 1.2,
+        "elementary": 1.1,
         "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 105,
-        "elementary": 72,
-        "middle": 107,
-        "high": 106
+        "all": 136,
+        "elementary": 108,
+        "middle": 134,
+        "high": 133
       },
       "related": {
         "all": [
@@ -4298,6 +5778,48 @@ export const edtechSnapshot: EdtechSnapshot = {
         ],
         "elementary": [
           "Delightex"
+        ],
+        "middle": [],
+        "high": []
+      }
+    },
+    {
+      "id": "tblt-agent",
+      "name": "TBLT-Agent",
+      "group": "생성형 AI",
+      "purpose": "과업 중심 언어 수업 설계와 활동 생성을 지원하는 AI 에이전트",
+      "counts": {
+        "all": 1,
+        "elementary": 1,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 0.6,
+        "elementary": 1.1,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 137,
+        "elementary": 110,
+        "middle": 135,
+        "high": 134
+      },
+      "related": {
+        "all": [
+          "4K Video Downloader+",
+          "북크리에이터",
+          "블루킷",
+          "알공",
+          "키위티"
+        ],
+        "elementary": [
+          "4K Video Downloader+",
+          "북크리에이터",
+          "블루킷",
+          "알공",
+          "키위티"
         ],
         "middle": [],
         "high": []
@@ -4321,10 +5843,10 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 0
       },
       "ranks": {
-        "all": 106,
-        "elementary": 106,
-        "middle": 46,
-        "high": 107
+        "all": 138,
+        "elementary": 140,
+        "middle": 45,
+        "high": 135
       },
       "related": {
         "all": [
@@ -4336,6 +5858,40 @@ export const edtechSnapshot: EdtechSnapshot = {
           "채움AI",
           "Snorkl"
         ],
+        "high": []
+      }
+    },
+    {
+      "id": "u클래스",
+      "name": "U클래스",
+      "group": "학습관리",
+      "purpose": "학생 계정·수업·과제·진도를 관리하는 교육용 클래스 플랫폼",
+      "counts": {
+        "all": 1,
+        "elementary": 1,
+        "middle": 0,
+        "high": 0
+      },
+      "rates": {
+        "all": 0.6,
+        "elementary": 1.1,
+        "middle": 0,
+        "high": 0
+      },
+      "ranks": {
+        "all": 139,
+        "elementary": 111,
+        "middle": 136,
+        "high": 136
+      },
+      "related": {
+        "all": [
+          "리딩게이트"
+        ],
+        "elementary": [
+          "리딩게이트"
+        ],
+        "middle": [],
         "high": []
       }
     },
@@ -4357,9 +5913,9 @@ export const edtechSnapshot: EdtechSnapshot = {
         "high": 2.7
       },
       "ranks": {
-        "all": 107,
-        "elementary": 107,
-        "middle": 108,
+        "all": 140,
+        "elementary": 141,
+        "middle": 137,
         "high": 41
       },
       "related": {
@@ -4376,40 +5932,44 @@ export const edtechSnapshot: EdtechSnapshot = {
       }
     },
     {
-      "id": "vllo",
-      "name": "VLLO",
-      "group": "콘텐츠 제작",
-      "purpose": "모바일에서 자막·효과·음악을 편집하는 쉬운 영상 제작 앱",
+      "id": "ybm-aidt",
+      "name": "YBM AIDT",
+      "group": "언어·문해",
+      "purpose": "교과 콘텐츠·AI 튜터·학습 분석을 결합한 YBM AI 디지털교과서",
       "counts": {
         "all": 1,
-        "elementary": 0,
-        "middle": 1,
+        "elementary": 1,
+        "middle": 0,
         "high": 0
       },
       "rates": {
         "all": 0.6,
-        "elementary": 0,
-        "middle": 2,
+        "elementary": 1.1,
+        "middle": 0,
         "high": 0
       },
       "ranks": {
-        "all": 108,
-        "elementary": 108,
-        "middle": 47,
-        "high": 108
+        "all": 141,
+        "elementary": 113,
+        "middle": 139,
+        "high": 139
       },
       "related": {
         "all": [
-          "캔바",
-          "클리포",
-          "Claude"
+          "북크리에이터",
+          "블루킷",
+          "와우아이디어스",
+          "초코클래스",
+          "카훗"
         ],
-        "elementary": [],
-        "middle": [
-          "캔바",
-          "클리포",
-          "Claude"
+        "elementary": [
+          "북크리에이터",
+          "블루킷",
+          "와우아이디어스",
+          "초코클래스",
+          "카훗"
         ],
+        "middle": [],
         "high": []
       }
     }
@@ -4418,14 +5978,14 @@ export const edtechSnapshot: EdtechSnapshot = {
     {
       "name": "협업·공유",
       "counts": {
-        "all": 74,
-        "elementary": 41,
+        "all": 93,
+        "elementary": 60,
         "middle": 19,
         "high": 14
       },
       "rates": {
-        "all": 42.5,
-        "elementary": 47.7,
+        "all": 52.5,
+        "elementary": 67.4,
         "middle": 37.3,
         "high": 37.8
       },
@@ -4435,14 +5995,14 @@ export const edtechSnapshot: EdtechSnapshot = {
     {
       "name": "언어·문해",
       "counts": {
-        "all": 30,
-        "elementary": 20,
+        "all": 46,
+        "elementary": 36,
         "middle": 5,
         "high": 5
       },
       "rates": {
-        "all": 17.2,
-        "elementary": 23.3,
+        "all": 26,
+        "elementary": 40.4,
         "middle": 9.8,
         "high": 13.5
       },
@@ -4452,14 +6012,14 @@ export const edtechSnapshot: EdtechSnapshot = {
     {
       "name": "퀴즈·참여",
       "counts": {
-        "all": 46,
-        "elementary": 18,
+        "all": 59,
+        "elementary": 31,
         "middle": 15,
         "high": 13
       },
       "rates": {
-        "all": 26.4,
-        "elementary": 20.9,
+        "all": 33.3,
+        "elementary": 34.8,
         "middle": 29.4,
         "high": 35.1
       },
@@ -4469,14 +6029,14 @@ export const edtechSnapshot: EdtechSnapshot = {
     {
       "name": "교과·맞춤형",
       "counts": {
-        "all": 32,
-        "elementary": 22,
+        "all": 46,
+        "elementary": 36,
         "middle": 8,
         "high": 2
       },
       "rates": {
-        "all": 18.4,
-        "elementary": 25.6,
+        "all": 26,
+        "elementary": 40.4,
         "middle": 15.7,
         "high": 5.4
       },
@@ -4486,14 +6046,14 @@ export const edtechSnapshot: EdtechSnapshot = {
     {
       "name": "생성형 AI",
       "counts": {
-        "all": 50,
-        "elementary": 13,
+        "all": 72,
+        "elementary": 35,
         "middle": 20,
         "high": 17
       },
       "rates": {
-        "all": 28.7,
-        "elementary": 15.1,
+        "all": 40.7,
+        "elementary": 39.3,
         "middle": 39.2,
         "high": 45.9
       },
@@ -4503,14 +6063,14 @@ export const edtechSnapshot: EdtechSnapshot = {
     {
       "name": "콘텐츠 제작",
       "counts": {
-        "all": 61,
-        "elementary": 33,
+        "all": 76,
+        "elementary": 48,
         "middle": 16,
         "high": 12
       },
       "rates": {
-        "all": 35.1,
-        "elementary": 38.4,
+        "all": 42.9,
+        "elementary": 53.9,
         "middle": 31.4,
         "high": 32.4
       },
@@ -4520,14 +6080,14 @@ export const edtechSnapshot: EdtechSnapshot = {
     {
       "name": "학습관리",
       "counts": {
-        "all": 49,
-        "elementary": 30,
+        "all": 60,
+        "elementary": 41,
         "middle": 11,
         "high": 8
       },
       "rates": {
-        "all": 28.2,
-        "elementary": 34.9,
+        "all": 33.9,
+        "elementary": 46.1,
         "middle": 21.6,
         "high": 21.6
       },
@@ -4537,14 +6097,14 @@ export const edtechSnapshot: EdtechSnapshot = {
     {
       "name": "코딩·컴퓨팅",
       "counts": {
-        "all": 8,
-        "elementary": 6,
+        "all": 12,
+        "elementary": 10,
         "middle": 1,
         "high": 1
       },
       "rates": {
-        "all": 4.6,
-        "elementary": 7,
+        "all": 6.8,
+        "elementary": 11.2,
         "middle": 2,
         "high": 2.7
       },

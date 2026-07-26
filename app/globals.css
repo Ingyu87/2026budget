@@ -3947,6 +3947,7 @@ footer p {
   .expense-source-buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .diagnosis-grid, .recipe-grid { grid-template-columns: repeat(2, 1fr); }
   .edutech-layout, .preference-layout { grid-template-columns: 1fr; }
+  .student-safety-gate { grid-template-columns: 1fr; }
   .tool-detail { position: relative; top: auto; }
   .preference-row { grid-template-columns: 190px 1fr; }
   .preference-row p { grid-column: 1 / -1; }
@@ -4064,6 +4065,8 @@ footer p {
   .diagnosis-card { min-height: 390px; }
   .decile-result p { grid-template-columns: 1fr; gap: 2px; }
   .school-level-toolbar { align-items: stretch; flex-direction: column; }
+  .student-safety-gate { padding: 20px; }
+  .student-safety-checks { grid-template-columns: 1fr; }
   .school-level-switch { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .school-level-switch button { min-width: 0; padding-inline: 8px; }
   .edutech-story-grid { grid-template-columns: 1fr; }

@@ -1,4 +1,4 @@
-import { writeFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 const SOURCE_COMMIT = "9819ddad0288e65279803c8523d37fdc0ea0b0d4";
@@ -49,11 +49,11 @@ const product = (name, group, purpose, aliases = []) => ({
 
 const catalog = [
   product("캔바", "콘텐츠 제작", "발표자료·이미지·영상·웹 콘텐츠를 함께 설계하고 제작하는 시각 저작 도구", ["Canva", "캔바 AI", "AI 캔바"]),
-  product("Gemini", "생성형 AI", "텍스트·이미지·자료 분석과 생성을 지원하는 멀티모달 생성형 AI", ["제미나이", "구글 젬스", "Gemini Gems", "구글 GEMS", "Gems"]),
+  product("Gemini", "생성형 AI", "텍스트·이미지·자료 분석과 생성을 지원하는 멀티모달 생성형 AI", ["제미나이", "구글 젬스", "Gemini Gems", "구글 GEMS", "Gems", "구글 AI Pro", "구글AI프로", "Google AI Pro"]),
   product("NotebookLM", "생성형 AI", "교사가 넣은 자료를 근거로 요약·질문·학습 자료 생성을 지원하는 AI 도구", ["노트북LM"]),
-  product("ChatGPT", "생성형 AI", "대화형 자료 생성·분석·아이디어 탐색을 지원하는 생성형 AI", ["ChatGPT Codex"]),
+  product("ChatGPT", "생성형 AI", "대화형 자료 생성·분석·아이디어 탐색을 지원하는 생성형 AI", ["ChatGPT Codex", "Chat GPT", "ChatGPT Plus", "챗GPT", "챗지피티"]),
   product("Claude", "생성형 AI", "긴 문서 분석·글쓰기·아이디어 정리와 코딩을 지원하는 생성형 AI", ["클로드", "클로드 코드", "클로드(스킬)"]),
-  product("SUNO", "콘텐츠 제작", "텍스트 지시로 노래와 배경음악을 만드는 생성형 음악 도구", ["Suno"]),
+  product("SUNO", "콘텐츠 제작", "텍스트 지시로 노래와 배경음악을 만드는 생성형 음악 도구", ["Suno", "Suno AI", "수노AI", "수노 AI"]),
   product("뤼튼", "생성형 AI", "한국어 대화와 자료 생성을 지원하는 생성형 AI 서비스"),
   product("Manus", "생성형 AI", "조사·정리·콘텐츠 제작 과정을 수행하는 AI 에이전트"),
   product("E-GPT", "생성형 AI", "교사가 목적에 맞는 교육용 챗봇을 구성해 활용하는 AI 서비스"),
@@ -70,6 +70,10 @@ const catalog = [
   product("VLLO", "콘텐츠 제작", "모바일에서 자막·효과·음악을 편집하는 쉬운 영상 제작 앱"),
   product("미리캔버스", "콘텐츠 제작", "발표자료·카드뉴스·학습자료를 만드는 웹 기반 디자인 도구"),
   product("Gamma", "콘텐츠 제작", "AI로 발표자료·문서·웹페이지 초안을 만드는 프레젠테이션 저작 도구", ["감마"]),
+  product("YouTube Premium", "콘텐츠 제작", "광고 없이 교육 영상을 탐색·재생·저장하는 영상 콘텐츠 이용 서비스", ["유튜브 프리미엄", "유튜브프리미엄", "유튜브 구독"]),
+  product("4K Video Downloader+", "콘텐츠 제작", "온라인 영상·음원을 내려받아 수업 자료로 관리하는 미디어 보조 도구"),
+  product("ElevenLabs", "콘텐츠 제작", "텍스트를 자연스러운 음성으로 변환하고 보이스를 생성하는 AI 오디오 도구", ["Eleven Labs"]),
+  product("Adobe Creative Cloud", "콘텐츠 제작", "이미지·영상·문서 제작에 필요한 Adobe 앱과 클라우드 서비스를 제공하는 창작 도구", ["어도비클라우드", "어도비 클라우드", "Adobe Cloud", "어도비 라이선스", "어도비 라이센스"]),
   product("투닝", "콘텐츠 제작", "웹툰·스토리·이미지 콘텐츠를 만드는 교육용 창작 도구", ["Tooning AI"]),
   product("픽스톤", "콘텐츠 제작", "캐릭터와 장면을 조합해 만화와 이야기를 만드는 디지털 스토리텔링 도구"),
   product("Skybox AI", "콘텐츠 제작", "텍스트 지시로 360도 배경과 가상 공간 이미지를 만드는 AI 도구"),
@@ -79,8 +83,9 @@ const catalog = [
   product("북크리에이터", "콘텐츠 제작", "글·이미지·음성·영상을 엮어 전자책과 학습 결과물을 만드는 저작 도구"),
   product("아트봉봉", "콘텐츠 제작", "디지털 드로잉과 미술 활동 결과물 제작을 지원하는 예술교육 도구", ["아트봉봉스쿨"]),
   product("후크패드", "콘텐츠 제작", "코드 진행을 만들고 함께 작곡·편곡하는 웹 기반 음악 창작 도구"),
-  product("패들렛", "협업·공유", "게시판과 캔버스에 자료·의견·결과물을 함께 모으는 실시간 협업 공간", ["Padlet"]),
-  product("와우아이디어스", "협업·공유", "온라인 브레인스토밍으로 아이디어 생성·정리·평가·공유를 잇는 PBL 협업 도구"),
+  product("패들렛", "협업·공유", "게시판과 캔버스에 자료·의견·결과물을 함께 모으는 실시간 협업 공간", ["Padlet", "페들렛", "패들릿"]),
+  product("와우아이디어스", "협업·공유", "온라인 브레인스토밍으로 아이디어 생성·정리·평가·공유를 잇는 PBL 협업 도구", ["Wow ideas", "Wow Ideas", "WowIdeas"]),
+  product("Zoom Pro", "협업·공유", "화상수업·회의·화면 공유·소그룹 활동을 지원하는 원격 협업 도구", ["Zoom", "zoom프로", "줌 프로", "줌Pro"]),
   product("Google Workspace", "협업·공유", "문서·슬라이드·시트·드라이브에서 공동 편집과 자료 공유를 지원하는 협업 도구", ["구글 워크스페이스", "구글 드라이브", "구글 문서", "구글 시트", "구글 스프레드시트", "구글 슬라이드"]),
   product("MS Teams", "협업·공유", "채팅·화상회의·과제·파일 공유를 한 공간에서 운영하는 협업 플랫폼"),
   product("MS OneNote", "협업·공유", "디지털 필기와 수업 자료 정리·공유를 지원하는 전자 노트"),
@@ -98,9 +103,7 @@ const catalog = [
   product("Class1234", "학습관리", "학생 일기·보상·댓글을 활용해 학급 소통과 참여를 돕는 운영 도구"),
   product("온라인 교무실", "학습관리", "교직원 자료 공유와 학교 업무 협업을 위한 온라인 공간"),
   product("심스페이스", "학습관리", "학생의 감정과 관계 데이터를 살펴 상담과 사회정서학습을 돕는 플랫폼"),
-  product("센스쿨", "학습관리", "학교 계정과 여러 교육 서비스를 연결해 수업·학급 운영을 지원하는 플랫폼"),
-  product("SEN스쿨", "학습관리", "서울 교육 환경에서 수업과 학교 업무 운영을 지원하는 플랫폼"),
-  product("SEN에듀", "학습관리", "교육 자료와 학교 수업 운영을 지원하는 서울교육 플랫폼"),
+  product("SEN스쿨", "학습관리", "서울교육 계정과 여러 교육 서비스를 연결해 수업·학급 운영을 지원하는 플랫폼", ["센스쿨", "SEN에듀", "sen스쿨", "sen에듀"]),
   product("임팩트스페이스", "학습관리", "학생 프로젝트와 활동 기록·공유를 지원하는 교육 플랫폼"),
   product("클래시파이", "학습관리", "학생 성향·관계 검사 결과로 상담과 생활지도를 돕는 학급관리 도구"),
   product("포커스팡", "학습관리", "학생의 디지털 학습 집중과 활동 관리를 지원하는 교실 도구"),
@@ -108,10 +111,14 @@ const catalog = [
   product("오르조 클래스", "학습관리", "문제 풀이와 학습 자료 배부·관리를 지원하는 학급용 학습 플랫폼"),
   product("플랭스쿨", "학습관리", "교과 학습 콘텐츠와 학생 진도·과제를 운영하는 학교용 학습 플랫폼"),
   product("문제G", "학습관리", "문항 제작·배부·채점과 학습 결과 관리를 돕는 평가 운영 도구"),
+  product("초코클래스", "학습관리", "수업 콘텐츠·학생 활동·학습 데이터를 운영하는 교실 학습 플랫폼"),
+  product("그라운드", "학습관리", "학생 학습 활동과 진도를 운영·확인하는 교육 플랫폼"),
+  product("U클래스", "학습관리", "학생 계정·수업·과제·진도를 관리하는 교육용 클래스 플랫폼"),
+  product("퍼플 경제교실", "학습관리", "학생 참여형 경제·금융 수업 콘텐츠와 활동을 제공하는 교과 플랫폼", ["퍼플 경제 교실", "퍼플 - 경제 교실"]),
   product("클리포", "퀴즈·참여", "수행평가 설계·AI 채점·맞춤 피드백·기록을 지원하는 평가 도구", ["Clipo AI"]),
   product("Snorkl", "퀴즈·참여", "학생이 말·글·그림으로 설명하면 AI 피드백을 제공하는 형성평가 플랫폼"),
   product("ZEP·젭퀴즈", "퀴즈·참여", "메타버스형 참여 공간과 게임형 퀴즈를 결합한 수업 참여 도구", ["ZEP", "젭퀴즈", "ZEP Quiz"]),
-  product("블루킷", "퀴즈·참여", "문항 세트를 여러 게임 모드로 운영하는 실시간 퀴즈 플랫폼"),
+  product("블루킷", "퀴즈·참여", "문항 세트를 여러 게임 모드로 운영하는 실시간 퀴즈 플랫폼", ["Blooket", "Blooket Plus"]),
   product("띵커벨", "퀴즈·참여", "퀴즈·토론·설문·워드클라우드·보드를 제공하는 수업 상호작용 도구", ["띵커벨 보드"]),
   product("카훗", "퀴즈·참여", "실시간 퀴즈와 설문으로 이해도와 참여를 확인하는 게임형 평가 도구", ["Kahoot"]),
   product("멘티미터", "퀴즈·참여", "실시간 투표·설문·퀴즈·워드클라우드로 의견을 모으는 참여 도구"),
@@ -120,7 +127,8 @@ const catalog = [
   product("왓퀴즈", "퀴즈·참여", "문항 제작과 실시간 퀴즈 운영을 지원하는 수업 참여 도구"),
   product("Redmenta", "퀴즈·참여", "디지털 활동지와 과제·평가를 제작하고 피드백하는 수업 도구", ["레드멘타"]),
   product("Brisk Teaching", "퀴즈·참여", "교사의 자료 제작과 학생 글 피드백·평가를 지원하는 AI 보조 도구", ["Brisk", "브리스크 티칭"]),
-  product("매쓰홀릭", "교과·맞춤형", "수학 문제은행과 진단·추천 학습을 제공하는 수학 AI 코스웨어", ["매쓰홀릭T"]),
+  product("Wordwall", "퀴즈·참여", "교사가 만든 문항을 게임·활동지 형태로 바꾸는 퀴즈 저작 도구", ["워드월"]),
+  product("매쓰홀릭", "교과·맞춤형", "수학 문제은행과 진단·추천 학습을 제공하는 수학 AI 코스웨어", ["매쓰홀릭T", "매스홀릭"]),
   product("스쿨플랫", "교과·맞춤형", "문제은행·과제·성취 분석을 제공하는 학교 맞춤형 수학 코스웨어"),
   product("풀리수학", "교과·맞춤형", "AI 진단과 수준별 수학 문제 추천을 지원하는 코스웨어", ["풀리"]),
   product("똑똑수학탐험대", "교과·맞춤형", "초등 수학 개념과 연산을 놀이형 활동으로 익히는 학습 서비스"),
@@ -130,7 +138,7 @@ const catalog = [
   product("데스모스", "교과·맞춤형", "그래프·수식·활동지를 활용해 수학 개념 탐구를 지원하는 도구"),
   product("수학 아레나", "교과·맞춤형", "게임형 문제 풀이로 수학 연습과 참여를 지원하는 학습 서비스"),
   product("일프로 연산", "교과·맞춤형", "학생 수준에 맞춘 수학 연산 연습을 제공하는 학습 서비스"),
-  product("AI 아크수학", "교과·맞춤형", "학생 수준 진단과 맞춤형 수학 학습을 지원하는 AI 코스웨어"),
+  product("AI 아크수학", "교과·맞춤형", "학생 수준 진단과 맞춤형 수학 학습을 지원하는 AI 코스웨어", ["AI아크수학"]),
   product("AI마타수학", "교과·맞춤형", "진단 결과에 따라 개별 수학 문항과 학습 경로를 제공하는 AI 코스웨어"),
   product("지니아튜터", "교과·맞춤형", "국·영·수·사·과 과정과 AI 글쓰기 평가를 제공하는 교과 코스웨어"),
   product("체리팟", "교과·맞춤형", "교과 학습 활동과 학생별 과제·피드백을 지원하는 교육 플랫폼"),
@@ -139,26 +147,48 @@ const catalog = [
   product("옥수수", "교과·맞춤형", "진단평가 후 학생별 학습을 추천하는 학교 전용 수학 AI 코스웨어"),
   product("토도한글", "언어·문해", "유아·초등 초기 문해의 한글 읽기와 쓰기를 돕는 단계형 학습 앱"),
   product("토도 시리즈", "언어·문해", "한글·수학·영어를 단계별 활동으로 연습하는 초기 학습 앱", ["토도한글·수학·영어"]),
+  product("토도수학", "교과·맞춤형", "초등 수 개념과 연산을 단계별 활동으로 익히는 수학 학습 앱"),
+  product("알공", "교과·맞춤형", "초등 영어·수학을 게임과 AI 맞춤 복습으로 지원하는 교과 코스웨어"),
+  product("매쓰플랫", "교과·맞춤형", "수학 문제은행·오답 관리·개인별 추천을 제공하는 맞춤형 수학 플랫폼"),
+  product("지학사 AIDT", "교과·맞춤형", "교과 학습·AI 튜터·학습 분석을 결합한 지학사 AI 디지털교과서", ["지학사AIDT"]),
   product("키위티", "언어·문해", "학생 글쓰기 제출과 AI 대화·피드백을 지원하는 AI 글쓰기 코스웨어"),
   product("클래스카드", "언어·문해", "영어 어휘·문장 세트를 게임과 반복 학습으로 익히는 언어 학습 도구"),
   product("리드포스쿨", "언어·문해", "시선추적과 AI 분석을 활용해 읽기 과정을 진단하는 문해력 코스웨어"),
   product("러니", "언어·문해", "읽기와 문해 활동을 지원하고 학습 과정을 관리하는 교육 서비스"),
   product("달달독해", "언어·문해", "초등 독해와 어휘를 단계적으로 연습하는 문해 학습 서비스"),
   product("리딩앤스쿨", "언어·문해", "학교 영어 읽기와 수준별 독서 활동을 지원하는 디지털 영어 서비스"),
-  product("리딩오션스쿨", "언어·문해", "전자책 읽기와 독서 활동·학습 관리를 제공하는 디지털 독서 플랫폼"),
+  product("리딩오션스쿨", "언어·문해", "전자책 읽기와 독서 활동·학습 관리를 제공하는 디지털 독서 플랫폼", ["리딩오션"]),
   product("리틀팍스", "언어·문해", "애니메이션 영어동화와 단계별 읽기·듣기 콘텐츠를 제공하는 영어 학습 서비스"),
-  product("이퓨처라이브러리", "언어·문해", "레벨별 영어 전자책과 듣기·읽기 활동을 제공하는 영어 도서관"),
+  product("이퓨처라이브러리", "언어·문해", "레벨별 영어 전자책과 듣기·읽기 활동을 제공하는 영어 도서관", ["e-Future e-Library", "e-future e-library"]),
+  product("리딩게이트", "언어·문해", "레벨별 영어 원서 읽기와 독후 활동을 제공하는 영어 독서 프로그램"),
+  product("매일국어·독도", "언어·문해", "국어 기초 학습과 독해·어휘 연습을 지원하는 교과 학습 콘텐츠", ["매일국어,독도", "매일 독도"]),
+  product("EBS영어", "언어·문해", "EBS 영어 영상·음원·학습 콘텐츠를 활용하는 영어 학습 서비스"),
+  product("Learney", "언어·문해", "성취기준 기반 국어·문해 학습과 AI 피드백·진도 분석을 제공하는 플랫폼"),
+  product("그림한글받아쓰기", "언어·문해", "그림 단서와 받아쓰기로 초기 한글 쓰기를 연습하는 문해 학습 도구"),
+  product("라포라포", "언어·문해", "학생의 읽기·쓰기 및 의사소통 활동을 지원하는 언어 학습 도구"),
+  product("밀리의 서재", "언어·문해", "전자책·오디오북을 읽고 듣는 디지털 독서 구독 서비스"),
+  product("스픽AI", "언어·문해", "AI 튜터와 대화하며 영어 말하기·발음을 연습하는 회화 학습 앱"),
+  product("엘리프", "언어·문해", "양방향 수업과 예습·복습을 결합한 초등 영어 디지털 학습 솔루션"),
+  product("초등문해력", "언어·문해", "초등 읽기 이해·어휘·독해를 단계적으로 연습하는 문해력 콘텐츠"),
+  product("토도국어", "언어·문해", "초등 국어 읽기·쓰기·어휘를 단계별로 학습하는 교과 앱"),
+  product("YBM AIDT", "언어·문해", "교과 콘텐츠·AI 튜터·학습 분석을 결합한 YBM AI 디지털교과서", ["YBMAIDT"]),
   product("아이글", "언어·문해", "학생 글쓰기와 피드백 과정을 지원하는 디지털 글쓰기 도구"),
   product("자작자작", "언어·문해", "학생의 글쓰기 과정과 교사 피드백을 연결하는 디지털 글쓰기 플랫폼"),
   product("Mizou", "언어·문해", "교사가 학습 목적의 대화형 챗봇을 구성해 언어 활동에 활용하는 도구", ["미조우"]),
   product("Read Along", "언어·문해", "소리 내어 읽기와 즉각적인 발음 피드백을 지원하는 읽기 학습 도구"),
   product("MS 리딩 프로그레스", "언어·문해", "학생의 소리 내어 읽기를 기록하고 읽기 유창성을 확인하는 도구"),
-  product("다했니·다했어요", "학습관리", "과제 배부·제출·확인과 학급 활동 기록을 돕는 학급관리 플랫폼", ["다했니 다했어요"]),
-  product("Delightex", "코딩·컴퓨팅", "3D 공간을 만들고 코딩·VR·AR로 확장하는 실감형 창작 플랫폼"),
+  product("다했니·다했어요", "학습관리", "과제 배부·제출·확인과 학급 활동 기록을 돕는 학급관리 플랫폼", ["다했니 다했어요", "다했니", "다했어요"]),
+  product("Delightex", "코딩·컴퓨팅", "3D 공간을 만들고 코딩·VR·AR로 확장하는 실감형 창작 플랫폼", ["딜라이텍스"]),
   product("엔트리", "코딩·컴퓨팅", "블록 코딩과 AI·데이터 활동을 지원하는 교육용 프로그래밍 플랫폼"),
   product("틴커캐드", "코딩·컴퓨팅", "3D 설계와 전자회로·코딩 시뮬레이션을 지원하는 제작 도구"),
   product("마인크래프트", "코딩·컴퓨팅", "가상 세계에서 협력·설계·코딩 프로젝트를 수행하는 학습 플랫폼"),
   product("AICE", "코딩·컴퓨팅", "AI 개념과 데이터 활용 역량을 학습·평가하는 교육 프로그램"),
+  product("코드모스", "코딩·컴퓨팅", "학교 수업용 단계형 SW·AI 학습 콘텐츠를 제공하는 코딩 코스웨어", ["코드모스 코딩"]),
+  product("Lily's AI", "생성형 AI", "영상·문서·웹 자료를 요약하고 지식 노트로 정리하는 AI 학습 보조 도구", ["LilysAI", "Lily AI"]),
+  product("OpenAI API", "생성형 AI", "생성형 AI 모델을 맞춤형 앱·자동화·수업 도구에 연결하는 개발 인터페이스", ["ChatGPT API"]),
+  product("TBLT-Agent", "생성형 AI", "과업 중심 언어 수업 설계와 활동 생성을 지원하는 AI 에이전트"),
+  product("젠스파크", "생성형 AI", "검색·자료 조사·문서와 프레젠테이션 생성을 수행하는 AI 에이전트", ["Genspark"]),
+  product("큐리팟", "생성형 AI", "질문 생성과 탐구 활동 설계를 지원하는 교육용 AI 도구"),
 ];
 
 const normalize = (value) =>
@@ -167,6 +197,58 @@ const normalize = (value) =>
     .trim()
     .toLocaleLowerCase("ko")
     .replace(/\s+/g, " ");
+
+const normalizeSchoolName = (value) =>
+  value
+    .normalize("NFKC")
+    .replace(/\s+/g, "")
+    .replace(/초등학교$/, "초")
+    .replace(/중학교$/, "중")
+    .replace(/고등학교$/, "고");
+
+const parseCsv = (text) => {
+  const rows = [];
+  let row = [];
+  let cell = "";
+  let quoted = false;
+  const source = text.replace(/^\uFEFF/, "");
+
+  for (let index = 0; index < source.length; index += 1) {
+    const character = source[index];
+    if (quoted) {
+      if (character === "\"" && source[index + 1] === "\"") {
+        cell += "\"";
+        index += 1;
+      } else if (character === "\"") {
+        quoted = false;
+      } else {
+        cell += character;
+      }
+    } else if (character === "\"") {
+      quoted = true;
+    } else if (character === ",") {
+      row.push(cell);
+      cell = "";
+    } else if (character === "\n") {
+      row.push(cell.replace(/\r$/, ""));
+      rows.push(row);
+      row = [];
+      cell = "";
+    } else {
+      cell += character;
+    }
+  }
+
+  if (cell || row.length) {
+    row.push(cell);
+    rows.push(row);
+  }
+
+  const [headers, ...dataRows] = rows;
+  return dataRows
+    .filter((values) => values.some(Boolean))
+    .map((values) => Object.fromEntries(headers.map((header, index) => [header, values[index] ?? ""])));
+};
 
 const aliasMap = new Map();
 for (const item of catalog) {
@@ -196,27 +278,12 @@ const levelKey = (value) => {
   throw new Error(`Unknown school level: ${value}`);
 };
 
-const denominators = {
-  all: cases.length,
-  elementary: cases.filter((item) => levelKey(item.level) === "elementary").length,
-  middle: cases.filter((item) => levelKey(item.level) === "middle").length,
-  high: cases.filter((item) => levelKey(item.level) === "high").length,
-};
-
-if (
-  denominators.all !== 174
-  || denominators.elementary !== 86
-  || denominators.middle !== 51
-  || denominators.high !== 37
-) {
-  throw new Error(`Unexpected population: ${JSON.stringify(denominators)}`);
-}
-
 const catalogByName = new Map(catalog.map((item) => [item.name, item]));
 const toolSchools = new Map();
 const groupSchools = new Map();
 const cooccurrence = new Map();
 const unmapped = new Map();
+const schoolRecords = new Map();
 
 const createLevelSets = () => ({
   all: new Set(),
@@ -233,6 +300,7 @@ const createLevelMaps = () => ({
 });
 
 for (const item of cases) {
+  const school = normalizeSchoolName(item.school);
   const level = levelKey(item.level);
   const canonicalTools = new Set();
 
@@ -245,16 +313,67 @@ for (const item of cases) {
     canonicalTools.add(canonical);
   }
 
+  schoolRecords.set(school, { level, tools: canonicalTools });
+}
+
+const budgetOutputDirectory = resolve(process.cwd(), "..", "outputs");
+if (!existsSync(budgetOutputDirectory)) {
+  throw new Error(`Budget output directory not found: ${budgetOutputDirectory}`);
+}
+const budgetDetailFile = readdirSync(budgetOutputDirectory)
+  .find((name) => name.includes("항목별_세부집행내역") && name.endsWith(".csv"));
+if (!budgetDetailFile) {
+  throw new Error("Budget detail CSV not found");
+}
+
+const budgetDetails = parseCsv(readFileSync(resolve(budgetOutputDirectory, budgetDetailFile), "utf8"));
+const searchableAliases = [...aliasMap.entries()]
+  .filter(([alias]) => alias.length >= 2)
+  .sort((left, right) => right[0].length - left[0].length);
+
+for (const row of budgetDetails) {
+  const school = normalizeSchoolName(row["학교명"]);
+  const record = schoolRecords.get(school) ?? { level: "elementary", tools: new Set() };
+  let unmatchedExpenseText = normalize(`${row["지출내용 상세"]} ${row["산출근거 상세"]}`);
+
+  for (const [alias, canonical] of searchableAliases) {
+    if (!unmatchedExpenseText.includes(alias)) continue;
+    record.tools.add(canonical);
+    unmatchedExpenseText = unmatchedExpenseText.split(alias).join(" ".repeat(alias.length));
+  }
+
+  schoolRecords.set(school, record);
+}
+
+const denominators = {
+  all: schoolRecords.size,
+  elementary: [...schoolRecords.values()].filter((item) => item.level === "elementary").length,
+  middle: [...schoolRecords.values()].filter((item) => item.level === "middle").length,
+  high: [...schoolRecords.values()].filter((item) => item.level === "high").length,
+};
+
+if (
+  denominators.all !== 177
+  || denominators.elementary !== 89
+  || denominators.middle !== 51
+  || denominators.high !== 37
+) {
+  throw new Error(`Unexpected merged population: ${JSON.stringify(denominators)}`);
+}
+
+for (const [school, record] of schoolRecords) {
+  const { level, tools: canonicalTools } = record;
+
   for (const toolName of canonicalTools) {
     const meta = catalogByName.get(toolName);
     const toolLevelSets = toolSchools.get(toolName) ?? createLevelSets();
-    toolLevelSets.all.add(item.school);
-    toolLevelSets[level].add(item.school);
+    toolLevelSets.all.add(school);
+    toolLevelSets[level].add(school);
     toolSchools.set(toolName, toolLevelSets);
 
     const groupLevelSets = groupSchools.get(meta.group) ?? createLevelSets();
-    groupLevelSets.all.add(item.school);
-    groupLevelSets[level].add(item.school);
+    groupLevelSets.all.add(school);
+    groupLevelSets[level].add(school);
     groupSchools.set(meta.group, groupLevelSets);
   }
 
@@ -429,7 +548,7 @@ const output = `// Generated by scripts/build-edtech-data.mjs. Do not edit manua
 writeFileSync(OUTPUT, output, "utf8");
 
 const unmappedSorted = [...unmapped.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "ko"));
-console.log(`Generated ${tools.length} tools from ${cases.length} schools.`);
+console.log(`Generated ${tools.length} tools from ${denominators.all} merged schools.`);
 console.log(`Unmapped labels (${unmappedSorted.length}):`);
 for (const [name, count] of unmappedSorted) {
   console.log(`${count}\t${name}`);

@@ -490,11 +490,11 @@ const schoolLevelLabels: Record<SchoolLevel, string> = {
   high: "고등",
 };
 
-const schoolLevelInsights: Record<SchoolLevel, string> = {
-  all: "협업·공유가 42.5%로 가장 넓었고 콘텐츠 제작 35.1%, 생성형 AI 28.7%가 뒤를 이었습니다. 함께 모으고 결과물을 만드는 기본 활동에 선택이 먼저 모인 흐름입니다.",
-  elementary: "초등은 협업·공유 47.7%, 콘텐츠 제작 38.4%, 학습관리 34.9% 순입니다. 결과물 공유와 일상적인 학급·학습 운영을 잇는 선택이 상대적으로 넓었습니다.",
-  middle: "중등은 생성형 AI 39.2%와 협업·공유 37.3%가 비슷하게 앞섰습니다. 교과 자료 제작·분석과 공동 활동을 함께 지원하려는 선택으로 읽을 수 있습니다.",
-  high: "고등은 생성형 AI가 45.9%로 가장 넓었고 협업·공유 37.8%, 퀴즈·참여 35.1%가 뒤를 이었습니다. 탐구·프로젝트와 빠른 확인 활동을 함께 지원하는 흐름입니다.",
+const schoolLevelInsightNotes: Record<SchoolLevel, string> = {
+  all: "함께 모으고 결과물을 만드는 기본 활동에 선택이 먼저 모인 흐름입니다.",
+  elementary: "결과물 공유와 일상적인 학급·학습 운영을 잇는 선택이 상대적으로 넓었습니다.",
+  middle: "교과 자료 제작·분석과 공동 활동을 함께 지원하려는 선택으로 읽을 수 있습니다.",
+  high: "탐구·프로젝트와 빠른 확인 활동을 함께 지원하는 흐름입니다.",
 };
 
 const getWordSize = (count: number, maxCount: number) => {
@@ -670,6 +670,7 @@ export default function Home() {
     [schoolLevel],
   );
   const leadingFunctionGroup: EdtechGroupSummary = functionGroups[0];
+  const schoolLevelInsight = `${functionGroups[0].name} ${functionGroups[0].rates[schoolLevel]}%가 가장 넓었고, ${functionGroups[1].name} ${functionGroups[1].rates[schoolLevel]}%, ${functionGroups[2].name} ${functionGroups[2].rates[schoolLevel]}%가 뒤를 이었습니다. ${schoolLevelInsightNotes[schoolLevel]}`;
   const selectedRecipe = semesterRecipes.find((recipe) => recipe.number === selectedRecipeNumber) ?? semesterRecipes[0];
   const selectedExpenseDetails = expenseDetailsByCategory[selectedCategory.name];
   const selectedExpense = selectedExpenseDetails[selectedExpenseIndex] ?? selectedExpenseDetails[0];
@@ -1150,20 +1151,42 @@ export default function Home() {
               </button>
             ))}
           </div>
-          <a
-            className="edutech-guide-link"
-            href="https://buseo.sen.go.kr/buseo/bu10/user/bbs/BD_selectBbs.do?q_bbsDocNo=20251220202229742&q_bbsSn=1240"
-            target="_blank"
-            rel="noreferrer"
-          >
-            서울시교육청 활용 가이드라인 ↗
-          </a>
         </div>
+        <section className="student-safety-gate" aria-labelledby="student-safety-title">
+          <div className="student-safety-heading">
+            <span>에듀테크 활용 전 안내</span>
+            <h3 id="student-safety-title">학생에게 안내하기 전에 세 가지를 확인하세요</h3>
+            <p>도구마다 이용 조건과 개인정보 처리 방식이 다릅니다. 학교에서 도입·활용하기 전에 공식 이용약관과 학교 절차를 먼저 확인해 주세요.</p>
+          </div>
+          <ol className="student-safety-checks">
+            <li>
+              <b>① 이용 가능 연령과 계정</b>
+              <p>공식 이용약관에서 학생의 이용 가능 연령, 보호자 동의, 학교 계정 사용 조건을 확인합니다.</p>
+            </li>
+            <li>
+              <b>② 학교 도입 절차</b>
+              <p>학교운영위원회 심의 대상 여부와 학교 내부의 교육자료 선정·도입 절차를 확인합니다.</p>
+            </li>
+            <li>
+              <b>③ 개인정보와 동의</b>
+              <p>수집 항목, 저장 위치와 기간을 확인하고 필요한 경우 학생·보호자 동의를 받은 뒤 사용합니다.</p>
+            </li>
+          </ol>
+          <nav className="student-safety-sources" aria-label="에듀테크 활용 전 확인 자료">
+            <a
+              href="https://buseo.sen.go.kr/buseo/bu10/user/bbs/BD_selectBbs.do?q_bbsDocNo=20251220202229742&q_bbsSn=1240"
+              target="_blank"
+              rel="noreferrer"
+            >
+              서울시교육청 AI·에듀테크 공교육 도입 및 활용 가이드라인·지원자료 ↗
+            </a>
+          </nav>
+        </section>
         <div className="edutech-story-grid" aria-label={`${selectedLevelLabel} 에듀테크 선택 흐름`}>
           <article className="edutech-story-card">
             <span>{selectedLevelLabel}에서 가장 넓게 확인</span>
             <h3>{leadingFunctionGroup.name} <b>{leadingFunctionGroup.rates[schoolLevel]}%</b></h3>
-            <p>{schoolLevelInsights[schoolLevel]}</p>
+            <p>{schoolLevelInsight}</p>
           </article>
           <button
             type="button"
@@ -1365,7 +1388,7 @@ export default function Home() {
           <article className="preference-insight">
             <span className="mini-sprinkle">● ✦ ●</span>
             <h3>{selectedLevelLabel}에서는<br />{leadingFunctionGroup.name}이 가장 넓었습니다</h3>
-            <p>{schoolLevelInsights[schoolLevel]} 학교에서 해결하려는 수업 문제를 먼저 정한 뒤 제품을 비교하는 것이 중요합니다.</p>
+            <p>{schoolLevelInsight} 학교에서 해결하려는 수업 문제를 먼저 정한 뒤 제품을 비교하는 것이 중요합니다.</p>
             <small>※ 한 학교가 여러 유형에 포함될 수 있어 비율의 합은 100%가 아닙니다. 구매·구독 자료에서 확인된 선택 경향이며, 선호 이유를 조사한 결과는 아닙니다.</small>
           </article>
         </div>
