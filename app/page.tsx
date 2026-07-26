@@ -1144,24 +1144,26 @@ export default function Home() {
             <span className="section-kicker">에듀테크 선택 현황</span>
             <small>7.24 기준</small>
           </div>
-          <h2 id="edutech-title">어떤 에듀테크를 많이 선택했을까요?</h2>
-          <p>구매·구독이 확인된 도구를 학교급별로 살펴보고, 2학기 선택에 필요한 질문을 함께 확인해 보세요.</p>
-        </div>
-        <div className="school-level-toolbar">
-          <div className="school-level-switch" role="tablist" aria-label="학교급 선택">
-            {(Object.keys(schoolLevelLabels) as SchoolLevel[]).map((level) => (
-              <button
-                key={level}
-                type="button"
-                role="tab"
-                aria-selected={schoolLevel === level}
-                className={schoolLevel === level ? "active" : ""}
-                onClick={() => changeSchoolLevel(level)}
-              >
-                {schoolLevelLabels[level]}
-              </button>
-            ))}
+          <div className="edutech-heading-copy">
+            <h2 id="edutech-title">어떤 에듀테크를 많이 선택했을까요?</h2>
+            <div className="school-level-toolbar">
+              <div className="school-level-switch" role="tablist" aria-label="학교급 선택">
+                {(Object.keys(schoolLevelLabels) as SchoolLevel[]).map((level) => (
+                  <button
+                    key={level}
+                    type="button"
+                    role="tab"
+                    aria-selected={schoolLevel === level}
+                    className={schoolLevel === level ? "active" : ""}
+                    onClick={() => changeSchoolLevel(level)}
+                  >
+                    {schoolLevelLabels[level]}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
+          <p>구매·구독이 확인된 도구를 학교급별로 살펴보고, 2학기 선택에 필요한 질문을 함께 확인해 보세요.</p>
         </div>
         <section className="student-safety-gate" aria-labelledby="student-safety-title">
           <div className="student-safety-heading">

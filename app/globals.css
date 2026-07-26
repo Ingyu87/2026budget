@@ -2494,6 +2494,128 @@ body {
   line-height: 1.5;
 }
 
+/* Edtech view: use the full canvas and prioritize readable decision text. */
+.edutech-section {
+  padding-top: 42px;
+}
+
+.edutech-section > .section-heading {
+  display: grid;
+  max-width: none;
+  grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
+  align-items: start;
+  gap: 12px 48px;
+  margin-bottom: 18px;
+}
+
+.edutech-section > .section-heading .section-kicker-row {
+  grid-column: 1 / -1;
+}
+
+.edutech-section > .section-heading h2 {
+  margin: 6px 0 0;
+  font-size: clamp(36px, 3vw, 46px);
+  line-height: 1.12;
+}
+
+.edutech-heading-copy {
+  min-width: 0;
+}
+
+.edutech-section > .section-heading > p {
+  display: flex;
+  min-height: 100%;
+  align-items: center;
+  margin: 0;
+  padding: 16px 20px;
+  border-left: 5px solid var(--purple);
+  border-radius: 0 18px 18px 0;
+  background: rgba(255, 255, 255, 0.62);
+  font-size: clamp(20px, 1.35vw, 24px);
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.edutech-section .school-level-toolbar {
+  margin: 20px 0 0;
+}
+
+.edutech-section .school-level-switch button {
+  min-width: 84px;
+  min-height: 48px;
+  font-size: 18px;
+}
+
+.edutech-section .student-safety-gate {
+  grid-template-columns: minmax(390px, 0.95fr) minmax(0, 1.65fr);
+  gap: 20px 28px;
+  padding: 28px;
+}
+
+.edutech-section .student-safety-heading > span {
+  padding: 7px 11px;
+  font-size: 14px;
+}
+
+.edutech-section .student-safety-heading h3 {
+  font-size: clamp(27px, 2vw, 32px);
+  line-height: 1.3;
+}
+
+.edutech-section .student-safety-heading p {
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.edutech-section .student-safety-checks {
+  gap: 14px;
+}
+
+.edutech-section .student-safety-checks li {
+  padding: 19px;
+}
+
+.edutech-section .student-safety-checks b {
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.edutech-section .student-safety-checks p {
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+
+.edutech-section .student-safety-sources a {
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.edutech-section .edutech-story-card,
+.edutech-section .teacher-webapp-card {
+  min-height: 178px;
+  padding: 27px;
+}
+
+.edutech-section .edutech-story-card > span,
+.edutech-section .teacher-webapp-card > span {
+  font-size: 16px;
+}
+
+.edutech-section .edutech-story-card h3,
+.edutech-section .teacher-webapp-card h3 {
+  font-size: clamp(29px, 2.25vw, 35px);
+}
+
+.edutech-section .edutech-story-card p,
+.edutech-section .teacher-webapp-card p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.edutech-section .teacher-webapp-card em {
+  font-size: 16px;
+}
+
 .exact-list summary,
 table {
   font-size: 24px;
@@ -4072,6 +4194,9 @@ footer p {
   .diagnosis-grid, .recipe-grid { grid-template-columns: repeat(2, 1fr); }
   .edutech-layout, .preference-layout { grid-template-columns: 1fr; }
   .student-safety-gate { grid-template-columns: 1fr; }
+  .edutech-section > .section-heading { grid-template-columns: 1fr; gap: 12px; }
+  .edutech-section > .section-heading > p { grid-column: 1; }
+  .edutech-section .student-safety-gate { grid-template-columns: 1fr; }
   .tool-detail { position: relative; top: auto; }
   .preference-row { grid-template-columns: 190px 1fr; }
   .preference-row p { grid-column: 1 / -1; }
@@ -4185,11 +4310,14 @@ footer p {
   .recipe-detail-head > button { width: 100%; }
   .section-heading h2 { font-size: 38px; }
   .section-heading > p { font-size: 27px; }
+  .edutech-section > .section-heading h2 { font-size: 34px; }
+  .edutech-section > .section-heading > p { padding: 14px 16px; font-size: 19px; }
   .diagnosis-grid, .recipe-grid { grid-template-columns: 1fr; }
   .diagnosis-card { min-height: 390px; }
   .decile-result p { grid-template-columns: 1fr; gap: 2px; }
   .school-level-toolbar { align-items: stretch; flex-direction: column; }
   .student-safety-gate { padding: 20px; }
+  .edutech-section .student-safety-gate { padding: 21px; }
   .student-safety-checks { grid-template-columns: 1fr; }
   .school-level-switch { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .school-level-switch button { min-width: 0; padding-inline: 8px; }
